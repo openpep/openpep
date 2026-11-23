@@ -5,6 +5,8 @@ import {postNumbers} from '../api/sncr-numbers.mjs';
 import {destination,numbersRequest,lotPayload} from '../integracao/sncr-lote.mjs';
 import {exportLot,portalOrigin,signingConfig} from './exports.mjs';
 const TTL=300000,COOKIE='__Host-openpep-rx-sncr';
+// Each signed-in account may open at most START_LIMIT SNCR logins per START_WINDOW.
+export const START_LIMIT=10,START_WINDOW=3600_000;
 const hex=()=>Array.from(crypto.getRandomValues(new Uint8Array(32)),b=>b.toString(16).padStart(2,'0')).join('');
 const hash=async text=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text))),b=>b.toString(16).padStart(2,'0')).join('');
 const equal=(a,b)=>typeof a==='string'&&typeof b==='string'&&a.length===b.length&&[...a].reduce((d,c,i)=>d|(c.charCodeAt(0)^b.charCodeAt(i)),0)===0;
@@ -42,8 +44,12 @@ export function createRelay({fetcher=fetch,now=Date.now}={}){
         const id=crypto.randomUUID(),state=hex(),prescriber=await hash(intent.request.documento+'|'+intent.request.uf),stateHash=await hash(state);
         // One atomic conditional INSERT enforces the quota across concurrent requests.
         const added=await db.prepare(`INSERT INTO rx_relay (id,local_id,user_id,prescriber,environment,type,quantity,period,intent,state_hash,status,created_at)
-          SELECT ?,?,?,?,?,?,?,?,?,?,'aguardando',? WHERE (SELECT ${range?'COUNT(*)':'COALESCE(SUM(quantity),0)'} FROM rx_relay WHERE prescriber=? AND environment=? AND type=? AND period=? AND (result_kind IS NULL OR result_kind NOT IN ('not-sent','refused'))) < ? AND NOT EXISTS (SELECT 1 FROM rx_relay WHERE local_id=?)`).bind(id,intent.id,user,prescriber,intent.environment,intent.request.tipo,intent.request.quantidade,period,JSON.stringify(intent),stateHash,time,prescriber,intent.environment,intent.request.tipo,period,range?3:51-intent.request.quantidade,intent.id).run();
-        if(added.meta.changes!==1)throw Error('Há um pedido pendente ou o limite deste período foi atingido. Confira o histórico.');
+          SELECT ?,?,?,?,?,?,?,?,?,?,'aguardando',? WHERE (SELECT ${range?'COUNT(*)':'COALESCE(SUM(quantity),0)'} FROM rx_relay WHERE prescriber=? AND environment=? AND type=? AND period=? AND (result_kind IS NULL OR result_kind NOT IN ('not-sent','refused'))) < ? AND NOT EXISTS (SELECT 1 FROM rx_relay WHERE local_id=?) AND (SELECT COUNT(*) FROM rx_relay WHERE user_id=? AND created_at>?) < ?`).bind(id,intent.id,user,prescriber,intent.environment,intent.request.tipo,intent.request.quantidade,period,JSON.stringify(intent),stateHash,time,prescriber,intent.environment,intent.request.tipo,period,range?3:51-intent.request.quantidade,intent.id,user,time-START_WINDOW,START_LIMIT).run();
+        if(added.meta.changes!==1){
+          const recent=await db.prepare('SELECT COUNT(*) AS n FROM rx_relay WHERE user_id=? AND created_at>?').bind(user,time-START_WINDOW).first();
+          if(recent.n>=START_LIMIT)return json({error:'Muitos pedidos iniciados nesta conta na última hora. Aguarde e confira o histórico antes de tentar novamente.'},429,{'Retry-After':'3600'});
+          throw Error('Há um pedido pendente ou o limite deste período foi atingido. Confira o histórico.');
+        }
         const login=new URL('auth/login',GATEWAYS[intent.environment]);login.searchParams.set('client_url',origin+'/sncr/retorno');login.searchParams.set('state',state);
         return json({id,url:login.href},200,{'Set-Cookie':`${COOKIE}=${state}; Secure; HttpOnly; SameSite=Lax; Path=/; Max-Age=300`});
       }

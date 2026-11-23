@@ -37,8 +37,11 @@ do mesmo estoque: o controle offline não impede duplicação entre clones.
 O portal SNCR por provedor é opcional e separado: recebe a identificação do
 estoque, autentica o prescritor e entrega um lote para importação local. O portal
 de documentos só recebe PDFs após confirmação individual. Instalar o módulo
-não provisiona esses serviços. Seus geradores estão em `scripts/preparar-portal.mjs`
-e `scripts/preparar-documentos.mjs`, com configuração em `.env.example`.
+não provisiona esses serviços. O portal SNCR identifica a conta pelo cabeçalho
+`oai-authenticated-user-id`, que a hospedagem precisa definir e não pode aceitar
+do cliente, e permite no máximo 10 logins SNCR por conta a cada hora. Seus
+geradores estão em `scripts/preparar-portal.mjs` e
+`scripts/preparar-documentos.mjs`, com configuração em `.env.example`.
 
 ## Verificar
 
