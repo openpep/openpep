@@ -13,7 +13,7 @@ Relate de forma privada, pelo recurso **Report a vulnerability** da aba **Securi
 
 Inclua no relato:
 
-- a versão ou o commit examinado e a versão do macOS;
+- a versão ou o commit examinado e, quando aplicável, a versão do macOS, do navegador ou do Node.js;
 - o componente afetado;
 - os passos para reproduzir, com um prontuário sintético;
 - o efeito observado e o efeito que você esperava;
@@ -28,7 +28,9 @@ Nunca envie credenciais: chaves de API, tokens, senhas, certificados, chaves pri
 ## Escopo
 
 - o aplicativo macOS em `apps/macos`;
+- o módulo de prescrição OpenPEP-Rx em `apps/openpep-rx`, incluindo o serviço local, o relay hospedado e a integração com o SNCR;
 - o formato do cofre e os schemas em `packages/protocol-schema`;
+- o site em `website/`;
 - as ferramentas em `tools/` e os scripts em `scripts/`.
 
 Serviços de terceiros usados pelo aplicativo, como provedores de IA, o SNCR e o provedor do certificado digital, ficam fora do escopo. Falhas neles devem ser relatadas aos respectivos responsáveis. A forma como o OpenPEP usa esses serviços está no escopo.
