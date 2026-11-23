@@ -766,7 +766,7 @@ async function startLocal() {
   };
   try {
     const response=await fetch('/api/local/session',{headers:{'X-OpenPEP-Request':'local'},cache:'no-store'});
-    const session=await response.json(); localToken=session.token; localReady=session.ready;
+    const session=await response.json(); if(!response.ok) throw Error(session.error); localToken=session.token; localReady=session.ready;
     if(!localReady) $('#local-cert-status').textContent='Prepare o auxiliar VIDaaS local com npm run build:signer.';
     await load();
     if (location.hash === '#historico') { $('#historico').scrollIntoView(); $('#historico').focus({preventScroll:true}); }

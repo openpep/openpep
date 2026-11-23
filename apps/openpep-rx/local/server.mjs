@@ -33,6 +33,9 @@ const types = {html: 'text/html; charset=utf-8', js: 'text/javascript', css: 'te
 export function createLocalServer({signer = native, prepare = prepareSignature, now = Date.now, available, database, fetcher = fetch, webOrigins,lotOptions,publicationOptions} = {}) {
   const findCEP=createCEPLookup({fetcher,now});
   const token = randomBytes(32).toString('hex');
+  // Single-use launch key shown only in the helper's terminal. Opening it sets the
+  // session cookie; the session token is never handed to a client without it.
+  let launch = randomBytes(32).toString('hex');
   const db = database || new LocalDatabase();
   const bridge=webBridge({origins:webOrigins,now});
   const publications=createPublications({db,fetcher,...publicationOptions});
@@ -75,6 +78,12 @@ export function createLocalServer({signer = native, prepare = prepareSignature, 
       ['/', '/index.html', '/receita.html', '/assinatura.html', '/dados-locais.html','/conectar.html'].includes(url.pathname);
     if (!pageNavigation && !paired && ((req.headers.origin && req.headers.origin !== origin) || req.headers['sec-fetch-site'] === 'cross-site')) return json(res, 403, {error: 'Pedido de outra origem recusado.'});
     if (!['GET', 'HEAD', 'POST'].includes(req.method)) return json(res, 405, {error: 'Método não permitido.'});
+    if (url.pathname === '/abrir' && req.method === 'GET') {
+      if (!launch || !equal(url.searchParams.get('chave'), launch)) return json(res, 403, {error: 'Endereço de abertura inválido ou já usado. Reinicie o auxiliar local e abra o novo endereço exibido no terminal.'});
+      launch = null;
+      res.setHeader('Set-Cookie', `openpep_rx_local=${token}; HttpOnly; SameSite=Strict; Path=/`);
+      return res.writeHead(303, {Location: '/'}).end();
+    }
     if (url.pathname.startsWith('/api/')) {
       if (url.pathname.startsWith('/api/receita/')) {
         if (!authorized(req) || (req.method === 'POST' && (req.headers.origin !== requestOrigin || req.headers['x-openpep-request'] !== 'local'))) return json(res, 403, {error:'Reabra o receituário local.'});
@@ -116,12 +125,12 @@ export function createLocalServer({signer = native, prepare = prepareSignature, 
       if (!url.pathname.startsWith('/api/local/')) return json(res, 404, {error: 'Este servidor disponibiliza somente assinatura local.'});
       if (req.headers['x-openpep-request'] !== 'local') return json(res, 403, {error: 'Pedido local inválido.'});
       if (url.pathname === '/api/local/session' && req.method === 'GET') {
+        if (!paired && !equal(cookie(req, 'openpep_rx_local'), token)) return json(res, 403, {error: 'Abra neste navegador o endereço de abertura exibido no terminal do auxiliar local.'});
         let ready = available;
         if (ready === undefined) {
           ready = process.platform === 'darwin';
           try { await access(new URL('./bin/vidaas-signer', import.meta.url)); } catch { ready = false; }
         }
-        if(!paired) res.setHeader('Set-Cookie', `openpep_rx_local=${token}; HttpOnly; SameSite=Strict; Path=/`);
         return json(res, 200, {token:paired?req.headers['x-openpep-local']:token, ready, platform: process.platform});
       }
       if (url.pathname === '/api/local/settings' && req.method === 'GET' && authorized(req)) {
@@ -260,6 +269,7 @@ export function createLocalServer({signer = native, prepare = prepareSignature, 
       res.end(req.method === 'HEAD' ? undefined : bytes);
     } catch { res.writeHead(404).end(); }
   });
+  server.launchPath = '/abrir?chave=' + launch;
   server.on('close', () => { if (!database) db.close(); });
   return server;
 }
@@ -274,7 +284,10 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   process.on('exit', unlock);
   for (const signal of ['SIGINT','SIGTERM']) process.on(signal, () => {database.close(); unlock(); process.exit(0);});
   if (process.env.OPENPEP_RX_SNCR_ENV || process.env.OPENPEP_RX_SNCR_ENABLED) database.setSetting('sncr', sncrConfig({environment:process.env.OPENPEP_RX_SNCR_ENV || 'prd', enabled:process.env.OPENPEP_RX_SNCR_ENABLED === 'true', confirmProduction:true, cnpj:process.env.SNCR_PLATFORM_CNPJ || ''}));
-  createLocalServer({database}).listen(port, '127.0.0.1', function () {
-    console.log(`OpenPEP-Rx · http://127.0.0.1:${this.address().port}/`);
+  const server = createLocalServer({database});
+  server.listen(port, '127.0.0.1', () => {
+    const address = `http://127.0.0.1:${server.address().port}`;
+    console.log(`OpenPEP-Rx · ${address}/`);
+    console.log(`Abra uma vez, no navegador que vai usar: ${address}${server.launchPath}`);
   });
 }

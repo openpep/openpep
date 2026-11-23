@@ -16,8 +16,14 @@ npm run build:signer
 npm run local
 ```
 
-Abra `http://127.0.0.1:4197/`. No macOS, depois da instalação, também é possível
-usar `Abrir-OpenPEP-Rx.command`. Mantenha o serviço local aberto durante o uso.
+Abra o endereço de abertura exibido no terminal
+(`http://127.0.0.1:4197/abrir?chave=…`). Ele vale uma vez por execução e entrega
+ao navegador que o abrir o cookie da sessão local; sem esse cookie ou um
+pareamento web, o serviço não entrega o token da sessão. Para usar outro
+navegador, reinicie o serviço. O cookie não isola portas em `127.0.0.1`, e quem
+lê o terminal ou os cookies do navegador obtém a sessão. No macOS, depois da
+instalação, também é possível usar `Abrir-OpenPEP-Rx.command`. Mantenha o
+serviço local aberto durante o uso.
 
 Para começar, escolha **Nova receita**, cadastre emitente e paciente sintéticos
 e marque **Ensaio sem consumir numeração SNCR**. Revise o PDF antes de qualquer

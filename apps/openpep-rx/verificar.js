@@ -18,7 +18,8 @@ async function verify(code) {
   try {
     const headers = {'Content-Type':'application/json'};
     if (local) {
-      const session = await (await fetch('/api/local/session', {headers:{'X-OpenPEP-Request':'local'},cache:'no-store'})).json();
+      const response = await fetch('/api/local/session', {headers:{'X-OpenPEP-Request':'local'},cache:'no-store'}), session = await response.json();
+      if (!response.ok) throw Error(session.error);
       headers['X-OpenPEP-Request']='local'; headers['X-OpenPEP-Local']=session.token;
     }
     const r = await fetch('/api/receita/acesso', {method: 'POST', headers, cache: 'no-store', credentials: 'same-origin', body: JSON.stringify({id: token, codigo: code})});

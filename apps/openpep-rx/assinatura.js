@@ -157,7 +157,8 @@ try {
   await history().catch(()=>{});
   $('workspace').hidden = !session.ready; $('setup').hidden = session.ready;
   status(session.ready ? 'Serviço local pronto. Escolha um PDF para começar.' : 'Prepare o auxiliar local para assinar com VIDaaS.');
-} catch {
+} catch (error) {
   $('setup').hidden = false;
-  status('O assinador precisa ser iniciado neste computador.');
+  // A refused session explains how to open it; a network failure means the helper is not running.
+  status(error instanceof TypeError ? 'O assinador precisa ser iniciado neste computador.' : error.message);
 }
