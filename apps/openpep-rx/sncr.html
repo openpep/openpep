@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive">
+<title>Teste SNCR | OpenPEP-Rx</title>
+<link rel="stylesheet" href="acesso.css"><link rel="stylesheet" href="sncr.css">
+<link rel="icon" href="/openpep-mark.png"><link rel="stylesheet" href="/openpep.css"></head>
+<body><main class="access-shell">
+<header class="brand"><a class="openpep-brand" href="/" aria-label="OpenPEP-Rx, início"><img src="/openpep-mark.png" width="42" height="42" alt=""><strong>OpenPEP-Rx</strong></a><span class="module-label">Prescrição</span></header>
+<section class="card" aria-labelledby="title">
+<p class="eyebrow">PRODUÇÃO · SNCR</p><h1 id="title">Conectar ao SNCR</h1>
+<p class="intro">Teste o login Gov.br e a recuperação do token pelo servidor.</p>
+<p id="status" role="status" aria-live="polite"></p>
+<section class="prd" aria-labelledby="prd-title">
+<p class="eyebrow">CONTA GOV.BR</p><h2 id="prd-title">Gateway de produção do SNCR</h2>
+<p>Diagnóstico de conectividade: mostra se o Cloudflare da Anvisa deixa o servidor passar e se a produção aceita este domínio como retorno. Não há login nem token.</p>
+<button id="probe" type="button" class="secondary">Verificar conexão</button>
+<div id="probe-result" aria-live="polite"></div>
+<p>Depois, se a sondagem permitir, entre com sua conta Gov.br real. O servidor troca o identificador por um token de produção uma única vez e o descarta.</p>
+<button id="start-prd" type="button">Conectar conta Gov.br de produção</button>
+<p id="status-prd" role="status" aria-live="polite"></p>
+<p class="scope">Esta verificação não solicita números. Para solicitar e consultar numerações reais, abra <a href="/numeros.html">Meus números</a>.</p>
+</section>
+<details class="homologation"><summary>Diagnóstico de homologação</summary>
+<div class="notice"><strong>Atualizado para o manual de 25/09/2026</strong><p>O teste usa o novo gateway de homologação. Ao retornar do Gov.br, o servidor tenta recuperar o token uma única vez e o descarta. A conclusão depende de um novo login feito por você.</p></div>
+<label for="callback">URL de retorno usada no teste</label>
+<textarea id="callback" readonly rows="3" spellcheck="false">https://rx-hml.openpep.com.br/</textarea>
+<button id="copy" type="button" class="secondary">Copiar URL de retorno</button>
+<ol><li>Abra esta instalação no domínio <strong>.br</strong> configurado.</li><li>Inicie o teste e faça você mesmo o login Gov.br.</li><li>Volte diretamente ao OpenPEP: o identificador de retorno vale por apenas 30 segundos.</li></ol>
+<button id="start" type="button">Testar autenticação Gov.br</button>
+
+
+
+</details>
+<p class="scope">O token permanece somente na memória do servidor durante o teste e é descartado. O resultado não libera uma sessão clínica nem confirma vínculo profissional. Este teste não solicita números, não emite documentos e não aplica assinatura digital.</p>
+<a href="/">Voltar ao OpenPEP</a>
+</section><p class="footnote">A senha Gov.br é informada somente no serviço oficial.</p>
+</main><script type="module" src="sncr.js"></script></body></html>

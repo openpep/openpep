@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpep.org/schemas/v1/vault.schema.json",
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "title": "OpenPEP vault manifest",
+  "description": "Root manifest for an openpep-vault 1.0 directory.",
+  "type": "object",
+  "required": [
+    "schema",
+    "vault_id",
+    "created_at",
+    "protocol_version",
+    "clinical_writer",
+    "storage_mode",
+    "encryption_mode",
+    "hash_algorithm",
+    "event_canonicalization"
+  ],
+  "properties": {
+    "schema": {
+      "const": "openpep/vault@1"
+    },
+    "vault_id": {
+      "type": "string",
+      "pattern": "^vlt_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "protocol_version": {
+      "const": "1.0"
+    },
+    "clinical_writer": {
+      "type": "object",
+      "required": ["device_id"],
+      "properties": {
+        "device_id": {
+          "type": "string",
+          "pattern": "^dev_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+        }
+      },
+      "patternProperties": {
+        "^x_[a-z0-9]+(?:_[a-z0-9]+)*$": true
+      },
+      "additionalProperties": false
+    },
+    "storage_mode": {
+      "const": "local-portable"
+    },
+    "encryption_mode": {
+      "const": "local-filevault"
+    },
+    "hash_algorithm": {
+      "const": "sha256"
+    },
+    "event_canonicalization": {
+      "const": "rfc8785"
+    }
+  },
+  "patternProperties": {
+    "^x_[a-z0-9]+(?:_[a-z0-9]+)*$": true
+  },
+  "additionalProperties": false
+}

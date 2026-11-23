@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpep.org/schemas/v1/synthetic-encounter-profile.schema.json",
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "title": "OpenPEP in-progress synthetic encounter profile",
+  "type": "object",
+  "required": [
+    "schema",
+    "encounter_id",
+    "patient_id",
+    "appointment_id",
+    "status",
+    "modality",
+    "started_at",
+    "ended_at",
+    "created_by",
+    "x_actor_assurance"
+  ],
+  "properties": {
+    "schema": { "const": "openpep/encounter@1" },
+    "encounter_id": {
+      "type": "string",
+      "pattern": "^enc_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "patient_id": {
+      "type": "string",
+      "pattern": "^pt_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "appointment_id": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^appt_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+        },
+        { "type": "null" }
+      ]
+    },
+    "status": { "const": "in_progress" },
+    "modality": { "enum": ["in_person", "telemedicine"] },
+    "started_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "ended_at": { "type": "null" },
+    "created_by": {
+      "type": "string",
+      "pattern": "^usr_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "template_id": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "template_version": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "telemedicine": {
+      "oneOf": [
+        { "$ref": "#/$defs/telemedicine" },
+        { "type": "null" }
+      ]
+    },
+    "x_actor_assurance": { "const": "synthetic_unauthenticated" }
+  },
+  "patternProperties": {
+    "^x_[a-z0-9]+(?:_[a-z0-9]+)*$": true
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "modality": { "const": "telemedicine" } } },
+      "then": {
+        "required": ["template_id", "template_version", "telemedicine"],
+        "properties": {
+          "template_id": true,
+          "template_version": true,
+          "telemedicine": { "$ref": "#/$defs/telemedicine" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "modality": { "const": "in_person" } } },
+      "then": {
+        "properties": { "telemedicine": { "type": "null" } }
+      }
+    }
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "telemedicine": {
+      "type": "object",
+      "required": [
+        "consent",
+        "declared_location",
+        "participants",
+        "limitations",
+        "contingency"
+      ],
+      "properties": {
+        "consent": { "enum": ["confirmed", "declined", "not_recorded"] },
+        "declared_location": {
+          "oneOf": [
+            { "type": "string", "minLength": 1, "maxLength": 200 },
+            { "type": "null" }
+          ]
+        },
+        "participants": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "uniqueItems": true,
+          "maxItems": 10
+        },
+        "limitations": {
+          "oneOf": [
+            { "type": "string", "minLength": 1, "maxLength": 1000 },
+            { "type": "null" }
+          ]
+        },
+        "contingency": {
+          "oneOf": [
+            { "type": "string", "minLength": 1, "maxLength": 1000 },
+            { "type": "null" }
+          ]
+        }
+      },
+      "patternProperties": {
+        "^x_[a-z0-9]+(?:_[a-z0-9]+)*$": true
+      },
+      "additionalProperties": false
+    }
+  }
+}

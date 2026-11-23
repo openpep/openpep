@@ -1,0 +1,5290 @@
+{
+ "gerado": "2026-09-29",
+ "itens": [
+  {
+   "chave": "quetiapina",
+   "classe": "C1",
+   "orientacoes": [
+    "Engolir o comprimido inteiro, sem partir nem mastigar. Pode ser tomado com ou sem alimentos.",
+    "Pode causar sonolência e tontura: não dirigir nem operar máquinas até saber como o remédio o afeta.",
+    "Levantar-se devagar da cama ou da cadeira, pois a pressão pode cair ao ficar em pé.",
+    "Evitar bebidas alcoólicas durante o tratamento.",
+    "Pode aumentar o peso, a glicose e o colesterol: o médico pode pedir exames durante o tratamento.",
+    "Não interromper o tratamento por conta própria; a suspensão deve ser orientada pelo médico."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "25 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Início esquizofrenia, dias 1 e 2",
+       "texto": "No 1º dia, tomar 1 comprimido de manhã e 1 à noite (50 mg por dia); no 2º dia, tomar 2 comprimidos de manhã e 2 à noite (100 mg por dia). A partir do 3º dia, seguir a dose prescrita com os comprimidos de maior concentração.",
+       "quantidade": 6,
+       "dias": 2
+      },
+      {
+       "rotulo": "Início depressão bipolar, dias 1 e 2",
+       "texto": "No 1º dia, tomar 2 comprimidos à noite (50 mg); no 2º dia, tomar 4 comprimidos à noite (100 mg). A partir do 3º dia, seguir a dose prescrita com os comprimidos de maior concentração.",
+       "quantidade": 6,
+       "dias": 2
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Seroquel-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "100 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h (200 mg/dia)",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas (200 mg por dia), em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 12/12 h (400 mg/dia)",
+       "texto": "Tomar 2 comprimidos por via oral de 12 em 12 horas (400 mg por dia), em uso contínuo.",
+       "quantidade": 120,
+       "dias": 30
+      },
+      {
+       "rotulo": "Depressão bipolar: 3 à noite (300 mg)",
+       "texto": "Tomar 3 comprimidos por via oral à noite (300 mg), em dose única diária, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Seroquel-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "200 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h (400 mg/dia)",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas (400 mg por dia), em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 12/12 h (800 mg/dia, máximo)",
+       "texto": "Tomar 2 comprimidos por via oral de 12 em 12 horas (800 mg por dia, dose máxima), em uso contínuo.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Seroquel-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido de liberação prolongada",
+     "concentracao": "50 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Depressão adjuvante: 50, depois 150 mg",
+       "texto": "Tomar 1 comprimido por via oral à noite nos dias 1 e 2 (50 mg) e, a partir do dia 3, 3 comprimidos à noite (150 mg), em uso contínuo.",
+       "quantidade": 86,
+       "dias": 30
+      },
+      {
+       "rotulo": "Idoso com depressão: 50 a 150 mg",
+       "texto": "Tomar 1 comprimido por via oral à noite nos dias 1 a 3 (50 mg), 2 comprimidos à noite do dia 4 ao dia 7 (100 mg) e 3 comprimidos à noite a partir do dia 8 (150 mg).",
+       "quantidade": 80,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar à noite, uma vez ao dia."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Seroquel-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "pregabalina",
+   "classe": "C1",
+   "orientacoes": [
+    "Pode ser tomado com ou sem alimentos.",
+    "Pode causar tontura e sonolência: não dirigir nem operar máquinas até saber como o remédio afeta você. Evitar bebida alcoólica.",
+    "Não parar de repente: a retirada deve ser gradual, em pelo menos 1 semana, com orientação médica.",
+    "Se esquecer uma dose, tomar assim que lembrar; se estiver perto da próxima, pular a esquecida. Não dobrar a dose."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "cápsula dura",
+     "concentracao": "75 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Início: 1 de 12/12 h, 7 dias",
+       "texto": "Tomar 1 cápsula (75 mg) por via oral de 12 em 12 horas por 7 dias; depois, se orientado pelo médico, passar para 150 mg de 12 em 12 horas.",
+       "quantidade": 14,
+       "dias": 7
+      },
+      {
+       "rotulo": "1 de 12/12 h (150 mg/dia), contínuo",
+       "texto": "Tomar 1 cápsula (75 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 12/12 h (300 mg/dia), contínuo",
+       "texto": "Tomar 2 cápsulas (150 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir a cápsula inteira, sem abrir nem mastigar."
+     ],
+     "fontes": [
+      "https://www.viatris.com.br/-/media/project/common/viatriscombr/pdf/leaflets_legacy_myl_brazil/bula_lyrica_profissional_1.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura",
+     "concentracao": "150 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h (300 mg/dia), contínuo",
+       "texto": "Tomar 1 cápsula (150 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 8/8 h (450 mg/dia), contínuo",
+       "texto": "Tomar 1 cápsula (150 mg) por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 12/12 h (600 mg/dia, máximo)",
+       "texto": "Tomar 2 cápsulas (300 mg) por via oral de 12 em 12 horas, em uso contínuo. Esta é a dose máxima: 600 mg por dia.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir a cápsula inteira, sem abrir nem mastigar."
+     ],
+     "fontes": [
+      "https://www.viatris.com.br/-/media/project/common/viatriscombr/pdf/leaflets_legacy_myl_brazil/bula_lyrica_profissional_1.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura",
+     "concentracao": "50 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 8/8 h (150 mg/dia), contínuo",
+       "texto": "Tomar 1 cápsula (50 mg) por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 8/8 h (300 mg/dia), contínuo",
+       "texto": "Tomar 2 cápsulas (100 mg) por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 180,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir a cápsula inteira, sem abrir nem mastigar."
+     ],
+     "fontes": [
+      "https://www.viatris.com.br/-/media/project/common/viatriscombr/pdf/leaflets_legacy_myl_brazil/bula_lyrica_profissional_1.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura",
+     "concentracao": "25 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h (50 mg/dia), contínuo",
+       "texto": "Tomar 1 cápsula (25 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 ao dia (25 mg/dia), contínuo",
+       "texto": "Tomar 1 cápsula (25 mg) por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir a cápsula inteira, sem abrir nem mastigar."
+     ],
+     "fontes": [
+      "https://www.viatris.com.br/-/media/project/common/viatriscombr/pdf/leaflets_legacy_myl_brazil/bula_lyrica_profissional_1.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "75 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Início: 1 de 12/12 h, 7 dias",
+       "texto": "Tomar 1 comprimido (75 mg) por via oral de 12 em 12 horas por 7 dias; depois, se orientado pelo médico, passar para 150 mg de 12 em 12 horas.",
+       "quantidade": 14,
+       "dias": 7
+      },
+      {
+       "rotulo": "1 de 12/12 h (150 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido (75 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 12/12 h (300 mg/dia), contínuo",
+       "texto": "Tomar 2 comprimidos (150 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, sem partir nem mastigar."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Dorene-Tabs-Profissional-Consulta-Remedios.pdf",
+      "https://www.viatris.com.br/-/media/project/common/viatriscombr/pdf/leaflets_legacy_myl_brazil/bula_lyrica_profissional_1.pdf"
+     ]
+    },
+    {
+     "forma": "solução oral",
+     "concentracao": "25 mg/mL",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Início: 3 mL de 12/12 h, 7 dias",
+       "texto": "Tomar 3 mL (75 mg) por via oral de 12 em 12 horas por 7 dias; depois, se orientado pelo médico, passar para 6 mL (150 mg) de 12 em 12 horas.",
+       "quantidade": 1,
+       "dias": 7
+      },
+      {
+       "rotulo": "3 mL de 12/12 h (150 mg/dia), contínuo",
+       "texto": "Tomar 3 mL (75 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 3,
+       "dias": 30
+      },
+      {
+       "rotulo": "6 mL de 12/12 h (300 mg/dia), contínuo",
+       "texto": "Tomar 6 mL (150 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 6,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Medir sempre com a seringa dosadora que acompanha o frasco.",
+      "Guardar em temperatura ambiente. Depois de aberto, o frasco de 60 mL vale 90 dias."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Dorene-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "sertralina",
+   "classe": "C1",
+   "orientacoes": [
+    "O efeito costuma aparecer após 2 a 4 semanas de uso contínuo.",
+    "Não parar de tomar nem mudar a dose por conta própria; a retirada deve ser gradual, com orientação médica.",
+    "Se surgirem piora da ansiedade, agitação ou pensamentos de se machucar, principalmente no início, procurar o médico.",
+    "Evitar bebidas alcoólicas. No início pode causar sonolência ou tontura: cuidado ao dirigir."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "50 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (50 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, pela manhã ou à noite, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 juntos ao dia (100 mg)",
+       "texto": "Tomar 2 comprimidos juntos por via oral uma vez ao dia, pela manhã ou à noite, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "3 juntos ao dia (150 mg)",
+       "texto": "Tomar 3 comprimidos juntos por via oral uma vez ao dia, pela manhã ou à noite, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Pode ser tomado com ou sem alimento. Aumentos de dose só a cada 1 semana ou mais, conforme orientação médica."
+     ],
+     "fontes": [
+      "https://www.viatris.com.br/-/media/project/common/viatriscombr/pdf/leaflets_legacy_myl_brazil/zoloft_bula_profissional.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "100 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (100 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, pela manhã ou à noite, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 juntos ao dia (200 mg, máximo)",
+       "texto": "Tomar 2 comprimidos juntos por via oral uma vez ao dia, pela manhã ou à noite, em uso contínuo. Não ultrapassar 200 mg por dia.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Pode ser tomado com ou sem alimento. Não partir nem mastigar o comprimido de 100 mg."
+     ],
+     "fontes": [
+      "https://www.viatris.com.br/-/media/project/common/viatriscombr/pdf/leaflets_legacy_myl_brazil/zoloft_bula_profissional.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "25 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Início: 1 ao dia por 7 dias, depois 2",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, pela manhã ou à noite, por 7 dias; depois, 2 comprimidos juntos uma vez ao dia (50 mg).",
+       "quantidade": 53,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 ao dia, 7 dias",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, pela manhã ou à noite, por 7 dias.",
+       "quantidade": 7,
+       "dias": 7
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Pode ser tomado com ou sem alimento."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Tolrest-Profissional-Consulta-Remedios.pdf",
+      "https://www.viatris.com.br/-/media/project/common/viatriscombr/pdf/leaflets_legacy_myl_brazil/zoloft_bula_profissional.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "75 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (75 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, pela manhã ou à noite, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Pode ser tomado com ou sem alimento."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Tolrest-Profissional-Consulta-Remedios.pdf",
+      "https://www.viatris.com.br/-/media/project/common/viatriscombr/pdf/leaflets_legacy_myl_brazil/zoloft_bula_profissional.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "escitalopram",
+   "classe": "C1",
+   "orientacoes": [
+    "O efeito costuma aparecer após 2 a 4 semanas de uso contínuo.",
+    "Não parar de tomar nem mudar a dose por conta própria; a retirada deve ser gradual, com orientação médica.",
+    "Se surgirem piora da ansiedade, agitação ou pensamentos de se machucar, principalmente no início, procurar o médico.",
+    "Evitar bebidas alcoólicas. No início pode causar sonolência ou tontura: cuidado ao dirigir."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (10 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "Início: meio por 7 dias, depois 1",
+       "texto": "Tomar meio comprimido por via oral uma vez ao dia por 7 dias; depois, 1 comprimido uma vez ao dia.",
+       "quantidade": 27,
+       "dias": 30
+      },
+      {
+       "rotulo": "Meio comprimido ao dia (5 mg)",
+       "texto": "Tomar meio comprimido por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 15,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Pode ser tomado a qualquer hora, com ou sem alimento, de preferência sempre no mesmo horário.",
+      "Engolir com água, sem mastigar. Para tomar meio comprimido, partir no sulco."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Lexapro-Profissional-Consulta-Remedios.pdf",
+      "https://img.drogasil.com.br/raiadrogasil_bula/Lexapro.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "15 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (15 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Pode ser tomado a qualquer hora, com ou sem alimento, de preferência sempre no mesmo horário.",
+      "Engolir com água, sem mastigar."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Lexapro-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "20 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (20 mg, máximo)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, em uso contínuo. Não ultrapassar 20 mg por dia.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Pode ser tomado a qualquer hora, com ou sem alimento, de preferência sempre no mesmo horário.",
+      "Engolir com água, sem mastigar."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Lexapro-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "solução oral",
+     "concentracao": "20 mg/mL",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "10 gotas ao dia (10 mg)",
+       "texto": "Tomar 10 gotas por via oral uma vez ao dia, diluídas em água ou suco, em uso contínuo.",
+       "quantidade": 1,
+       "dias": 30
+      },
+      {
+       "rotulo": "Início: 5 gotas por 7 dias, depois 10",
+       "texto": "Tomar 5 gotas por via oral uma vez ao dia por 7 dias; depois, 10 gotas uma vez ao dia. Diluir em água ou suco.",
+       "quantidade": 1,
+       "dias": 30
+      },
+      {
+       "rotulo": "20 gotas ao dia (20 mg, máximo)",
+       "texto": "Tomar 20 gotas por via oral uma vez ao dia, diluídas em água ou suco, em uso contínuo. Não ultrapassar 20 gotas por dia.",
+       "quantidade": 2,
+       "dias": 30
+      },
+      {
+       "rotulo": "5 gotas ao dia (5 mg)",
+       "texto": "Tomar 5 gotas por via oral uma vez ao dia, diluídas em água ou suco, em uso contínuo.",
+       "quantidade": 1,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Cada gota tem 1 mg (20 gotas equivalem a 1 mL). Pingar com o frasco na vertical, diluir em água, suco de laranja ou de maçã e tomar em seguida.",
+      "Depois de aberto, o frasco pode ser usado por 8 semanas."
+     ],
+     "fontes": [
+      "https://drogariasp.vteximg.com.br/arquivos/269557---lexapro-20mg-lundbeck-15ml-conta-gotas.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido orodispersível",
+     "concentracao": "5 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (5 mg)",
+       "texto": "Colocar 1 comprimido na ponta da língua uma vez ao dia, deixar dissolver e engolir com a saliva, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 ao dia, 7 dias (início)",
+       "texto": "Colocar 1 comprimido na ponta da língua uma vez ao dia por 7 dias, deixar dissolver e engolir com a saliva.",
+       "quantidade": 7,
+       "dias": 7
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar sem alimento. Retirar o comprimido do blíster com as mãos secas e colocar logo na língua; não precisa de água. Não partir."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Esc-ODT-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido orodispersível",
+     "concentracao": "10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (10 mg)",
+       "texto": "Colocar 1 comprimido na ponta da língua uma vez ao dia, deixar dissolver e engolir com a saliva, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 ao dia (20 mg, máximo)",
+       "texto": "Colocar 2 comprimidos na ponta da língua uma vez ao dia, deixar dissolver e engolir com a saliva, em uso contínuo. Não ultrapassar 20 mg por dia.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar sem alimento. Retirar o comprimido do blíster com as mãos secas e colocar logo na língua; não precisa de água. Não partir."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Esc-ODT-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "venlafaxina",
+   "classe": "C1",
+   "orientacoes": [
+    "Não parar de tomar de repente: a retirada deve ser gradual, com orientação médica.",
+    "Pode causar sonolência ou tontura: cuidado ao dirigir. Evitar bebida alcoólica.",
+    "No início do tratamento, procurar o médico se houver piora do humor, agitação ou pensamentos de se machucar.",
+    "Pode aumentar a pressão arterial: medir a pressão com regularidade durante o tratamento."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "cápsula dura",
+     "concentracao": "75 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia com alimento, contínuo",
+       "texto": "Tomar 1 cápsula por via oral uma vez ao dia, com alimento, sempre no mesmo horário, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 juntas ao dia (150 mg), contínuo",
+       "texto": "Tomar 2 cápsulas juntas por via oral uma vez ao dia, com alimento, sempre no mesmo horário, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar com alimento, sempre no mesmo horário. Engolir a cápsula inteira com líquido, sem abrir, partir ou mastigar."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Venlift-OD-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura de liberação prolongada",
+     "concentracao": "75 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia com alimento, contínuo",
+       "texto": "Tomar 1 cápsula por via oral uma vez ao dia, com alimento, sempre no mesmo horário, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 juntas ao dia (150 mg), contínuo",
+       "texto": "Tomar 2 cápsulas juntas por via oral uma vez ao dia, com alimento, sempre no mesmo horário, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar com alimento, sempre no mesmo horário. Engolir a cápsula inteira com líquido, sem abrir, partir ou mastigar."
+     ],
+     "fontes": [
+      "https://www.viatris.com.br/-/media/project/common/viatriscombr/pdf/leaflets_legacy_myl_brazil/efexor-xr_bula_profissional.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Venlift-OD-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura de liberação prolongada",
+     "concentracao": "150 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia com alimento, contínuo",
+       "texto": "Tomar 1 cápsula por via oral uma vez ao dia, com alimento, sempre no mesmo horário, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar com alimento, sempre no mesmo horário. Engolir a cápsula inteira com líquido, sem abrir, partir ou mastigar."
+     ],
+     "fontes": [
+      "https://www.viatris.com.br/-/media/project/common/viatriscombr/pdf/leaflets_legacy_myl_brazil/efexor-xr_bula_profissional.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Venlift-OD-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura de liberação prolongada",
+     "concentracao": "37,5 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia por 7 dias, depois 75 mg",
+       "texto": "Tomar 1 cápsula por via oral uma vez ao dia, com alimento, por 7 dias; depois, passar para 75 mg uma vez ao dia.",
+       "quantidade": 7,
+       "dias": 7
+      },
+      {
+       "rotulo": "1 ao dia com alimento, contínuo",
+       "texto": "Tomar 1 cápsula por via oral uma vez ao dia, com alimento, sempre no mesmo horário, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 juntas ao dia (75 mg), contínuo",
+       "texto": "Tomar 2 cápsulas juntas por via oral uma vez ao dia, com alimento, sempre no mesmo horário, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar com alimento, sempre no mesmo horário. Engolir a cápsula inteira com líquido, sem abrir, partir ou mastigar."
+     ],
+     "fontes": [
+      "https://www.viatris.com.br/-/media/project/common/viatriscombr/pdf/leaflets_legacy_myl_brazil/efexor-xr_bula_profissional.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Venlift-OD-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura",
+     "concentracao": "150 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia com alimento, contínuo",
+       "texto": "Tomar 1 cápsula por via oral uma vez ao dia, com alimento, sempre no mesmo horário, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar com alimento, sempre no mesmo horário. Engolir a cápsula inteira com líquido, sem abrir, partir ou mastigar."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Venlift-OD-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura",
+     "concentracao": "37,5 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia por 7 dias, depois 75 mg",
+       "texto": "Tomar 1 cápsula por via oral uma vez ao dia, com alimento, por 7 dias; depois, passar para 75 mg uma vez ao dia.",
+       "quantidade": 7,
+       "dias": 7
+      },
+      {
+       "rotulo": "1 ao dia com alimento, contínuo",
+       "texto": "Tomar 1 cápsula por via oral uma vez ao dia, com alimento, sempre no mesmo horário, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 juntas ao dia (75 mg), contínuo",
+       "texto": "Tomar 2 cápsulas juntas por via oral uma vez ao dia, com alimento, sempre no mesmo horário, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar com alimento, sempre no mesmo horário. Engolir a cápsula inteira com líquido, sem abrir, partir ou mastigar."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Venlift-OD-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "tramadol",
+   "classe": "A2-adendo",
+   "orientacoes": [
+    "Pode causar sonolência e tontura: não dirigir nem operar máquinas até saber como o remédio age em você.",
+    "Não tomar bebida alcoólica nem calmantes ou remédios para dormir sem orientação médica.",
+    "Pode causar náusea e prisão de ventre: beber bastante líquido e comer fibras.",
+    "Usar só na dose e pelo tempo prescritos, pelo risco de dependência. Após uso prolongado, não parar de repente."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "cápsula dura",
+     "concentracao": "50 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 6/6 h, 5 dias",
+       "texto": "Tomar 1 cápsula (50 mg) por via oral de 6 em 6 horas por 5 dias. Não passar de 8 cápsulas (400 mg) por dia.",
+       "quantidade": 20,
+       "dias": 5
+      },
+      {
+       "rotulo": "1 de 8/8 h, 5 dias",
+       "texto": "Tomar 1 cápsula (50 mg) por via oral de 8 em 8 horas por 5 dias. Não passar de 8 cápsulas (400 mg) por dia.",
+       "quantidade": 15,
+       "dias": 5
+      },
+      {
+       "rotulo": "1 de 6/6 h, 3 dias",
+       "texto": "Tomar 1 cápsula (50 mg) por via oral de 6 em 6 horas por 3 dias. Não passar de 8 cápsulas (400 mg) por dia.",
+       "quantidade": 12,
+       "dias": 3
+      },
+      {
+       "rotulo": "2 de 6/6 h, 3 dias",
+       "texto": "Tomar 2 cápsulas (100 mg) por via oral de 6 em 6 horas por 3 dias. Não passar de 8 cápsulas (400 mg) por dia.",
+       "quantidade": 24,
+       "dias": 3
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir a cápsula inteira, sem abrir nem mastigar, com líquido, com ou sem alimento."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Tramal-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido de liberação prolongada",
+     "concentracao": "100 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h, 30 dias",
+       "texto": "Tomar 1 comprimido (100 mg) por via oral de 12 em 12 horas, de manhã e à noite, por 30 dias. Não passar de 400 mg de tramadol por dia.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 12/12 h, 7 dias",
+       "texto": "Tomar 1 comprimido (100 mg) por via oral de 12 em 12 horas, de manhã e à noite, por 7 dias. Não passar de 400 mg de tramadol por dia.",
+       "quantidade": 14,
+       "dias": 7
+      },
+      {
+       "rotulo": "2 de 12/12 h, 30 dias",
+       "texto": "Tomar 2 comprimidos (200 mg) por via oral de 12 em 12 horas, de manhã e à noite, por 30 dias. Não passar de 400 mg de tramadol por dia.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, sem partir nem mastigar, com líquido. O efeito dura cerca de 12 horas."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Tramal-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido de liberação prolongada",
+     "concentracao": "50 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h, 30 dias",
+       "texto": "Tomar 1 comprimido (50 mg) por via oral de 12 em 12 horas, de manhã e à noite, por 30 dias. Não passar de 400 mg de tramadol por dia.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 12/12 h, 7 dias",
+       "texto": "Tomar 1 comprimido (50 mg) por via oral de 12 em 12 horas, de manhã e à noite, por 7 dias. Não passar de 400 mg de tramadol por dia.",
+       "quantidade": 14,
+       "dias": 7
+      },
+      {
+       "rotulo": "2 de 12/12 h, 30 dias",
+       "texto": "Tomar 2 comprimidos (100 mg) por via oral de 12 em 12 horas, de manhã e à noite, por 30 dias. Não passar de 400 mg de tramadol por dia.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, sem partir nem mastigar, com líquido. O efeito dura cerca de 12 horas."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Tramal-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "solução oral",
+     "concentracao": "100 mg/mL",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "20 gotas de 6/6 h, 5 dias",
+       "texto": "Tomar 20 gotas (50 mg) por via oral de 6 em 6 horas por 5 dias, com um pouco de água. Não passar de 160 gotas (400 mg) por dia.",
+       "quantidade": 1,
+       "dias": 5
+      },
+      {
+       "rotulo": "20 gotas de 8/8 h, 5 dias",
+       "texto": "Tomar 20 gotas (50 mg) por via oral de 8 em 8 horas por 5 dias, com um pouco de água. Não passar de 160 gotas (400 mg) por dia.",
+       "quantidade": 1,
+       "dias": 5
+      },
+      {
+       "rotulo": "40 gotas de 6/6 h, 3 dias",
+       "texto": "Tomar 40 gotas (100 mg) por via oral de 6 em 6 horas por 3 dias, com um pouco de água. Não passar de 160 gotas (400 mg) por dia.",
+       "quantidade": 2,
+       "dias": 3
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Cada gota tem 2,5 mg de tramadol: 20 gotas correspondem a 50 mg. Para pingar, virar o frasco para baixo e dar um leve tapa na base.",
+      "Pode ser tomado com um pouco de água ou líquido adoçado, com ou sem alimento."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Tramal-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "fluoxetina",
+   "classe": "C1",
+   "orientacoes": [
+    "O efeito costuma aparecer após 2 a 4 semanas de uso contínuo.",
+    "Não parar de tomar nem mudar a dose por conta própria; a retirada deve ser gradual, com orientação médica.",
+    "Se surgirem piora da ansiedade, agitação ou pensamentos de se machucar, principalmente no início, procurar o médico.",
+    "Evitar bebidas alcoólicas. No início pode causar sonolência ou tontura: cuidado ao dirigir."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "cápsula dura",
+     "concentracao": "20 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (20 mg)",
+       "texto": "Tomar 1 cápsula por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 ao dia (40 mg)",
+       "texto": "Tomar 2 cápsulas juntas por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "3 ao dia (60 mg)",
+       "texto": "Tomar 3 cápsulas juntas por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Pode ser tomado com ou sem alimento. Não ultrapassar 80 mg por dia.",
+      "Não abrir, partir nem mastigar a cápsula."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Prozac-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "20 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (20 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 ao dia (40 mg)",
+       "texto": "Tomar 2 comprimidos juntos por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "3 ao dia (60 mg)",
+       "texto": "Tomar 3 comprimidos juntos por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Pode ser tomado com ou sem alimento. Não ultrapassar 80 mg por dia."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Prozac-Profissional-Consulta-Remedios.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Daforin-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura",
+     "concentracao": "10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "2 ao dia (20 mg)",
+       "texto": "Tomar 2 cápsulas juntas por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 ao dia (10 mg)",
+       "texto": "Tomar 1 cápsula por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Pode ser tomado com ou sem alimento. Não ultrapassar 80 mg por dia.",
+      "Não abrir, partir nem mastigar a cápsula."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Daforin-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "solução oral",
+     "concentracao": "20 mg/mL",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "20 gotas ao dia (20 mg)",
+       "texto": "Tomar 20 gotas por via oral uma vez ao dia, misturadas em um pouco de líquido, em uso contínuo.",
+       "quantidade": 2,
+       "dias": 30
+      },
+      {
+       "rotulo": "40 gotas ao dia (40 mg)",
+       "texto": "Tomar 40 gotas por via oral uma vez ao dia, misturadas em um pouco de líquido, em uso contínuo.",
+       "quantidade": 3,
+       "dias": 30
+      },
+      {
+       "rotulo": "60 gotas ao dia (60 mg)",
+       "texto": "Tomar 60 gotas por via oral uma vez ao dia, misturadas em um pouco de líquido, em uso contínuo.",
+       "quantidade": 5,
+       "dias": 30
+      },
+      {
+       "rotulo": "10 gotas ao dia (10 mg)",
+       "texto": "Tomar 10 gotas por via oral uma vez ao dia, misturadas em um pouco de líquido, em uso contínuo.",
+       "quantidade": 1,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Cada gota tem 1 mg (20 gotas equivalem a 1 mL). Pingar com o frasco na vertical, misturar as gotas em um líquido e mexer bem antes de tomar.",
+      "Pode ser tomado com ou sem alimento."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Daforin-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "trazodona",
+   "classe": "C1",
+   "orientacoes": [
+    "Causa sonolência e pode baixar a pressão ao levantar: levantar-se devagar, cuidado ao dirigir e evitar bebida alcoólica.",
+    "Homens: procurar atendimento imediato se houver ereção prolongada ou dolorosa.",
+    "Não parar de tomar de repente: a retirada deve ser gradual, com orientação médica.",
+    "No início do tratamento, procurar o médico se houver piora do humor, agitação ou pensamentos de se machucar."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "50 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 à noite, contínuo",
+       "texto": "Tomar 1 comprimido por via oral à noite, logo após o jantar ou um lanche, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 12/12 h, contínuo",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas, logo após uma refeição, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 à noite (100 mg), contínuo",
+       "texto": "Tomar 2 comprimidos por via oral à noite, logo após o jantar ou um lanche, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar logo após uma refeição ou um lanche."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Donaren-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "100 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 à noite, contínuo",
+       "texto": "Tomar 1 comprimido por via oral à noite, logo após o jantar ou um lanche, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 12/12 h (200 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas, logo após uma refeição, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar logo após uma refeição ou um lanche."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Donaren-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido de liberação prolongada",
+     "concentracao": "150 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 à noite, contínuo",
+       "texto": "Tomar 1 comprimido por via oral à noite, antes de dormir, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 12/12 h (300 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas, em uso contínuo. Não ultrapassar 2 comprimidos por dia.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Não mastigar nem triturar o comprimido."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Donaren-Retard-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "50 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 à noite, contínuo",
+       "texto": "Tomar 1 comprimido por via oral à noite, logo após o jantar ou um lanche, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 12/12 h, contínuo",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas, logo após uma refeição, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 à noite (100 mg), contínuo",
+       "texto": "Tomar 2 comprimidos por via oral à noite, logo após o jantar ou um lanche, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar logo após uma refeição ou um lanche."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Loredon-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "100 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 à noite, contínuo",
+       "texto": "Tomar 1 comprimido por via oral à noite, logo após o jantar ou um lanche, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 12/12 h (200 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas, logo após uma refeição, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar logo após uma refeição ou um lanche."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Loredon-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido de liberação prolongada",
+     "concentracao": "150 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 à noite, contínuo",
+       "texto": "Tomar 1 comprimido por via oral à noite, antes de deitar, com um copo de água e de estômago vazio, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 juntos à noite (300 mg), contínuo",
+       "texto": "Tomar 2 comprimidos juntos por via oral à noite, antes de deitar, com um copo de água e de estômago vazio, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar de estômago vazio, com um copo de água. Não mastigar nem triturar o comprimido."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Inseris-XR-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "desvenlafaxina",
+   "classe": "C1",
+   "orientacoes": [
+    "Engolir o comprimido inteiro, sem partir, triturar ou mastigar. Um resíduo do comprimido pode aparecer nas fezes; isso é esperado.",
+    "Não parar de tomar de repente: a retirada deve ser gradual, com orientação médica.",
+    "Pode causar sonolência ou tontura: cuidado ao dirigir. Evitar bebida alcoólica.",
+    "No início do tratamento, procurar o médico se houver piora do humor, agitação ou pensamentos de se machucar."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido de liberação prolongada",
+     "concentracao": "50 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia, contínuo",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, sempre no mesmo horário, com ou sem alimento, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 em dias alternados, contínuo",
+       "texto": "Tomar 1 comprimido por via oral em dias alternados (um dia sim, outro não), em uso contínuo.",
+       "quantidade": 15,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://www.pfizer.com.br/files/Pristiq_Profissional_de_Saude_30.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido de liberação prolongada",
+     "concentracao": "100 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia, contínuo",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, sempre no mesmo horário, com ou sem alimento, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://www.pfizer.com.br/files/Pristiq_Profissional_de_Saude_30.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "risperidona",
+   "classe": "C1",
+   "orientacoes": [
+    "Pode causar sonolência e tontura: não dirigir nem operar máquinas até saber como o remédio o afeta.",
+    "Levantar-se devagar da cama ou da cadeira, pois a pressão pode cair ao ficar em pé.",
+    "Evitar bebidas alcoólicas durante o tratamento.",
+    "Pode aumentar o peso, a glicose e o colesterol: o médico pode pedir exames durante o tratamento.",
+    "Não interromper o tratamento por conta própria; a suspensão deve ser orientada pelo médico."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "solução oral",
+     "concentracao": "1 mg/mL",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Autismo, menos de 20 kg: início",
+       "texto": "Tomar 0,25 mL (0,25 mg) por via oral uma vez ao dia nos dias 1 a 3 e 0,5 mL (0,5 mg) uma vez ao dia a partir do dia 4.",
+       "quantidade": 1,
+       "dias": 30
+      },
+      {
+       "rotulo": "Autismo, 20 kg ou mais: início",
+       "texto": "Tomar 0,5 mL (0,5 mg) por via oral uma vez ao dia nos dias 1 a 3 e 1 mL (1 mg) uma vez ao dia a partir do dia 4.",
+       "quantidade": 1,
+       "dias": 30
+      },
+      {
+       "rotulo": "Demência (agitação): 0,25 mL 12/12 h",
+       "texto": "Tomar 0,25 mL (0,25 mg) por via oral de 12 em 12 horas.",
+       "quantidade": 1,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Medir a dose com a pipeta que acompanha o frasco (1 mL tem 1 mg) e misturar em água ou outra bebida sem álcool, exceto chá.",
+      "Depois de aberto, o frasco vale 3 meses."
+     ],
+     "fontes": [
+      "https://assets.jnjlabels.com/innovativemedicine/latam/brasil/risperdal-pub-vps-comp.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "1 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h (2 mg/dia)",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas (2 mg por dia), em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 ao dia (1 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, sem partir nem mastigar."
+     ],
+     "fontes": [
+      "https://assets.jnjlabels.com/innovativemedicine/latam/brasil/risperdal-pub-vps-comp.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "2 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Início esquizofrenia: 2 e depois 4 mg",
+       "texto": "No 1º dia, tomar 1 comprimido (2 mg); a partir do 2º dia, tomar 1 comprimido de 12 em 12 horas (4 mg por dia), em uso contínuo.",
+       "quantidade": 59,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 12/12 h (4 mg/dia)",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas (4 mg por dia), em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "Mania: 1 ao dia (2 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia (2 mg), em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, sem partir nem mastigar."
+     ],
+     "fontes": [
+      "https://assets.jnjlabels.com/innovativemedicine/latam/brasil/risperdal-pub-vps-comp.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "3 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h (6 mg/dia)",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas (6 mg por dia), em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "Mania: 1 ao dia (3 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia (3 mg), em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, sem partir nem mastigar."
+     ],
+     "fontes": [
+      "https://assets.jnjlabels.com/innovativemedicine/latam/brasil/risperdal-pub-vps-comp.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "500 mcg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Idoso: 1 de 12/12 h (1 mg/dia)",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas (0,5 mg por dose).",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "Adolescente: início 1 ao dia",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, de manhã ou à noite (0,5 mg).",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, sem partir nem mastigar."
+     ],
+     "fontes": [
+      "https://assets.jnjlabels.com/innovativemedicine/latam/brasil/risperdal-pub-vps-comp.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "duloxetina",
+   "classe": "C1",
+   "orientacoes": [
+    "Tomar com ou sem alimento. Engolir a cápsula inteira, sem abrir, partir ou mastigar.",
+    "Se esquecer uma dose, tomar assim que lembrar; se estiver perto da próxima, pular a esquecida. Não tomar 2 doses juntas.",
+    "Não parar de tomar de repente: a retirada deve ser gradual, com orientação médica.",
+    "Pode causar sonolência ou tontura: cuidado ao dirigir. Evitar bebida alcoólica.",
+    "No início do tratamento, procurar o médico se houver piora do humor, agitação ou pensamentos de se machucar."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "cápsula dura de liberação retardada",
+     "concentracao": "30 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia por 7 dias, depois 60 mg",
+       "texto": "Tomar 1 cápsula por via oral uma vez ao dia por 7 dias; depois, passar para 60 mg uma vez ao dia.",
+       "quantidade": 7,
+       "dias": 7
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://assets.ctfassets.net/fhvti7ztpwfk/41aaoR1JNorFF3y3itvZ0T/b8829b8d254856ac03b8a446de19c1a6/CYMBALTA_30_60_LIT_HCP_V03_20DEC21_MTC_clean.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura de liberação retardada",
+     "concentracao": "60 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia, contínuo",
+       "texto": "Tomar 1 cápsula por via oral uma vez ao dia, sempre no mesmo horário, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 12/12 h (120 mg, dose máxima)",
+       "texto": "Tomar 1 cápsula por via oral de 12 em 12 horas, em uso contínuo. Não ultrapassar 2 cápsulas por dia.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://assets.ctfassets.net/fhvti7ztpwfk/41aaoR1JNorFF3y3itvZ0T/b8829b8d254856ac03b8a446de19c1a6/CYMBALTA_30_60_LIT_HCP_V03_20DEC21_MTC_clean.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "lamotrigina",
+   "classe": "C1",
+   "orientacoes": [
+    "Se surgirem manchas ou bolhas na pele, feridas na boca, febre ou inchaço, parar e procurar o médico imediatamente, principalmente nas primeiras 8 semanas.",
+    "Não aumentar a dose antes do prazo indicado: subir rápido demais aumenta o risco de reação grave na pele.",
+    "Não parar de repente: a retirada deve ser gradual, em cerca de 2 semanas. Se ficar vários dias sem tomar, falar com o médico antes de recomeçar.",
+    "Avisar o médico ao começar ou parar anticoncepcional hormonal, pois a dose pode precisar de ajuste."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido",
+     "concentracao": "100 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (100 mg), contínuo",
+       "texto": "Tomar 1 comprimido (100 mg) por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 12/12 h (200 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido (100 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 12/12 h (400 mg/dia), contínuo",
+       "texto": "Tomar 2 comprimidos (200 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro com um copo de água, sem mastigar nem partir."
+     ],
+     "fontes": [
+      "https://br.gsk.com/media/od0j15hy/lamictal.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido para suspensão",
+     "concentracao": "100 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Bipolar sem valproato: semana 5",
+       "texto": "Tomar 1 comprimido (100 mg) por via oral uma vez ao dia por 1 semana (semana 5); depois, passar para 200 mg por dia conforme orientação médica.",
+       "quantidade": 7,
+       "dias": 7
+      },
+      {
+       "rotulo": "1 ao dia (100 mg), contínuo",
+       "texto": "Tomar 1 comprimido (100 mg) por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 12/12 h (200 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido (100 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 12/12 h (400 mg/dia), contínuo",
+       "texto": "Tomar 2 comprimidos (200 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "O comprimido pode ser mastigado, disperso em um pouco de água ou engolido inteiro; não partir."
+     ],
+     "fontes": [
+      "https://br.gsk.com/media/3vzebm45/lamictal-comprimidos-dispers%C3%ADveis.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "50 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Sem valproato: semanas 3 e 4",
+       "texto": "Tomar 1 comprimido (50 mg) por via oral uma vez ao dia por 2 semanas; depois, aumentar conforme orientação médica.",
+       "quantidade": 14,
+       "dias": 14
+      },
+      {
+       "rotulo": "Com indutor enzimático: semanas 1 e 2",
+       "texto": "Tomar 1 comprimido (50 mg) por via oral uma vez ao dia por 2 semanas; depois, passar para 50 mg de 12 em 12 horas por mais 2 semanas.",
+       "quantidade": 14,
+       "dias": 14
+      },
+      {
+       "rotulo": "Com indutor enzimático: semanas 3 e 4",
+       "texto": "Tomar 1 comprimido (50 mg) por via oral de 12 em 12 horas por 2 semanas; depois, aumentar conforme orientação médica.",
+       "quantidade": 28,
+       "dias": 14
+      },
+      {
+       "rotulo": "1 de 12/12 h (100 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido (50 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro com um copo de água, sem mastigar nem partir."
+     ],
+     "fontes": [
+      "https://br.gsk.com/media/od0j15hy/lamictal.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "25 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Sem valproato: semanas 1 e 2",
+       "texto": "Tomar 1 comprimido (25 mg) por via oral uma vez ao dia por 2 semanas; depois, passar para 50 mg uma vez ao dia por mais 2 semanas.",
+       "quantidade": 14,
+       "dias": 14
+      },
+      {
+       "rotulo": "Sem valproato: semanas 3 e 4",
+       "texto": "Tomar 2 comprimidos (50 mg) por via oral uma vez ao dia por 2 semanas; depois, aumentar conforme orientação médica.",
+       "quantidade": 28,
+       "dias": 14
+      },
+      {
+       "rotulo": "Com valproato: semanas 1 e 2",
+       "texto": "Tomar 1 comprimido (25 mg) por via oral em dias alternados por 2 semanas; depois, passar para 25 mg uma vez ao dia por mais 2 semanas.",
+       "quantidade": 7,
+       "dias": 14
+      },
+      {
+       "rotulo": "Com valproato: semanas 3 e 4",
+       "texto": "Tomar 1 comprimido (25 mg) por via oral uma vez ao dia por 2 semanas; depois, aumentar conforme orientação médica.",
+       "quantidade": 14,
+       "dias": 14
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro com um copo de água, sem mastigar nem partir."
+     ],
+     "fontes": [
+      "https://br.gsk.com/media/od0j15hy/lamictal.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido para suspensão",
+     "concentracao": "50 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Sem valproato: semanas 3 e 4",
+       "texto": "Tomar 1 comprimido (50 mg) por via oral uma vez ao dia por 2 semanas; depois, aumentar conforme orientação médica.",
+       "quantidade": 14,
+       "dias": 14
+      },
+      {
+       "rotulo": "Com indutor enzimático: semanas 1 e 2",
+       "texto": "Tomar 1 comprimido (50 mg) por via oral uma vez ao dia por 2 semanas; depois, passar para 50 mg de 12 em 12 horas por mais 2 semanas.",
+       "quantidade": 14,
+       "dias": 14
+      },
+      {
+       "rotulo": "Com indutor enzimático: semanas 3 e 4",
+       "texto": "Tomar 1 comprimido (50 mg) por via oral de 12 em 12 horas por 2 semanas; depois, aumentar conforme orientação médica.",
+       "quantidade": 28,
+       "dias": 14
+      },
+      {
+       "rotulo": "1 de 12/12 h (100 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido (50 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "O comprimido pode ser mastigado, disperso em um pouco de água ou engolido inteiro; não partir."
+     ],
+     "fontes": [
+      "https://br.gsk.com/media/3vzebm45/lamictal-comprimidos-dispers%C3%ADveis.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido para suspensão",
+     "concentracao": "25 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Sem valproato: semanas 1 e 2",
+       "texto": "Tomar 1 comprimido (25 mg) por via oral uma vez ao dia por 2 semanas; depois, passar para 50 mg uma vez ao dia por mais 2 semanas.",
+       "quantidade": 14,
+       "dias": 14
+      },
+      {
+       "rotulo": "Sem valproato: semanas 3 e 4",
+       "texto": "Tomar 2 comprimidos (50 mg) por via oral uma vez ao dia por 2 semanas; depois, aumentar conforme orientação médica.",
+       "quantidade": 28,
+       "dias": 14
+      },
+      {
+       "rotulo": "Com valproato: semanas 1 e 2",
+       "texto": "Tomar 1 comprimido (25 mg) por via oral em dias alternados por 2 semanas; depois, passar para 25 mg uma vez ao dia por mais 2 semanas.",
+       "quantidade": 7,
+       "dias": 14
+      },
+      {
+       "rotulo": "Com valproato: semanas 3 e 4",
+       "texto": "Tomar 1 comprimido (25 mg) por via oral uma vez ao dia por 2 semanas; depois, aumentar conforme orientação médica.",
+       "quantidade": 14,
+       "dias": 14
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "O comprimido pode ser mastigado, disperso em um pouco de água ou engolido inteiro; não partir."
+     ],
+     "fontes": [
+      "https://br.gsk.com/media/3vzebm45/lamictal-comprimidos-dispers%C3%ADveis.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "amitriptilina",
+   "classe": "C1",
+   "orientacoes": [
+    "Pode causar sonolência, boca seca, prisão de ventre e tontura ao levantar: levantar-se devagar e cuidado ao dirigir.",
+    "Evitar bebida alcoólica durante o tratamento.",
+    "Não parar de tomar de repente: a retirada deve ser gradual, com orientação médica.",
+    "No início do tratamento, procurar o médico se houver piora do humor, agitação ou pensamentos de se machucar."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "25 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao deitar, contínuo",
+       "texto": "Tomar 1 comprimido por via oral à noite, ao deitar, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 ao deitar (50 mg), contínuo",
+       "texto": "Tomar 2 comprimidos por via oral à noite, ao deitar, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 8/8 h (75 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Cloridrato-de-Amitriptilina-Profissional-Consulta-Remedios.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Amytril-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao deitar, contínuo",
+       "texto": "Tomar 1 comprimido por via oral à noite, ao deitar, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 ao deitar (20 mg), contínuo",
+       "texto": "Tomar 2 comprimidos por via oral à noite, ao deitar, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Amytril-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "25 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao deitar, contínuo",
+       "texto": "Tomar 1 comprimido por via oral à noite, ao deitar, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 ao deitar (50 mg), contínuo",
+       "texto": "Tomar 2 comprimidos por via oral à noite, ao deitar, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 8/8 h (75 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Cloridrato-de-Amitriptilina-Profissional-Consulta-Remedios.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Amytril-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "75 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao deitar, contínuo",
+       "texto": "Tomar 1 comprimido por via oral à noite, ao deitar, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 ao deitar (150 mg), contínuo",
+       "texto": "Tomar 2 comprimidos por via oral à noite, ao deitar, em uso contínuo. Não ultrapassar 2 comprimidos por dia.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Amytril-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "etoricoxibe",
+   "classe": "C1",
+   "orientacoes": [
+    "Tomar a menor dose pelo menor tempo possível e não usar junto com outros anti-inflamatórios.",
+    "Avisar o médico se tiver doença do coração, pressão alta, úlcera ou sangramento no estômago ou doença dos rins.",
+    "Pode ser tomado com ou sem alimento."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "90 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia, 7 dias",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia por 7 dias. Não tomar mais de 1 comprimido por dia.",
+       "quantidade": 7,
+       "dias": 7
+      },
+      {
+       "rotulo": "1 ao dia, 5 dias",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia por 5 dias. Não tomar mais de 1 comprimido por dia.",
+       "quantidade": 5,
+       "dias": 5
+      },
+      {
+       "rotulo": "1 ao dia, 3 dias",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia por 3 dias. Não tomar mais de 1 comprimido por dia.",
+       "quantidade": 3,
+       "dias": 3
+      },
+      {
+       "rotulo": "1 ao dia, 30 dias",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia por 30 dias. Não tomar mais de 1 comprimido por dia.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Na dor aguda, usar no máximo 8 dias."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Arcoxia-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "60 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia, 30 dias",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia por 30 dias. Não tomar mais de 1 comprimido por dia.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 ao dia, 14 dias",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia por 14 dias. Não tomar mais de 1 comprimido por dia.",
+       "quantidade": 14,
+       "dias": 14
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Arcoxia-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "codeina+paracetamol",
+   "classe": "A2-adendo",
+   "orientacoes": [
+    "Pode causar sonolência e tontura: não dirigir nem operar máquinas até saber como o remédio age em você.",
+    "Não tomar bebida alcoólica nem calmantes ou remédios para dormir sem orientação médica.",
+    "Pode causar náusea e prisão de ventre: beber bastante líquido e comer fibras.",
+    "Usar só na dose e pelo tempo prescritos, pelo risco de dependência. Após uso prolongado, não parar de repente.",
+    "Não tomar outros remédios com paracetamol ao mesmo tempo: o limite de paracetamol é 4 g por dia."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido",
+     "concentracao": "30 mg + 500 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 4/4 h, 3 dias",
+       "texto": "Tomar 1 comprimido por via oral de 4 em 4 horas por 3 dias. Não passar de 8 comprimidos por dia.",
+       "quantidade": 18,
+       "dias": 3
+      },
+      {
+       "rotulo": "1 de 6/6 h, 3 dias",
+       "texto": "Tomar 1 comprimido por via oral de 6 em 6 horas por 3 dias. Não passar de 8 comprimidos por dia.",
+       "quantidade": 12,
+       "dias": 3
+      },
+      {
+       "rotulo": "2 de 6/6 h, 3 dias",
+       "texto": "Tomar 2 comprimidos por via oral de 6 em 6 horas por 3 dias (dor mais intensa). Não passar de 8 comprimidos por dia.",
+       "quantidade": 24,
+       "dias": 3
+      },
+      {
+       "rotulo": "1 de 6/6 h, 5 dias",
+       "texto": "Tomar 1 comprimido por via oral de 6 em 6 horas por 5 dias. Não passar de 8 comprimidos por dia.",
+       "quantidade": 20,
+       "dias": 5
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, sem partir nem mastigar."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Tylex-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "7,5 mg + 500 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 4/4 h, 3 dias",
+       "texto": "Tomar 1 comprimido por via oral de 4 em 4 horas por 3 dias. Não passar de 8 comprimidos por dia.",
+       "quantidade": 18,
+       "dias": 3
+      },
+      {
+       "rotulo": "1 de 6/6 h, 3 dias",
+       "texto": "Tomar 1 comprimido por via oral de 6 em 6 horas por 3 dias. Não passar de 8 comprimidos por dia.",
+       "quantidade": 12,
+       "dias": 3
+      },
+      {
+       "rotulo": "2 de 6/6 h, 3 dias",
+       "texto": "Tomar 2 comprimidos por via oral de 6 em 6 horas por 3 dias (dor mais intensa). Não passar de 8 comprimidos por dia.",
+       "quantidade": 24,
+       "dias": 3
+      },
+      {
+       "rotulo": "1 de 6/6 h, 5 dias",
+       "texto": "Tomar 1 comprimido por via oral de 6 em 6 horas por 5 dias. Não passar de 8 comprimidos por dia.",
+       "quantidade": 20,
+       "dias": 5
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, sem partir nem mastigar."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Tylex-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "paroxetina",
+   "classe": "C1",
+   "orientacoes": [
+    "O efeito costuma aparecer após 2 a 4 semanas de uso contínuo.",
+    "Não parar de tomar nem mudar a dose por conta própria; a retirada deve ser gradual, com orientação médica.",
+    "Se surgirem piora da ansiedade, agitação ou pensamentos de se machucar, principalmente no início, procurar o médico.",
+    "Evitar bebidas alcoólicas. No início pode causar sonolência ou tontura: cuidado ao dirigir."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "20 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 pela manhã (20 mg)",
+       "texto": "Tomar 1 comprimido por via oral pela manhã, com alimento, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 pela manhã (40 mg)",
+       "texto": "Tomar 2 comprimidos juntos por via oral pela manhã, com alimento, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar pela manhã, com alimento, engolindo com um copo de água. Não mastigar.",
+      "Aumentos de dose de 10 mg só a cada 1 semana ou mais, conforme orientação médica."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Aropax-Profissional-Consulta-Remedios.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Pondera-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Início: 1 por 7 dias, depois 2",
+       "texto": "Tomar 1 comprimido por via oral pela manhã, com alimento, por 7 dias; depois, 2 comprimidos juntos pela manhã (20 mg).",
+       "quantidade": 53,
+       "dias": 30
+      },
+      {
+       "rotulo": "3 pela manhã (30 mg)",
+       "texto": "Tomar 3 comprimidos juntos por via oral pela manhã, com alimento, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 pela manhã, 7 dias",
+       "texto": "Tomar 1 comprimido por via oral pela manhã, com alimento, por 7 dias.",
+       "quantidade": 7,
+       "dias": 7
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar pela manhã, com alimento, engolindo com um copo de água. Não mastigar.",
+      "Aumentos de dose de 10 mg só a cada 1 semana ou mais, conforme orientação médica."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Aropax-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido de liberação modificada",
+     "concentracao": "25 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 pela manhã (25 mg)",
+       "texto": "Tomar 1 comprimido por via oral pela manhã, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 pela manhã (50 mg)",
+       "texto": "Tomar 2 comprimidos juntos por via oral pela manhã, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar pela manhã, com ou sem alimento. Engolir inteiro, sem partir, triturar ou mastigar.",
+      "Aumentos de dose de 12,5 mg só a cada 1 semana ou mais, conforme orientação médica."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Paxil-CR-Profissional-Consulta-Remedios.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Pondera-XR-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido de liberação modificada",
+     "concentracao": "25 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 pela manhã (25 mg)",
+       "texto": "Tomar 1 comprimido por via oral pela manhã, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 pela manhã (50 mg)",
+       "texto": "Tomar 2 comprimidos juntos por via oral pela manhã, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar pela manhã, com ou sem alimento. Engolir inteiro, sem partir, triturar ou mastigar.",
+      "Aumentos de dose de 12,5 mg só a cada 1 semana ou mais, conforme orientação médica."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Paxil-CR-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido de liberação modificada",
+     "concentracao": "12,5 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 pela manhã (12,5 mg)",
+       "texto": "Tomar 1 comprimido por via oral pela manhã, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "Início: 1 por 7 dias, depois 2",
+       "texto": "Tomar 1 comprimido por via oral pela manhã por 7 dias; depois, 2 comprimidos juntos pela manhã (25 mg).",
+       "quantidade": 53,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 pela manhã, 7 dias",
+       "texto": "Tomar 1 comprimido por via oral pela manhã por 7 dias.",
+       "quantidade": 7,
+       "dias": 7
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Tomar pela manhã, com ou sem alimento. Engolir inteiro, sem partir, triturar ou mastigar.",
+      "Aumentos de dose de 12,5 mg só a cada 1 semana ou mais, conforme orientação médica."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Paxil-CR-Profissional-Consulta-Remedios.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Pondera-XR-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "bupropiona",
+   "classe": "C1",
+   "orientacoes": [
+    "Engolir o comprimido inteiro, sem partir, triturar ou mastigar: isso aumenta o risco de convulsão.",
+    "Não tomar mais que a dose prescrita. Evitar tomar perto da hora de dormir, pois pode tirar o sono.",
+    "Evitar bebida alcoólica durante o tratamento.",
+    "No início do tratamento, procurar o médico se houver piora do humor, agitação ou pensamentos de se machucar."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido de liberação prolongada",
+     "concentracao": "150 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 pela manhã, contínuo",
+       "texto": "Tomar 1 comprimido por via oral pela manhã, uma vez ao dia, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 manhã e 1 tarde, 8 h entre eles",
+       "texto": "Tomar 1 comprimido por via oral pela manhã e 1 no fim da tarde, com pelo menos 8 horas entre eles, em uso contínuo. Não tomar mais de 2 comprimidos por dia.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "3 dias 1x/dia, depois 2x/dia, 7 semanas",
+       "texto": "Tomar 1 comprimido por via oral pela manhã por 3 dias; depois, 1 comprimido pela manhã e 1 no fim da tarde, com pelo menos 8 horas entre eles, até completar 7 semanas. Não tomar mais de 2 comprimidos por dia.",
+       "quantidade": 95,
+       "dias": 49
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Não tomar mais de 1 comprimido de cada vez; quando forem 2 por dia, manter pelo menos 8 horas entre eles."
+     ],
+     "fontes": [
+      "https://br.gsk.com/media/onxkmcmu/l1701_wellbutrin-sr_com_rev_lib_lenta_gds32_ipi19.pdf",
+      "https://br.gsk.com/media/jdyhpw5h/l1703_zyban_com_rev_lib_lenta_gds32_ipi19.pdf",
+      "https://cr-net-public-prod.s3.amazonaws.com/product_leaflet/CDA4E7E470B8EFFFD3B2C5C9426819F7.pdf",
+      "https://br.gsk.com/media/m42jfmk2/wellbutrin-xl.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido de liberação prolongada",
+     "concentracao": "300 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 pela manhã, contínuo",
+       "texto": "Tomar 1 comprimido por via oral pela manhã, uma vez ao dia, em uso contínuo. Não tomar mais de 1 comprimido por dia.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Manter pelo menos 24 horas entre uma dose e outra."
+     ],
+     "fontes": [
+      "https://br.gsk.com/media/m42jfmk2/wellbutrin-xl.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Eutymia-XL-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "buspirona",
+   "classe": "C1",
+   "orientacoes": [
+    "Tomar sempre nos mesmos horários, todos os dias, com ou sem alimento (de preferência sempre do mesmo jeito).",
+    "O efeito completo pode levar de 3 a 4 semanas. Não ultrapassar 60 mg por dia.",
+    "Evitar bebidas alcoólicas e grandes quantidades de suco de grapefruit (toranja).",
+    "Não partir, abrir nem mastigar o comprimido."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido",
+     "concentracao": "5 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 8/8 h (15 mg/dia)",
+       "texto": "Tomar 1 comprimido por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 12/12 h (20 mg/dia)",
+       "texto": "Tomar 2 comprimidos por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 120,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 8/8 h (30 mg/dia)",
+       "texto": "Tomar 2 comprimidos por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 180,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Ansitec-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h (20 mg/dia)",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 8/8 h (30 mg/dia)",
+       "texto": "Tomar 1 comprimido por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Ansitec-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "mirtazapina",
+   "classe": "C1",
+   "orientacoes": [
+    "Tomar de preferência à noite, antes de deitar.",
+    "Causa sonolência e aumento do apetite: cuidado ao dirigir e evitar bebida alcoólica.",
+    "Não parar de tomar de repente: a retirada deve ser gradual, com orientação médica.",
+    "No início do tratamento, procurar o médico se houver piora do humor, agitação ou pensamentos de se machucar."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido orodispersível",
+     "concentracao": "15 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao deitar, contínuo",
+       "texto": "Colocar 1 comprimido sobre a língua à noite, antes de deitar, deixar desfazer e engolir, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Colocar o comprimido sobre a língua: ele se desfaz e pode ser engolido sem água. Não partir nem mastigar.",
+      "Contém fenilalanina: avisar o médico em caso de fenilcetonúria."
+     ],
+     "fontes": [
+      "https://www.organon.com/brazil/wp-content/uploads/sites/33/2023/06/remeron_soltab_bula_profissional.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "30 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao deitar, contínuo",
+       "texto": "Tomar 1 comprimido por via oral com água à noite, antes de deitar, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido com água, sem mastigar."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Razapina-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido orodispersível",
+     "concentracao": "30 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao deitar, contínuo",
+       "texto": "Colocar 1 comprimido sobre a língua à noite, antes de deitar, deixar desfazer e engolir, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Colocar o comprimido sobre a língua: ele se desfaz e pode ser engolido sem água. Não partir nem mastigar.",
+      "Contém fenilalanina: avisar o médico em caso de fenilcetonúria."
+     ],
+     "fontes": [
+      "https://www.organon.com/brazil/wp-content/uploads/sites/33/2023/06/remeron_soltab_bula_profissional.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "45 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao deitar, contínuo",
+       "texto": "Tomar 1 comprimido por via oral com água à noite, antes de deitar, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido com água, sem mastigar."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Razapina-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido orodispersível",
+     "concentracao": "45 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao deitar, contínuo",
+       "texto": "Colocar 1 comprimido sobre a língua à noite, antes de deitar, deixar desfazer e engolir, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Colocar o comprimido sobre a língua: ele se desfaz e pode ser engolido sem água. Não partir nem mastigar.",
+      "Contém fenilalanina: avisar o médico em caso de fenilcetonúria."
+     ],
+     "fontes": [
+      "https://www.organon.com/brazil/wp-content/uploads/sites/33/2023/06/remeron_soltab_bula_profissional.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "fenobarbital",
+   "classe": "B1-adendo",
+   "orientacoes": [],
+   "apresentacoes": [
+    {
+     "forma": "solução oral",
+     "concentracao": "40 mg/mL",
+     "marca": null,
+     "dose": null,
+     "regimes": [],
+     "pediatrico": {
+      "mgKgDia": 3,
+      "componente": "fenobarbital",
+      "dosesDia": 1,
+      "mgPorMl": 40,
+      "maxMgDia": null,
+      "dias": 30,
+      "texto": "Tomar __ mL por via oral, diluídos em água, uma vez ao dia (1 mL corresponde a 40 gotas), em uso contínuo."
+     },
+     "orientacoes": [
+      "Diluir as gotas em um pouco de água antes de tomar. Cada gota tem 1 mg; 40 gotas correspondem a 1 mL.",
+      "Não parar de tomar de repente: a retirada deve ser gradual, com orientação médica.",
+      "Pode causar sonolência. Não tomar bebidas alcoólicas.",
+      "Guardar em temperatura ambiente (15 a 30 °C)."
+     ],
+     "fontes": [
+      "https://bula-anvisa.s3.sa-east-1.amazonaws.com/1832603230037_paciente.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "100 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 à noite (100 mg/dia, 33 a 50 kg)",
+       "texto": "Tomar 1 comprimido por via oral à noite, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 à noite (200 mg/dia, 67 a 100 kg)",
+       "texto": "Tomar 2 comprimidos por via oral à noite, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Dose de 2 a 3 mg/kg/dia, em dose única (bula); as faixas de peso indicam a dose diária mais próxima.",
+      "Não parar de tomar de repente: a retirada deve ser gradual, com orientação médica.",
+      "Pode causar sonolência. Não tomar bebidas alcoólicas.",
+      "Tomar sempre no mesmo horário, de preferência à noite."
+     ],
+     "fontes": [
+      "https://bula-anvisa.s3.sa-east-1.amazonaws.com/1832603230037_paciente.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "50 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 à noite (50 mg/dia, 17 a 25 kg)",
+       "texto": "Tomar 1 comprimido por via oral à noite, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 à noite (100 mg/dia, 33 a 50 kg)",
+       "texto": "Tomar 2 comprimidos por via oral à noite, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "3 à noite (150 mg/dia, 50 a 75 kg)",
+       "texto": "Tomar 3 comprimidos por via oral à noite, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Dose de 2 a 3 mg/kg/dia, em dose única (bula); as faixas de peso indicam a dose diária mais próxima.",
+      "Não parar de tomar de repente: a retirada deve ser gradual, com orientação médica.",
+      "Pode causar sonolência. Não tomar bebidas alcoólicas.",
+      "Tomar sempre no mesmo horário, de preferência à noite."
+     ],
+     "fontes": [
+      "https://bula-anvisa.s3.sa-east-1.amazonaws.com/1832603230037_paciente.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "undecilato de testosterona",
+   "classe": "C5",
+   "orientacoes": [],
+   "apresentacoes": [
+    {
+     "forma": "solução injetável",
+     "concentracao": "250 mg/mL",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ampola a cada 12 semanas",
+       "texto": "Aplicar 1 ampola (4 mL, 1000 mg) por via intramuscular profunda, muito lentamente, a cada 12 semanas, em uso contínuo.",
+       "quantidade": 1,
+       "dias": 84
+      },
+      {
+       "rotulo": "Início: 2ª ampola após 6 semanas",
+       "texto": "Aplicar 1 ampola (4 mL, 1000 mg) por via intramuscular profunda, muito lentamente, e a 2ª ampola 6 semanas depois; a seguir, 1 ampola a cada 10 a 14 semanas, conforme orientação médica.",
+       "quantidade": 2,
+       "dias": 42
+      },
+      {
+       "rotulo": "1 ampola a cada 10 semanas",
+       "texto": "Aplicar 1 ampola (4 mL, 1000 mg) por via intramuscular profunda, muito lentamente, a cada 10 semanas, em uso contínuo.",
+       "quantidade": 1,
+       "dias": 70
+      },
+      {
+       "rotulo": "1 ampola a cada 14 semanas",
+       "texto": "Aplicar 1 ampola (4 mL, 1000 mg) por via intramuscular profunda, muito lentamente, a cada 14 semanas, em uso contínuo.",
+       "quantidade": 1,
+       "dias": 98
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Aplicação intramuscular profunda, feita por profissional de saúde, injetando muito lentamente logo após abrir a ampola.",
+      "Avisar logo se tiver tosse, falta de ar, mal-estar, suor ou dor no peito durante ou logo após a aplicação.",
+      "Fazer os exames pedidos pelo médico durante o tratamento (testosterona, hemograma e próstata).",
+      "O intervalo entre as aplicações deve ficar entre 10 e 14 semanas, conforme o médico ajustar pelos exames.",
+      "Uso exclusivo em homens adultos."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Nebido-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "atomoxetina",
+   "classe": "C1",
+   "orientacoes": [
+    "Engolir a cápsula inteira, com líquido, sem abrir; o pó irrita os olhos. Pode ser tomada com ou sem alimentos.",
+    "Se esquecer uma dose, tomar assim que lembrar, sem passar da dose total do dia."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "cápsula dura",
+     "concentracao": "25 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 pela manhã",
+       "texto": "Tomar 1 cápsula por via oral pela manhã, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de manhã e 1 no fim da tarde",
+       "texto": "Tomar 1 cápsula por via oral de manhã e 1 no fim da tarde, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Atentah-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura",
+     "concentracao": "40 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Adulto, início: 1 pela manhã, 7 dias",
+       "texto": "Tomar 1 cápsula (40 mg) por via oral pela manhã nos primeiros 7 dias; depois, passar para 80 mg por dia.",
+       "quantidade": 7,
+       "dias": 7
+      },
+      {
+       "rotulo": "1 de manhã e 1 no fim da tarde (80 mg)",
+       "texto": "Tomar 1 cápsula por via oral de manhã e 1 no fim da tarde (80 mg por dia), em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 pela manhã (40 mg)",
+       "texto": "Tomar 1 cápsula por via oral pela manhã (40 mg), em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Atentah-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura",
+     "concentracao": "10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 pela manhã",
+       "texto": "Tomar 1 cápsula por via oral pela manhã, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de manhã e 1 no fim da tarde",
+       "texto": "Tomar 1 cápsula por via oral de manhã e 1 no fim da tarde, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Atentah-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura",
+     "concentracao": "18 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 pela manhã",
+       "texto": "Tomar 1 cápsula por via oral pela manhã, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de manhã e 1 no fim da tarde",
+       "texto": "Tomar 1 cápsula por via oral de manhã e 1 no fim da tarde, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Atentah-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura",
+     "concentracao": "60 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 pela manhã (60 mg)",
+       "texto": "Tomar 1 cápsula por via oral pela manhã (60 mg), em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Atentah-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura",
+     "concentracao": "80 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 pela manhã (80 mg)",
+       "texto": "Tomar 1 cápsula por via oral pela manhã (80 mg), em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Atentah-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "carbamazepina",
+   "classe": "C1",
+   "orientacoes": [
+    "Pode ser tomado durante, após ou entre as refeições. Tomar nos horários certos, todos os dias.",
+    "Se surgirem manchas, bolhas ou descamação na pele, feridas na boca ou febre, procurar o médico imediatamente.",
+    "O médico pode pedir exames de sangue (hemograma, fígado e sódio) antes e durante o tratamento.",
+    "Pode causar tontura e sonolência; evitar bebida alcoólica. Reduz o efeito de anticoncepcionais hormonais: usar outro método.",
+    "Não parar de repente: a retirada deve ser gradual, com orientação médica."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido",
+     "concentracao": "200 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h (400 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido (200 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 8/8 h (600 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido (200 mg) por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 6/6 h (800 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido (200 mg) por via oral de 6 em 6 horas, em uso contínuo.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir com um pouco de líquido, sem mastigar. A linha do comprimido serve só para facilitar a deglutição, não para tomar metade da dose."
+     ],
+     "fontes": [
+      "https://portal.novartis.com.br/medicamentos/wp-content/uploads/2025/11/Bula-TEGRETOL-Comprimido-Comprimido-de-Liberacao-Prolongada-Medico.pdf"
+     ]
+    },
+    {
+     "forma": "suspensão oral",
+     "concentracao": "20 mg/mL",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "10 mL de 8/8 h (600 mg/dia), contínuo",
+       "texto": "Tomar 10 mL (200 mg) por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 9,
+       "dias": 30
+      }
+     ],
+     "pediatrico": {
+      "mgKgDia": 10,
+      "componente": "carbamazepina",
+      "dosesDia": 3,
+      "mgPorMl": 20,
+      "maxMgDia": 1000,
+      "dias": 30,
+      "texto": "Tomar __ mL por via oral de 8 em 8 horas, em uso contínuo."
+     },
+     "orientacoes": [
+      "Agitar o frasco antes de usar e medir com a medida que acompanha o produto (5 mL contêm 100 mg).",
+      "A dose começa baixa e é aumentada aos poucos pelo médico.",
+      "Guardar em temperatura ambiente, protegido da luz."
+     ],
+     "fontes": [
+      "https://portal.novartis.com.br/medicamentos/wp-content/uploads/2025/11/Bula-TEGRETOL-Suspensao-Medico.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "400 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h (800 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido (400 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 8/8 h (1200 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido (400 mg) por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir com um pouco de líquido, sem mastigar. A linha do comprimido serve só para facilitar a deglutição, não para tomar metade da dose."
+     ],
+     "fontes": [
+      "https://portal.novartis.com.br/medicamentos/wp-content/uploads/2025/11/Bula-TEGRETOL-Comprimido-Comprimido-de-Liberacao-Prolongada-Medico.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido de liberação prolongada",
+     "concentracao": "200 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h (400 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido (200 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 12/12 h (800 mg/dia), contínuo",
+       "texto": "Tomar 2 comprimidos (400 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir inteiro com um pouco de líquido, sem mastigar. Se o médico indicar meio comprimido, partir na linha e usar a outra metade em até 7 dias."
+     ],
+     "fontes": [
+      "https://portal.novartis.com.br/medicamentos/wp-content/uploads/2025/11/Bula-TEGRETOL-Comprimido-Comprimido-de-Liberacao-Prolongada-Medico.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido de liberação prolongada",
+     "concentracao": "400 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h (800 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido (400 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "Meio de 12/12 h (400 mg/dia), contínuo",
+       "texto": "Tomar meio comprimido (200 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir inteiro com um pouco de líquido, sem mastigar. Se o médico indicar meio comprimido, partir na linha e usar a outra metade em até 7 dias."
+     ],
+     "fontes": [
+      "https://portal.novartis.com.br/medicamentos/wp-content/uploads/2025/11/Bula-TEGRETOL-Comprimido-Comprimido-de-Liberacao-Prolongada-Medico.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "decanoato de testosterona+fempropionato de testosterona+isocaproato de testosterona+propionato de testosterona",
+   "classe": "C5",
+   "orientacoes": [],
+   "apresentacoes": [
+    {
+     "forma": "solução injetável",
+     "concentracao": "100 mg + 60 mg + 60 mg + 30 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ampola a cada 3 semanas, 6 semanas",
+       "texto": "Aplicar 1 ampola (1 mL) por via intramuscular profunda a cada 3 semanas, em uso contínuo.",
+       "quantidade": 2,
+       "dias": 42
+      },
+      {
+       "rotulo": "1 ampola a cada 3 semanas, 12 semanas",
+       "texto": "Aplicar 1 ampola (1 mL) por via intramuscular profunda a cada 3 semanas, em uso contínuo.",
+       "quantidade": 4,
+       "dias": 84
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Aplicação intramuscular profunda, feita por profissional de saúde, logo após abrir a ampola.",
+      "Se esquecer uma aplicação, aplicar assim que lembrar e contar as 3 semanas seguintes a partir dela.",
+      "Contém óleo de amendoim: não usar se tiver alergia a amendoim ou soja.",
+      "Fazer os exames pedidos pelo médico durante o tratamento (hemograma e próstata)."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Durateston-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "gabapentina",
+   "classe": "C1",
+   "orientacoes": [
+    "Pode ser tomado com ou sem alimentos. Se usar antiácido com alumínio ou magnésio, tomar a gabapentina 2 horas depois dele.",
+    "Nas 3 tomadas do dia, não deixar passar mais de 12 horas entre uma dose e outra.",
+    "Pode causar tontura e sonolência: não dirigir nem operar máquinas até saber como o remédio afeta você. Evitar bebida alcoólica.",
+    "Não parar de repente: a redução deve ser gradual, em pelo menos 1 semana, com orientação médica."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "cápsula dura",
+     "concentracao": "300 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Início: dias 1 a 3, depois 1 de 8/8 h",
+       "texto": "Tomar por via oral: no 1º dia, 1 cápsula à noite; no 2º dia, 1 cápsula de manhã e 1 à noite; a partir do 3º dia, 1 cápsula de 8 em 8 horas (900 mg por dia).",
+       "quantidade": 87,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 8/8 h (900 mg/dia), contínuo",
+       "texto": "Tomar 1 cápsula (300 mg) por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 8/8 h (1800 mg/dia), contínuo",
+       "texto": "Tomar 2 cápsulas (600 mg) por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 180,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir a cápsula inteira, sem abrir nem mastigar."
+     ],
+     "fontes": [
+      "https://www.viatris.com/-/media/project/common/viatris/pdf/brazil/leaflets_legacy_myl_brazil/neurontin_bula_profissional.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura",
+     "concentracao": "400 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 8/8 h (1200 mg/dia), contínuo",
+       "texto": "Tomar 1 cápsula (400 mg) por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 8/8 h (2400 mg/dia), contínuo",
+       "texto": "Tomar 2 cápsulas (800 mg) por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 180,
+       "dias": 30
+      },
+      {
+       "rotulo": "3 de 8/8 h (3600 mg/dia, máximo)",
+       "texto": "Tomar 3 cápsulas (1200 mg) por via oral de 8 em 8 horas, em uso contínuo. Esta é a dose máxima: 3600 mg por dia.",
+       "quantidade": 270,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir a cápsula inteira, sem abrir nem mastigar."
+     ],
+     "fontes": [
+      "https://www.viatris.com/-/media/project/common/viatris/pdf/brazil/leaflets_legacy_myl_brazil/neurontin_bula_profissional.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "600 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 8/8 h (1800 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido (600 mg) por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      },
+      {
+       "rotulo": "Meio de 8/8 h (900 mg/dia), contínuo",
+       "texto": "Tomar meio comprimido (300 mg) por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 45,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 8/8 h (3600 mg/dia, máximo)",
+       "texto": "Tomar 2 comprimidos (1200 mg) por via oral de 8 em 8 horas, em uso contínuo. Esta é a dose máxima: 3600 mg por dia.",
+       "quantidade": 180,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "O comprimido tem sulco e pode ser partido ao meio; engolir sem mastigar."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/Bula-Gabaneurin-Paciente-Consulta-Remedios.pdf",
+      "https://www.viatris.com/-/media/project/common/viatris/pdf/brazil/leaflets_legacy_myl_brazil/neurontin_bula_profissional.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "olanzapina",
+   "classe": "C1",
+   "orientacoes": [
+    "Tomar uma vez ao dia, com ou sem alimentos. Engolir inteiro, sem partir nem mastigar.",
+    "Pode causar sonolência e tontura: não dirigir nem operar máquinas até saber como o remédio o afeta.",
+    "Levantar-se devagar da cama ou da cadeira, pois a pressão pode cair ao ficar em pé.",
+    "Evitar bebidas alcoólicas durante o tratamento.",
+    "Pode aumentar o peso, a glicose e o colesterol: o médico pode pedir exames durante o tratamento.",
+    "Não interromper o tratamento por conta própria; a suspensão deve ser orientada pelo médico."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (10 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia (10 mg), em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 ao dia (20 mg, máximo)",
+       "texto": "Tomar 2 comprimidos juntos por via oral uma vez ao dia (20 mg, dose máxima), em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Olanzapina-Eurofarma-Profissional-Consulta-Remedios.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Zyprexa-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "5 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (5 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia (5 mg), em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "Mania: 3 ao dia (15 mg)",
+       "texto": "Tomar 3 comprimidos juntos por via oral uma vez ao dia (15 mg), em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Olanzapina-Eurofarma-Profissional-Consulta-Remedios.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Zyprexa-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (10 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia (10 mg), em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 ao dia (20 mg, máximo)",
+       "texto": "Tomar 2 comprimidos juntos por via oral uma vez ao dia (20 mg, dose máxima), em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Olanzapina-Eurofarma-Profissional-Consulta-Remedios.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Zyprexa-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "5 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (5 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia (5 mg), em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "Mania: 3 ao dia (15 mg)",
+       "texto": "Tomar 3 comprimidos juntos por via oral uma vez ao dia (15 mg), em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Olanzapina-Eurofarma-Profissional-Consulta-Remedios.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Zyprexa-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "levetiracetam",
+   "classe": "C1",
+   "orientacoes": [
+    "Tomar sempre nos mesmos horários, com ou sem alimentos.",
+    "Não parar de tomar de repente: a retirada deve ser gradual, com orientação médica.",
+    "Pode causar sonolência e tontura, principalmente no início ou após aumento da dose; cuidado ao dirigir.",
+    "Avisar o médico se surgirem mudanças de humor, irritabilidade, depressão ou pensamentos de se machucar."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "250 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h, 2 semanas (início)",
+       "texto": "Tomar 1 comprimido (250 mg) por via oral de 12 em 12 horas por 2 semanas; depois, passar para 500 mg de 12 em 12 horas.",
+       "quantidade": 28,
+       "dias": 14
+      },
+      {
+       "rotulo": "2 de 12/12 h (500 mg), contínuo",
+       "texto": "Tomar 2 comprimidos (500 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro com um copo de água."
+     ],
+     "fontes": [
+      "https://product-data.raiadrogasil.io/documents/3824803.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "500 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h, contínuo",
+       "texto": "Tomar 1 comprimido (500 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 12/12 h (1000 mg), contínuo",
+       "texto": "Tomar 2 comprimidos (1000 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro com um copo de água."
+     ],
+     "fontes": [
+      "https://product-data.raiadrogasil.io/documents/3824803.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "750 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h, contínuo",
+       "texto": "Tomar 1 comprimido (750 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 12/12 h (1500 mg), dose máxima",
+       "texto": "Tomar 2 comprimidos (1500 mg) por via oral de 12 em 12 horas, em uso contínuo. Dose máxima: 3000 mg por dia.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro com um copo de água."
+     ],
+     "fontes": [
+      "https://product-data.raiadrogasil.io/documents/3824803.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "1 g",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h, contínuo",
+       "texto": "Tomar 1 comprimido (1000 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro com um copo de água."
+     ],
+     "fontes": [
+      "https://product-data.raiadrogasil.io/documents/3824803.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido de liberação prolongada",
+     "concentracao": "500 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia, 2 semanas (início)",
+       "texto": "Tomar 1 comprimido (500 mg) por via oral uma vez ao dia por 2 semanas; depois, passar para 1000 mg uma vez ao dia.",
+       "quantidade": 14,
+       "dias": 14
+      },
+      {
+       "rotulo": "2 juntos 1x/dia (1000 mg), contínuo",
+       "texto": "Tomar 2 comprimidos (1000 mg) juntos, por via oral, uma vez ao dia, sempre no mesmo horário, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "3 juntos 1x/dia (1500 mg), contínuo",
+       "texto": "Tomar 3 comprimidos (1500 mg) juntos, por via oral, uma vez ao dia, sempre no mesmo horário, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir inteiro com um copo de água, sem partir, abrir ou mastigar."
+     ],
+     "fontes": [
+      "https://img.drogasil.com.br/raiadrogasil_bula/KeppraXr.pdf"
+     ]
+    },
+    {
+     "forma": "solução oral",
+     "concentracao": "100 mg/mL",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "5 mL (500 mg) de 12/12 h, contínuo",
+       "texto": "Tomar 5 mL (500 mg) por via oral de 12 em 12 horas, puro ou diluído em água, em uso contínuo.",
+       "quantidade": 2,
+       "dias": 30
+      },
+      {
+       "rotulo": "2,5 mL (250 mg) de 12/12 h, 2 semanas",
+       "texto": "Tomar 2,5 mL (250 mg) por via oral de 12 em 12 horas por 2 semanas; depois, passar para 5 mL de 12 em 12 horas.",
+       "quantidade": 1,
+       "dias": 14
+      }
+     ],
+     "pediatrico": {
+      "mgKgDia": 20,
+      "componente": "levetiracetam",
+      "dosesDia": 2,
+      "mgPorMl": 100,
+      "maxMgDia": 3000,
+      "dias": 30,
+      "texto": "Tomar __ mL por via oral de 12 em 12 horas, puro ou diluído em água, em uso contínuo."
+     },
+     "orientacoes": [
+      "Medir a dose com a seringa dosadora que acompanha o frasco; pode tomar puro ou diluído em um copo com água.",
+      "Depois de aberto, o frasco vale 7 meses. Guardar em temperatura ambiente."
+     ],
+     "fontes": [
+      "https://product-data.raiadrogasil.io/documents/3824803.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "topiramato",
+   "classe": "C1",
+   "orientacoes": [
+    "Pode ser tomado com ou sem alimentos. Engolir o comprimido inteiro, sem partir.",
+    "Beber bastante líquido durante o tratamento, para reduzir o risco de pedra nos rins.",
+    "Pode causar sonolência, tontura, formigamento e dificuldade de concentração; evitar bebida alcoólica.",
+    "Se tiver dor nos olhos ou piora súbita da visão, procurar atendimento imediatamente.",
+    "Não parar de repente: a retirada deve ser gradual. Mulheres que podem engravidar devem usar método contraceptivo eficaz."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "50 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h (100 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido (50 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "Semana 1: 1 à noite (50 mg)",
+       "texto": "Tomar 1 comprimido (50 mg) por via oral à noite por 7 dias; depois, aumentar conforme orientação médica.",
+       "quantidade": 7,
+       "dias": 7
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://assets.jnjlabels.com/innovativemedicine/latam/brasil/topamax-pub-vps.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "25 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Semana 1: 1 à noite (25 mg)",
+       "texto": "Tomar 1 comprimido (25 mg) por via oral à noite por 7 dias; depois, passar para 25 mg de 12 em 12 horas.",
+       "quantidade": 7,
+       "dias": 7
+      },
+      {
+       "rotulo": "Semana 2: 1 de 12/12 h (50 mg/dia)",
+       "texto": "Tomar 1 comprimido (25 mg) por via oral de 12 em 12 horas por 7 dias; depois, se orientado pelo médico, passar para 75 mg por dia.",
+       "quantidade": 14,
+       "dias": 7
+      },
+      {
+       "rotulo": "Semana 3: 1 de manhã e 2 à noite",
+       "texto": "Tomar 1 comprimido (25 mg) de manhã e 2 comprimidos (50 mg) à noite, por via oral, por 7 dias; depois, passar para 50 mg de 12 em 12 horas.",
+       "quantidade": 21,
+       "dias": 7
+      },
+      {
+       "rotulo": "1 de 12/12 h (50 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido (25 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://assets.jnjlabels.com/innovativemedicine/latam/brasil/topamax-pub-vps.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "100 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h (200 mg/dia), contínuo",
+       "texto": "Tomar 1 comprimido (100 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 12/12 h (400 mg/dia), contínuo",
+       "texto": "Tomar 2 comprimidos (200 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://assets.jnjlabels.com/innovativemedicine/latam/brasil/topamax-pub-vps.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "donepezila",
+   "classe": "C1",
+   "orientacoes": [
+    "Tomar uma vez ao dia, sempre no mesmo horário.",
+    "Avisar o médico se tiver náusea, diarreia ou perda de apetite que não passam, desmaio ou batimento cardíaco lento."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (10 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia (10 mg), em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Eranz-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "5 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Início: 1 ao dia, 4 a 6 semanas",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia (5 mg) nas primeiras 4 a 6 semanas; depois, o médico pode aumentar para 10 mg.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 ao dia (5 mg), uso contínuo",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia (5 mg), em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Eranz-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "celecoxibe",
+   "classe": "C1",
+   "orientacoes": [
+    "Tomar a menor dose pelo menor tempo possível e não usar junto com outros anti-inflamatórios.",
+    "Avisar o médico se tiver doença do coração, pressão alta, úlcera ou sangramento no estômago ou doença dos rins.",
+    "Pode ser tomado com ou sem alimento."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "cápsula dura",
+     "concentracao": "200 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Dor aguda: 2 no 1º dia, depois 12/12 h",
+       "texto": "No 1º dia, tomar 2 cápsulas juntas e, se necessário, mais 1 cápsula 12 horas depois; do 2º ao 5º dia, tomar 1 cápsula de 12 em 12 horas, se dor. Não passar de 2 cápsulas por dia após o 1º dia.",
+       "quantidade": 11,
+       "dias": 5
+      },
+      {
+       "rotulo": "Cólica menstrual, 3 dias",
+       "texto": "No 1º dia, tomar 2 cápsulas juntas e, se necessário, mais 1 cápsula 12 horas depois; no 2º e 3º dias, tomar 1 cápsula de 12 em 12 horas, se dor.",
+       "quantidade": 7,
+       "dias": 3
+      },
+      {
+       "rotulo": "1 ao dia, 30 dias",
+       "texto": "Tomar 1 cápsula por via oral uma vez ao dia por 30 dias.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 12/12 h, 30 dias",
+       "texto": "Tomar 1 cápsula por via oral de 12 em 12 horas por 30 dias. Não passar de 2 cápsulas por dia.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Celebra-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura",
+     "concentracao": "100 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h, 30 dias",
+       "texto": "Tomar 1 cápsula por via oral de 12 em 12 horas por 30 dias.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 de 12/12 h, 30 dias",
+       "texto": "Tomar 2 cápsulas por via oral de 12 em 12 horas por 30 dias. Não passar de 4 cápsulas por dia.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Celebra-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "citalopram",
+   "classe": "C1",
+   "orientacoes": [
+    "O efeito costuma aparecer após 2 a 4 semanas de uso contínuo.",
+    "Não parar de tomar nem mudar a dose por conta própria; a retirada deve ser gradual, com orientação médica.",
+    "Se surgirem piora da ansiedade, agitação ou pensamentos de se machucar, principalmente no início, procurar o médico.",
+    "Evitar bebidas alcoólicas. No início pode causar sonolência ou tontura: cuidado ao dirigir."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "20 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (20 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Pode ser tomado a qualquer hora, com ou sem alimento. Engolir com água, sem mastigar."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Cipramil-Profissional-Consulta-Remedios.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Procimax-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "40 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (40 mg, máximo)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, em uso contínuo. Não ultrapassar 40 mg por dia.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Pode ser tomado a qualquer hora, com ou sem alimento. Engolir com água, sem mastigar."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Cipramil-Profissional-Consulta-Remedios.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Procimax-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "divalproato de sodio",
+   "classe": "C1",
+   "orientacoes": [
+    "Não parar de tomar de repente: a retirada deve ser gradual, com orientação médica.",
+    "Não usar na gravidez: pode causar malformações. Mulheres que podem engravidar devem usar método contraceptivo eficaz durante todo o tratamento.",
+    "Procurar atendimento se surgir dor forte na barriga, vômitos, pele ou olhos amarelados, inchaço ou sonolência intensa.",
+    "Pode causar sonolência, que piora com álcool: não dirigir nem operar máquinas durante o tratamento.",
+    "Fazer os exames de sangue pedidos pelo médico durante o tratamento."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido de liberação prolongada",
+     "concentracao": "500 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia, 1 semana (início)",
+       "texto": "Tomar 1 comprimido (500 mg) por via oral uma vez ao dia por 1 semana; depois, passar para 2 comprimidos (1000 mg) uma vez ao dia.",
+       "quantidade": 7,
+       "dias": 7
+      },
+      {
+       "rotulo": "2 juntos 1x/dia (1000 mg), contínuo",
+       "texto": "Tomar 2 comprimidos (1000 mg) juntos, por via oral, uma vez ao dia, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, sem partir, triturar ou mastigar."
+     ],
+     "fontes": [
+      "https://www.abbottbrasil.com.br/content/dam/corp/abbott/pt-br/documents/pdfs/nossas-bulas/D/BU-37-Depakote-ER-Bula-Profissional-FINAL.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido de liberação prolongada",
+     "concentracao": "250 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "2 juntos 1x/dia (500 mg), 1 semana",
+       "texto": "Tomar 2 comprimidos (500 mg) juntos, por via oral, uma vez ao dia por 1 semana; depois, passar para 1000 mg uma vez ao dia.",
+       "quantidade": 14,
+       "dias": 7
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, sem partir, triturar ou mastigar."
+     ],
+     "fontes": [
+      "https://www.abbottbrasil.com.br/content/dam/corp/abbott/pt-br/documents/pdfs/nossas-bulas/D/BU-37-Depakote-ER-Bula-Profissional-FINAL.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido de liberação retardada",
+     "concentracao": "250 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h, contínuo",
+       "texto": "Tomar 1 comprimido (250 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 8/8 h (750 mg/dia)",
+       "texto": "Tomar 1 comprimido (250 mg) por via oral de 8 em 8 horas.",
+       "quantidade": 90,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, sem partir, triturar ou mastigar. Pode ser tomado com alimentos se causar desconforto no estômago."
+     ],
+     "fontes": [
+      "https://www.abbottbrasil.com.br/content/dam/corp/abbott/pt-br/documents/pdfs/nossas-bulas/D/BU-32-Depakote-DR-Bula-Profissional-FINAL.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido de liberação retardada",
+     "concentracao": "500 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h (1000 mg), contínuo",
+       "texto": "Tomar 1 comprimido (500 mg) por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, sem partir, triturar ou mastigar. Pode ser tomado com alimentos se causar desconforto no estômago."
+     ],
+     "fontes": [
+      "https://www.abbottbrasil.com.br/content/dam/corp/abbott/pt-br/documents/pdfs/nossas-bulas/D/BU-32-Depakote-DR-Bula-Profissional-FINAL.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "litio",
+   "classe": "C1",
+   "orientacoes": [
+    "O médico vai pedir exames de sangue para medir o nível de lítio; colher o sangue de 8 a 12 horas após a última dose.",
+    "Beber bastante líquido e não mudar a quantidade de sal da comida sem falar com o médico.",
+    "Procurar o médico se tiver tremor forte, diarreia, vômitos, sonolência ou confusão: podem ser sinais de excesso de lítio.",
+    "Se esquecer uma dose e lembrar em até 3 horas, tomar; depois disso, pular e tomar a próxima no horário. Nunca dobrar a dose.",
+    "Engolir inteiro, sem partir nem mastigar.",
+    "Não interromper o tratamento por conta própria; a suspensão deve ser orientada pelo médico."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "300 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Manutenção: 1 de 8/8 h (900 mg/dia)",
+       "texto": "Tomar 1 comprimido por via oral de 8 em 8 horas (900 mg por dia), em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      },
+      {
+       "rotulo": "Manutenção: 1 de 6/6 h (1200 mg/dia)",
+       "texto": "Tomar 1 comprimido por via oral de 6 em 6 horas (1200 mg por dia), em uso contínuo.",
+       "quantidade": 120,
+       "dias": 30
+      },
+      {
+       "rotulo": "Mania aguda: 2 de 8/8 h (1800 mg/dia)",
+       "texto": "Tomar 2 comprimidos por via oral de 8 em 8 horas (1800 mg por dia), com exames de lítio no sangue 2 vezes por semana na fase aguda.",
+       "quantidade": 180,
+       "dias": 30
+      },
+      {
+       "rotulo": "Potencializador: 1 de 12/12 h",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas (600 mg por dia), junto com o antidepressivo, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://img.drogasil.com.br/raiadrogasil_bula/CARBOLITIUM.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido de liberação prolongada",
+     "concentracao": "450 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h (900 mg/dia)",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas (900 mg por dia), em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "Mania aguda: 2 de 12/12 h (1800 mg)",
+       "texto": "Tomar 2 comprimidos por via oral de 12 em 12 horas (1800 mg por dia), com exames de lítio no sangue 2 vezes por semana na fase aguda.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://www.saudedireta.com.br/catinc/drugs/bulas/carbolitiumcr.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "300 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Manutenção: 1 de 8/8 h (900 mg/dia)",
+       "texto": "Tomar 1 comprimido por via oral de 8 em 8 horas (900 mg por dia), em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      },
+      {
+       "rotulo": "Manutenção: 1 de 6/6 h (1200 mg/dia)",
+       "texto": "Tomar 1 comprimido por via oral de 6 em 6 horas (1200 mg por dia), em uso contínuo.",
+       "quantidade": 120,
+       "dias": 30
+      },
+      {
+       "rotulo": "Mania aguda: 2 de 8/8 h (1800 mg/dia)",
+       "texto": "Tomar 2 comprimidos por via oral de 8 em 8 horas (1800 mg por dia), com exames de lítio no sangue 2 vezes por semana na fase aguda.",
+       "quantidade": 180,
+       "dias": 30
+      },
+      {
+       "rotulo": "Potencializador: 1 de 12/12 h",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas (600 mg por dia), junto com o antidepressivo, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://img.drogasil.com.br/raiadrogasil_bula/CARBOLITIUM.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "memantina",
+   "classe": "C1",
+   "orientacoes": [
+    "Tomar todos os dias no mesmo horário, com ou sem alimentos."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Manutenção: 2 ao dia (20 mg)",
+       "texto": "Tomar 2 comprimidos juntos por via oral uma vez ao dia (20 mg), em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "Semana 1: meio comprimido ao dia",
+       "texto": "Tomar meio comprimido (5 mg) por via oral uma vez ao dia por 7 dias.",
+       "quantidade": 4,
+       "dias": 7
+      },
+      {
+       "rotulo": "Semana 2: 1 comprimido ao dia",
+       "texto": "Tomar 1 comprimido (10 mg) por via oral uma vez ao dia por 7 dias.",
+       "quantidade": 7,
+       "dias": 7
+      },
+      {
+       "rotulo": "Semana 3: 1 comprimido e meio ao dia",
+       "texto": "Tomar 1 comprimido e meio (15 mg) por via oral uma vez ao dia por 7 dias.",
+       "quantidade": 11,
+       "dias": 7
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Não mastigar; o comprimido de 10 mg pode ser partido ao meio."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Ebix-Profissional-Consulta-Remedios.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Zider-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "20 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (20 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia (20 mg), em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido sem mastigar."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Ebix-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "solução oral",
+     "concentracao": "10 mg/mL",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Manutenção: 20 gotas 2x/dia",
+       "texto": "Tomar 20 gotas (10 mg) de manhã e 20 gotas (10 mg) à tarde, por via oral, com um pouco de água, em uso contínuo.",
+       "quantidade": 2,
+       "dias": 30
+      },
+      {
+       "rotulo": "Início: semanas 1 a 3",
+       "texto": "Semana 1: tomar 10 gotas de manhã. Semana 2: 10 gotas de manhã e 10 à tarde. Semana 3: 20 gotas de manhã e 10 à tarde. A partir da semana 4, 20 gotas de manhã e 20 à tarde.",
+       "quantidade": 1,
+       "dias": 21
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Cada 20 gotas equivalem a 1 mL (10 mg). Tomar com um pouco de água, junto das refeições ou lanches.",
+      "Depois de aberto, o frasco vale 35 dias."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Alois-Solucao-Oral-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "solução oral",
+     "concentracao": "20 mg/mL",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Manutenção: 10 gotas 2x/dia",
+       "texto": "Tomar 10 gotas (10 mg) de manhã e 10 gotas (10 mg) à tarde, por via oral, com um pouco de água, em uso contínuo.",
+       "quantidade": 1,
+       "dias": 30
+      },
+      {
+       "rotulo": "Início: semanas 1 a 3",
+       "texto": "Semana 1: tomar 5 gotas de manhã. Semana 2: 5 gotas de manhã e 5 à tarde. Semana 3: 10 gotas de manhã e 5 à tarde. A partir da semana 4, 10 gotas de manhã e 10 à tarde.",
+       "quantidade": 1,
+       "dias": 21
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Cada gota tem 1 mg (20 gotas fazem 1 mL). Pingar com o frasco na vertical, em um pouco de água, junto das refeições ou lanches.",
+      "Depois de aberto, o frasco de 30 mL vale 60 dias."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Zider-Gotas-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido orodispersível",
+     "concentracao": "5 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Semana 1: 1 ao dia (5 mg)",
+       "texto": "Colocar 1 comprimido na boca e deixar dissolver, uma vez ao dia, por 7 dias.",
+       "quantidade": 7,
+       "dias": 7
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Colocar o comprimido na boca logo depois de tirar do blíster, sem água nem alimento na boca, e deixar dissolver."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Moriale-ODT-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido orodispersível",
+     "concentracao": "10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Semana 2: 1 ao dia (10 mg)",
+       "texto": "Colocar 1 comprimido na boca e deixar dissolver, uma vez ao dia, por 7 dias.",
+       "quantidade": 7,
+       "dias": 7
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Colocar o comprimido na boca logo depois de tirar do blíster, sem água nem alimento na boca, e deixar dissolver."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Moriale-ODT-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "aripiprazol",
+   "classe": "C1",
+   "orientacoes": [
+    "Tomar uma vez ao dia, sempre no mesmo horário, com ou sem alimentos.",
+    "Pode causar sonolência e tontura: não dirigir nem operar máquinas até saber como o remédio o afeta.",
+    "Evitar bebidas alcoólicas durante o tratamento.",
+    "Não interromper o tratamento por conta própria; a suspensão deve ser orientada pelo médico."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido",
+     "concentracao": "10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (10 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia (10 mg), em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Aristab-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "15 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (15 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia (15 mg), em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "Bipolar: 2 ao dia (30 mg, máximo)",
+       "texto": "Tomar 2 comprimidos juntos por via oral uma vez ao dia (30 mg, dose máxima), em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Aristab-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "20 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (20 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia (20 mg), em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Aristab-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "30 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (30 mg, máximo)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia (30 mg, dose máxima), em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Aristab-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "suspensão oral",
+     "concentracao": "1 mg/mL",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "10 mL 1x/dia (10 mg)",
+       "texto": "Tomar 10 mL (10 mg) por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 2,
+       "dias": 30
+      },
+      {
+       "rotulo": "15 mL 1x/dia (15 mg)",
+       "texto": "Tomar 15 mL (15 mg) por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 3,
+       "dias": 30
+      },
+      {
+       "rotulo": "Bipolar: 30 mL 1x/dia (máximo)",
+       "texto": "Tomar 30 mL (30 mg, dose máxima) por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 6,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Agitar antes de usar e medir com o copo dosador que acompanha o frasco.",
+      "Depois de aberto, o frasco vale 60 dias."
+     ],
+     "fontes": [
+      "https://drogariasp.vteximg.com.br/arquivos/711160---aristab-1mgml-ache-suspensao-oral-150ml.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Aristab-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "suspensão oral",
+     "concentracao": "20 mg/mL",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "10 gotas 1x/dia (10 mg)",
+       "texto": "Tomar 10 gotas (10 mg) por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 1,
+       "dias": 30
+      },
+      {
+       "rotulo": "15 gotas 1x/dia (15 mg)",
+       "texto": "Tomar 15 gotas (15 mg) por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 1,
+       "dias": 30
+      },
+      {
+       "rotulo": "Bipolar: 30 gotas 1x/dia (máximo)",
+       "texto": "Tomar 30 gotas (30 mg, dose máxima) por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 2,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Cada gota tem 1 mg (20 gotas fazem 1 mL). Agitar antes de usar e contar as gotas com o frasco na vertical.",
+      "Depois de aberto, o frasco vale 6 meses."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Arpejo-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "valproato de sodio",
+   "classe": "C1",
+   "orientacoes": [
+    "Não parar de tomar de repente: a retirada deve ser gradual, com orientação médica.",
+    "Não usar na gravidez: pode causar malformações. Mulheres que podem engravidar devem usar método contraceptivo eficaz durante todo o tratamento.",
+    "Procurar atendimento se surgir dor forte na barriga, vômitos, pele ou olhos amarelados, inchaço ou sonolência intensa.",
+    "Pode causar sonolência, que piora com álcool: não dirigir nem operar máquinas durante o tratamento.",
+    "Fazer os exames de sangue pedidos pelo médico durante o tratamento."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "xarope",
+     "concentracao": "50 mg/mL",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Início, 40 a 59,9 kg: 5 mL de 8/8 h",
+       "texto": "Tomar 5 mL (250 mg) por via oral de 8 em 8 horas.",
+       "quantidade": 5,
+       "dias": 30
+      },
+      {
+       "rotulo": "Início, 60 a 74,9 kg: 5, 5 e 10 mL",
+       "texto": "Tomar 5 mL de manhã, 5 mL à tarde e 10 mL à noite, por via oral (1000 mg por dia).",
+       "quantidade": 6,
+       "dias": 30
+      },
+      {
+       "rotulo": "Início, 75 a 89,9 kg: 10, 5 e 10 mL",
+       "texto": "Tomar 10 mL de manhã, 5 mL à tarde e 10 mL à noite, por via oral (1250 mg por dia).",
+       "quantidade": 8,
+       "dias": 30
+      },
+      {
+       "rotulo": "Início, 25 a 39,9 kg: 5 mL de 12/12 h",
+       "texto": "Tomar 5 mL (250 mg) por via oral de manhã e 5 mL à noite.",
+       "quantidade": 3,
+       "dias": 30
+      }
+     ],
+     "pediatrico": {
+      "mgKgDia": 15,
+      "componente": "valproato de sodio",
+      "dosesDia": 2,
+      "mgPorMl": 50,
+      "maxMgDia": null,
+      "dias": 30,
+      "texto": "Tomar __ mL por via oral de 12 em 12 horas, em uso contínuo."
+     },
+     "orientacoes": [
+      "Medir a dose com o copo dosador que acompanha o frasco.",
+      "Guardar em temperatura ambiente, protegido da luz."
+     ],
+     "fontes": [
+      "https://www.abbottbrasil.com.br/content/dam/corp/abbott/pt-br/documents/pdfs/nossas-bulas/D/BU-31-Depakene-Bula-Profissional-Xpe-FINAL.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "vortioxetina",
+   "classe": "C1",
+   "orientacoes": [
+    "O efeito costuma aparecer após 2 a 4 semanas de uso contínuo.",
+    "Não parar de tomar nem mudar a dose sem falar com o médico.",
+    "Se surgirem piora da ansiedade, agitação ou pensamentos de se machucar, principalmente no início, procurar o médico.",
+    "Evitar bebidas alcoólicas. No início pode causar sonolência ou tontura: cuidado ao dirigir."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (10 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Pode ser tomado a qualquer hora, com ou sem alimento. Engolir com água, sem partir nem mastigar.",
+      "Se esquecer uma dose, pular e tomar a próxima no dia seguinte, no horário de costume."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Brintellix-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "5 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (5 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Pode ser tomado a qualquer hora, com ou sem alimento. Engolir com água, sem partir nem mastigar.",
+      "Se esquecer uma dose, pular e tomar a próxima no dia seguinte, no horário de costume."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Brintellix-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "15 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (15 mg)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Pode ser tomado a qualquer hora, com ou sem alimento. Engolir com água, sem partir nem mastigar.",
+      "Se esquecer uma dose, pular e tomar a próxima no dia seguinte, no horário de costume."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Brintellix-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "20 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 ao dia (20 mg, máximo)",
+       "texto": "Tomar 1 comprimido por via oral uma vez ao dia, em uso contínuo. Não ultrapassar 20 mg por dia.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Pode ser tomado a qualquer hora, com ou sem alimento. Engolir com água, sem partir nem mastigar.",
+      "Se esquecer uma dose, pular e tomar a próxima no dia seguinte, no horário de costume."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Brintellix-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "nortriptilina",
+   "classe": "C1",
+   "orientacoes": [
+    "Pode causar sonolência, boca seca, prisão de ventre e tontura ao levantar: levantar-se devagar e cuidado ao dirigir.",
+    "Evitar bebida alcoólica durante o tratamento.",
+    "Não parar de tomar de repente: a retirada deve ser gradual, com orientação médica.",
+    "No início do tratamento, procurar o médico se houver piora do humor, agitação ou pensamentos de se machucar."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "cápsula dura",
+     "concentracao": "25 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 à noite, contínuo",
+       "texto": "Tomar 1 cápsula por via oral à noite, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 8/8 h (75 mg/dia), contínuo",
+       "texto": "Tomar 1 cápsula por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 6/6 h (100 mg/dia), contínuo",
+       "texto": "Tomar 1 cápsula por via oral de 6 em 6 horas, em uso contínuo.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Pamelor-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura",
+     "concentracao": "10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 à noite, contínuo",
+       "texto": "Tomar 1 cápsula por via oral à noite, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 8/8 h (30 mg/dia), contínuo",
+       "texto": "Tomar 1 cápsula por via oral de 8 em 8 horas, em uso contínuo.",
+       "quantidade": 90,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Pamelor-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura",
+     "concentracao": "50 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 à noite, contínuo",
+       "texto": "Tomar 1 cápsula por via oral à noite, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 12/12 h (100 mg/dia), contínuo",
+       "texto": "Tomar 1 cápsula por via oral de 12 em 12 horas, em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Pamelor-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "cápsula dura",
+     "concentracao": "75 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 à noite, contínuo",
+       "texto": "Tomar 1 cápsula por via oral à noite, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "2 à noite (150 mg, dose máxima)",
+       "texto": "Tomar 2 cápsulas juntas por via oral à noite, em uso contínuo. Não ultrapassar 2 cápsulas por dia.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Doses acima de 100 mg por dia exigem exame do nível do remédio no sangue, conforme orientação médica."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Pamelor-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "tramadol+paracetamol",
+   "classe": "A2-adendo",
+   "orientacoes": [
+    "Pode causar sonolência e tontura: não dirigir nem operar máquinas até saber como o remédio age em você.",
+    "Não tomar bebida alcoólica nem calmantes ou remédios para dormir sem orientação médica.",
+    "Pode causar náusea e prisão de ventre: beber bastante líquido e comer fibras.",
+    "Usar só na dose e pelo tempo prescritos, pelo risco de dependência. Após uso prolongado, não parar de repente.",
+    "Não tomar outros remédios com paracetamol ao mesmo tempo: o limite de paracetamol é 4 g por dia."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "37,5 mg + 325 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 a 2 de 6/6 h se dor, 5 dias",
+       "texto": "Tomar 1 a 2 comprimidos por via oral de 6 em 6 horas, se dor, por até 5 dias. Não passar de 8 comprimidos por dia.",
+       "quantidade": 40,
+       "dias": 5
+      },
+      {
+       "rotulo": "1 de 6/6 h se dor, 3 dias",
+       "texto": "Tomar 1 comprimido por via oral de 6 em 6 horas, se dor, por até 3 dias. Não passar de 8 comprimidos por dia.",
+       "quantidade": 12,
+       "dias": 3
+      },
+      {
+       "rotulo": "Dor crônica: início, subir a cada 3 dias",
+       "texto": "Tomar 1 comprimido por dia nos dias 1 a 3, 2 por dia nos dias 4 a 6, 3 por dia nos dias 7 a 9 e, a partir do 10º dia, 1 comprimido de 6 em 6 horas. Não passar de 8 comprimidos por dia.",
+       "quantidade": 102,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 6/6 h, 30 dias",
+       "texto": "Tomar 1 comprimido por via oral de 6 em 6 horas, em uso contínuo, por 30 dias. Não passar de 8 comprimidos por dia.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, sem partir nem mastigar, com ou sem alimento."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Ultracet-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "37,5 mg + 325 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 a 2 de 6/6 h se dor, 5 dias",
+       "texto": "Tomar 1 a 2 comprimidos por via oral de 6 em 6 horas, se dor, por até 5 dias. Não passar de 8 comprimidos por dia.",
+       "quantidade": 40,
+       "dias": 5
+      },
+      {
+       "rotulo": "1 de 6/6 h se dor, 3 dias",
+       "texto": "Tomar 1 comprimido por via oral de 6 em 6 horas, se dor, por até 3 dias. Não passar de 8 comprimidos por dia.",
+       "quantidade": 12,
+       "dias": 3
+      },
+      {
+       "rotulo": "Dor crônica: início, subir a cada 3 dias",
+       "texto": "Tomar 1 comprimido por dia nos dias 1 a 3, 2 por dia nos dias 4 a 6, 3 por dia nos dias 7 a 9 e, a partir do 10º dia, 1 comprimido de 6 em 6 horas. Não passar de 8 comprimidos por dia.",
+       "quantidade": 102,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 6/6 h, 30 dias",
+       "texto": "Tomar 1 comprimido por via oral de 6 em 6 horas, em uso contínuo, por 30 dias. Não passar de 8 comprimidos por dia.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, sem partir nem mastigar, com ou sem alimento."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Paratram-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "levomepromazina",
+   "classe": "C1",
+   "orientacoes": [
+    "Causa sonolência: não dirigir nem operar máquinas. Evitar bebidas alcoólicas.",
+    "No início do tratamento, ficar deitado por 1 hora depois de cada dose, pois a pressão pode cair.",
+    "Não interromper o tratamento por conta própria; a suspensão deve ser orientada pelo médico."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "25 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Início: 1 de 12/12 h (50 mg/dia)",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas (50 mg por dia) no início do tratamento; o médico aumenta a dose aos poucos.",
+       "quantidade": 20,
+       "dias": 10
+      },
+      {
+       "rotulo": "Dor (paciente terminal): 2 de 12/12 h",
+       "texto": "Tomar 2 comprimidos (50 mg) por via oral de 12 em 12 horas.",
+       "quantidade": 120,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Neozine-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "100 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h (200 mg/dia)",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas (200 mg por dia), em uso contínuo.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Neozine-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "solução oral",
+     "concentracao": "40 mg/mL",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Início: 25 gotas de 12/12 h",
+       "texto": "Tomar 25 gotas (25 mg) por via oral de 12 em 12 horas (50 mg por dia) no início do tratamento; o médico aumenta a dose aos poucos.",
+       "quantidade": 1,
+       "dias": 10
+      },
+      {
+       "rotulo": "Dor (terminal): 50 gotas de 12/12 h",
+       "texto": "Tomar 50 gotas (50 mg) por via oral de 12 em 12 horas.",
+       "quantidade": 4,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Cada gota tem 1 mg (40 gotas fazem 1 mL). Diluir as gotas em água com açúcar; nunca pingar direto na língua."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Neozine-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "codeina",
+   "classe": "A2-adendo",
+   "orientacoes": [
+    "Pode causar sonolência e tontura: não dirigir nem operar máquinas até saber como o remédio age em você.",
+    "Não tomar bebida alcoólica nem calmantes ou remédios para dormir sem orientação médica.",
+    "Pode causar náusea e prisão de ventre: beber bastante líquido e comer fibras.",
+    "Usar só na dose e pelo tempo prescritos, pelo risco de dependência. Após uso prolongado, não parar de repente."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido",
+     "concentracao": "30 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 6/6 h, 3 dias",
+       "texto": "Tomar 1 comprimido (30 mg) por via oral de 6 em 6 horas por 3 dias. Não passar de 360 mg de codeína por dia.",
+       "quantidade": 12,
+       "dias": 3
+      },
+      {
+       "rotulo": "1 de 4/4 h, 3 dias",
+       "texto": "Tomar 1 comprimido (30 mg) por via oral de 4 em 4 horas por 3 dias. Não passar de 360 mg de codeína por dia.",
+       "quantidade": 18,
+       "dias": 3
+      },
+      {
+       "rotulo": "2 de 6/6 h, 3 dias",
+       "texto": "Tomar 2 comprimidos (60 mg) por via oral de 6 em 6 horas por 3 dias. Não passar de 360 mg de codeína por dia.",
+       "quantidade": 24,
+       "dias": 3
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Codein-Comprimido-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "60 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 6/6 h, 3 dias",
+       "texto": "Tomar 1 comprimido (60 mg) por via oral de 6 em 6 horas por 3 dias. Não passar de 360 mg de codeína por dia.",
+       "quantidade": 12,
+       "dias": 3
+      },
+      {
+       "rotulo": "1 de 4/4 h, 3 dias",
+       "texto": "Tomar 1 comprimido (60 mg) por via oral de 4 em 4 horas por 3 dias. Não passar de 360 mg de codeína por dia.",
+       "quantidade": 18,
+       "dias": 3
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Codein-Comprimido-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "solução oral",
+     "concentracao": "3 mg/mL",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "10 mL de 6/6 h, 3 dias",
+       "texto": "Tomar 10 mL (30 mg) por via oral de 6 em 6 horas por 3 dias, medidos com o dosador. Não passar de 360 mg de codeína por dia.",
+       "quantidade": 1,
+       "dias": 3
+      },
+      {
+       "rotulo": "10 mL de 4/4 h, 3 dias",
+       "texto": "Tomar 10 mL (30 mg) por via oral de 4 em 4 horas por 3 dias, medidos com o dosador. Não passar de 360 mg de codeína por dia.",
+       "quantidade": 2,
+       "dias": 3
+      },
+      {
+       "rotulo": "5 mL de 6/6 h, 3 dias",
+       "texto": "Tomar 5 mL (15 mg) por via oral de 6 em 6 horas por 3 dias, medidos com o dosador. Não passar de 360 mg de codeína por dia.",
+       "quantidade": 1,
+       "dias": 3
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Medir a dose com o dosador que acompanha o frasco (5 mL contêm 15 mg; 10 mL, 30 mg)."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Codein-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "tramadol+diclofenaco",
+   "classe": "A2-adendo",
+   "orientacoes": [
+    "Pode causar sonolência e tontura: não dirigir nem operar máquinas até saber como o remédio age em você.",
+    "Não tomar bebida alcoólica nem calmantes ou remédios para dormir sem orientação médica.",
+    "Pode causar náusea e prisão de ventre: beber bastante líquido e comer fibras.",
+    "Usar só na dose e pelo tempo prescritos, pelo risco de dependência. Após uso prolongado, não parar de repente.",
+    "Tomar a menor dose pelo menor tempo possível e não usar junto com outros anti-inflamatórios.",
+    "Avisar o médico se tiver doença do coração, pressão alta, úlcera ou sangramento no estômago ou doença dos rins."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido",
+     "concentracao": "25 mg + 25 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 8/8 h, 5 dias",
+       "texto": "Tomar 1 comprimido por via oral de 8 em 8 horas por 5 dias. Não passar de 3 comprimidos por dia.",
+       "quantidade": 15,
+       "dias": 5
+      },
+      {
+       "rotulo": "1 de 8/8 h, 3 dias",
+       "texto": "Tomar 1 comprimido por via oral de 8 em 8 horas por 3 dias. Não passar de 3 comprimidos por dia.",
+       "quantidade": 9,
+       "dias": 3
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, com líquido."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Adorlan-Profissional-Consulta-Remedios.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Nusira-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido",
+     "concentracao": "50 mg + 50 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 8/8 h, 5 dias",
+       "texto": "Tomar 1 comprimido por via oral de 8 em 8 horas por 5 dias. Não passar de 3 comprimidos por dia.",
+       "quantidade": 15,
+       "dias": 5
+      },
+      {
+       "rotulo": "1 de 8/8 h, 3 dias",
+       "texto": "Tomar 1 comprimido por via oral de 8 em 8 horas por 3 dias. Não passar de 3 comprimidos por dia.",
+       "quantidade": 9,
+       "dias": 3
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, com líquido."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Adorlan-Profissional-Consulta-Remedios.pdf",
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Nusira-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "buprenorfina",
+   "classe": "A1-adendo",
+   "orientacoes": [
+    "Pode causar sonolência e tontura: não dirigir nem operar máquinas até saber como o remédio age em você.",
+    "Não tomar bebida alcoólica nem calmantes ou remédios para dormir sem orientação médica.",
+    "Pode causar náusea e prisão de ventre: beber bastante líquido e comer fibras.",
+    "Usar só na dose e pelo tempo prescritos, pelo risco de dependência. Após uso prolongado, não parar de repente.",
+    "Colar em pele limpa, seca e sem pelos (se preciso, cortar com tesoura), na parte de fora do braço, na parte de cima do peito ou das costas ou na lateral do peito.",
+    "Limpar o local só com água, sem sabão, álcool ou creme, e apertar o adesivo com a palma da mão por 30 segundos.",
+    "Trocar o local a cada adesivo novo e só repetir o mesmo local depois de 3 semanas. Se o adesivo cair, colar um novo.",
+    "Não expor o adesivo a calor (bolsa térmica, cobertor elétrico, sauna). Avisar o médico em caso de febre.",
+    "Ao trocar, dobrar o adesivo usado ao meio, com a parte colante para dentro, e descartar fora do alcance de crianças.",
+    "Não cortar o adesivo. Pode tomar banho e nadar com ele."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "adesivo transdérmico",
+     "concentracao": "10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 adesivo a cada 7 dias",
+       "texto": "Aplicar 1 adesivo na pele e trocar a cada 7 dias, sempre no mesmo dia da semana, em uso contínuo. Não usar mais de 2 adesivos ao mesmo tempo.",
+       "quantidade": 4,
+       "dias": 28
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://br.mundipharma.com/sites/mundi-pharma-brazil/files/products/bula_do%20profissional_Restiva.pdf"
+     ]
+    },
+    {
+     "forma": "adesivo transdérmico",
+     "concentracao": "5 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Início: 1 adesivo a cada 7 dias",
+       "texto": "Aplicar 1 adesivo na pele e trocar a cada 7 dias, sempre no mesmo dia da semana. Não aumentar a dose antes de 3 dias de uso. Não usar mais de 2 adesivos ao mesmo tempo.",
+       "quantidade": 4,
+       "dias": 28
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://br.mundipharma.com/sites/mundi-pharma-brazil/files/products/bula_do%20profissional_Restiva.pdf"
+     ]
+    },
+    {
+     "forma": "adesivo transdérmico",
+     "concentracao": "5 mcg/h",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Início: 1 adesivo a cada 7 dias",
+       "texto": "Aplicar 1 adesivo na pele e trocar a cada 7 dias, sempre no mesmo dia da semana. Não aumentar a dose antes de 3 dias de uso. Não usar mais de 2 adesivos ao mesmo tempo.",
+       "quantidade": 4,
+       "dias": 28
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://cr-net-public-prod.s3.amazonaws.com/product_leaflet/F98E5D146A7EBFD16C59097B80CAB8CB.pdf",
+      "https://adium.com.br/wp-content/uploads/sites/3/2026/01/02_Bula-Profissional_BUPRENORFINA_0050-04-1.pdf"
+     ]
+    },
+    {
+     "forma": "adesivo transdérmico",
+     "concentracao": "10 mcg/h",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 adesivo a cada 7 dias",
+       "texto": "Aplicar 1 adesivo na pele e trocar a cada 7 dias, sempre no mesmo dia da semana, em uso contínuo. Não usar mais de 2 adesivos ao mesmo tempo.",
+       "quantidade": 4,
+       "dias": 28
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://cr-net-public-prod.s3.amazonaws.com/product_leaflet/F98E5D146A7EBFD16C59097B80CAB8CB.pdf",
+      "https://adium.com.br/wp-content/uploads/sites/3/2026/01/02_Bula-Profissional_BUPRENORFINA_0050-04-1.pdf"
+     ]
+    },
+    {
+     "forma": "adesivo transdérmico",
+     "concentracao": "20 mcg/h",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 adesivo a cada 7 dias",
+       "texto": "Aplicar 1 adesivo na pele e trocar a cada 7 dias, sempre no mesmo dia da semana, em uso contínuo. Não usar mais de 2 adesivos ao mesmo tempo.",
+       "quantidade": 4,
+       "dias": 28
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://cr-net-public-prod.s3.amazonaws.com/product_leaflet/F98E5D146A7EBFD16C59097B80CAB8CB.pdf",
+      "https://adium.com.br/wp-content/uploads/sites/3/2026/01/02_Bula-Profissional_BUPRENORFINA_0050-04-1.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "oxicodona",
+   "classe": "A1-adendo",
+   "orientacoes": [
+    "Pode causar sonolência e tontura: não dirigir nem operar máquinas até saber como o remédio age em você.",
+    "Não tomar bebida alcoólica nem calmantes ou remédios para dormir sem orientação médica.",
+    "Pode causar náusea e prisão de ventre: beber bastante líquido e comer fibras.",
+    "Usar só na dose e pelo tempo prescritos, pelo risco de dependência. Após uso prolongado, não parar de repente.",
+    "Engolir o comprimido inteiro, sem partir, mastigar ou triturar, sempre nos mesmos horários e da mesma forma em relação às refeições."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido de liberação prolongada",
+     "concentracao": "10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h, 30 dias",
+       "texto": "Tomar 1 comprimido (10 mg) por via oral de 12 em 12 horas, sempre nos mesmos horários, por 30 dias.",
+       "quantidade": 60,
+       "dias": 30
+      },
+      {
+       "rotulo": "1 de 12/12 h, 7 dias",
+       "texto": "Tomar 1 comprimido (10 mg) por via oral de 12 em 12 horas, sempre nos mesmos horários, por 7 dias.",
+       "quantidade": 14,
+       "dias": 7
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Oxycontin-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido de liberação prolongada",
+     "concentracao": "20 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h, 30 dias",
+       "texto": "Tomar 1 comprimido (20 mg) por via oral de 12 em 12 horas, sempre nos mesmos horários, por 30 dias.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Oxycontin-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "oxicodona+naloxona",
+   "classe": "A1-adendo",
+   "orientacoes": [
+    "Pode causar sonolência e tontura: não dirigir nem operar máquinas até saber como o remédio age em você.",
+    "Não tomar bebida alcoólica nem calmantes ou remédios para dormir sem orientação médica.",
+    "Pode causar náusea e prisão de ventre: beber bastante líquido e comer fibras.",
+    "Usar só na dose e pelo tempo prescritos, pelo risco de dependência. Após uso prolongado, não parar de repente.",
+    "Engolir o comprimido inteiro, sem partir nem mastigar, com líquido, com ou sem alimento."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido de liberação prolongada",
+     "concentracao": "5 mg + 2,5 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h, 30 dias",
+       "texto": "Tomar 1 comprimido (5 mg + 2,5 mg) por via oral de 12 em 12 horas, sempre nos mesmos horários, por 30 dias. Não passar de 80 mg de oxicodona por dia.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://br.mundipharma.com/sites/mundi-pharma-brazil/files/products/bula_do%20profissional%20Targin.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido de liberação prolongada",
+     "concentracao": "10 mg + 5 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "Início: 1 de 12/12 h, 30 dias",
+       "texto": "Tomar 1 comprimido (10 mg + 5 mg) por via oral de 12 em 12 horas, sempre nos mesmos horários, por 30 dias. Não passar de 80 mg de oxicodona por dia.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://br.mundipharma.com/sites/mundi-pharma-brazil/files/products/bula_do%20profissional%20Targin.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido de liberação prolongada",
+     "concentracao": "20 mg + 10 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 12/12 h, 30 dias",
+       "texto": "Tomar 1 comprimido (20 mg + 10 mg) por via oral de 12 em 12 horas, sempre nos mesmos horários, por 30 dias. Não passar de 80 mg de oxicodona por dia.",
+       "quantidade": 60,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://br.mundipharma.com/sites/mundi-pharma-brazil/files/products/bula_do%20profissional%20Targin.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "perampanel",
+   "classe": "B1-adendo",
+   "orientacoes": [
+    "Tomar uma vez ao dia, antes de dormir, com ou sem alimento. Engolir inteiro com um copo de água, sem mastigar, triturar ou partir.",
+    "Pode causar tontura e sonolência; cuidado ao dirigir. Evitar bebidas alcoólicas.",
+    "Avisar o médico se surgir irritação, agressividade ou mudança de humor.",
+    "Se esquecer uma dose, não tomar depois: tomar a próxima no horário de costume.",
+    "Não parar de tomar de repente: a retirada deve ser gradual, com orientação médica."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "2 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "2 mg ao deitar, 2 semanas e subir",
+       "texto": "Tomar 1 comprimido (2 mg) por via oral uma vez ao dia, antes de dormir, por 2 semanas; depois, passar para 4 mg.",
+       "quantidade": 14,
+       "dias": 14
+      },
+      {
+       "rotulo": "2 mg ao deitar, 1 semana e subir",
+       "texto": "Tomar 1 comprimido (2 mg) por via oral uma vez ao dia, antes de dormir, por 1 semana; depois, passar para 4 mg.",
+       "quantidade": 7,
+       "dias": 7
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Fycompa-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "4 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "4 mg ao deitar, contínuo",
+       "texto": "Tomar 1 comprimido (4 mg) por via oral uma vez ao dia, antes de dormir, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "4 mg ao deitar, 2 semanas e subir",
+       "texto": "Tomar 1 comprimido (4 mg) por via oral uma vez ao dia, antes de dormir, por 2 semanas; depois, passar para 6 mg.",
+       "quantidade": 14,
+       "dias": 14
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Fycompa-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "6 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "6 mg ao deitar, contínuo",
+       "texto": "Tomar 1 comprimido (6 mg) por via oral uma vez ao dia, antes de dormir, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      },
+      {
+       "rotulo": "6 mg ao deitar, 2 semanas e subir",
+       "texto": "Tomar 1 comprimido (6 mg) por via oral uma vez ao dia, antes de dormir, por 2 semanas; depois, passar para 8 mg.",
+       "quantidade": 14,
+       "dias": 14
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Fycompa-Profissional-Consulta-Remedios.pdf"
+     ]
+    },
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "8 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "8 mg ao deitar, contínuo",
+       "texto": "Tomar 1 comprimido (8 mg) por via oral uma vez ao dia, antes de dormir, em uso contínuo.",
+       "quantidade": 30,
+       "dias": 30
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Fycompa-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  },
+  {
+   "chave": "codeina+diclofenaco",
+   "classe": "A2-adendo",
+   "orientacoes": [
+    "Pode causar sonolência e tontura: não dirigir nem operar máquinas até saber como o remédio age em você.",
+    "Não tomar bebida alcoólica nem calmantes ou remédios para dormir sem orientação médica.",
+    "Pode causar náusea e prisão de ventre: beber bastante líquido e comer fibras.",
+    "Usar só na dose e pelo tempo prescritos, pelo risco de dependência. Após uso prolongado, não parar de repente.",
+    "Tomar a menor dose pelo menor tempo possível e não usar junto com outros anti-inflamatórios.",
+    "Avisar o médico se tiver doença do coração, pressão alta, úlcera ou sangramento no estômago ou doença dos rins."
+   ],
+   "apresentacoes": [
+    {
+     "forma": "comprimido revestido",
+     "concentracao": "50 mg + 50 mg",
+     "marca": null,
+     "dose": null,
+     "regimes": [
+      {
+       "rotulo": "1 de 8/8 h, 5 dias",
+       "texto": "Tomar 1 comprimido por via oral de 8 em 8 horas, antes das refeições, por 5 dias. Não passar de 3 comprimidos por dia.",
+       "quantidade": 15,
+       "dias": 5
+      },
+      {
+       "rotulo": "1 de 12/12 h, 5 dias",
+       "texto": "Tomar 1 comprimido por via oral de 12 em 12 horas, antes das refeições, por 5 dias. Não passar de 3 comprimidos por dia.",
+       "quantidade": 10,
+       "dias": 5
+      }
+     ],
+     "pediatrico": null,
+     "orientacoes": [
+      "Engolir o comprimido inteiro, com líquido, de preferência antes das refeições.",
+      "Procurar o médico se a dor não melhorar em 3 dias."
+     ],
+     "fontes": [
+      "https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Codaten-Profissional-Consulta-Remedios.pdf"
+     ]
+    }
+   ]
+  }
+ ]
+}

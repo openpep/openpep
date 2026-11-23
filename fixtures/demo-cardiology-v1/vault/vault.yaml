@@ -1,0 +1,11 @@
+schema: openpep/vault@1
+vault_id: vlt_01990000-0000-7000-8000-000000000001
+created_at: "2026-08-30T20:00:00Z"
+protocol_version: "1.0"
+clinical_writer:
+  device_id: dev_01990000-0000-7000-8000-000000000002
+storage_mode: local-portable
+encryption_mode: local-filevault
+hash_algorithm: sha256
+event_canonicalization: rfc8785
+x_profile: cardiology_demo_v1

@@ -1,0 +1,6 @@
+{
+  "schema": "openpep/fixture-expectation@1",
+  "result": "reject",
+  "rule": "yaml.syntax.duplicate_key",
+  "path": "line:10:column:1"
+}

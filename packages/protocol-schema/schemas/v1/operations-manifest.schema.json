@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpep.org/schemas/v1/operations-manifest.schema.json",
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "title": "OpenPEP empty operations manifest",
+  "description": "Operational-plane marker for a vault with no persisted operational state.",
+  "type": "object",
+  "required": ["schema", "vault_id", "state"],
+  "properties": {
+    "schema": {
+      "const": "openpep/operations-manifest@1"
+    },
+    "vault_id": {
+      "type": "string",
+      "pattern": "^vlt_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "state": {
+      "const": "empty"
+    }
+  },
+  "patternProperties": {
+    "^x_[a-z0-9]+(?:_[a-z0-9]+)*$": true
+  },
+  "additionalProperties": false
+}

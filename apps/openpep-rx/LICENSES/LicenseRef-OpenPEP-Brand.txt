@@ -1,0 +1,10 @@
+OpenPEP Brand Assets Notice
+
+This LicenseRef identifies OpenPEP names, logos, and visual identity files that
+are not offered under the software or documentation licenses in this
+repository.
+
+Making a brand asset available in the source tree does not grant permission to
+suggest sponsorship, certification, endorsement, or official status. Use of
+these assets is governed by the separate OpenPEP trademark policy. Until that
+policy is published, no additional permission is granted by this notice.

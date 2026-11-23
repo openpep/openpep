@@ -1,0 +1,145 @@
+# SPDX-FileCopyrightText: 2026 Carlos Pedrotti and OpenPEP contributors <https://github.com/openpep/openpep>
+# SPDX-License-Identifier: CC0-1.0
+
+name: Foundation
+
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      run_macos:
+        description: Executar testes macOS (consome cota do GitHub Actions)
+        type: boolean
+        default: false
+
+concurrency:
+  group: foundation-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  reuse:
+    name: REUSE compliance
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Check licenses
+        uses: fsfe/reuse-action@676e2d560c9a403aa252096d99fcab3e1132b0f5 # v6
+
+  protocol:
+    name: Protocol schema
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version-file: .node-version
+          cache: npm
+          cache-dependency-path: packages/protocol-schema/package-lock.json
+
+      - name: Install protocol dependencies
+        run: npm ci
+        working-directory: packages/protocol-schema
+
+      - name: Test protocol and fixtures
+        run: npm run check
+        working-directory: packages/protocol-schema
+
+      - name: Install PDF renderer dependencies
+        run: npm ci --prefix tools/cockpit-pdf --ignore-scripts
+
+      - name: Check PDF bundle and models
+        run: make cockpit-pdf-check
+
+  vaultctl:
+    name: vaultctl
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version-file: .node-version
+          cache: npm
+          cache-dependency-path: |
+            packages/protocol-schema/package-lock.json
+            tools/vaultctl/package-lock.json
+
+      - name: Install and build protocol dependency
+        run: |
+          npm ci
+          npm run build
+        working-directory: packages/protocol-schema
+
+      - name: Install vaultctl dependencies
+        run: npm ci
+        working-directory: tools/vaultctl
+
+      - name: Test vaultctl
+        run: npm run check
+        working-directory: tools/vaultctl
+
+  openpep-rx:
+    name: OpenPEP-Rx synthetic tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version-file: .node-version
+          cache: npm
+          cache-dependency-path: apps/openpep-rx/package-lock.json
+
+      - name: Install locked dependencies
+        run: npm ci
+        working-directory: apps/openpep-rx
+
+      - name: Test with synthetic data and isolated databases
+        run: npm test
+        working-directory: apps/openpep-rx
+
+      - name: Build the source distribution
+        run: npm run release
+        working-directory: apps/openpep-rx
+
+  macos:
+    name: macOS app
+    if: github.event_name == 'workflow_dispatch' && inputs.run_macos
+    runs-on: xcode-27
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version-file: .node-version
+
+      - name: Install REUSE verifier
+        run: |
+          python3 -m venv "$RUNNER_TEMP/reuse-venv"
+          "$RUNNER_TEMP/reuse-venv/bin/pip" install reuse==6.2.0
+          echo "$RUNNER_TEMP/reuse-venv/bin" >> "$GITHUB_PATH"
+
+      - name: Confirm Xcode toolchain
+        run: |
+          xcodebuild -version | sed -n '1p' | grep -q '^Xcode 27\.'
+          make check-mac-environment
+
+      - name: Resolve locked Swift dependencies
+        run: make mac-bootstrap
+
+      - name: Test macOS app
+        run: make mac-check

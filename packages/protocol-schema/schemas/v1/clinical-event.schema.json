@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpep.org/schemas/v1/clinical-event.schema.json",
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "title": "OpenPEP clinical ledger event",
+  "description": "A signed event stored in a patient clinical ledger.",
+  "type": "object",
+  "required": [
+    "schema",
+    "event_id",
+    "sequence",
+    "patient_id",
+    "event_type",
+    "object_id",
+    "relative_path",
+    "object_sha256",
+    "actor_id",
+    "device_id",
+    "signing_key_id",
+    "occurred_at",
+    "previous_event_hash",
+    "event_hash",
+    "signature"
+  ],
+  "properties": {
+    "schema": {
+      "const": "openpep/clinical-event@1"
+    },
+    "event_id": {
+      "$ref": "#/$defs/event_id"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "patient_id": {
+      "$ref": "#/$defs/patient_id"
+    },
+    "event_type": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)+$",
+      "maxLength": 128
+    },
+    "object_id": {
+      "type": "string",
+      "pattern": "^(?:pt|enc|note|asset)_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "relative_path": {
+      "type": "string",
+      "pattern": "^(?:raw|content)/(?!\\.{1,2}(?:/|$))[A-Za-z0-9._-]+(?:/(?!\\.{1,2}(?:/|$))[A-Za-z0-9._-]+)*$",
+      "maxLength": 1024
+    },
+    "object_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "actor_id": {
+      "type": "string",
+      "pattern": "^usr_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "device_id": {
+      "type": "string",
+      "pattern": "^dev_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "signing_key_id": {
+      "type": "string",
+      "pattern": "^key_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "previous_event_hash": {
+      "$ref": "#/$defs/sha256"
+    },
+    "event_hash": {
+      "$ref": "#/$defs/sha256"
+    },
+    "signature": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{86}$"
+    }
+  },
+  "patternProperties": {
+    "^x_[a-z0-9]+(?:_[a-z0-9]+)*$": true
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "event_id": {
+      "type": "string",
+      "pattern": "^evt_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "patient_id": {
+      "type": "string",
+      "pattern": "^pt_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR" data-transition="loading">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive">
+<script src="/transicao.js"></script>
+<title>Emitir receita | OpenPEP-Rx</title>
+<link rel="stylesheet" href="acesso.css"><link rel="stylesheet" href="compartilhar-documento.css"><link rel="stylesheet" href="/vendor/intl-tel-input/css/intlTelInput.min.css"><link rel="stylesheet" href="receita.css"><link rel="stylesheet" href="/transicao.css">
+<link rel="icon" href="/openpep-mark.png"><link rel="stylesheet" href="/openpep.css"></head>
+<body><div class="transition" role="status" aria-live="polite"><div class="transition-card"><div class="transition-step" data-when="loading"><div class="transition-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 2.5h7l4.5 4.5v12.5a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-15a2 2 0 0 1 2-2Z"/><path d="M14 2.5V7h4.5"/><path d="M8.5 12.5h7M8.5 16h4.5"/></svg></div><h2>Carregando receituário…</h2><div class="transition-bar"><span></span></div><p class="transition-slow">Está demorando mais que o normal. <a href="/receita.html">Recarregue a página</a>.</p></div></div></div>
+<main class="access-shell rx-shell">
+<header class="brand app-bar"><a class="openpep-brand" href="/" aria-label="OpenPEP-Rx, início"><img src="/openpep-mark.png" width="42" height="42" alt=""><strong>OpenPEP-Rx</strong></a><nav class="app-nav" aria-label="Conta"><span id="who"></span><a href="/numeros.html" id="numbers-link">Meus números</a><a href="/assinatura.html" data-local-only hidden>Assinar outro PDF</a><a href="/dados-locais.html" data-local-only hidden>Dados locais</a><button type="button" id="logout" class="link">Sair</button></nav></header>
+<section class="card" aria-labelledby="title">
+<h1 id="title">Nova receita</h1>
+<p class="intro" id="professional">Conferindo sua sessão…</p>
+<p id="blocked" hidden><a class="button-link" href="/entrada.html">Ir para a entrada</a></p>
+<div id="session-bar" hidden><p id="session" class="session"></p><button type="button" id="renew" hidden>Entrar de novo</button></div>
+
+
+<div id="panel" hidden>
+<form id="form" novalidate>
+<fieldset>
+<legend>Paciente</legend>
+<label>Nome<input id="patient-name" name="paciente.nome" autocomplete="off" maxlength="120"></label>
+<div class="row half" id="patient-retention"><label>Data de nascimento <span class="optional" id="patient-birth-requirement">opcional neste modelo</span><input id="patient-birth" name="paciente.nascimento" type="date" autocomplete="off" aria-describedby="patient-birth-requirement patient-age"><span class="hint" id="patient-age" aria-live="polite"></span></label><label>Sexo <span class="optional" id="patient-sex-requirement">opcional neste modelo</span><select id="patient-sex" name="paciente.sexo" aria-describedby="patient-sex-requirement"><option value="">Selecione</option><option value="F">Feminino</option><option value="M">Masculino</option></select></label></div>
+<div class="row half"><label>CPF ou, se estrangeiro, passaporte<input id="patient-document" name="paciente.documento" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="20" placeholder="000.000.000-00"><span class="hint" id="patient-document-hint" aria-live="polite"></span></label>
+<label>Celular (WhatsApp) <span class="optional">opcional, não vai para a receita</span><input id="patient-phone" type="tel" autocomplete="off"></label></div>
+<label id="patient-email-row">E-mail <span class="optional">opcional, salvo localmente para envio</span><input id="patient-email" type="email" maxlength="254" autocomplete="off"></label>
+
+<div class="row half" id="patient-nrt" hidden><label>CID<input id="patient-cid" name="paciente.cid" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="8" placeholder="A30.5"></label><label>Telefone do paciente <span class="optional">se houver; sai na notificação</span><input id="patient-tel" name="paciente.telefone" autocomplete="off" inputmode="tel" maxlength="20" placeholder="(11) 91234-5678"></label></div>
+<details class="guardian" id="patient-guardian" hidden><summary>Responsável pelo paciente <span class="optional">se for o caso</span></summary>
+<label>Nome<input name="responsavel.nome" autocomplete="off" maxlength="120"></label>
+<div class="row half"><label>CPF ou, se estrangeiro, passaporte<input name="responsavel.documento" autocomplete="off" maxlength="20"></label><label>Telefone <span class="optional">se houver</span><input name="responsavel.telefone" autocomplete="off" inputmode="tel" maxlength="20"></label></div>
+<label>Endereço completo<input name="responsavel.endereco" autocomplete="off" maxlength="160"></label>
+</details>
+<div class="row cep"><div class="cep-field"><label for="patient-cep">CEP</label><input id="patient-cep" inputmode="numeric" autocomplete="off" maxlength="9" placeholder="00000-000" aria-describedby="patient-cep-hint"><button type="button" class="secondary cep-search" id="patient-cep-search">Buscar CEP</button><span class="hint" id="patient-cep-hint" aria-live="polite"></span></div><label>Endereço<input id="patient-logradouro" autocomplete="off" maxlength="100" placeholder="Rua, avenida…"></label></div>
+<div class="row three-eq"><label>Número<input id="patient-numero" autocomplete="off" maxlength="10" placeholder="ou s/n"></label><label>Complemento <span class="optional">opcional</span><input id="patient-complemento" autocomplete="off" maxlength="40"></label><label>Bairro<input id="patient-bairro" autocomplete="off" maxlength="60"></label></div>
+<div class="row"><label>Cidade<input id="patient-cidade" name="paciente.cidade" autocomplete="off" maxlength="80"></label><label>UF<select id="patient-uf" name="paciente.uf" class="uf"></select></label></div>
+</fieldset>
+
+<fieldset>
+<legend id="med-legend">Medicamento</legend>
+<div class="med-stack" id="med-stack"><div class="med-editor" id="med-editor">
+<p class="med-editor-title" id="med-editor-title" hidden><span id="med-editor-label"></span><button type="button" class="link" id="med-editor-remove">Remover</button></p>
+<div class="med-search"><label>Medicamento ou substância<input id="med-name" name="medicamento.nome" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="med-list" autocomplete="off" spellcheck="false" maxlength="120" placeholder="Busque pelo nome ou pela marca: zolpidem, rivotril, venvanse…"></label><ul class="med-list" id="med-list" role="listbox" aria-label="Medicamentos e apresentações" hidden></ul></div>
+<p class="med-info" id="med-info" aria-live="polite" hidden></p>
+<div class="chips" id="med-presentations" role="group" aria-label="Apresentações" hidden></div>
+<div class="row four"><label>Concentração<input name="medicamento.concentracao" autocomplete="off" maxlength="40" placeholder="10 mg"></label><label>Forma farmacêutica<input name="medicamento.forma" autocomplete="off" maxlength="60" placeholder="comprimido revestido"></label><label>Quantidade<input name="medicamento.quantidade" type="number" inputmode="numeric" min="1" max="999" step="1"></label><label>Unidade<input name="medicamento.unidade" autocomplete="off" maxlength="40" placeholder="comprimidos"></label></div>
+<label>Posologia<textarea name="medicamento.posologia" rows="3" maxlength="600"></textarea></label>
+<div class="row half" id="med-nrt" hidden><label>Tempo de tratamento<input name="medicamento.tempo" autocomplete="off" maxlength="60" placeholder="30 dias"></label><label>Outras orientações <span class="optional">se houver</span><input name="medicamento.orientacoes" autocomplete="off" maxlength="300"></label></div>
+<div class="chips regimens" id="med-regimens" role="group" aria-label="Sugestões de posologia" hidden></div>
+<p class="note" id="med-regimens-note" hidden></p>
+<div class="calc" id="med-calc" hidden><label>Peso do paciente (kg)<input id="med-weight" type="number" inputmode="decimal" min="1" max="150" step="0.1"></label><label id="med-calc-dose-label" hidden>Dose<select id="med-calc-dose"></select></label><p class="calc-out" id="med-calc-out" aria-live="polite"></p><button type="button" class="chip" id="med-calc-use" disabled>Usar na posologia</button></div>
+<div class="med-notes" id="med-notes" hidden><p class="med-notes-title">Orientações da bula</p><ul id="med-notes-list"></ul></div>
+</div></div>
+<div class="med-add" id="med-add-row" hidden><button type="button" class="secondary" id="med-add">+ Adicionar outro medicamento</button><span class="note" id="med-add-note"></span></div>
+<div class="prescription-model"><label for="tipo">Modelo da receita</label><select id="tipo" name="tipo" aria-describedby="model-hint"><option value="">Identificado ao escolher o medicamento</option></select><p class="hint" id="model-hint">Sugerido pelo medicamento e pela apresentação. Confira ou selecione manualmente.</p></div>
+</fieldset>
+
+<fieldset id="emitente">
+<legend>Emitente</legend>
+<p class="note" id="emitter-name"></p>
+<div class="row half" id="emitter-nrt" hidden><label>Especialidade<input id="emitter-specialty" name="emitente.especialidade" autocomplete="off" maxlength="60"></label><label>Nº do cadastro <span class="optional">prescritor de talidomida</span><input id="emitter-registry" name="emitente.cadastro" autocomplete="off" maxlength="30"></label></div>
+<div class="summary" id="emitter-summary" hidden><p><strong id="emitter-summary-identity"></strong></p><p id="emitter-summary-text"></p><button type="button" class="link" id="emitter-edit">Editar cadastro</button></div>
+<div class="emitter-fields" id="emitter-fields">
+<div data-local-only hidden><label>Nome do emitente<input id="emitter-profile-name" autocomplete="name" maxlength="120"></label><div class="row three-eq"><label>CPF<input id="emitter-profile-cpf" inputmode="numeric" autocomplete="off" maxlength="14"></label><label>CRM<input id="emitter-profile-crm" inputmode="numeric" autocomplete="off" maxlength="10"></label><label>UF do CRM<select id="emitter-profile-uf" class="uf"></select></label></div></div>
+<label id="emitter-full-address-row" hidden>Endereço do consultório<input id="emitter-full-address" maxlength="160" autocomplete="off"></label>
+<div id="emitter-address-parts">
+<div class="row cep"><div class="cep-field"><label for="emitter-cep">CEP</label><input id="emitter-cep" inputmode="numeric" autocomplete="off" maxlength="9" placeholder="00000-000" aria-describedby="emitter-cep-hint"><button type="button" class="secondary cep-search" id="emitter-cep-search">Buscar CEP</button><span class="hint" id="emitter-cep-hint" aria-live="polite"></span></div><label>Endereço<input id="emitter-logradouro" autocomplete="off" maxlength="100" placeholder="Rua, avenida…"></label></div>
+<div class="row three-eq"><label>Número<input id="emitter-numero" autocomplete="off" maxlength="10" placeholder="ou s/n"></label><label>Complemento <span class="optional">opcional</span><input id="emitter-complemento" autocomplete="off" maxlength="40"></label><label>Bairro<input id="emitter-bairro" autocomplete="off" maxlength="60"></label></div>
+</div>
+<div class="row"><label>Cidade<input id="emitter-cidade" name="emitente.cidade" autocomplete="off" maxlength="80"></label><label>UF<select id="emitter-uf" name="emitente.uf" class="uf"></select></label></div>
+<label>Telefone do consultório <span class="optional">opcional</span><input id="emitter-phone" type="tel" autocomplete="off"></label>
+<div class="actions" data-local-only hidden><button type="button" id="emitter-save">Salvar emitente</button><button type="button" id="emitter-cancel" class="secondary" hidden>Cancelar</button></div>
+</div>
+<p class="hint" id="emitter-status" role="status"></p>
+</fieldset>
+
+<p id="result" role="status" aria-live="polite"></p>
+<label id="local-publication-option" class="consent" hidden><input type="checkbox" id="local-publish"><span><strong>Incluir QR e link para o paciente</strong><span class="consent-note">Você confirmará a publicação do PDF ao assinar.</span></span></label>
+<details class="practice-options" data-local-only hidden><summary>Opções de teste</summary><label class="consent"><input type="checkbox" id="local-practice"><span>Ensaio sem consumir numeração SNCR (PDF identificado como prévia)</span></label></details>
+<div class="actions"><button type="submit" id="review">Revisar e emitir</button><button type="button" id="new" class="secondary">Nova receita</button></div>
+</form>
+
+<div id="done" hidden><p class="patient-code" id="code-box" hidden>Código do paciente: <strong id="patient-code"></strong><span class="note">Impresso na receita, abaixo do QR "Acesse:". O link do WhatsApp já leva o código e abre a receita direto.</span></p><div class="send"><button id="local-share" type="button" class="secondary" hidden>Enviar documento</button><a id="download" class="button-link">Baixar receita assinada</a><a id="term" class="button-link secondary-link" target="_blank" rel="noopener noreferrer" hidden>Termo para assinatura</a><a id="whatsapp" class="button-link whatsapp" target="_blank" rel="noopener noreferrer" hidden>Enviar por WhatsApp</a><a href="https://validar.iti.gov.br/" target="_blank" rel="noopener noreferrer">Validar no ITI</a></div><p class="note" id="whatsapp-note" hidden>Informe o celular do paciente no formulário para enviar por WhatsApp.</p></div>
+
+<h2 id="historico" tabindex="-1">Minhas receitas</h2>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Data</th><th scope="col">Tipo</th><th scope="col">Número</th><th scope="col">Paciente</th><th scope="col">Medicamento</th><th scope="col">Estado</th><th scope="col"></th></tr></thead>
+<tbody id="history"></tbody>
+</table></div>
+<p class="note" id="history-empty">Nenhuma receita ainda.</p>
+</div>
+
+</section>
+</main>
+<dialog class="preview" id="preview" aria-labelledby="preview-title" data-state="loading">
+<header class="preview-head"><div><h2 id="preview-title">Prévia da receita</h2><p id="preview-sub"></p></div><button type="button" class="preview-close" id="preview-close" aria-label="Fechar">×</button></header>
+<div class="preview-body"><div id="preview-pages" class="pdf-pages" hidden></div><iframe id="preview-frame" title="Receita em PDF"></iframe><div class="preview-wait" id="preview-wait"><span class="spinner" aria-hidden="true"></span><span id="preview-wait-text">Gerando a prévia…</span></div></div>
+<footer class="preview-foot">
+<section id="local-stock-help" class="stock-help" aria-labelledby="local-stock-title" hidden>
+<strong id="local-stock-title">Falta numeração SNCR para esta receita</strong>
+<p id="local-stock-reason"></p>
+<div class="stock-actions"><a href="/dados-locais.html#transferencia" target="_blank" rel="noopener noreferrer">Importar números SNCR</a><button type="button" class="secondary" id="local-stock-retry">Já importei: revisar novamente</button><button type="button" class="secondary" id="local-practice-start">Preparar ensaio sem numeração</button></div>
+<p class="hint">O ensaio permite testar a assinatura, mas o PDF continua identificado como prévia.</p>
+</section>
+<div id="local-signing" data-local-only hidden>
+<button type="button" id="local-certificates" class="secondary">Consultar VIDaaS local</button>
+<label>Titular do certificado<select id="local-identity"><option value="">Selecione o certificado</option></select></label>
+<label><input type="checkbox" id="local-confirm"> Revisei o PDF e confirmei que o certificado corresponde ao emitente.</label>
+<p class="note" id="local-cert-status" role="status"></p>
+</div>
+<label id="local-publication-confirm" class="consent" hidden><input type="checkbox" id="local-publish-confirm"><span>Autorizo publicar este PDF assinado em <strong id="local-publication-origin"></strong>. Quem tiver o link completo poderá abrir o documento.</span></label>
+<p id="local-sign-status" class="note local-sign-status" role="status" hidden></p>
+<p class="preview-error" id="preview-error" role="alert"></p>
+<div class="preview-review"><p class="note" id="preview-note"></p><p class="note term-note" id="preview-term-note" hidden>Acompanha o <a id="preview-term" target="_blank" rel="noopener noreferrer"></a>, já preenchido: imprima em 3 vias (<span id="preview-term-vias"></span>) para você e o paciente assinarem.</p><div class="preview-actions"><a id="preview-open" target="_blank" rel="noopener noreferrer">Abrir em nova aba</a><button type="button" class="secondary" id="preview-edit">Voltar e editar</button><button type="button" id="emit" aria-describedby="local-sign-status preview-note">Assinar e emitir</button></div></div>
+<div class="preview-signing"><div class="transition-bar"><span></span></div><p class="note" id="preview-signing-text"></p></div>
+<div class="preview-done"><p class="preview-ok" id="preview-ok"></p><p class="patient-code" id="preview-code-box">Código do paciente: <strong id="preview-code"></strong></p><div class="preview-actions"><button id="preview-share" type="button" class="secondary" hidden>Enviar documento</button><a id="preview-whatsapp" class="button-link whatsapp" target="_blank" rel="noopener noreferrer">Enviar por WhatsApp</a><button type="button" class="secondary" id="preview-phone">Informar celular para WhatsApp</button><a id="preview-download" class="button-link secondary-link">Baixar PDF</a><a id="preview-term-done" class="button-link secondary-link" target="_blank" rel="noopener noreferrer" hidden>Termo para assinatura</a><button type="button" id="preview-new">Nova receita</button></div></div>
+</footer>
+</dialog>
+<script type="module" src="receita.js"></script></body></html>

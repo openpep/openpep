@@ -1,0 +1,6 @@
+{
+  "schema": "openpep/fixture-expectation@1",
+  "result": "reject",
+  "rule": "clinical_document.ai_source_set_mismatch",
+  "path": "/source_ids"
+}

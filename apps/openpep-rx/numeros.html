@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive">
+<title>Meus números | OpenPEP-Rx</title>
+<link rel="stylesheet" href="acesso.css"><link rel="stylesheet" href="numeros.css">
+<link rel="icon" href="/openpep-mark.png"><link rel="stylesheet" href="/openpep.css"></head>
+<body><main class="access-shell numbers-shell">
+<header class="brand"><a class="openpep-brand" href="/" aria-label="OpenPEP-Rx, início"><img src="/openpep-mark.png" width="42" height="42" alt=""><strong>OpenPEP-Rx</strong></a><span class="module-label">Prescrição</span></header>
+<section class="card" aria-labelledby="title">
+<p class="eyebrow">SNCR</p><h1 id="title">Meus números</h1>
+<p class="intro" id="professional">Conferindo sua sessão…</p>
+<p id="result" role="status" aria-live="polite"></p>
+
+<div id="signin" hidden><p>Para ver e solicitar números, entre no OpenPEP com sua conta institucional e confirme nome, CRM/UF e CPF.</p><a class="button-link" href="/entrada.html">Ir para a entrada</a></div>
+
+<div id="panel" hidden>
+<section id="prd" class="prd" aria-labelledby="prd-title" hidden>
+<h2 id="prd-title">Produção · SNCR real</h2>
+<p class="note" id="prd-status"></p>
+<form id="prd-request" hidden>
+<div class="row">
+<label>Tipo<select id="prd-type"></select></label>
+<label>Quantidade<input id="prd-quantity" type="number" inputmode="numeric" min="10" max="50" step="1" value="10"></label>
+</div>
+<p class="note" id="prd-note"></p>
+<label class="consent"><input type="checkbox" id="prd-consent"><span id="prd-consent-text"></span></label>
+<button id="prd-submit" type="submit" disabled>Pedir em produção com gov.br</button>
+</form>
+<ol id="prd-history" class="history"></ol>
+<p class="note">Os números de produção ficam guardados à parte: ainda não entram no estoque nem nas receitas.</p>
+</section>
+<details class="homologation"><summary>Homologação · dados de teste</summary>
+<h2>Estoque de homologação</h2>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Tipo</th><th scope="col">Disponíveis</th><th scope="col">Reservados</th><th scope="col">Usados</th><th scope="col">Inutilizados</th><th scope="col">Limite</th><th scope="col">Saldo no SNCR</th></tr></thead>
+<tbody id="stock"></tbody>
+</table></div>
+
+<h2>Solicitar números de homologação</h2>
+<form id="request">
+<div class="row">
+<label>Tipo<select id="type"></select></label>
+<label>Quantidade<input id="quantity" type="number" inputmode="numeric" min="10" max="50" step="1" value="10"></label>
+</div>
+<p class="note" id="limits"></p>
+<p class="note">A Anvisa recomenda pedir só o necessário: o saldo é compartilhado entre plataformas. Cada pedido exige um login gov.br, e o OpenPEP envia o pedido uma única vez, sem repetição automática.</p>
+<label class="consent"><input type="checkbox" id="consent"><span>Confirmo o pedido com minha própria conta gov.br.</span></label>
+<button id="submit" type="submit" disabled>Solicitar com gov.br</button>
+<p class="note" id="blocked" hidden></p>
+</form>
+
+<h2>Histórico de pedidos</h2>
+<ol id="history" class="history"></ol>
+<p class="note" id="history-empty">Nenhum pedido ainda.</p>
+</details>
+
+
+</div>
+
+<p class="scope">Os números ficam no registro do OpenPEP, com trilha de auditoria.</p>
+<a href="/receita.html">Voltar às receitas</a>
+</section><p class="footnote">A senha gov.br é informada somente no serviço oficial.</p>
+</main><script type="module" src="numeros.js"></script></body></html>

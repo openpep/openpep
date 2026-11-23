@@ -1,0 +1,1 @@
+{"schema":"openpep/fixture-expectation@1","result":"reject","rule":"appointment.invalid_interval","path":"/ends_at"}

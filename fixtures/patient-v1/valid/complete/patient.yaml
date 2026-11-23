@@ -1,0 +1,25 @@
+schema: openpep/patient@1
+patient_id: pt_0198f5c2-0000-7000-8000-000000000002
+status: active
+full_name: "João da Silva Sintético"
+preferred_name: "Joca"
+birth_date: "1984-02-29"
+contacts:
+  - type: phone
+    value: "+55 00 90000-0000"
+    authorized_for_care: true
+  - type: email
+    value: "joao.sintetico@example.invalid"
+    authorized_for_care: false
+identifiers:
+  - type: cpf
+    value: "00000000000"
+alerts:
+  - type: allergy
+    description: "Alergia sintética a substância de teste"
+    source: "Relato sintético"
+    recorded_at: "2026-08-31T18:05:00Z"
+created_at: "2026-08-31T18:00:00Z"
+updated_at: "2026-08-31T18:05:00Z"
+archived_at: null
+x_fixture_note: preserved

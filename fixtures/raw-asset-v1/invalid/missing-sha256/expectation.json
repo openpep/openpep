@@ -1,0 +1,4 @@
+{
+  "rule": "raw_asset.missing_field",
+  "path": "/sha256"
+}

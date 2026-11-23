@@ -1,0 +1,64 @@
+--- a/apps/clinical-web/index.html
++++ b/apps/clinical-web/index.html
+@@ -11,7 +11,7 @@
+ <body>
+   <a class="skip" href="#main">Pular para o conteúdo</a>
+   <header class="topbar">
+-    <a class="brand" href="/" aria-label="OpenPEP, início"><span class="mark" aria-hidden="true">O</span> OpenPEP</a>
++    <a class="brand" href="/" aria-label="OpenPEP, início"><img class="rx-mark" src="/modulos/prescricao/openpep-mark.png" width="38" height="38" alt=""> OpenPEP</a>
+     <span class="mode">Demonstração · somente leitura</span>
+     <button id="lock" class="quiet" hidden>Encerrar acesso</button>
+   </header>
+@@ -30,6 +30,7 @@
+     </section>
+     <div id="workspace" class="workspace" hidden>
+       <aside class="sidebar" aria-label="Pacientes">
++        <nav class="modules" aria-label="Módulos clínicos"><a href="/modulos/prescricao/abrir" target="_blank" rel="noopener noreferrer">OpenPEP-Rx</a></nav>
+         <div class="sidebar-title"><h1>Pacientes</h1><span id="count" class="count"></span></div>
+         <label class="search-label" for="search">Buscar paciente</label>
+         <input id="search" type="search" placeholder="Nome ou nome preferido" autocomplete="off">
+--- a/apps/clinical-web/style.css
++++ b/apps/clinical-web/style.css
+@@ -15,6 +15,9 @@
+ .topbar { height:76px; padding:0 32px; display:flex; align-items:center; gap:24px; border-bottom:1px solid var(--line); background:var(--surface); }
+ .brand { display:flex; align-items:center; gap:10px; color:var(--ink); text-decoration:none; font-size:21px; font-weight:650; }
+ .mark { display:grid; place-items:center; width:34px; height:34px; background:var(--accent); color:#fff; border-radius:10px; font-weight:500; }
++.rx-mark { object-fit:contain; }
++.modules { margin:0 4px 24px; }
++.modules a { color:var(--accent); font-weight:600; }
+ .mode { font-size:13px; color:var(--muted); border:1px solid var(--line); padding:3px 11px; border-radius:20px; }
+ .quiet { background:transparent; color:var(--accent); margin-left:auto; }
+ .access { max-width:510px; margin:9vh auto; padding:32px; }
+--- a/apps/clinical-local/src/server.ts
++++ b/apps/clinical-local/src/server.ts
+@@ -19,6 +19,11 @@
+     ["/app.js", "app.js", "text/javascript; charset=utf-8"],
+     ["/style.css", "style.css", "text/css; charset=utf-8"],
+   ] as const) assets.set(route, { content: await readFile(new URL(file, assetRoot)), type });
++  // The clinical reader and the prescription module are siblings under apps/.
++  const moduleUrl = new URL("../../../openpep-rx/openpep-module.mjs", import.meta.url);
++  const { loadPrescriptionModule } = await import(moduleUrl.href);
++  const rx = await loadPrescriptionModule(process.env.OPENPEP_RX_ORIGIN);
++  for (const [route, asset] of rx.assets) assets.set(route, asset);
+   let origin = "";
+   const server = createServer({ maxHeaderSize: 8192, requestTimeout: 5000, headersTimeout: 5000 }, (req, res) => {
+     res.setHeader("Cache-Control", "no-store");
+@@ -27,7 +32,7 @@
+     res.setHeader("X-Frame-Options", "DENY");
+     res.setHeader("Cross-Origin-Resource-Policy", "same-origin");
+     res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
+-    res.setHeader("Content-Security-Policy", "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'");
++    res.setHeader("Content-Security-Policy", "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'");
+     function json(status: number, value: unknown) {
+       res.writeHead(status, { "Content-Type": "application/json; charset=utf-8" });
+       res.end(JSON.stringify(value));
+@@ -41,6 +46,9 @@
+       res.setHeader("Allow", "GET"); json(405, { error: "Esta versão permite somente leitura." }); return;
+     }
+     const route = req.url ?? "";
++    if (route === "/modulos/prescricao/abrir") {
++      res.writeHead(303, { Location: rx.entry }); res.end(); return;
++    }
+     const asset = assets.get(route);
+     if (asset) { res.writeHead(200, { "Content-Type": asset.type }); res.end(asset.content); return; }
+     if (!route.startsWith("/api/")) { json(404, { error: "Conteúdo indisponível." }); return; }

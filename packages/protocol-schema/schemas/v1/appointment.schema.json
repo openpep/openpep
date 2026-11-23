@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpep.org/schemas/v1/appointment.schema.json",
+  "title": "OpenPEP Appointment",
+  "type": "object",
+  "required": [
+    "schema",
+    "appointment_id",
+    "patient_id",
+    "starts_at",
+    "ends_at",
+    "time_zone",
+    "modality",
+    "status",
+    "location",
+    "remote_access_url",
+    "administrative_note",
+    "encounter_id",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "schema": { "const": "openpep/appointment@1" },
+    "appointment_id": {
+      "type": "string",
+      "pattern": "^appt_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "patient_id": {
+      "type": "string",
+      "pattern": "^pt_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "starts_at": { "type": "string", "format": "date-time" },
+    "ends_at": { "type": "string", "format": "date-time" },
+    "time_zone": {
+      "type": "string",
+      "pattern": "^(?:UTC|[A-Za-z_]+(?:/[A-Za-z0-9_+\\-]+)+)$",
+      "maxLength": 100
+    },
+    "modality": { "enum": ["in_person", "telemedicine"] },
+    "status": {
+      "enum": ["scheduled", "arrived", "in_progress", "completed", "cancelled", "no_show"]
+    },
+    "location": {
+      "oneOf": [
+        { "type": "string", "minLength": 1, "maxLength": 200 },
+        { "type": "null" }
+      ]
+    },
+    "remote_access_url": {
+      "oneOf": [
+        { "type": "string", "pattern": "^https://", "maxLength": 2048 },
+        { "type": "null" }
+      ]
+    },
+    "administrative_note": {
+      "oneOf": [
+        { "type": "string", "minLength": 1, "maxLength": 500 },
+        { "type": "null" }
+      ]
+    },
+    "encounter_id": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^enc_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+        },
+        { "type": "null" }
+      ]
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" }
+  },
+  "patternProperties": {
+    "^x_[a-z0-9]+(?:_[a-z0-9]+)*$": true
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "modality": { "const": "in_person" } } },
+      "then": { "properties": { "remote_access_url": { "type": "null" } } }
+    },
+    {
+      "if": { "properties": { "modality": { "const": "telemedicine" } } },
+      "then": { "properties": { "location": { "type": "null" } } }
+    }
+  ],
+  "additionalProperties": false
+}

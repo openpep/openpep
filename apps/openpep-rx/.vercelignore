@@ -1,0 +1,11 @@
+docs
+tests
+qa
+tmp
+*.md
+.env*
+.vercel
+design-samples*
+
+dist
+integracao

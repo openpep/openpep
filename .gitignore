@@ -1,0 +1,36 @@
+# Arquivo local dos protótipos e planos anteriores à arquitetura Apple-first.
+# O histórico versionado permanece acessível no Git.
+/legado/
+
+# JavaScript / TypeScript
+node_modules/
+dist/
+coverage/
+*.log
+
+# Swift / Xcode
+.build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+
+# Configuração local
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# Projeto audiovisual e renders locais, entregues separadamente da alfa.
+/media/openpep-teaser/
+
+# Bancos e índices locais reconstruíveis
+/data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+/media/openpep-teaser-dinamico/
+
+# Catálogos distribuíveis do módulo; não contém a pasta clínica de execução.
+!/apps/openpep-rx/data/
+!/apps/openpep-rx/data/**

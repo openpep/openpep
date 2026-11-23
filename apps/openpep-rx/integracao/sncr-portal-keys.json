@@ -1,0 +1,12 @@
+[
+  {
+    "issuer": "https://rx.openpep.com.br",
+    "keyId": "708b980869a8189471c7c542",
+    "publicJwk": {
+      "kty": "EC",
+      "x": "U4nwuKkZ7gwGpo_y3bobopliXlAFHy1vqGCeQ5CX2WQ",
+      "y": "MJAEP3lcITXLPkImO59zXviAGfZp1ldg5yO0ek09DIc",
+      "crv": "P-256"
+    }
+  }
+]

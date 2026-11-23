@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpep.org/schemas/v4/clinical-draft.schema.json",
+  "title": "OpenPEP clinical draft with accepted progressive summaries",
+  "type": "object",
+  "required": ["schema", "note_id", "patient_id", "encounter_id", "status", "note_type", "author_id", "created_at", "updated_at", "source_ids", "ai_assistance", "finalization", "x_actor_assurance"],
+  "properties": {
+    "schema": { "const": "openpep/clinical-note@4" },
+    "note_id": { "type": "string", "pattern": "^note_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+    "patient_id": { "type": "string", "pattern": "^pt_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+    "encounter_id": { "type": "string", "pattern": "^enc_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+    "status": { "const": "draft" },
+    "note_type": { "const": "progress" },
+    "author_id": { "type": "string", "pattern": "^usr_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+    "created_at": { "type": "string", "format": "date-time", "pattern": "Z$" },
+    "updated_at": { "type": "string", "format": "date-time", "pattern": "Z$" },
+    "source_ids": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^asset_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "ai_assistance": {
+      "type": "object",
+      "required": ["used", "generations"],
+      "properties": {
+        "used": { "const": true },
+        "generations": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "required": ["generation_id", "accepted_by", "accepted_at", "source_id", "source_sha256", "provenance_schema", "engine", "model", "response_id", "prompt_version", "locale", "generated_at", "chunk_count"],
+            "properties": {
+              "generation_id": { "type": "string", "pattern": "^gen_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+              "accepted_by": { "type": "string", "pattern": "^usr_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+              "accepted_at": { "type": ["string", "null"], "format": "date-time", "pattern": "Z$" },
+              "source_id": { "type": "string", "pattern": "^asset_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+              "source_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+              "provenance_schema": { "enum": ["openpep/consultation-summary-provenance@1", "openpep/patient-ai-provenance@1", "openpep/progressive-summary-provenance@1"] },
+              "engine": { "type": "string", "minLength": 1, "maxLength": 256 },
+              "model": { "type": ["string", "null"], "minLength": 1, "maxLength": 256 },
+              "response_id": { "type": ["string", "null"], "minLength": 1, "maxLength": 256 },
+              "prompt_version": { "type": ["string", "null"], "minLength": 1, "maxLength": 256 },
+              "locale": { "type": ["string", "null"], "minLength": 1, "maxLength": 64 },
+              "generated_at": { "type": ["string", "null"], "format": "date-time", "pattern": "Z$" },
+              "chunk_count": { "type": ["integer", "null"], "minimum": 1, "maximum": 9999 }
+            },
+            "allOf": [
+              {
+                "if": { "properties": { "provenance_schema": { "const": "openpep/patient-ai-provenance@1" } } },
+                "then": {
+                  "properties": {
+                    "engine": { "const": "openai/responses" },
+                    "accepted_at": { "type": "string", "format": "date-time", "pattern": "Z$" },
+                    "model": { "type": "string", "minLength": 1, "maxLength": 256 },
+                    "response_id": { "type": "string", "minLength": 1, "maxLength": 256 }
+                  }
+                }
+              },
+              {
+                "if": { "properties": { "provenance_schema": { "const": "openpep/consultation-summary-provenance@1" } } },
+                "then": {
+                  "properties": {
+                    "engine": { "const": "apple/FoundationModels.SystemLanguageModel" },
+                    "model": { "type": "null" },
+                    "response_id": { "type": "null" },
+                    "prompt_version": { "const": "openpep/consultation-summary-pt-BR@1" },
+                    "locale": { "const": "pt-BR" },
+                    "generated_at": { "type": "string", "format": "date-time", "pattern": "Z$" },
+                    "chunk_count": { "type": "integer", "minimum": 1, "maximum": 9999 }
+                  }
+                }
+              },
+              {
+                "if": { "properties": { "provenance_schema": { "const": "openpep/progressive-summary-provenance@1" } } },
+                "then": {
+                  "properties": {
+                    "engine": { "enum": ["apple/FoundationModels.SystemLanguageModel", "openai/responses"] },
+                    "accepted_at": { "type": "string", "format": "date-time", "pattern": "Z$" },
+                    "prompt_version": { "enum": ["openpep/progressive-consultation-summary-pt-BR@1", "openpep/progressive-consultation-summary-pt-BR@2", "openpep/progressive-consultation-summary-pt-BR@3", "openpep/progressive-consultation-summary-pt-BR@4", "openpep/progressive-consultation-summary-pt-BR@5", "openpep/final-consultation-summary-apple-pt-BR@1"] },
+                    "locale": { "const": "pt-BR" },
+                    "generated_at": { "type": "string", "format": "date-time", "pattern": "Z$" },
+                    "chunk_count": { "type": "integer", "minimum": 1, "maximum": 9999 }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "provenance_schema": { "const": "openpep/progressive-summary-provenance@1" },
+                    "engine": { "const": "apple/FoundationModels.SystemLanguageModel" }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "model": { "type": "null" },
+                    "response_id": { "type": "null" }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "provenance_schema": { "const": "openpep/progressive-summary-provenance@1" },
+                    "engine": { "const": "openai/responses" }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "model": { "type": "string", "minLength": 1, "maxLength": 256 },
+                    "response_id": { "type": "string", "minLength": 1, "maxLength": 256 }
+                  }
+                }
+              }
+            ],
+            "patternProperties": { "^x_[a-z0-9]+(?:_[a-z0-9]+)*$": true },
+            "additionalProperties": false
+          }
+        }
+      },
+      "patternProperties": { "^x_[a-z0-9]+(?:_[a-z0-9]+)*$": true },
+      "additionalProperties": false
+    },
+    "finalization": { "type": "null" },
+    "x_actor_assurance": { "const": "synthetic_unauthenticated" }
+  },
+  "patternProperties": { "^x_[a-z0-9]+(?:_[a-z0-9]+)*$": true },
+  "additionalProperties": false
+}

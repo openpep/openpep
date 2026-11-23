@@ -1,0 +1,6 @@
+{
+  "schema": "openpep/fixture-expectation@1",
+  "result": "reject",
+  "rule": "schema.const",
+  "path": "/state"
+}

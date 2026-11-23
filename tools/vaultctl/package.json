@@ -1,0 +1,30 @@
+{
+  "name": "@openpep/vaultctl",
+  "version": "0.4.0",
+  "description": "Independent validation and recovery CLI for OpenPEP vaults",
+  "license": "Apache-2.0",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "vaultctl": "dist/src/cli.js"
+  },
+  "engines": {
+    "node": ">=24.20.0 <25"
+  },
+  "files": [
+    "dist/src/"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build --silent && node --test dist/test/cli.test.js",
+    "check": "npm test",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@openpep/protocol-schema": "file:../../packages/protocol-schema"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.3",
+    "typescript": "7.0.2"
+  }
+}

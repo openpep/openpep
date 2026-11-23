@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: 2026 Carlos Pedrotti and OpenPEP contributors <https://github.com/openpep/openpep>
+# SPDX-License-Identifier: CC0-1.0
+
+fixtures/demo-cardiology-v1/vault/**/*.pdf binary
+output/pdf/*.pdf binary
+
+# Generated bundle: minified lines legitimately carry trailing whitespace.
+apps/macos/OpenPEP/Resources/CockpitPDF/renderer.js -whitespace linguist-generated

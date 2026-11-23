@@ -1,0 +1,21 @@
+Catálogos e textos de referência de medicamentos
+
+Os arquivos em apps/openpep-rx/data,
+suas cópias em tools/cockpit-pdf/data e tools/cockpit-pdf/src/termos.json e o
+derivado apps/macos/OpenPEP/Resources/CockpitPDF/medication-assistance.json reúnem:
+
+- dados regulatórios e de mercado publicados pela Anvisa (CMED, SNGPC e listas
+  da Portaria SVS/MS nº 344/1998), redistribuídos como dados públicos;
+- texto de anexos normativos (Portaria SVS/MS nº 344/1998 e RDC nº 11/2011),
+  transcrito como publicado; atos oficiais não são protegidos por direito
+  autoral (art. 8º, IV, da Lei nº 9.610/1998);
+- posologias estruturadas e orientações ao paciente elaboradas pelo projeto a
+  partir das bulas vigentes. Doses, apresentações e regimes são informações
+  factuais das bulas; as orientações são redação do projeto.
+
+Fontes, versões e decisões editoriais estão em apps/openpep-rx/data/PROVENANCE.md e nos
+documentos de posologias do módulo.
+
+Este identificador separa esses materiais da licença do código gerador. Não
+declara domínio público sobre o conteúdo das fontes nem concede direitos sobre
+ele. Os dados não substituem a bula vigente nem o julgamento clínico.

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Início | OpenPEP-Rx</title>
+<link rel="icon" href="openpep-mark.png"><link rel="stylesheet" href="inicio.css"><link rel="stylesheet" href="openpep.css">
+</head>
+<body>
+<div class="home-shell">
+<header class="home-header">
+<a class="openpep-brand" href="./" aria-label="OpenPEP-Rx, início"><img src="openpep-mark.png" width="42" height="42" alt=""><strong>OpenPEP-Rx</strong></a>
+<nav aria-label="Navegação principal"><a data-rx-page="receita.html#historico" href="http://127.0.0.1:4197/receita.html#historico">Minhas receitas</a><a data-rx-page="dados-locais.html#transferencia" href="http://127.0.0.1:4197/dados-locais.html#transferencia">Números SNCR</a><a data-rx-page="dados-locais.html" href="http://127.0.0.1:4197/dados-locais.html">Configurações</a></nav>
+</header>
+<main>
+<section class="welcome" aria-labelledby="welcome-title"><p class="eyebrow">PRESCRIÇÃO · OPENPEP</p><h1 id="welcome-title">Vamos começar?</h1><p>Prepare uma receita ou assine um documento.<br>Você revisa tudo antes de assinar.</p></section>
+<div class="home-actions">
+<a class="action-card primary" data-rx-page="receita.html" href="http://127.0.0.1:4197/receita.html">
+<span class="action-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+<h2>Nova receita</h2><p>Escolha o medicamento, preencha os dados e confira o PDF.</p><span class="action-link">Criar receita</span>
+</a>
+<a class="action-card secondary" data-rx-page="assinatura.html" href="http://127.0.0.1:4197/assinatura.html">
+<span class="action-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 4 5 5M4 20l5-1L20 8a2.8 2.8 0 0 0-4-4L5 15l-1 5ZM13 21h8"/></svg></span>
+<h2>Assinar PDF</h2><p>Arraste um documento pronto e assine com seu VIDaaS.</p><span class="action-link">Escolher documento</span>
+</a>
+</div>
+<aside class="home-help"><div><h2>Primeira vez por aqui?</h2><p>Cadastre seus dados profissionais para começar a prescrever.</p></div><a data-rx-page="receita.html#emitente" href="http://127.0.0.1:4197/receita.html#emitente">Configurar meu perfil</a></aside>
+<details class="local-help" id="local-help"><summary>Como abrir no meu computador</summary><p>Na pasta do OpenPEP-Rx, execute:</p><pre>npm ci
+npm run build:signer
+npm run local</pre><p>Depois, use uma das opções acima.</p></details>
+</main>
+<footer class="home-footer"><span>Seus documentos neste computador.</span><span>Assinatura com VIDaaS local.</span></footer>
+</div>
+<script type="module" src="inicio.js"></script>
+</body></html>

@@ -1,0 +1,33 @@
+OpenPEP-Rx
+Copyright 2026 Carlos Pedrotti and OpenPEP contributors.
+
+Código original do módulo: GNU Affero General Public License, versão 3 ou posterior.
+Texto integral em LICENSE. Documentação original: CC-BY-4.0, em LICENSES/.
+
+O bem-te-vi de assets/openpep-mark.png deriva de assets/brand/openpep-logo.png
+do projeto OpenPEP. O nome e o logotipo seguem LicenseRef-OpenPEP-Brand,
+em LICENSES/. A fonte Inter conserva a licença SIL OFL em assets/fonts/OFL.txt.
+As dependências npm conservam suas próprias licenças.
+
+Os catálogos e os textos de referência preservam suas fontes e atribuições
+em data/ e scripts/medicamentos/. A licença do código cobre as rotinas do
+módulo. Materiais de terceiros continuam sujeitos aos termos de suas fontes.
+Prontuários e documentos produzidos pelos usuários pertencem aos seus titulares.
+
+Assinatura local
+- local/VIDaaSSigner.swift deriva de LocalPDFSignature.swift do OpenPEP.
+  Copyright 2026 Carlos Pedrotti e colaboradores; AGPL-3.0-or-later.
+- local/prepare-pdf.mjs deriva do renderizador cockpit-pdf do OpenPEP.
+  Copyright 2026 Carlos Pedrotti; Apache-2.0 (LICENSES/Apache-2.0.txt).
+- VIDaaS e VIDaaS Connect são marcas de seus respectivos titulares.
+
+PDF.js: Mozilla Foundation e colaboradores, Apache-2.0. A distribuição estática inclui a licença e as atribuições das fontes do pacote pdfjs-dist.
+
+Modelos de referência: os seis PDFs de references/anvisa-modelos/ são documentos
+da Anvisa preservados para conferência dos renderizadores. Sua inclusão não implica
+homologação ou endosso do OpenPEP-Rx pela Anvisa. Fontes oficiais em LICENSING.md.
+
+Revisão de redistribuição
+Os catálogos e modelos não recebem a licença AGPL do código. Os identificadores
+LicenseRef-Anvisa-Catalogs e LicenseRef-Anvisa-Reference, em LICENSES/, registram
+a origem e a base de redistribuição de cada material.

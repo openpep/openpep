@@ -1,0 +1,13 @@
+.document-share{font-family:inherit;color:var(--ink,#213541);width:min(560px,calc(100% - 32px));max-width:560px;max-height:calc(100% - 32px);padding:24px;border:1px solid #c3d2dc;border-radius:16px;overflow:auto;box-shadow:0 24px 90px #13243840}
+.document-share::backdrop{background:#14253588}
+.document-share header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:0 0 12px;margin:0;max-width:none;border-bottom:1px solid #dce4e9}
+.document-share h2{margin:0;font-size:22px}.document-share p{font-size:15px;line-height:1.5;margin:14px 0}.document-share .hint{font-size:14px;color:#526474}
+.document-share header button{font-size:25px;border:0;background:transparent;padding:0 6px;margin:0;color:inherit}
+.document-share button{font:inherit;cursor:pointer;padding:10px 15px;border:1px solid #b8c9d6;border-radius:8px;background:white;color:#075b91;margin:0}
+.document-share button.primary{background:#285381;color:white;width:100%}.document-share button:disabled{opacity:.55;cursor:not-allowed}
+.document-share details{margin:22px 0;padding:16px 0;border-top:1px solid #dce4e9;border-bottom:1px solid #dce4e9}.document-share summary{font-size:15px;font-weight:600;cursor:pointer}
+.document-share label{display:grid;gap:6px;margin:14px 0;font-size:14px;font-weight:600}.document-share input{font:inherit;width:100%;padding:10px;border:1px solid #b8c9d6;border-radius:8px;background:white;color:inherit}
+.document-share-actions{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-top:16px}.document-share a{font-size:14px;color:#075b91;font-weight:600;text-underline-offset:3px}
+.document-share [hidden]{display:none!important}
+.document-share-portal{background:#f0f7fc;border:1px solid #c9dfea;border-radius:16px;padding:20px;margin:20px 0}.document-share-portal h3{font-size:1.1rem;margin:0 0 10px}.document-share .document-share-consent{display:flex;align-items:flex-start;gap:10px;line-height:1.5;margin-bottom:16px}.document-share-consent input{width:20px;height:20px;flex:none;margin-top:3px}.document-share-consent strong{overflow-wrap:anywhere}.document-share [data-link]{display:block;overflow-wrap:anywhere;margin:12px 0}.document-share [data-revoke-confirm]{border-top:1px solid #c9dfea;margin-top:12px}.document-share button{cursor:pointer}.document-share button:disabled{cursor:not-allowed}
+.document-share input[type=tel],.document-share input[type=email]{text-align:left;letter-spacing:normal;font-weight:400;font-size:16px;text-transform:none}

@@ -1,0 +1,3 @@
+OPENPEP SYNTHETIC DOCUMENT
+Documento geral fictício para validar DOC-001.
+Não contém dados reais e não deve ser usado em atendimento.

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpep.org/schemas/v2/clinical-draft.schema.json",
+  "title": "OpenPEP clinical draft with reviewed AI assistance",
+  "type": "object",
+  "required": ["schema", "note_id", "patient_id", "encounter_id", "status", "note_type", "author_id", "created_at", "updated_at", "source_ids", "ai_assistance", "finalization", "x_actor_assurance"],
+  "properties": {
+    "schema": { "const": "openpep/clinical-note@2" },
+    "note_id": { "type": "string", "pattern": "^note_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+    "patient_id": { "type": "string", "pattern": "^pt_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+    "encounter_id": { "type": "string", "pattern": "^enc_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+    "status": { "const": "draft" },
+    "note_type": { "const": "progress" },
+    "author_id": { "type": "string", "pattern": "^usr_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+    "created_at": { "type": "string", "format": "date-time", "pattern": "Z$" },
+    "updated_at": { "type": "string", "format": "date-time", "pattern": "Z$" },
+    "source_ids": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^asset_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+      "minItems": 1, "maxItems": 1, "uniqueItems": true
+    },
+    "ai_assistance": {
+      "type": "object",
+      "required": ["used", "generation_id", "reviewed_by", "provenance_schema", "engine", "prompt_version", "locale", "generated_at", "source_sha256", "chunk_count"],
+      "properties": {
+        "used": { "const": true },
+        "generation_id": { "type": "string", "pattern": "^gen_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+        "reviewed_by": { "type": "string", "pattern": "^usr_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+        "provenance_schema": { "const": "openpep/consultation-summary-provenance@1" },
+        "engine": { "const": "apple/FoundationModels.SystemLanguageModel" },
+        "prompt_version": { "const": "openpep/consultation-summary-pt-BR@1" },
+        "locale": { "const": "pt-BR" },
+        "generated_at": { "type": "string", "format": "date-time", "pattern": "Z$" },
+        "source_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "chunk_count": { "type": "integer", "minimum": 1, "maximum": 9999 }
+      },
+      "patternProperties": { "^x_[a-z0-9]+(?:_[a-z0-9]+)*$": true },
+      "additionalProperties": false
+    },
+    "finalization": { "type": "null" },
+    "x_actor_assurance": { "const": "synthetic_unauthenticated" }
+  },
+  "patternProperties": { "^x_[a-z0-9]+(?:_[a-z0-9]+)*$": true },
+  "additionalProperties": false
+}

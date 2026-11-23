@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: CC0-1.0
+schema: openpep/appointment@1
+appointment_id: appt_0198f6c0-0000-7000-8000-000000000004
+patient_id: pt_0198f5c2-0000-7000-8000-000000000001
+starts_at: "2026-09-01T15:00:00Z"
+ends_at: "2026-09-01T15:30:00Z"
+time_zone: Mars/Olympus
+modality: telemedicine
+status: scheduled
+location: null
+remote_access_url: null
+administrative_note: null
+encounter_id: null
+created_at: "2026-08-31T18:15:00Z"
+updated_at: "2026-08-31T18:15:00Z"

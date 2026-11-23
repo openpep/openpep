@@ -1,0 +1,11 @@
+{
+  "schema": "openpep/raw-asset-fixture-expectation@1",
+  "patient_id": "pt_0198f5c2-0000-7000-8000-000000000001",
+  "asset_id": "asset_0198f5d2-0000-7000-8000-000000000077",
+  "device_id": "dev_0198f5c1-0d8f-7f8f-82a2-0e4390d41a22",
+  "imported_at": "2026-09-01T12:00:00Z",
+  "size_bytes": 138,
+  "sha256": "47029e70124e151df6325c2aa66de1c829bf029a01f1b87acae4affbba6a004d",
+  "original_relative_path": "raw/2026/09/asset_0198f5d2-0000-7000-8000-000000000077.txt",
+  "sidecar_relative_path": "raw/2026/09/asset_0198f5d2-0000-7000-8000-000000000077.meta.md"
+}

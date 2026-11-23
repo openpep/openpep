@@ -1,0 +1,103 @@
+<!doctype html>
+<!-- SPDX-FileCopyrightText: 2026 Carlos Pedrotti and OpenPEP contributors -->
+<!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenPEP — um prontuário pensado na era da IA</title>
+<meta name="description" content="A voz como base do registro. Inteligência integrada e arquivos sob seu controle. Conheça o OpenPEP, prontuário ambulatorial brasileiro de código aberto. Alfa experimental, sem liberação clínica.">
+<meta name="theme-color" content="#102c25"><meta property="og:title" content="Conheça o OpenPEP"><meta property="og:description" content="Um prontuário ambulatorial brasileiro, 100% open-source. É só o começo."><meta property="og:type" content="website"><meta property="og:image" content="https://openpep.com.br/assets/images/film-poster.jpg">
+<link rel="icon" type="image/png" href="assets/openpep-logo.png"><link rel="stylesheet" href="style.css"><link rel="preload" as="image" href="assets/images/consultorio-v2.webp" fetchpriority="high">
+</head>
+<body class="bg-forest text-ivory antialiased">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<header class="site-header absolute inset-x-0 top-0 z-30 border-b border-white/15">
+ <div class="shell flex min-h-24 items-center justify-between gap-5">
+  <a class="brand flex items-center gap-3" href="#inicio" aria-label="OpenPEP, início"><img src="assets/openpep-logo.png" width="44" height="44" alt=""><span class="text-2xl font-bold tracking-tight">OpenPEP</span></a>
+  <nav class="hidden items-center gap-8 text-sm md:flex" aria-label="Navegação principal"><a href="#filme">O filme</a><a href="#recursos">O prontuário</a><a href="#arquivos">Seus arquivos</a><a href="#colabore" class="nav-cta">Faça parte</a></nav>
+  <button id="menu-toggle" class="menu-toggle md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
+ </div>
+ <nav id="mobile-menu" class="mobile-menu" aria-label="Navegação móvel" hidden><a href="#filme">O filme</a><a href="#recursos">O prontuário</a><a href="#arquivos">Seus arquivos</a><a href="#colabore">Faça parte</a></nav>
+</header>
+<main id="conteudo">
+ <section id="inicio" class="hero relative isolate flex min-h-svh flex-col justify-end overflow-hidden" aria-labelledby="hero-title">
+  <img class="hero-background absolute inset-0 -z-20 h-full w-full object-cover" src="assets/images/consultorio-v2.webp" alt="" width="1672" height="941" fetchpriority="high">
+  <div class="hero-shade absolute inset-0 -z-10"></div>
+  <div class="shell hero-content relative pb-16 pt-40 lg:pb-24">
+   <p class="eyebrow mb-7">ABERTO POR NATUREZA</p>
+   <h1 id="hero-title" class="max-w-4xl text-balance">Um prontuário pensado na era da IA.</h1>
+   <p class="mt-7 max-w-xl text-lg leading-relaxed text-white/85 lg:text-xl">Boas tecnologias desaparecem na paisagem.<br>Uma iniciativa 100% open-source e brasileira.</p>
+   <div class="mt-9 flex flex-wrap items-center gap-4"><a href="#filme" class="button button-yellow"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg>Assista ao filme <span class="button-meta">1:09</span></a><a href="#recursos" class="button button-glass">Explore o OpenPEP</a><a href="https://github.com/openpep/openpep" class="hero-github underlined-link">GitHub</a></div>
+   <p class="mt-7 text-sm text-white/75">Alfa experimental · uso clínico ainda não liberado</p>
+  </div>
+  <div class="hero-strip border-t border-white/20"><div class="shell flex flex-wrap items-center justify-between gap-x-8 gap-y-3 py-5 text-sm"><span>Um projeto brasileiro de código aberto</span><span>Arquivos locais. Acesso direto.</span><a href="#colabore">Construído para evoluir com você</a></div></div>
+ </section>
+ <div id="flight" class="flight" aria-hidden="true" hidden><img src="assets/images/bemtevi-flight.webp" width="480" height="480" alt="" decoding="async"></div>
+
+ <section id="filme" class="film-section section-pad" aria-labelledby="film-title">
+  <div class="shell">
+   <div class="mb-10 grid items-end gap-6 md:grid-cols-[1.2fr_1fr]"><div><p class="eyebrow mb-4">CONHEÇA O OPENPEP</p><h2 id="film-title">O começo de uma<br class="hidden md:block"> nova conversa.</h2></div><p class="max-w-lg text-lg leading-relaxed text-sage md:justify-self-end">Um prontuário ambulatorial brasileiro, 100% open-source. Veja como voz, inteligência e autonomia se encontram.</p></div>
+   <div class="film-frame relative overflow-hidden rounded-2xl border border-white/15 bg-black shadow-2xl"><video id="teaser" class="block aspect-video w-full" controls playsinline preload="none" poster="assets/images/film-poster.jpg" aria-label="Filme de apresentação do OpenPEP, 69 segundos" aria-describedby="film-caption"><source src="assets/video/openpep-69s.mp4" type="video/mp4"><a href="assets/video/openpep-69s.mp4">Baixar o filme do OpenPEP</a></video></div>
+   <div id="film-caption" class="mt-4 flex flex-wrap justify-between gap-3 text-sm text-sage"><p>Uma consulta com Ana Silva, do primeiro registro aos documentos.</p><a href="assets/video/openpep-69s.mp4" download class="underlined-link">Baixar o filme</a></div>
+   <details class="film-description mt-5 text-sm text-sage"><summary>Descrição do filme</summary><p class="mt-3 max-w-3xl leading-relaxed">Um médico chega ao consultório e inicia uma consulta no OpenPEP. O filme apresenta transcrição local ou na nuvem, personalização da anamnese, revisão dos registros, receitas e assinatura digital, integração com o SNCR e arquivos locais. Convida profissionais de diferentes áreas da saúde a colaborar. Ao final, um bem-te-vi se transforma no símbolo do projeto. A demonstração reúne telas da alfa e uma visão de evolução da interface.</p></details>
+  </div>
+ </section>
+
+ <section id="recursos" class="voice-section relative isolate overflow-hidden" aria-labelledby="voice-title">
+  <img src="assets/images/consulta.webp" class="absolute inset-0 -z-20 h-full w-full object-cover" alt="" loading="lazy" width="1672" height="941"><div class="voice-shade absolute inset-0 -z-10"></div>
+  <div class="shell grid items-center gap-14 py-24 lg:grid-cols-2 lg:py-36">
+   <div><div class="waveform mb-7 flex h-12 items-center gap-1.5" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p class="eyebrow mb-5">DA CONVERSA AO PRONTUÁRIO</p><h2 id="voice-title">A voz como base<br>do registro.</h2><p class="mt-6 max-w-lg text-lg leading-relaxed text-white/85">Converse, acompanhe a transcrição e revise na própria consulta. Escolha um modelo local ou na nuvem, conforme sua configuração.</p><div class="mt-8 flex flex-wrap gap-3"><span class="feature-pill">Transcrição integrada</span><span class="feature-pill">Revisão profissional</span></div></div>
+   <figure class="screen-figure"><a class="screen-frame" href="assets/screenshots/ana-consulta.webp" aria-label="Ampliar a consulta da Ana Silva"><img src="assets/screenshots/ana-consulta.webp" alt="Consulta de Ana Silva no OpenPEP, com registro e acesso à transcrição" width="1800" height="1274" loading="lazy" class="block w-full rounded-lg"></a><figcaption class="mt-4 text-sm text-white/70">O registro, a transcrição e os documentos no contexto da consulta.</figcaption></figure>
+  </div>
+ </section>
+
+ <section class="intelligence-section section-pad bg-ivory text-forest" aria-labelledby="intelligence-title">
+  <div class="shell">
+   <div class="grid gap-10 lg:grid-cols-[1.1fr_1fr]"><div><p class="eyebrow mb-5">INTELIGÊNCIA INTEGRADA</p><h2 id="intelligence-title">IA é infraestrutura.</h2></div><div><p class="text-2xl leading-snug tracking-tight md:text-3xl">Do sistema de dados à interface, um design pensado na era dos agentes de IA.</p><p class="mt-6 text-lg leading-relaxed text-forest/75">O contexto acompanha você. Transforme a transcrição em uma proposta de resumo, consulte a história do paciente e confira as fontes. Você revisa antes de aceitar.</p></div></div>
+   <div class="mt-16 grid gap-8 lg:grid-cols-[1.55fr_1fr]">
+    <figure class="ai-screen">
+     <div class="ips-preview" role="img" aria-label="Visão de futuro do IPS de Ana Silva: resumo organizado por IA, com fontes e informações para revisão profissional.">
+      <div class="ips-toolbar"><span class="ips-brand"><img src="assets/openpep-logo.png" width="24" height="24" alt="">OpenPEP</span><span>Prontuário / IPS</span></div>
+      <div class="ips-body">
+       <div class="ips-patient"><div class="ips-avatar" aria-hidden="true">AS</div><div><h3>Ana Silva</h3><p>42 anos · Resumo de saúde</p></div></div>
+       <div class="ips-context"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z"/></svg><div><strong>A história, organizada.</strong><p>A IA reuniu os registros. Você confere cada informação e decide o que incorporar.</p></div></div>
+       <div class="ips-section-title"><h4>Resumo clínico</h4><span>2 itens a revisar</span></div>
+       <div class="ips-fact"><div class="ips-fact-heading"><strong>Condições de saúde</strong><span class="ips-reviewed">Revisado</span></div><p>Hipertensão arterial em acompanhamento.</p><small>Fonte: consulta de 12 nov. 2026</small></div>
+       <div class="ips-fact"><div class="ips-fact-heading"><strong>Medicamentos em uso</strong><span class="ips-pending">A revisar</span></div><p>Losartana 50 mg · 1 vez ao dia</p><small>Fonte: receita de 12 nov. 2026</small></div>
+       <div class="ips-fact"><div class="ips-fact-heading"><strong>Alergias</strong><span class="ips-pending">A revisar</span></div><p>Nenhuma alergia relatada na última consulta.</p><small>Fonte: registro de 12 nov. 2026</small></div>
+       <div class="ips-footer"><span>Fontes preservadas no seu computador</span><span>Revisão profissional</span></div>
+      </div>
+     </div>
+     <figcaption class="mt-4 text-sm text-forest/65">Visão de futuro · resumo inspirado no IPS, com a história de Ana Silva.</figcaption>
+    </figure>
+    <div class="flex flex-col justify-center"><article class="feature-row"><h3>Personalize a anamnese exatamente do seu jeito.</h3><p>Organize o registro para o seu raciocínio e sua forma de atender.</p></article><article class="feature-row"><h3>Uma interface que deixa o essencial à mão.</h3><p>Agenda, histórico, consulta e documentos fazem parte do mesmo fluxo.</p></article><article class="feature-row"><h3>A proposta é da IA. A decisão é sua.</h3><p>Confira o conteúdo e suas referências antes de incorporar ao prontuário.</p></article></div>
+   </div>
+  </div>
+ </section>
+
+ <section id="arquivos" class="files-section section-pad relative overflow-hidden" aria-labelledby="files-title">
+  <div class="shell relative grid items-center gap-14 lg:grid-cols-2">
+   <div><p class="eyebrow mb-5">AUTONOMIA DESDE A ORIGEM</p><h2 id="files-title">Todos os registros legíveis, sob seu controle.</h2><p class="mt-6 max-w-lg text-lg leading-relaxed text-sage">Os registros vivem em uma pasta escolhida por você. Arquivos legíveis e formatos abertos tornam muito mais simples exportar sua história e importar registros de outros sistemas.</p><p class="mt-5 max-w-lg leading-relaxed text-sage">Guarde qualquer tipo de arquivo junto ao prontuário: PDFs de resultados de exames, textos, documentos, imagens e mais. Abra, copie e organize tudo diretamente no computador. A adaptação de registros de outros sistemas depende do formato de origem e da sua revisão.</p><p class="mt-8 text-sm tracking-wide text-yellow">Markdown · YAML · PDF · formatos documentados</p></div>
+   <div class="file-browser overflow-hidden rounded-2xl border border-white/20 bg-[#0a211c]/90 shadow-2xl">
+    <div class="flex items-center gap-3 border-b border-white/10 px-6 py-5 text-sm text-sage"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 6h7l2 3h9v11H3Z"/></svg>prontuário / Ana Silva</div>
+    <div class="folder-tabs grid grid-cols-3 border-b border-white/10" role="tablist" aria-label="Pastas do prontuário"><button role="tab" id="tab-raw" aria-selected="true" aria-controls="panel-raw" data-folder="raw">raw/</button><button role="tab" id="tab-content" aria-selected="false" aria-controls="panel-content" tabindex="-1" data-folder="content">content/</button><button role="tab" id="tab-wiki" aria-selected="false" aria-controls="panel-wiki" tabindex="-1" data-folder="wiki">wiki/</button></div>
+    <div id="panel-raw" class="folder-panel" role="tabpanel" aria-labelledby="tab-raw" tabindex="0"><p class="eyebrow text-yellow">FONTES ORIGINAIS</p><h3>Documentos que chegam com a pessoa.</h3><p>Exames, imagens e transcrições preservados como fontes para consulta.</p><div class="file-row"><span>exames-ana-silva.pdf</span><span>PDF</span></div><div class="file-row"><span>transcricao-consulta.txt</span><span>TXT</span></div></div>
+    <div id="panel-content" class="folder-panel" role="tabpanel" aria-labelledby="tab-content" tabindex="0" hidden><p class="eyebrow text-yellow">REGISTRO PROFISSIONAL</p><h3>A história escrita por você.</h3><p>Rascunhos, notas finais e adendos em arquivos legíveis. Correções são registradas por adendo.</p><div class="file-row"><span>consulta-ana-silva.md</span><span>MD</span></div><div class="file-row"><span>adendo-consulta.md</span><span>MD</span></div></div>
+    <div id="panel-wiki" class="folder-panel" role="tabpanel" aria-labelledby="tab-wiki" tabindex="0" hidden><p class="eyebrow text-yellow">CONTEXTO E REFERÊNCIAS</p><h3>Resumos ligados às suas fontes.</h3><p>Uma visão organizada da história, com propostas que passam pela sua revisão.</p><div class="file-row"><span>resumo-ana-silva.md</span><span>MD</span></div><div class="file-row"><span>referencias.json</span><span>JSON</span></div></div>
+    <div class="border-t border-white/10 px-6 py-4 text-sm text-sage">Explore a organização das pastas.</div>
+   </div>
+  </div>
+ </section>
+
+ <section class="documents-section section-pad bg-ivory text-forest" aria-labelledby="documents-title"><div class="shell grid items-center gap-14 lg:grid-cols-2">
+  <figure class="order-2 lg:order-1"><a href="assets/screenshots/ana-receita.webp" aria-label="Ampliar a receita no OpenPEP"><img src="assets/screenshots/ana-receita.webp" alt="Editor de receita de Ana Silva no OpenPEP" width="1800" height="1274" loading="lazy" class="w-full rounded-xl border border-forest/10 shadow-xl"></a><figcaption class="mt-4 text-sm text-forest/65">Receitas e documentos no mesmo fluxo de trabalho.</figcaption></figure>
+  <div class="order-1 lg:order-2"><p class="eyebrow mb-5">DA CONSULTA AOS DOCUMENTOS</p><h2 id="documents-title">Emissão de documentos super amigável.</h2><p class="mt-6 text-lg leading-relaxed text-forest/75">Emita receitas e outros documentos 100% localmente, com certificado digital local.</p><article class="feature-row mt-5"><h3>Integração nativa com o SNCR.</h3><p>Organize as numerações de receitas controladas. A homologação é o padrão; produção depende de escolha explícita e configuração.</p></article><p class="mt-5 text-sm text-forest/65">A alfa ainda não está liberada para emissão clínica. Certificados, serviços externos e integrações têm requisitos próprios.</p></div>
+ </div></section>
+
+ <section id="colabore" class="collaborate relative isolate overflow-hidden" aria-labelledby="collaborate-title"><img src="assets/images/consultorio-v2.webp" alt="" class="absolute inset-0 -z-20 h-full w-full object-cover" loading="lazy" width="1672" height="941"><div class="absolute inset-0 -z-10 bg-forest/90"></div><div class="shell py-24 lg:py-32"><p class="eyebrow mb-6">100% OPEN-SOURCE. FEITO NO BRASIL.</p><h2 id="collaborate-title" class="max-w-4xl">É só o começo.<br>Faça parte do que vem.</h2><div class="mt-10 grid gap-10 md:grid-cols-2"><p class="max-w-xl text-xl leading-relaxed text-white/85">Um projeto aberto para evoluir com diferentes especialidades e profissões da saúde. Traga sua experiência, adapte os fluxos e ajude a construir o próximo capítulo.</p><div><a class="button button-yellow" href="https://github.com/openpep/openpep">Acompanhe no GitHub</a><p class="mt-5 max-w-md text-sm leading-relaxed text-white/70">Estamos preparando o repositório para acesso público. A colaboração começa com a abertura do código.</p></div></div></div></section>
+
+ <section id="alfa" class="alpha-section section-pad bg-ivory text-forest" aria-labelledby="alpha-title"><div class="shell grid gap-12 lg:grid-cols-2"><div><p class="eyebrow mb-5">ALFA EXPERIMENTAL</p><h2 id="alpha-title">Espaço para testar,<br>aprender e melhorar.</h2><p class="mt-6 text-lg leading-relaxed text-forest/75">A primeira alfa está em preparação para distribuição como código-fonte. Ainda não há download público nem liberação para uso clínico.</p><p class="alpha-note mt-7">Os testes devem usar somente dados sintéticos. Não utilize a alfa para atendimento ou guarda de dados reais de pacientes.</p></div><div class="faq"><details><summary>Em quais computadores funciona?</summary><p>A alfa foi preparada para Mac com Apple Silicon e macOS 26 ou posterior. A compilação utiliza Xcode 27 e Swift 6.4. Windows e instalador não fazem parte desta distribuição inicial.</p></details><details><summary>O prontuário precisa ir para a nuvem?</summary><p>Os arquivos ficam localmente. Serviços de IA externos são opcionais e exigem configuração e autorização. Recursos Apple dependem da disponibilidade dos modelos no Mac; SNCR e certificados em nuvem também dependem de internet.</p></details><details><summary>Posso adaptar para minha especialidade?</summary><p>Essa é a proposta do código aberto: permitir que o projeto seja estudado e adaptado a diferentes formas de cuidar. Cada adaptação e cada novo uso precisam ser avaliados e validados.</p></details><details><summary>Qual é a licença do projeto?</summary><p>O núcleo usa AGPL-3.0-or-later. Schemas e ferramentas usam Apache-2.0; documentação, CC BY 4.0. Catálogos, fontes e marca têm avisos próprios no repositório.</p></details></div></div></section>
+</main>
+<footer class="border-t border-white/15"><div class="shell flex flex-wrap items-center justify-between gap-6 py-10"><a class="brand flex items-center gap-3" href="#inicio"><img src="assets/openpep-logo.png" alt="" width="40" height="40"><span class="text-xl font-bold">OpenPEP</span></a><p class="text-sm text-sage">Aberto para construir. Feito para cuidar.</p><div class="flex gap-6 text-sm text-sage"><a href="https://github.com/openpep/openpep">GitHub</a><span>© 2026 OpenPEP</span></div></div></footer>
+<script src="script.js" defer></script>
+</body></html>

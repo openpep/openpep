@@ -1,0 +1,4 @@
+{
+  "rule": "progressive_summary_work.summary_acceptance_mismatch",
+  "path": "/summary/acceptance/accepted_text"
+}

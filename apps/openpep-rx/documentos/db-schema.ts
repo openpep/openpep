@@ -1,0 +1,3 @@
+import {sqliteTable,text,integer} from 'drizzle-orm/sqlite-core';
+export const documents=sqliteTable('documents',{id:text('id').primaryKey(),publisher:text('publisher').notNull(),accessHash:text('access_hash').notNull(),pdfHash:text('pdf_hash').notNull(),objectKey:text('object_key').notNull(),bytes:integer('bytes').notNull(),createdAt:integer('created_at').notNull(),revokedAt:integer('revoked_at')});
+export const documentValidations=sqliteTable('document_validations',{documentId:text('document_id').primaryKey().references(()=>documents.id),tokenHash:text('token_hash').notNull(),expiresAt:integer('expires_at').notNull()});

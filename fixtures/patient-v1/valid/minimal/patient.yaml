@@ -1,0 +1,12 @@
+schema: openpep/patient@1
+patient_id: pt_0198f5c2-0000-7000-8000-000000000001
+status: active
+full_name: "Ana Fictícia"
+preferred_name: null
+birth_date: null
+contacts: []
+identifiers: []
+alerts: []
+created_at: "2026-08-31T18:00:00Z"
+updated_at: "2026-08-31T18:00:00Z"
+archived_at: null
