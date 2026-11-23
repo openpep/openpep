@@ -1,0 +1,12 @@
+{
+  "schema": "openpep/fixture-expectation@1",
+  "result": "accept",
+  "patient_id": "pt_0198f5c2-0000-7000-8000-000000000001",
+  "encounter_id": "enc_0198f5d1-0000-7000-8000-000000000001",
+  "note_id": "note_0198f5d3-0000-7000-8000-000000000001",
+  "author_id": "usr_0198f4a0-0000-7000-8000-000000000001",
+  "started_at": "2026-08-30T17:20:00Z",
+  "encounter_relative_path": "content/encounters/enc_0198f5d1-0000-7000-8000-000000000001.md",
+  "draft_relative_path": "content/notes/drafts/note_0198f5d3-0000-7000-8000-000000000001.md",
+  "body": "Texto clínico sintético para desenvolvimento.\n"
+}

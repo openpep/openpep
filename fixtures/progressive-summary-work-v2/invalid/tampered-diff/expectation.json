@@ -1,0 +1,4 @@
+{
+  "rule": "progressive_summary_work.summary_revision_diff_mismatch",
+  "path": "/summary/revisions/0/computed_diff"
+}

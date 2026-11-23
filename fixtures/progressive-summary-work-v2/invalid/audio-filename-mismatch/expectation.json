@@ -1,0 +1,4 @@
+{
+  "rule": "progressive_summary_work.capture_audio_filename_mismatch",
+  "path": "/capture/audio_filenames"
+}

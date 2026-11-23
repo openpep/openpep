@@ -1,0 +1,5 @@
+{
+  "schema": "openpep/clinical-ledger-invalid-fixture@1",
+  "rule": "ledger.sequence",
+  "path": "/lines/1/sequence"
+}

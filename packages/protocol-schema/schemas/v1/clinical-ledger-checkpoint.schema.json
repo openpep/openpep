@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpep.org/schemas/v1/clinical-ledger-checkpoint.schema.json",
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "title": "OpenPEP clinical ledger checkpoint",
+  "description": "A trusted expected length and head hash for one patient clinical ledger.",
+  "type": "object",
+  "required": [
+    "schema",
+    "patient_id",
+    "event_count",
+    "head_event_hash"
+  ],
+  "properties": {
+    "schema": {
+      "const": "openpep/clinical-ledger-checkpoint@1"
+    },
+    "patient_id": {
+      "type": "string",
+      "pattern": "^pt_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "event_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "head_event_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "patternProperties": {
+    "^x_[a-z0-9]+(?:_[a-z0-9]+)*$": true
+  },
+  "additionalProperties": false
+}

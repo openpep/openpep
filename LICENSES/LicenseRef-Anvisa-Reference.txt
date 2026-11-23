@@ -1,0 +1,12 @@
+Modelos de referência publicados pela Anvisa
+
+Os seis PDFs em apps/openpep-rx/references/anvisa-modelos reproduzem, sem alteração,
+modelos de receituário publicados pela Agência Nacional de Vigilância Sanitária
+(Anvisa) como parte da regulamentação sanitária. URLs das fontes constam em
+apps/openpep-rx/LICENSING.md. Servem de referência para o layout que o módulo segue;
+o software não depende deles em execução.
+
+A redistribuição se apoia no art. 8º, IV, da Lei nº 9.610/1998, que exclui da
+proteção por direito autoral os atos oficiais. Este identificador registra a
+origem e separa esses arquivos da licença do código OpenPEP. Não é uma
+concessão de licença pelo OpenPEP. Não há endosso ou homologação da Anvisa.

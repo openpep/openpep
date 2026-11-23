@@ -1,0 +1,21 @@
+{
+  "format": "openpep-backup",
+  "version": 1,
+  "createdAt": "2026-09-04T12:00:00Z",
+  "vaultID": "vlt_0198f5c0-0000-7000-8000-000000000201",
+  "fileCount": 2,
+  "byteCount": 0,
+  "directories": [],
+  "files": [
+    {
+      "path": "duplicate.txt",
+      "sizeBytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "duplicate.txt",
+      "sizeBytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

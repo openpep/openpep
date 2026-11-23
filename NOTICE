@@ -1,0 +1,22 @@
+OpenPEP
+Copyright 2026 Carlos Pedrotti and OpenPEP contributors.
+
+This repository contains material under multiple licenses. REUSE.toml maps
+each path to its license, and LICENSES/ contains the corresponding license
+texts. User-created medical records and operational data are not licensed to
+the OpenPEP project by the repository licenses.
+
+The OpenPEP name and bird logo are handled separately from the software and
+documentation licenses. See LICENSING.md and LICENSES/LicenseRef-OpenPEP-Brand.txt.
+
+The wiki exporter uses selected LOINC identifiers and their official names.
+This material contains content from LOINC (http://loinc.org). LOINC is copyright
+© Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and
+Codes (LOINC) Committee and is available at no cost under the license at
+http://loinc.org/license. LOINC® is a registered United States trademark of
+Regenstrief Institute, Inc.
+
+The wiki exporter uses the UCUM unit identifiers kg and % without modifying
+their meaning. UCUM is copyright ©1999-2024 Regenstrief Institute, Inc.
+Its license and warranty disclaimer are available at https://ucum.org/license.
+Neither complete terminology nor a terminology service is included.

@@ -1,0 +1,37 @@
+# Dependencies, deployments and local configuration
+node_modules/
+.vercel/
+.env*
+!/.env.example
+.DS_Store
+*.log
+/tmp/
+
+# Keys and personal certificate material
+*.pfx
+*.p12
+*.key
+*.pem
+
+# Design experiments, generated evidence and backups
+/design-samples*/
+/qa/*
+!/qa/*.mjs
+!/qa/*.py
+
+# Source release packages
+/dist/
+
+# Native local signer build
+/local/bin/
+
+# Local clinical data (never part of a source release)
+/.local-data/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+
+# Separate sanitized Sites source checkout
+/sites/
+
+/.local-backups/

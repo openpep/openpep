@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Assinatura local | OpenPEP-Rx</title><link rel="icon" href="openpep-mark.png"><link rel="stylesheet" href="assinatura.css"><link rel="stylesheet" href="openpep.css"><link rel="stylesheet" href="compartilhar-documento.css"></head>
+<body>
+<header><a class="brand openpep-brand" href="index.html"><img src="openpep-mark.png" width="44" height="44" alt=""><span>OpenPEP-Rx<small>Prescrição</small></span></a><a href="index.html">Voltar ao início</a></header>
+<main>
+<p class="eyebrow">VIDaaS CONNECT</p><h1>Seu PDF, sua assinatura.</h1>
+<p class="intro">Revise o documento neste computador e autorize a assinatura com seu certificado VIDaaS.</p>
+<p id="status" role="status" aria-live="polite">Conectando ao serviço local…</p>
+<section id="setup" hidden class="panel"><h2>Abra o assinador no computador</h2><p>Esta versão usa macOS e o VIDaaS Connect instalado e autenticado. Na pasta do módulo, execute:</p><pre>npm ci
+npm run build:signer
+npm run local</pre><p>Abra <a href="http://127.0.0.1:4197/assinatura.html">o assinador local</a>. A compilação requer Xcode Command Line Tools.</p></section>
+<div class="workspace" id="workspace" hidden>
+<div class="controls">
+<section class="panel dropzone" id="dropzone" tabindex="0" aria-label="Solte um PDF aqui ou escolha um arquivo"><p class="step">01 · DOCUMENTO</p><h2>Arraste seu PDF aqui</h2><p id="file-name" class="hint">Ou escolha um arquivo abaixo.</p><p><a href="assinatura-local.pdf" download>Baixar PDF fictício para testar</a></p><label for="file">Arquivo, até 20 MB</label><input id="file" type="file" accept="application/pdf,.pdf"><p class="hint">Até 50 páginas. PDFs com formulários ou assinaturas anteriores não são aceitos nesta versão.</p></section>
+<section class="panel"><p class="step">02 · CERTIFICADO</p><h2>Conecte seu VIDaaS</h2><button id="certificates" type="button">Consultar certificado local</button><label for="identity">Titular</label><select id="identity" disabled><option value="">Nenhum certificado selecionado</option></select><p class="hint">A consulta mostra apenas certificados expostos pelo VIDaaS Connect.</p></section>
+<section class="panel"><p class="step">03 · ASSINATURA</p><h2>Posicione e assine</h2><button id="position" type="button" disabled>Posicionar assinatura</button><p class="hint">Uma marca com o nome do titular será inserida no PDF, na posição escolhida.</p><label class="confirm"><input id="confirm" type="checkbox" disabled><span>Revisei a prévia e autorizo a assinatura deste PDF.</span></label><button id="sign" class="primary" type="button" disabled>Assinar com VIDaaS</button><button id="without-mark" class="text-button" type="button" disabled>Assinar sem marca visual</button><button id="share-document" type="button" hidden>Enviar documento</button><a id="download" class="download" hidden download="openpep-rx-assinado.pdf">Baixar PDF assinado</a><p class="hint">A autorização é feita pelo VIDaaS Connect. Se a operação falhar, será necessário revisar o documento novamente.</p></section>
+</div>
+<section class="preview panel"><div class="preview-heading"><h2>Prévia do documento</h2><a id="open-preview" hidden target="_blank" rel="noopener">Abrir PDF</a></div><div id="placement" class="placement" hidden><p>Arraste a caixa para um espaço livre. Você também pode usar as setas do teclado.</p><div class="placement-controls"><label>Página<select id="stamp-page"></select></label><label>Tamanho<select id="stamp-size"><option value="220">Padrão</option><option value="160">Pequena</option><option value="280">Grande</option></select></label><button id="apply-position" type="button">Aplicar posição</button><button id="cancel-position" type="button">Cancelar</button></div></div><p id="empty">Selecione um PDF para revisar.</p><div id="preview" role="region" aria-label="Páginas do PDF preparado para assinatura" hidden></div><p id="hash" class="hash"></p></section>
+</div>
+<section id="signed-history" class="panel" hidden><h2>PDFs assinados neste computador</h2><ul id="signed-list"></ul><p class="hint">Reabra o envio ou desative um link sem assinar novamente.</p></section>
+<footer>O PDF é processado pelo serviço neste computador. O certificado VIDaaS permanece na nuvem da VALID; o Connect faz a autorização. A verificação local confere integridade e certificado signatário, sem certificar conformidade ICP-Brasil ou liberação clínica.</footer>
+</main><script type="module" src="assinatura.js"></script>
+</body></html>

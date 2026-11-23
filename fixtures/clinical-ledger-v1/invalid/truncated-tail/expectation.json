@@ -1,0 +1,6 @@
+{
+  "schema": "openpep/clinical-ledger-invalid-fixture@1",
+  "checkpoint": "../../golden/two-events/checkpoint.json",
+  "rule": "ledger.checkpoint_count",
+  "path": "/checkpoint/eventCount"
+}

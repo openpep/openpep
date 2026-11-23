@@ -1,0 +1,6 @@
+{
+  "schema": "openpep/fixture-expectation@1",
+  "result": "reject",
+  "rule": "yaml.maximum_depth",
+  "path": "/x_level_0/x_level_1/x_level_2/x_level_3/x_level_4/x_level_5/x_level_6/x_level_7/x_level_8/x_level_9/x_level_10/x_level_11"
+}

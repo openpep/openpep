@@ -1,0 +1,5 @@
+{
+  "schema": "openpep/clinical-ledger-invalid-fixture@1",
+  "rule": "ledger.event_hash",
+  "path": "/lines/1/event_hash"
+}

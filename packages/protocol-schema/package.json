@@ -1,0 +1,51 @@
+{
+  "name": "@openpep/protocol-schema",
+  "version": "0.11.0",
+  "description": "Schemas and validators for the openpep-vault protocol",
+  "license": "Apache-2.0",
+  "type": "module",
+  "private": false,
+  "engines": {
+    "node": ">=24.20.0 <25"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    },
+    "./schemas/v1/vault.schema.json": "./schemas/v1/vault.schema.json",
+    "./schemas/v1/operations-manifest.schema.json": "./schemas/v1/operations-manifest.schema.json",
+    "./schemas/v1/patient.schema.json": "./schemas/v1/patient.schema.json",
+    "./schemas/v1/appointment.schema.json": "./schemas/v1/appointment.schema.json",
+    "./schemas/v1/synthetic-encounter-profile.schema.json": "./schemas/v1/synthetic-encounter-profile.schema.json",
+    "./schemas/v1/synthetic-clinical-draft-profile.schema.json": "./schemas/v1/synthetic-clinical-draft-profile.schema.json",
+    "./schemas/v1/progressive-summary-work.schema.json": "./schemas/v1/progressive-summary-work.schema.json",
+    "./schemas/v2/progressive-summary-work.schema.json": "./schemas/v2/progressive-summary-work.schema.json",
+    "./schemas/v2/clinical-draft.schema.json": "./schemas/v2/clinical-draft.schema.json",
+    "./schemas/v3/clinical-draft.schema.json": "./schemas/v3/clinical-draft.schema.json",
+    "./schemas/v4/clinical-draft.schema.json": "./schemas/v4/clinical-draft.schema.json",
+    "./schemas/v1/clinical-event.schema.json": "./schemas/v1/clinical-event.schema.json",
+    "./schemas/v1/clinical-ledger-checkpoint.schema.json": "./schemas/v1/clinical-ledger-checkpoint.schema.json",
+    "./schemas/v1/signing-key-registry.schema.json": "./schemas/v1/signing-key-registry.schema.json"
+  },
+  "files": [
+    "dist/src/",
+    "schemas/"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build --silent && node --test dist/test/appointment.test.js dist/test/canonical.test.js dist/test/checkpoint.test.js dist/test/clinical-document.test.js dist/test/clinical-event.test.js dist/test/ids.test.js dist/test/ledger.test.js dist/test/operations-manifest.test.js dist/test/patient.test.js dist/test/progressive-summary-work.test.js dist/test/signing-keys.test.js dist/test/vault-directory.test.js dist/test/yaml.test.js dist/test/vault.test.js",
+    "validate:fixtures": "npm run build --silent && node dist/src/validate-fixtures.js ../../fixtures/vault-v1 vault && node dist/src/validate-fixtures.js ../../fixtures/operations-manifest-v1 operations && node dist/src/validate-fixtures.js ../../fixtures/patient-v1 patient && node dist/src/validate-fixtures.js ../../fixtures/appointment-v1 appointment",
+    "check": "npm test && npm run validate:fixtures",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "canonicalize": "4.0.0",
+    "yaml": "2.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.3",
+    "typescript": "7.0.2"
+  }
+}

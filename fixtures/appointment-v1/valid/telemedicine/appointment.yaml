@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: CC0-1.0
+schema: openpep/appointment@1
+appointment_id: appt_0198f6c0-0000-7000-8000-000000000002
+patient_id: pt_0198f5c2-0000-7000-8000-000000000001
+starts_at: "2026-09-01T13:00:00Z"
+ends_at: "2026-09-01T13:45:00Z"
+time_zone: America/Sao_Paulo
+modality: telemedicine
+status: scheduled
+location: null
+remote_access_url: https://facetime.apple.com/join/synthetic-room
+administrative_note: null
+encounter_id: null
+created_at: "2026-08-31T18:05:00Z"
+updated_at: "2026-08-31T18:05:00Z"
+x_fixture_note: preserved

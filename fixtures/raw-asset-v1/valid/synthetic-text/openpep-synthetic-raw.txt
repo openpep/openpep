@@ -1,0 +1,2 @@
+OPENPEP_SYNTHETIC_FIXTURE_V1
+Generated test text without a person or clinical event.

@@ -1,0 +1,6 @@
+{
+  "schema": "openpep/fixture-expectation@1",
+  "result": "reject",
+  "rule": "clinical_document.duplicate_generation",
+  "path": "/ai_assistance/generations"
+}

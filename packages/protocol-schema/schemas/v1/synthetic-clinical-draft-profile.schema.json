@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpep.org/schemas/v1/synthetic-clinical-draft-profile.schema.json",
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "title": "OpenPEP synthetic clinical draft profile",
+  "type": "object",
+  "required": [
+    "schema",
+    "note_id",
+    "patient_id",
+    "encounter_id",
+    "status",
+    "note_type",
+    "author_id",
+    "created_at",
+    "updated_at",
+    "source_ids",
+    "ai_assistance",
+    "finalization",
+    "x_actor_assurance"
+  ],
+  "properties": {
+    "schema": { "const": "openpep/clinical-note@1" },
+    "note_id": {
+      "type": "string",
+      "pattern": "^note_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "patient_id": {
+      "type": "string",
+      "pattern": "^pt_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "encounter_id": {
+      "type": "string",
+      "pattern": "^enc_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "status": { "const": "draft" },
+    "note_type": { "const": "progress" },
+    "author_id": {
+      "type": "string",
+      "pattern": "^usr_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^asset_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+      },
+      "uniqueItems": true,
+      "maxItems": 0
+    },
+    "ai_assistance": {
+      "type": "object",
+      "required": ["used", "generation_id", "reviewed_by"],
+      "properties": {
+        "used": { "const": false },
+        "generation_id": { "type": "null" },
+        "reviewed_by": { "type": "null" }
+      },
+      "patternProperties": {
+        "^x_[a-z0-9]+(?:_[a-z0-9]+)*$": true
+      },
+      "additionalProperties": false
+    },
+    "finalization": { "type": "null" },
+    "x_actor_assurance": { "const": "synthetic_unauthenticated" }
+  },
+  "patternProperties": {
+    "^x_[a-z0-9]+(?:_[a-z0-9]+)*$": true
+  },
+  "additionalProperties": false
+}

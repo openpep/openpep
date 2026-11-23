@@ -1,0 +1,6 @@
+.facts{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;margin:6px 0 18px;font-size:15px}
+.facts dt{color:var(--muted);font-weight:600}
+.facts dd{margin:0;font-weight:650}
+.note{color:var(--muted);font-size:13px}
+#found a{color:#075f9d;font-weight:650}
+#view,#save{display:inline-block;margin-right:18px}

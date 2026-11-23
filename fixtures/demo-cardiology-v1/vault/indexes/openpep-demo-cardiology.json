@@ -1,0 +1,1243 @@
+{
+  "disclaimer": "DADOS FICTICIOS DE DEMONSTRACAO. NAO USAR PARA CUIDADO, DECISAO OU ORIENTACAO MEDICA.",
+  "generated_at": "2026-08-30T20:00:00Z",
+  "patients": [
+    {
+      "active_problems": [
+        "Hipertensao arterial",
+        "Fibrilacao atrial paroxistica",
+        "Acompanhamento de anticoagulacao"
+      ],
+      "administrative_sex": "female",
+      "age": 68,
+      "birth_date": "1958-02-11",
+      "consultations": [
+        {
+          "date": "2024-05-16",
+          "encounter_id": "enc_01991001-0000-7000-8000-000001000101",
+          "note_id": "note_01992001-0000-7000-8000-000002000101",
+          "status": "draft"
+        },
+        {
+          "date": "2024-10-03",
+          "encounter_id": "enc_01991001-0000-7000-8000-000001000102",
+          "note_id": "note_01992001-0000-7000-8000-000002000102",
+          "status": "draft"
+        },
+        {
+          "date": "2025-04-22",
+          "encounter_id": "enc_01991001-0000-7000-8000-000001000103",
+          "note_id": "note_01992001-0000-7000-8000-000002000103",
+          "status": "draft"
+        },
+        {
+          "date": "2026-02-10",
+          "encounter_id": "enc_01991001-0000-7000-8000-000001000104",
+          "note_id": "note_01992001-0000-7000-8000-000002000104",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Alaide Cobalto",
+      "next_appointment": {
+        "modality": "in_person",
+        "starts_at": "2026-09-04T09:00:00-03:00",
+        "synthetic": true,
+        "time_zone": "America/Sao_Paulo"
+      },
+      "patient_id": "pt_01990001-0000-7000-8000-000000000101",
+      "primary_problem": "Fibrilacao atrial paroxistica",
+      "raw_assets": [
+        {
+          "asset_id": "asset_01994001-0000-7000-8000-000004000101",
+          "imported_at": "2026-02-10T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-hemograma,-funcao-renal-e-tsh-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994001-0000-7000-8000-000004000102",
+          "imported_at": "2026-02-10T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-ecocardiograma-transtoracico-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994001-0000-7000-8000-000004000103",
+          "imported_at": "2026-02-10T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Hipertensao e episodios recentes de palpitacao, sem instabilidade descrita no cenario ficticio."
+    },
+    {
+      "active_problems": [
+        "Doenca arterial coronariana",
+        "Dislipidemia",
+        "Sedentarismo"
+      ],
+      "administrative_sex": "male",
+      "age": 54,
+      "birth_date": "1972-07-19",
+      "consultations": [
+        {
+          "date": "2024-02-08",
+          "encounter_id": "enc_01991002-0000-7000-8000-000001000201",
+          "note_id": "note_01992002-0000-7000-8000-000002000201",
+          "status": "draft"
+        },
+        {
+          "date": "2024-08-15",
+          "encounter_id": "enc_01991002-0000-7000-8000-000001000202",
+          "note_id": "note_01992002-0000-7000-8000-000002000202",
+          "status": "draft"
+        },
+        {
+          "date": "2025-03-13",
+          "encounter_id": "enc_01991002-0000-7000-8000-000001000203",
+          "note_id": "note_01992002-0000-7000-8000-000002000203",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Breno Lumen",
+      "next_appointment": null,
+      "patient_id": "pt_01990002-0000-7000-8000-000000000201",
+      "primary_problem": "Doenca coronariana cronica",
+      "raw_assets": [
+        {
+          "asset_id": "asset_01994002-0000-7000-8000-000004000201",
+          "imported_at": "2025-03-13T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-perfil-lipidico-e-painel-metabolico-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994002-0000-7000-8000-000004000202",
+          "imported_at": "2025-03-13T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-teste-ergometrico-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994002-0000-7000-8000-000004000203",
+          "imported_at": "2025-03-13T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Seguimento depois de intervencao coronariana ficticia, com atividade fisica irregular."
+    },
+    {
+      "active_problems": [
+        "Insuficiencia cardiaca",
+        "Disfuncao ventricular esquerda",
+        "Fragilidade leve"
+      ],
+      "administrative_sex": "female",
+      "age": 75,
+      "birth_date": "1950-11-03",
+      "consultations": [
+        {
+          "date": "2024-09-05",
+          "encounter_id": "enc_01991003-0000-7000-8000-000001000301",
+          "note_id": "note_01992003-0000-7000-8000-000002000301",
+          "status": "draft"
+        },
+        {
+          "date": "2024-11-21",
+          "encounter_id": "enc_01991003-0000-7000-8000-000001000302",
+          "note_id": "note_01992003-0000-7000-8000-000002000302",
+          "status": "draft"
+        },
+        {
+          "date": "2025-02-27",
+          "encounter_id": "enc_01991003-0000-7000-8000-000001000303",
+          "note_id": "note_01992003-0000-7000-8000-000002000303",
+          "status": "draft"
+        },
+        {
+          "date": "2025-07-17",
+          "encounter_id": "enc_01991003-0000-7000-8000-000001000304",
+          "note_id": "note_01992003-0000-7000-8000-000002000304",
+          "status": "draft"
+        },
+        {
+          "date": "2026-01-29",
+          "encounter_id": "enc_01991003-0000-7000-8000-000001000305",
+          "note_id": "note_01992003-0000-7000-8000-000002000305",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Celina Vertice",
+      "next_appointment": {
+        "modality": "in_person",
+        "starts_at": "2026-09-03T14:30:00-03:00",
+        "synthetic": true,
+        "time_zone": "America/Sao_Paulo"
+      },
+      "patient_id": "pt_01990003-0000-7000-8000-000000000301",
+      "primary_problem": "Insuficiencia cardiaca com fracao reduzida",
+      "raw_assets": [
+        {
+          "asset_id": "asset_01994003-0000-7000-8000-000004000301",
+          "imported_at": "2026-01-29T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-creatinina,-potassio-e-peptideo-natriuretico-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994003-0000-7000-8000-000004000302",
+          "imported_at": "2026-01-29T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-radiografia-de-torax---laudo-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994003-0000-7000-8000-000004000303",
+          "imported_at": "2026-01-29T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Dispneia aos esforcos e fragilidade leve em titulacao cautelosa no roteiro sintetico."
+    },
+    {
+      "active_problems": [
+        "Hipertensao arterial",
+        "Obesidade",
+        "Suspeita de apneia do sono"
+      ],
+      "administrative_sex": "male",
+      "age": 43,
+      "birth_date": "1983-04-27",
+      "consultations": [
+        {
+          "date": "2025-01-14",
+          "encounter_id": "enc_01991004-0000-7000-8000-000001000401",
+          "note_id": "note_01992004-0000-7000-8000-000002000401",
+          "status": "draft"
+        },
+        {
+          "date": "2025-05-09",
+          "encounter_id": "enc_01991004-0000-7000-8000-000001000402",
+          "note_id": "note_01992004-0000-7000-8000-000002000402",
+          "status": "draft"
+        },
+        {
+          "date": "2025-12-04",
+          "encounter_id": "enc_01991004-0000-7000-8000-000001000403",
+          "note_id": "note_01992004-0000-7000-8000-000002000403",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Dario Nimbo",
+      "next_appointment": {
+        "modality": "in_person",
+        "starts_at": "2026-09-09T16:00:00-03:00",
+        "synthetic": true,
+        "time_zone": "America/Sao_Paulo"
+      },
+      "patient_id": "pt_01990004-0000-7000-8000-000000000401",
+      "primary_problem": "Hipertensao de dificil controle",
+      "raw_assets": [
+        {
+          "asset_id": "asset_01994004-0000-7000-8000-000004000401",
+          "imported_at": "2025-12-04T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-painel-para-hipertensao-secundaria-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994004-0000-7000-8000-000004000402",
+          "imported_at": "2025-12-04T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-monitorizacao-ambulatorial-da-pressao-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994004-0000-7000-8000-000004000403",
+          "imported_at": "2025-12-04T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Investigacao ficticia de medidas elevadas, sono nao reparador e fatores metabolicos."
+    },
+    {
+      "active_problems": [
+        "Estenose aortica moderada",
+        "Hipertensao controlada"
+      ],
+      "administrative_sex": "female",
+      "age": 58,
+      "birth_date": "1967-09-14",
+      "consultations": [
+        {
+          "date": "2024-04-11",
+          "encounter_id": "enc_01991005-0000-7000-8000-000001000501",
+          "note_id": "note_01992005-0000-7000-8000-000002000501",
+          "status": "draft"
+        },
+        {
+          "date": "2025-04-24",
+          "encounter_id": "enc_01991005-0000-7000-8000-000001000502",
+          "note_id": "note_01992005-0000-7000-8000-000002000502",
+          "status": "draft"
+        },
+        {
+          "date": "2026-04-30",
+          "encounter_id": "enc_01991005-0000-7000-8000-000001000503",
+          "note_id": "note_01992005-0000-7000-8000-000002000503",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Esmeralda Riacho",
+      "next_appointment": null,
+      "patient_id": "pt_01990005-0000-7000-8000-000000000501",
+      "primary_problem": "Estenose aortica moderada",
+      "raw_assets": [
+        {
+          "asset_id": "asset_01994005-0000-7000-8000-000004000501",
+          "imported_at": "2026-04-30T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-hemograma-e-painel-metabolico-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994005-0000-7000-8000-000004000502",
+          "imported_at": "2026-04-30T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-ecocardiograma-transtoracico-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994005-0000-7000-8000-000004000503",
+          "imported_at": "2026-04-30T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Vigilancia ecocardiografica ficticia, sem limitacao funcional referida."
+    },
+    {
+      "active_problems": [
+        "Extrassistoles isoladas",
+        "Ansiedade situacional"
+      ],
+      "administrative_sex": "male",
+      "age": 35,
+      "birth_date": "1991-01-22",
+      "consultations": [
+        {
+          "date": "2025-03-06",
+          "encounter_id": "enc_01991006-0000-7000-8000-000001000601",
+          "note_id": "note_01992006-0000-7000-8000-000002000601",
+          "status": "draft"
+        },
+        {
+          "date": "2025-07-24",
+          "encounter_id": "enc_01991006-0000-7000-8000-000001000602",
+          "note_id": "note_01992006-0000-7000-8000-000002000602",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Fabio Ambar",
+      "next_appointment": null,
+      "patient_id": "pt_01990006-0000-7000-8000-000000000601",
+      "primary_problem": "Palpitacoes com extrassistoles isoladas",
+      "raw_assets": [
+        {
+          "asset_id": "asset_01994006-0000-7000-8000-000004000601",
+          "imported_at": "2025-07-24T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-funcao-tireoidiana-e-eletrolitos-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994006-0000-7000-8000-000004000602",
+          "imported_at": "2025-07-24T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-holter-de-48-horas-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994006-0000-7000-8000-000004000603",
+          "imported_at": "2025-07-24T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Sintomas relacionados a cafeina e estresse, sem cardiopatia estrutural no cenario."
+    },
+    {
+      "active_problems": [
+        "Fibrilacao atrial persistente",
+        "Doenca renal cronica estagio 3",
+        "Risco de quedas"
+      ],
+      "administrative_sex": "female",
+      "age": 72,
+      "birth_date": "1954-06-08",
+      "consultations": [
+        {
+          "date": "2024-06-20",
+          "encounter_id": "enc_01991007-0000-7000-8000-000001000701",
+          "note_id": "note_01992007-0000-7000-8000-000002000701",
+          "status": "draft"
+        },
+        {
+          "date": "2024-12-12",
+          "encounter_id": "enc_01991007-0000-7000-8000-000001000702",
+          "note_id": "note_01992007-0000-7000-8000-000002000702",
+          "status": "draft"
+        },
+        {
+          "date": "2025-06-26",
+          "encounter_id": "enc_01991007-0000-7000-8000-000001000703",
+          "note_id": "note_01992007-0000-7000-8000-000002000703",
+          "status": "draft"
+        },
+        {
+          "date": "2026-03-19",
+          "encounter_id": "enc_01991007-0000-7000-8000-000001000704",
+          "note_id": "note_01992007-0000-7000-8000-000002000704",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Gilda Horizonte",
+      "next_appointment": {
+        "modality": "in_person",
+        "starts_at": "2026-09-11T10:30:00-03:00",
+        "synthetic": true,
+        "time_zone": "America/Sao_Paulo"
+      },
+      "patient_id": "pt_01990007-0000-7000-8000-000000000701",
+      "primary_problem": "Fibrilacao atrial persistente",
+      "raw_assets": [
+        {
+          "asset_id": "asset_01994007-0000-7000-8000-000004000701",
+          "imported_at": "2026-03-19T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-hemograma-e-funcao-renal-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994007-0000-7000-8000-000004000702",
+          "imported_at": "2026-03-19T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-eletrocardiograma-de-repouso-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994007-0000-7000-8000-000004000703",
+          "imported_at": "2026-03-19T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Controle de frequencia e conciliacao ficticia em contexto de funcao renal reduzida."
+    },
+    {
+      "active_problems": [
+        "Doenca arterial coronariana",
+        "Tabagismo em cessacao",
+        "Dislipidemia"
+      ],
+      "administrative_sex": "male",
+      "age": 60,
+      "birth_date": "1965-12-30",
+      "consultations": [
+        {
+          "date": "2024-07-02",
+          "encounter_id": "enc_01991008-0000-7000-8000-000001000801",
+          "note_id": "note_01992008-0000-7000-8000-000002000801",
+          "status": "draft"
+        },
+        {
+          "date": "2024-09-17",
+          "encounter_id": "enc_01991008-0000-7000-8000-000001000802",
+          "note_id": "note_01992008-0000-7000-8000-000002000802",
+          "status": "draft"
+        },
+        {
+          "date": "2025-01-30",
+          "encounter_id": "enc_01991008-0000-7000-8000-000001000803",
+          "note_id": "note_01992008-0000-7000-8000-000002000803",
+          "status": "draft"
+        },
+        {
+          "date": "2025-08-21",
+          "encounter_id": "enc_01991008-0000-7000-8000-000001000804",
+          "note_id": "note_01992008-0000-7000-8000-000002000804",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Heitor Prisma",
+      "next_appointment": null,
+      "patient_id": "pt_01990008-0000-7000-8000-000000000801",
+      "primary_problem": "Prevencao secundaria coronariana",
+      "raw_assets": [
+        {
+          "asset_id": "asset_01994008-0000-7000-8000-000004000801",
+          "imported_at": "2025-08-21T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-perfil-lipidico-e-glicemia-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994008-0000-7000-8000-000004000802",
+          "imported_at": "2025-08-21T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-teste-ergometrico-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994008-0000-7000-8000-000004000803",
+          "imported_at": "2025-08-21T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Retorno gradual as atividades depois de sindrome coronariana ficticia em 2024."
+    },
+    {
+      "active_problems": [
+        "Taquicardia supraventricular",
+        "Palpitacoes"
+      ],
+      "administrative_sex": "female",
+      "age": 47,
+      "birth_date": "1979-03-05",
+      "consultations": [
+        {
+          "date": "2025-02-13",
+          "encounter_id": "enc_01991009-0000-7000-8000-000001000901",
+          "note_id": "note_01992009-0000-7000-8000-000002000901",
+          "status": "draft"
+        },
+        {
+          "date": "2025-06-05",
+          "encounter_id": "enc_01991009-0000-7000-8000-000001000902",
+          "note_id": "note_01992009-0000-7000-8000-000002000902",
+          "status": "draft"
+        },
+        {
+          "date": "2026-02-12",
+          "encounter_id": "enc_01991009-0000-7000-8000-000001000903",
+          "note_id": "note_01992009-0000-7000-8000-000002000903",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Iara Solsticio",
+      "next_appointment": {
+        "modality": "in_person",
+        "starts_at": "2026-09-02T11:00:00-03:00",
+        "synthetic": true,
+        "time_zone": "America/Sao_Paulo"
+      },
+      "patient_id": "pt_01990009-0000-7000-8000-000000000901",
+      "primary_problem": "Taquicardia supraventricular recorrente",
+      "raw_assets": [
+        {
+          "asset_id": "asset_01994009-0000-7000-8000-000004000901",
+          "imported_at": "2026-02-12T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-hemograma,-eletrólitos-e-tsh-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994009-0000-7000-8000-000004000902",
+          "imported_at": "2026-02-12T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-holter-prolongado-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994009-0000-7000-8000-000004000903",
+          "imported_at": "2026-02-12T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Episodios abruptos e decisao compartilhada ficticia sobre avaliacao eletrofisiologica."
+    },
+    {
+      "active_problems": [
+        "Marcapasso definitivo",
+        "Insuficiencia mitral moderada",
+        "Tontura episodica"
+      ],
+      "administrative_sex": "male",
+      "age": 82,
+      "birth_date": "1944-08-17",
+      "consultations": [
+        {
+          "date": "2024-03-28",
+          "encounter_id": "enc_0199100a-0000-7000-8000-000001001001",
+          "note_id": "note_0199200a-0000-7000-8000-000002001001",
+          "status": "draft"
+        },
+        {
+          "date": "2024-10-10",
+          "encounter_id": "enc_0199100a-0000-7000-8000-000001001002",
+          "note_id": "note_0199200a-0000-7000-8000-000002001002",
+          "status": "draft"
+        },
+        {
+          "date": "2025-04-03",
+          "encounter_id": "enc_0199100a-0000-7000-8000-000001001003",
+          "note_id": "note_0199200a-0000-7000-8000-000002001003",
+          "status": "draft"
+        },
+        {
+          "date": "2025-10-02",
+          "encounter_id": "enc_0199100a-0000-7000-8000-000001001004",
+          "note_id": "note_0199200a-0000-7000-8000-000002001004",
+          "status": "draft"
+        },
+        {
+          "date": "2026-04-09",
+          "encounter_id": "enc_0199100a-0000-7000-8000-000001001005",
+          "note_id": "note_0199200a-0000-7000-8000-000002001005",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Jairo Quasar",
+      "next_appointment": null,
+      "patient_id": "pt_0199000a-0000-7000-8000-000000001001",
+      "primary_problem": "Acompanhamento de marcapasso",
+      "raw_assets": [
+        {
+          "asset_id": "asset_0199400a-0000-7000-8000-000004001001",
+          "imported_at": "2026-04-09T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-funcao-renal-e-eletrólitos-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_0199400a-0000-7000-8000-000004001002",
+          "imported_at": "2026-04-09T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-interrogacao-de-marcapasso---laudo-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_0199400a-0000-7000-8000-000004001003",
+          "imported_at": "2026-04-09T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Seguimento ficticio de dispositivo e insuficiencia mitral moderada."
+    },
+    {
+      "active_problems": [
+        "Miocardiopatia hipertrofica",
+        "Risco familiar em avaliacao"
+      ],
+      "administrative_sex": "female",
+      "age": 50,
+      "birth_date": "1976-05-26",
+      "consultations": [
+        {
+          "date": "2024-08-08",
+          "encounter_id": "enc_0199100b-0000-7000-8000-000001001101",
+          "note_id": "note_0199200b-0000-7000-8000-000002001101",
+          "status": "draft"
+        },
+        {
+          "date": "2025-02-20",
+          "encounter_id": "enc_0199100b-0000-7000-8000-000001001102",
+          "note_id": "note_0199200b-0000-7000-8000-000002001102",
+          "status": "draft"
+        },
+        {
+          "date": "2025-09-11",
+          "encounter_id": "enc_0199100b-0000-7000-8000-000001001103",
+          "note_id": "note_0199200b-0000-7000-8000-000002001103",
+          "status": "draft"
+        },
+        {
+          "date": "2026-05-14",
+          "encounter_id": "enc_0199100b-0000-7000-8000-000001001104",
+          "note_id": "note_0199200b-0000-7000-8000-000002001104",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Katia Boreal",
+      "next_appointment": {
+        "modality": "in_person",
+        "starts_at": "2026-09-15T15:30:00-03:00",
+        "synthetic": true,
+        "time_zone": "America/Sao_Paulo"
+      },
+      "patient_id": "pt_0199000b-0000-7000-8000-000000001101",
+      "primary_problem": "Miocardiopatia hipertrofica nao obstrutiva",
+      "raw_assets": [
+        {
+          "asset_id": "asset_0199400b-0000-7000-8000-000004001101",
+          "imported_at": "2026-05-14T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-hemograma-e-painel-metabolico-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_0199400b-0000-7000-8000-000004001102",
+          "imported_at": "2026-05-14T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-ressonancia-magnetica-cardiaca---laudo-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_0199400b-0000-7000-8000-000004001103",
+          "imported_at": "2026-05-14T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Avaliacao ficticia de sintomas aos esforcos e historia familiar igualmente sintetica."
+    },
+    {
+      "active_problems": [
+        "Diabetes tipo 2",
+        "Hipertensao arterial",
+        "Doenca arterial periferica"
+      ],
+      "administrative_sex": "male",
+      "age": 63,
+      "birth_date": "1962-10-09",
+      "consultations": [
+        {
+          "date": "2024-01-18",
+          "encounter_id": "enc_0199100c-0000-7000-8000-000001001201",
+          "note_id": "note_0199200c-0000-7000-8000-000002001201",
+          "status": "draft"
+        },
+        {
+          "date": "2024-07-11",
+          "encounter_id": "enc_0199100c-0000-7000-8000-000001001202",
+          "note_id": "note_0199200c-0000-7000-8000-000002001202",
+          "status": "draft"
+        },
+        {
+          "date": "2025-01-23",
+          "encounter_id": "enc_0199100c-0000-7000-8000-000001001203",
+          "note_id": "note_0199200c-0000-7000-8000-000002001203",
+          "status": "draft"
+        },
+        {
+          "date": "2025-07-31",
+          "encounter_id": "enc_0199100c-0000-7000-8000-000001001204",
+          "note_id": "note_0199200c-0000-7000-8000-000002001204",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Lucio Mosaico",
+      "next_appointment": null,
+      "patient_id": "pt_0199000c-0000-7000-8000-000000001201",
+      "primary_problem": "Risco cardiovascular elevado",
+      "raw_assets": [
+        {
+          "asset_id": "asset_0199400c-0000-7000-8000-000004001201",
+          "imported_at": "2025-07-31T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-hemoglobina-glicada-e-perfil-lipidico-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_0199400c-0000-7000-8000-000004001202",
+          "imported_at": "2025-07-31T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-doppler-arterial-de-membros-inferiores-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_0199400c-0000-7000-8000-000004001203",
+          "imported_at": "2025-07-31T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Diabetes, hipertensao e claudicacao estavel no caso demonstrativo."
+    },
+    {
+      "active_problems": [
+        "Suspeita de hipertensao pulmonar",
+        "Dispneia cronica"
+      ],
+      "administrative_sex": "female",
+      "age": 70,
+      "birth_date": "1956-01-31",
+      "consultations": [
+        {
+          "date": "2024-11-07",
+          "encounter_id": "enc_0199100d-0000-7000-8000-000001001301",
+          "note_id": "note_0199200d-0000-7000-8000-000002001301",
+          "status": "draft"
+        },
+        {
+          "date": "2025-03-20",
+          "encounter_id": "enc_0199100d-0000-7000-8000-000001001302",
+          "note_id": "note_0199200d-0000-7000-8000-000002001302",
+          "status": "draft"
+        },
+        {
+          "date": "2025-09-25",
+          "encounter_id": "enc_0199100d-0000-7000-8000-000001001303",
+          "note_id": "note_0199200d-0000-7000-8000-000002001303",
+          "status": "draft"
+        },
+        {
+          "date": "2026-03-05",
+          "encounter_id": "enc_0199100d-0000-7000-8000-000001001304",
+          "note_id": "note_0199200d-0000-7000-8000-000002001304",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Miriam Zenite",
+      "next_appointment": {
+        "modality": "in_person",
+        "starts_at": "2026-09-17T08:30:00-03:00",
+        "synthetic": true,
+        "time_zone": "America/Sao_Paulo"
+      },
+      "patient_id": "pt_0199000d-0000-7000-8000-000000001301",
+      "primary_problem": "Hipertensao pulmonar em investigacao",
+      "raw_assets": [
+        {
+          "asset_id": "asset_0199400d-0000-7000-8000-000004001301",
+          "imported_at": "2026-03-05T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-painel-autoimune-basico-e-funcao-renal-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_0199400d-0000-7000-8000-000004001302",
+          "imported_at": "2026-03-05T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-angiotomografia-de-torax---laudo-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_0199400d-0000-7000-8000-000004001303",
+          "imported_at": "2026-03-05T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Dispneia multifatorial em acompanhamento conjunto ficticio com pneumologia."
+    },
+    {
+      "active_problems": [
+        "Aneurisma de aorta ascendente",
+        "Hipertensao arterial"
+      ],
+      "administrative_sex": "male",
+      "age": 58,
+      "birth_date": "1968-02-24",
+      "consultations": [
+        {
+          "date": "2024-05-23",
+          "encounter_id": "enc_0199100e-0000-7000-8000-000001001401",
+          "note_id": "note_0199200e-0000-7000-8000-000002001401",
+          "status": "draft"
+        },
+        {
+          "date": "2024-11-14",
+          "encounter_id": "enc_0199100e-0000-7000-8000-000001001402",
+          "note_id": "note_0199200e-0000-7000-8000-000002001402",
+          "status": "draft"
+        },
+        {
+          "date": "2025-05-22",
+          "encounter_id": "enc_0199100e-0000-7000-8000-000001001403",
+          "note_id": "note_0199200e-0000-7000-8000-000002001403",
+          "status": "draft"
+        },
+        {
+          "date": "2026-05-28",
+          "encounter_id": "enc_0199100e-0000-7000-8000-000001001404",
+          "note_id": "note_0199200e-0000-7000-8000-000002001404",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Nestor Circulo",
+      "next_appointment": null,
+      "patient_id": "pt_0199000e-0000-7000-8000-000000001401",
+      "primary_problem": "Aneurisma estavel de aorta ascendente",
+      "raw_assets": [
+        {
+          "asset_id": "asset_0199400e-0000-7000-8000-000004001401",
+          "imported_at": "2026-05-28T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-funcao-renal-antes-de-contraste-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_0199400e-0000-7000-8000-000004001402",
+          "imported_at": "2026-05-28T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-angiotomografia-de-aorta---laudo-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_0199400e-0000-7000-8000-000004001403",
+          "imported_at": "2026-05-28T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Comparacao seriada ficticia de medidas e controle pressor."
+    },
+    {
+      "active_problems": [
+        "Insuficiencia cardiaca",
+        "Fibrilacao atrial",
+        "Hipotensao postural"
+      ],
+      "administrative_sex": "female",
+      "age": 87,
+      "birth_date": "1939-07-07",
+      "consultations": [
+        {
+          "date": "2024-02-22",
+          "encounter_id": "enc_0199100f-0000-7000-8000-000001001501",
+          "note_id": "note_0199200f-0000-7000-8000-000002001501",
+          "status": "draft"
+        },
+        {
+          "date": "2024-08-29",
+          "encounter_id": "enc_0199100f-0000-7000-8000-000001001502",
+          "note_id": "note_0199200f-0000-7000-8000-000002001502",
+          "status": "draft"
+        },
+        {
+          "date": "2025-02-06",
+          "encounter_id": "enc_0199100f-0000-7000-8000-000001001503",
+          "note_id": "note_0199200f-0000-7000-8000-000002001503",
+          "status": "draft"
+        },
+        {
+          "date": "2025-08-14",
+          "encounter_id": "enc_0199100f-0000-7000-8000-000001001504",
+          "note_id": "note_0199200f-0000-7000-8000-000002001504",
+          "status": "draft"
+        },
+        {
+          "date": "2026-02-19",
+          "encounter_id": "enc_0199100f-0000-7000-8000-000001001505",
+          "note_id": "note_0199200f-0000-7000-8000-000002001505",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Ofelia Marfim",
+      "next_appointment": {
+        "modality": "in_person",
+        "starts_at": "2026-09-18T09:30:00-03:00",
+        "synthetic": true,
+        "time_zone": "America/Sao_Paulo"
+      },
+      "patient_id": "pt_0199000f-0000-7000-8000-000000001501",
+      "primary_problem": "Insuficiencia cardiaca com fracao preservada",
+      "raw_assets": [
+        {
+          "asset_id": "asset_0199400f-0000-7000-8000-000004001501",
+          "imported_at": "2026-02-19T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-hemograma,-funcao-renal-e-eletrólitos-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_0199400f-0000-7000-8000-000004001502",
+          "imported_at": "2026-02-19T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-monitorizacao-ambulatorial-da-pressao-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_0199400f-0000-7000-8000-000004001503",
+          "imported_at": "2026-02-19T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Edema, hipotensao postural e revisao ficticia de polifarmacia com familiar."
+    },
+    {
+      "active_problems": [
+        "Dor toracica atipica",
+        "Ansiedade relacionada a sintomas"
+      ],
+      "administrative_sex": "male",
+      "age": 28,
+      "birth_date": "1997-11-12",
+      "consultations": [
+        {
+          "date": "2025-04-03",
+          "encounter_id": "enc_01991010-0000-7000-8000-000001001601",
+          "note_id": "note_01992010-0000-7000-8000-000002001601",
+          "status": "draft"
+        },
+        {
+          "date": "2025-04-24",
+          "encounter_id": "enc_01991010-0000-7000-8000-000001001602",
+          "note_id": "note_01992010-0000-7000-8000-000002001602",
+          "status": "draft"
+        },
+        {
+          "date": "2025-08-07",
+          "encounter_id": "enc_01991010-0000-7000-8000-000001001603",
+          "note_id": "note_01992010-0000-7000-8000-000002001603",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Persio Estelar",
+      "next_appointment": null,
+      "patient_id": "pt_01990010-0000-7000-8000-000000001601",
+      "primary_problem": "Dor toracica atipica",
+      "raw_assets": [
+        {
+          "asset_id": "asset_01994010-0000-7000-8000-000004001601",
+          "imported_at": "2025-08-07T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-troponina-e-marcadores-inflamatorios-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994010-0000-7000-8000-000004001602",
+          "imported_at": "2025-08-07T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-ressonancia-magnetica-cardiaca---laudo-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994010-0000-7000-8000-000004001603",
+          "imported_at": "2025-08-07T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Investigacao ficticia apos virose sem evidencia de miocardite ativa."
+    },
+    {
+      "active_problems": [
+        "Suspeita de doenca microvascular",
+        "Dislipidemia"
+      ],
+      "administrative_sex": "female",
+      "age": 66,
+      "birth_date": "1960-03-18",
+      "consultations": [
+        {
+          "date": "2024-10-01",
+          "encounter_id": "enc_01991011-0000-7000-8000-000001001701",
+          "note_id": "note_01992011-0000-7000-8000-000002001701",
+          "status": "draft"
+        },
+        {
+          "date": "2025-01-09",
+          "encounter_id": "enc_01991011-0000-7000-8000-000001001702",
+          "note_id": "note_01992011-0000-7000-8000-000002001702",
+          "status": "draft"
+        },
+        {
+          "date": "2025-06-12",
+          "encounter_id": "enc_01991011-0000-7000-8000-000001001703",
+          "note_id": "note_01992011-0000-7000-8000-000002001703",
+          "status": "draft"
+        },
+        {
+          "date": "2026-01-15",
+          "encounter_id": "enc_01991011-0000-7000-8000-000001001704",
+          "note_id": "note_01992011-0000-7000-8000-000002001704",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Quiteria Oliva",
+      "next_appointment": {
+        "modality": "in_person",
+        "starts_at": "2026-09-21T13:30:00-03:00",
+        "synthetic": true,
+        "time_zone": "America/Sao_Paulo"
+      },
+      "patient_id": "pt_01990011-0000-7000-8000-000000001701",
+      "primary_problem": "Angina com coronarias nao obstrutivas",
+      "raw_assets": [
+        {
+          "asset_id": "asset_01994011-0000-7000-8000-000004001701",
+          "imported_at": "2026-01-15T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-perfil-lipidico-e-funcao-renal-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994011-0000-7000-8000-000004001702",
+          "imported_at": "2026-01-15T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-ecocardiograma-sob-estresse-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994011-0000-7000-8000-000004001703",
+          "imported_at": "2026-01-15T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Sintomas aos esforcos e impacto funcional em seguimento demonstrativo."
+    },
+    {
+      "active_problems": [
+        "Protese aortica transcateter",
+        "Anemia em investigacao"
+      ],
+      "administrative_sex": "male",
+      "age": 73,
+      "birth_date": "1952-09-02",
+      "consultations": [
+        {
+          "date": "2025-02-06",
+          "encounter_id": "enc_01991012-0000-7000-8000-000001001801",
+          "note_id": "note_01992012-0000-7000-8000-000002001801",
+          "status": "draft"
+        },
+        {
+          "date": "2025-04-17",
+          "encounter_id": "enc_01991012-0000-7000-8000-000001001802",
+          "note_id": "note_01992012-0000-7000-8000-000002001802",
+          "status": "draft"
+        },
+        {
+          "date": "2025-10-23",
+          "encounter_id": "enc_01991012-0000-7000-8000-000001001803",
+          "note_id": "note_01992012-0000-7000-8000-000002001803",
+          "status": "draft"
+        },
+        {
+          "date": "2026-04-16",
+          "encounter_id": "enc_01991012-0000-7000-8000-000001001804",
+          "note_id": "note_01992012-0000-7000-8000-000002001804",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Raul Meridian",
+      "next_appointment": null,
+      "patient_id": "pt_01990012-0000-7000-8000-000000001801",
+      "primary_problem": "Acompanhamento depois de TAVI ficticio",
+      "raw_assets": [
+        {
+          "asset_id": "asset_01994012-0000-7000-8000-000004001801",
+          "imported_at": "2026-04-16T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-hemograma,-ferro-e-ferritina-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994012-0000-7000-8000-000004001802",
+          "imported_at": "2026-04-16T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-ecocardiograma-de-protese-aortica-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994012-0000-7000-8000-000004001803",
+          "imported_at": "2026-04-16T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Seguimento demonstrativo de protese valvar e anemia em investigacao."
+    },
+    {
+      "active_problems": [
+        "Antecedente de hipertensao gestacional",
+        "Risco metabolico"
+      ],
+      "administrative_sex": "female",
+      "age": 41,
+      "birth_date": "1985-06-21",
+      "consultations": [
+        {
+          "date": "2024-03-14",
+          "encounter_id": "enc_01991013-0000-7000-8000-000001001901",
+          "note_id": "note_01992013-0000-7000-8000-000002001901",
+          "status": "draft"
+        },
+        {
+          "date": "2024-09-19",
+          "encounter_id": "enc_01991013-0000-7000-8000-000001001902",
+          "note_id": "note_01992013-0000-7000-8000-000002001902",
+          "status": "draft"
+        },
+        {
+          "date": "2025-09-18",
+          "encounter_id": "enc_01991013-0000-7000-8000-000001001903",
+          "note_id": "note_01992013-0000-7000-8000-000002001903",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Silvia Ametista",
+      "next_appointment": {
+        "modality": "in_person",
+        "starts_at": "2026-09-23T17:00:00-03:00",
+        "synthetic": true,
+        "time_zone": "America/Sao_Paulo"
+      },
+      "patient_id": "pt_01990013-0000-7000-8000-000000001901",
+      "primary_problem": "Risco cardiovascular depois de hipertensao gestacional",
+      "raw_assets": [
+        {
+          "asset_id": "asset_01994013-0000-7000-8000-000004001901",
+          "imported_at": "2025-09-18T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-painel-metabolico-e-perfil-lipidico-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994013-0000-7000-8000-000004001902",
+          "imported_at": "2025-09-18T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-ecocardiograma-transtoracico-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994013-0000-7000-8000-000004001903",
+          "imported_at": "2025-09-18T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Prevencao longitudinal e planejamento reprodutivo no roteiro ficticio."
+    },
+    {
+      "active_problems": [
+        "Dislipidemia importante",
+        "Doenca coronariana subclinica"
+      ],
+      "administrative_sex": "male",
+      "age": 55,
+      "birth_date": "1970-12-04",
+      "consultations": [
+        {
+          "date": "2024-06-13",
+          "encounter_id": "enc_01991014-0000-7000-8000-000001002001",
+          "note_id": "note_01992014-0000-7000-8000-000002002001",
+          "status": "draft"
+        },
+        {
+          "date": "2024-12-05",
+          "encounter_id": "enc_01991014-0000-7000-8000-000001002002",
+          "note_id": "note_01992014-0000-7000-8000-000002002002",
+          "status": "draft"
+        },
+        {
+          "date": "2025-06-19",
+          "encounter_id": "enc_01991014-0000-7000-8000-000001002003",
+          "note_id": "note_01992014-0000-7000-8000-000002002003",
+          "status": "draft"
+        },
+        {
+          "date": "2026-06-11",
+          "encounter_id": "enc_01991014-0000-7000-8000-000001002004",
+          "note_id": "note_01992014-0000-7000-8000-000002002004",
+          "status": "draft"
+        }
+      ],
+      "display_name": "Tadeu Safira",
+      "next_appointment": {
+        "modality": "in_person",
+        "starts_at": "2026-09-25T11:30:00-03:00",
+        "synthetic": true,
+        "time_zone": "America/Sao_Paulo"
+      },
+      "patient_id": "pt_01990014-0000-7000-8000-000000002001",
+      "primary_problem": "Dislipidemia familiar provavel",
+      "raw_assets": [
+        {
+          "asset_id": "asset_01994014-0000-7000-8000-000004002001",
+          "imported_at": "2026-06-11T16:00:00Z",
+          "kind": "laboratory",
+          "original_name": "laboratorio-perfil-lipidico,-apob-e-lp(a)-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994014-0000-7000-8000-000004002002",
+          "imported_at": "2026-06-11T16:00:00Z",
+          "kind": "imaging",
+          "original_name": "laudo-angiotomografia-coronariana---laudo-sintetico.pdf"
+        },
+        {
+          "asset_id": "asset_01994014-0000-7000-8000-000004002003",
+          "imported_at": "2026-06-11T16:00:00Z",
+          "kind": "transcript",
+          "original_name": "transcricao-consulta-sintetica.txt"
+        }
+      ],
+      "summary": "Escore de calcio elevado e doenca coronariana subclinica no cenario sintetico."
+    }
+  ],
+  "schema": "openpep/demo-cardiology-index@1",
+  "synthetic": true,
+  "vault_id": "vlt_01990000-0000-7000-8000-000000000001"
+}

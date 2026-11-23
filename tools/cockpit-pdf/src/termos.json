@@ -1,0 +1,115 @@
+{
+  "fontes": {
+    "NRR": "Portaria SVS/MS nº 344/1998, art. 50, Anexos XV e XVI; § 3º (RDC nº 1.000/2025): o termo pode ser assinado em meio eletrônico pelo prescritor e pelo paciente (Lei nº 14.063/2020). Imagens dos anexos em docs/reference/termos/.",
+    "NRT": "RDC Anvisa nº 11/2011, art. 20 e Anexos V-A e V-B; § 1º: 3 vias; § 3º (RDC nº 1.000/2025): o termo pode ser assinado em meio eletrônico pelo prescritor e pelo paciente. Texto em docs/reference/termos/rdc-11-2011-anexos-v-a-v-b.txt."
+  },
+  "nota": "Texto dos anexos transcrito como publicado, com espaços normalizados (\"ele (a)\" → \"ele(a)\"). Correções de erro evidente, e só estas: V-A \"talidomina\" → \"talidomida\"; XV item 3 \"quando a ela já terminou\" → \"quando ela já terminou\"; XV item 9 \"a ocorrência que qualquer\" → \"a ocorrência de qualquer\"; XVI \"congenitos\" → \"congênitos\", \"passado nenhuma outra pessoa\" → \"passado para nenhuma outra pessoa\" e \"declaro que entendido\" → \"declaro que entendi\". Marcas: {campo} é preenchido com os dados da receita (linha em branco se faltar; {campo:*} ocupa o resto da linha; {crmuf} é o CRM com a UF); {_}, {_:largura} e {_*} (até o fim da linha) são linhas para preencher à mão; {x:chave} é uma caixa de seleção, marcada quando a chave é a substância da receita (isotretinoina, tretinoina, acitretina) ou o sexo do paciente (M, F); {x:-} fica sempre em branco. \\n quebra a linha.",
+  "termos": {
+    "NRR-XV": {
+      "anexo": "Portaria SVS/MS nº 344/1998 · Anexo XV",
+      "titulo": "TERMO DE CONHECIMENTOS DE RISCO E CONSENTIMENTO PÓS-INFORMAÇÃO PARA PACIENTES DO SEXO FEMININO MENORES DE 55 ANOS DE IDADE",
+      "instrucao": "(a ser preenchido e assinado pelo médico e pelo paciente maior de 21 anos de idade ou pelo responsável quando o paciente tiver idade inferior a 21 anos)",
+      "pictograma": true,
+      "blocos": [
+        {"n": 1, "t": "Informei à paciente que o produto:\n{x:isotretinoina} Isotretinoína\n{x:tretinoina} Tretinoína\n{x:acitretina} Acitretina\nTêm altíssimo risco de causar defeitos congênitos graves no corpo do bebê se for consumido pela mãe durante a gravidez, já nasceram mais de 250 bebês com graves deformações na face, orelhas, coração ou sistema nervoso devido ao uso destas substâncias."},
+        {"n": 2, "t": "Se o remédio prescrito é a isotretinoína, informei que a única indicação aprovada para esta substância é \"acne nódulo-cística ou conglobata, não responsiva a outros tratamentos\", ou seja, pode ser utilizado apenas na forma mais grave de acne que deixa cicatrizes profundas na pele e não melhora com outros tratamentos. Não deve ser usado em formas mais simples de acne, devido aos sérios riscos acima mencionados."},
+        {"n": 3, "t": "Expliquei que, como estes remédios ficam no corpo durante algum tempo após o tratamento, e podem causar defeitos em bebês mesmo quando ela já terminou o tratamento, ela deve aguardar os seguintes períodos antes de tentar engravidar após terminar o tratamento com:\n{x:isotretinoina} Isotretinoína ou {x:tretinoina} Tretinoína: Esperar 2 meses\n{x:acitretina} Acitretina: Esperar 3 anos"},
+        {"n": 4, "t": "Realizei um teste de gravidez de alta sensibilidade (que detecta gravidez desde o primeiro dia de atraso menstrual):\nData do teste {_:90} Resultado {_*}"},
+        {"n": 5, "t": "Recomendei aguardar o início da próxima menstruação para começar o tratamento."},
+        {"n": 6, "t": "Certifiquei-me que ela está utilizando um método para evitar a gravidez altamente eficaz (recomenda-se abstinência total, dispositivo intra-uterino-DIU - com cobre, anticoncepcional injetável, ou, no caso de mulheres que já tem filhos, são maiores de 30 anos e não desejam engravidar mais, laqueadura tubária).\nMétodo anticoncepcional em uso {_:200} data de início: {_*}"},
+        {"n": 7, "t": "Solicitei à paciente que me mantenha sempre informado sobre as reações adversas à medicação, ou sobre qualquer problema com a anticoncepção durante o tratamento, retornando à consulta periodicamente conforme estabelecido."},
+        {"n": 8, "t": "Informei à paciente que caso venha a suspeitar que esteja grávida, deverá parar imediatamente o tratamento e me procurar."},
+        {"n": 9, "t": "Comunicarei imediatamente ao fabricante a ocorrência de qualquer efeito colateral grave ou não esperado, bem como a ocorrência de gravidez exposta durante o tratamento ou em prazos inferiores aos previstos no item 3, após tratamento."},
+        {"h": "A Ser Preenchido Pelo Paciente"},
+        {"p": "Eu, {paciente}, Carteira de Identidade número {_:110} Órgão expedidor {_:80}, residente na rua {endereco}, Cidade {cidade}, Estado {uf}, e telefone para contato {telefone}, recebi pessoalmente as informações sobre o tratamento que vou receber e declaro ter entendido as orientações prestadas, e (no caso de ser paciente do sexo feminino) de poder cumprir as medidas para evitar a gravidez durante o tratamento e no prazo previsto no item 3, após o tratamento. Entendo que este remédio é só meu e que não devo passá-lo para ninguém."},
+        {"assinatura": "Assinatura {_*}"},
+        {"p": "(Nome e Assinatura do responsável caso o paciente seja menor de 21 anos:)"},
+        {"p": "Nome {responsavel:*}"},
+        {"assinatura": "Assinatura {_*}"},
+        {"p": "R.G. do Responsável {_*}"},
+        {"assinatura": ["Data e Assinatura do Médico {data} {_*}", "CRM {crmuf}"]}
+      ],
+      "vias": "(3 vias) 1ª paciente / 2ª médico / 3ª farmácia (A Ser Repassada ao Fabricante)"
+    },
+    "NRR-XVI": {
+      "anexo": "Portaria SVS/MS nº 344/1998 · Anexo XVI",
+      "titulo": "TERMO DE CONHECIMENTO DE RISCO E DE CONSENTIMENTO PÓS-INFORMAÇÃO PARA HOMENS OU MULHERES MAIORES QUE 55 ANOS DE IDADE.",
+      "instrucao": null,
+      "pictograma": true,
+      "blocos": [
+        {"p": "Eu, Dr. {medico}, registrado no Conselho Regional de Medicina do Estado {ufcrm}, sob o número {crm} sou o responsável pelo tratamento e acompanhamento do paciente {paciente} do sexo {x:M} masculino {x:F} feminino, com idade de {idade} anos completos, residente na rua {endereco} cidade {cidade}, estado {uf} e telefone para contato {telefone}, para quem estou indicando o produto:\n{x:isotretinoina} Isotretinoína\n{x:acitretina} Acitretina\n{x:tretinoina} Tretinoína\nCom diagnóstico de {_*}"},
+        {"h": "Se o paciente é do sexo masculino, ou mulher acima de 55 anos de idade:"},
+        {"n": 1, "t": "Informei ao paciente que este produto pode causar graves defeitos congênitos no corpo dos bebês de mulheres que utilizam na gravidez. Portanto somente pode ser utilizado por ele(a). Não pode ser passado para nenhuma outra pessoa."},
+        {"h": "A Ser Preenchido Pelo Paciente"},
+        {"p": "Eu, {paciente}, Carteira de identidade número {_:110} Órgão Expedidor {_:80}, residente na rua {endereco}, Cidade {cidade}, Estado {uf}, e telefone para contato {telefone}, recebi pessoalmente as informações sobre o tratamento que vou receber e declaro que entendi as orientações prestadas. Entendo que este remédio é só meu e que não devo passá-lo para ninguém."},
+        {"assinatura": "Assinatura {_*}"},
+        {"p": "Nome e Assinatura do responsável caso o paciente seja menor de 21 anos:"},
+        {"p": "Nome {responsavel:*}"},
+        {"assinatura": "Assinatura {_*}"},
+        {"p": "R.G. do Responsável {_*}"},
+        {"assinatura": ["Data e Assinatura do Médico {data} {_*}", "CRM {crmuf}"]}
+      ],
+      "vias": "(3 vias) 1ª paciente / 2ª médico / 3ª farmácia (A Ser Repassada ao Fabricante)"
+    },
+    "NRT-V-A": {
+      "anexo": "RDC Anvisa nº 11/2011 · Anexo V-A",
+      "titulo": "TERMO DE RESPONSABILIDADE / ESCLARECIMENTO PARA MULHERES COM MAIS DE 55 ANOS DE IDADE OU PARA HOMENS DE QUALQUER IDADE",
+      "instrucao": null,
+      "pictograma": false,
+      "blocos": [
+        {"h": "A ser preenchido pelo(a) médico(a):"},
+        {"p": "Eu, Dr.(a) {medico} registrado no Conselho Regional de Medicina do Estado {ufcrm} sob o número {crm} sou o responsável pelo tratamento e acompanhamento do(a) paciente {paciente} do sexo masculino {x:M} feminino {x:F} com idade de {idade} anos completos, com diagnóstico de {diagnostico} para quem estou indicando o medicamento à base de talidomida."},
+        {"n": 1, "t": "Informei verbalmente ao paciente que este produto tem alto risco de causar graves defeitos congênitos no corpo dos bebês de mulheres que o utilizam na gravidez, que não evita filhos e que não provoca aborto. Portanto somente pode ser utilizado por ele(a). Não pode ser passado para nenhuma outra pessoa."},
+        {"n": 2, "t": "Informei verbalmente também que a talidomida pode causar problemas como sonolência, neuropatia periférica e pseudo abdome agudo."},
+        {"n": 3, "t": "Informei verbalmente ao paciente que poderá ser responsabilizado(a) na justiça, caso repasse o medicamento a base de talidomida a outra pessoa; deixe alguém tomar este medicamento no seu lugar ou use-o indevidamente."},
+        {"n": 4, "t": "Informei que o medicamento deve ser guardado em local seguro."},
+        {"n": 5, "t": "Recomendei ao paciente do sexo masculino que utilize preservativo durante todo o tratamento com Talidomida e 30 (trinta dias) após o término e que informe a sua parceira e familiares o potencial risco da droga."},
+        {"n": 6, "t": "Informei que em caso de interrupção do uso deste medicamento, por qualquer motivo, este deve ser entregue à Autoridade Sanitária competente que providenciará a inutilização."},
+        {"n": 7, "t": "Certifiquei-me que o(a) paciente compreendeu as informações acima descritas."},
+        {"assinatura": ["Assinatura e carimbo do(a) médico(a): {_*}", "C.R.M.: {crmuf}", "Data: {data}"]},
+        {"h": "A ser preenchido pelo(a) paciente:"},
+        {"p": "Eu, {paciente} Carteira de Identidade nº {_:110} Órgão Expedidor {_:80} residente na rua {endereco} Cidade {cidade} Estado {uf} e telefone {telefone}\nRecebi pessoalmente as informações do prescritor sobre o tratamento e:"},
+        {"p": "{x:-} NÃO CONCORDO COM O TRATAMENTO E NÃO UTILIZAREI A TALIDOMIDA"},
+        {"assinatura": "Assinatura: {_*}"},
+        {"p": "{x:-} CONCORDO que vou fazer e declaro que entendi as orientações prestadas. Entendo que este remédio é só meu e que não devo passá-lo para ninguém."},
+        {"assinatura": "Assinatura: {_*}"},
+        {"p": "Nome e Assinatura do responsável caso o(a) paciente seja menor de 18 anos, analfabeto, incapaz ou impossibilitado de locomoção:"},
+        {"p": "Eu, {responsavel}, R.G. {_:90}, órgão expedidor {_:70}, responsável pelo(a) paciente {pacienteResponsavel}, comprometo-me a repassar todas estas orientações do prescritor ao(a) paciente e estou ciente da minha responsabilidade solidária de evitar o uso indevido do medicamento."},
+        {"assinatura": ["Assinatura: {_*}", "Data: {_*}"]}
+      ],
+      "vias": "3 vias (RDC nº 11/2011, art. 20, § 1º): 1ª prontuário / 2ª unidade pública dispensadora / 3ª paciente"
+    },
+    "NRT-V-B": {
+      "anexo": "RDC Anvisa nº 11/2011 · Anexo V-B",
+      "titulo": "TERMO DE RESPONSABILIDADE / ESCLARECIMENTO PARA PACIENTES DO SEXO FEMININO, MENORES DE 55 ANOS DE IDADE",
+      "instrucao": null,
+      "pictograma": false,
+      "blocos": [
+        {"h": "A ser preenchido pelo(a) médico(a):"},
+        {"n": 1, "t": "Informei verbalmente a paciente, com diagnóstico de {diagnostico}, que o medicamento a base de talidomida tem altíssimo risco de causar deficiências graves no corpo do bebê se for consumido pela mãe durante a gravidez. Estas deficiências ocorrem no período bem inicial de formação do bebê, quando a maioria das mulheres ainda não sabe que está grávida."},
+        {"n": 2, "t": "Informei verbalmente à paciente que a talidomida pode causar sonolência, neuropatia periférica e pseudo-abdome agudo; que a talidomida não provoca aborto e não evita filhos e que não deve passar este medicamento para ninguém."},
+        {"n": 3, "t": "Expliquei verbalmente que como este medicamento fica no corpo durante algum tempo após o tratamento e pode causar defeitos em bebês mesmo quando ela já terminou o tratamento, ela deve aguardar 30 dias antes de tentar engravidar após terminar o tratamento com talidomida."},
+        {"n": 4, "t": "Informei verbalmente à paciente que poderá ser responsabilizada na justiça, caso repasse o medicamento a base de talidomida a outra pessoa; deixe alguém tomar este medicamento no seu lugar ou use-o indevidamente."},
+        {"n": 5, "t": "Informei que o medicamento deve ser guardado em local seguro."},
+        {"n": 6, "t": "Constatei, por meio de teste de gravidez de ALTA SENSIBILIDADE (que detecta gravidez desde o primeiro dia de atraso menstrual), que a paciente não está grávida:\nData do Teste: {_:100} Resultado: {_*}\nNome do laboratório onde foi realizado o teste: {_*}"},
+        {"n": 7, "t": "Certifiquei-me que a paciente está utilizando 2 (dois) métodos para evitar gravidez altamente eficazes, sendo um deles de barreira:\nMétodos anticoncepcionais em uso: {_:150} Data do início: {_*}"},
+        {"n": 8, "t": "Informei a paciente que o seu parceiro deve usar preservativo nas relações sexuais ocorridas durante o tratamento."},
+        {"n": 9, "t": "Solicitei à paciente que me mantenha sempre informado(a) sobre as reações adversas à medicação, ou sobre qualquer problema com a anticoncepção durante o tratamento, retornando à consulta periodicamente conforme estabelecido."},
+        {"n": 10, "t": "Informei verbalmente a paciente que caso venha a suspeitar que esteja grávida deverá parar imediatamente o tratamento e me procurar."},
+        {"n": 11, "t": "Informei que em caso de interrupção do uso deste medicamento, por qualquer motivo, este deve ser entregue à Autoridade Sanitária competente que providenciará a inutilização."},
+        {"n": 12, "t": "Certifiquei-me que a paciente compreendeu todas as informações por mim prestadas."},
+        {"assinatura": ["Assinatura e carimbo do(a) médico(a) {_*}", "C.R.M.: {crmuf}"]},
+        {"h": "A ser preenchido pela paciente:"},
+        {"p": "Eu, {paciente} Carteira de Identidade nº {_:110} Órgão Expedidor {_:80} residente na rua {endereco} Cidade {cidade} Estado {uf} e telefone {telefone}\nrecebi pessoalmente as informações do prescritor sobre o tratamento e:"},
+        {"p": "{x:-} NÃO CONCORDO COM O TRATAMENTO E NÃO UTILIZAREI A TALIDOMIDA"},
+        {"assinatura": "Assinatura: {_*}"},
+        {"p": "{x:-} CONCORDO que vou fazer o tratamento e declaro que recebi pessoalmente as informações sobre o tratamento que vou fazer e declaro que entendi as orientações prestadas e me comprometo a cumprir as medidas para evitar a gravidez durante o tratamento e no prazo previsto no item 3, após o tratamento. Entendo que este remédio é só meu e que não devo passá-lo para ninguém."},
+        {"assinatura": "Assinatura: {_*}"},
+        {"p": "Nome e Assinatura do responsável caso a paciente seja menor de 18 anos, analfabeto, incapaz ou impossibilitado de locomoção:"},
+        {"p": "Eu, {responsavel}, R.G. {_:90}, órgão expedidor {_:70}, responsável pelo paciente {pacienteResponsavel}, comprometo-me a repassar todas estas orientações do prescritor à paciente e estou ciente da minha responsabilidade solidária de evitar o uso indevido do medicamento."},
+        {"assinatura": ["Assinatura: {_*}", "Data: {_*}"]}
+      ],
+      "vias": "3 vias (RDC nº 11/2011, art. 20, § 1º): 1ª prontuário / 2ª unidade pública dispensadora / 3ª paciente"
+    }
+  }
+}

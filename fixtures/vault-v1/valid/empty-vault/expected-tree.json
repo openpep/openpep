@@ -1,0 +1,20 @@
+{
+  "schema": "openpep/empty-vault-tree@1",
+  "directories": [
+    "backups",
+    "appointments",
+    "indexes",
+    "operations/checkpoints",
+    "operations/ledger",
+    "operations/schemas",
+    "operations/snapshots/actions",
+    "operations/snapshots/appointments",
+    "operations/snapshots/patients",
+    "patients"
+  ],
+  "files": [
+    "README.txt",
+    "operations/manifest.yaml",
+    "vault.yaml"
+  ]
+}

@@ -1,0 +1,8 @@
+OpenPEP presentation media notice
+
+These generated images and edited audiovisual compositions are presentation assets,
+not application source code. The application software license does not grant
+rights over third-party marks, official forms, music or generated footage.
+Third-party material remains subject to its applicable rights and provider terms.
+For reuse or separate distribution, consult the project maintainer and the source
+notices in website/ASSETS.md. No endorsement by Anvisa or ICP-Brasil is implied.

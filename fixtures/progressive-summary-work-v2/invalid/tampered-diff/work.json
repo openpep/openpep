@@ -1,0 +1,82 @@
+{
+  "schema": "openpep/progressive-summary-work@2",
+  "session_id": "session_0198f7a0-0000-7000-8000-000000000003",
+  "vault_id": "vlt_0198f7a1-0000-4000-8000-000000000003",
+  "patient_id": "pt_0198f7a2-0000-7000-8000-000000000003",
+  "encounter_id": "enc_0198f7a3-0000-7000-8000-000000000003",
+  "created_at": "2026-09-06T10:00:00Z",
+  "updated_at": "2026-09-06T10:01:05Z",
+  "summary_interval_seconds": 60,
+  "capture": {
+    "source": "microphone",
+    "status": "recording",
+    "attempt_id": "attempt_0198f7a4-0000-7000-8000-000000000003",
+    "started_at": "2026-09-06T10:00:00Z",
+    "ended_at": null,
+    "captured_seconds": 65,
+    "audio_filename": "consulta-sintetica.wav"
+  },
+  "transcription_engine": "apple/SpeechTranscriber",
+  "transcription_model": "system",
+  "summary_engine": "apple/FoundationModels.SystemLanguageModel",
+  "summary_model": null,
+  "segments": [{
+    "id": "segment_0198f7a5-0000-7000-8000-000000000003",
+    "revision": 1,
+    "range": { "start_seconds": 0, "end_seconds": 60, "is_approximate": true },
+    "text": "Paciente sintético relata melhora.",
+    "engine": "apple/SpeechTranscriber",
+    "model": "system",
+    "attempt_id": "attempt_0198f7a4-0000-7000-8000-000000000003"
+  }],
+  "blocks": [],
+  "summary": {
+    "revision": 1,
+    "covered_segment_references": [{
+      "segment_id": "segment_0198f7a5-0000-7000-8000-000000000003",
+      "revision": 1
+    }],
+    "items": [{
+      "id": "summary_item_0198f7a6-0000-7000-8000-000000000003",
+      "text": "- Melhora referida.",
+      "state": "proposed",
+      "segment_references": [{
+        "segment_id": "segment_0198f7a5-0000-7000-8000-000000000003",
+        "revision": 1
+      }]
+    }],
+    "revisions": [{
+      "id": "revision_0198f7a7-0000-7000-8000-000000000003",
+      "sequence": 1,
+      "base_revision": 0,
+      "saved_at": "2026-09-06T10:01:05Z",
+      "origin": "model",
+      "kind": "update",
+      "affected_item_ids": ["summary_item_0198f7a6-0000-7000-8000-000000000003"],
+      "segment_references": [{
+        "segment_id": "segment_0198f7a5-0000-7000-8000-000000000003",
+        "revision": 1
+      }],
+      "before_text": "",
+      "after_text": "- Melhora referida.",
+      "computed_diff": "+1: texto adulterado",
+      "generation": {
+        "generation_id": "gen_0198f7a8-0000-7000-8000-000000000003",
+        "engine": "apple/FoundationModels.SystemLanguageModel",
+        "model": null,
+        "response_id": null,
+        "prompt_version": "openpep/progressive-consultation-summary-pt-BR@2",
+        "generated_at": "2026-09-06T10:01:05Z",
+        "source": "Paciente sintético relata melhora.",
+        "segment_references": [{
+          "segment_id": "segment_0198f7a5-0000-7000-8000-000000000003",
+          "revision": 1
+        }]
+      }
+    }],
+    "acceptance": null
+  },
+  "pending_ranges": [],
+  "status": "recording",
+  "last_error": null
+}

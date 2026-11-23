@@ -1,0 +1,6 @@
+{
+  "schema": "openpep/fixture-expectation@1",
+  "result": "reject",
+  "rule": "patient.archived_without_timestamp",
+  "path": "/archived_at"
+}

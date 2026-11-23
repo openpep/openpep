@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpep.org/schemas/v1/patient.schema.json",
+  "title": "OpenPEP Patient",
+  "type": "object",
+  "required": [
+    "schema",
+    "patient_id",
+    "status",
+    "full_name",
+    "preferred_name",
+    "birth_date",
+    "contacts",
+    "identifiers",
+    "alerts",
+    "created_at",
+    "updated_at",
+    "archived_at"
+  ],
+  "properties": {
+    "schema": { "const": "openpep/patient@1" },
+    "patient_id": {
+      "type": "string",
+      "pattern": "^pt_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "status": { "enum": ["active", "archived"] },
+    "full_name": {
+      "oneOf": [
+        { "type": "string", "minLength": 1, "maxLength": 200 },
+        { "type": "null" }
+      ]
+    },
+    "preferred_name": {
+      "oneOf": [
+        { "type": "string", "minLength": 1, "maxLength": 120 },
+        { "type": "null" }
+      ]
+    },
+    "birth_date": {
+      "oneOf": [
+        { "type": "string", "format": "date" },
+        { "type": "null" }
+      ]
+    },
+    "contacts": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "required": ["type", "value", "authorized_for_care"],
+        "properties": {
+          "type": { "enum": ["phone", "email"] },
+          "value": { "type": "string", "minLength": 1, "maxLength": 254 },
+          "authorized_for_care": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "identifiers": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "required": ["type", "value"],
+        "properties": {
+          "type": { "enum": ["cpf", "other"] },
+          "value": { "type": "string", "minLength": 1, "maxLength": 120 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "alerts": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "required": ["type", "description", "source", "recorded_at"],
+        "properties": {
+          "type": { "enum": ["allergy", "critical"] },
+          "description": { "type": "string", "minLength": 1, "maxLength": 500 },
+          "source": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "recorded_at": { "type": "string", "format": "date-time" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "archived_at": {
+      "oneOf": [
+        { "type": "string", "format": "date-time" },
+        { "type": "null" }
+      ]
+    }
+  },
+  "patternProperties": {
+    "^x_[a-z0-9]+(?:_[a-z0-9]+)*$": true
+  },
+  "additionalProperties": false
+}

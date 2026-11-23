@@ -1,0 +1,4 @@
+{
+  "rule": "raw_asset.unknown_field",
+  "path": "/unexpected"
+}

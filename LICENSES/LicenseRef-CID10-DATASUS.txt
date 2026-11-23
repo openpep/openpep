@@ -1,0 +1,14 @@
+CID-10 em português — catálogo histórico DATASUS V2008.
+
+Direitos em língua portuguesa atribuídos ao Centro Brasileiro de Classificação
+de Doenças / Faculdade de Saúde Pública da Universidade de São Paulo,
+Organização Mundial da Saúde e Organização Pan-Americana da Saúde.
+
+Fonte: http://www2.datasus.gov.br/cid10/V2008/download.htm
+A página oficial disponibiliza os arquivos para uso em aplicações, incluindo
+formação de bases de dados. Não apresenta licença aberta padronizada nem
+esclarece todos os termos de redistribuição da tradução.
+
+A licença AGPL do código OpenPEP não se aplica a este catálogo de terceiros.
+Este marcador não concede direitos novos nem afirma domínio público.
+Detalhes, hashes e base de distribuição: LICENSING.md.

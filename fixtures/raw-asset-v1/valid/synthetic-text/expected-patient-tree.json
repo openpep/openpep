@@ -1,0 +1,10 @@
+{
+  "schema": "openpep/synthetic-patient-tree@1",
+  "directories": [
+    ".openpep",
+    "content",
+    "raw",
+    "wiki"
+  ],
+  "files": []
+}

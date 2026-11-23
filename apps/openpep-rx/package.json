@@ -1,0 +1,35 @@
+{
+  "name": "@openpep/rx",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node build.mjs && node scripts/test-public.mjs",
+    "demo": "npm run local",
+    "demo:receita": "node build.mjs && node qa/receita-local-server.mjs",
+    "release": "python3 scripts/empacotar.py",
+    "preview": "node scripts/preview.mjs",
+    "local": "node --env-file-if-exists=.env build.mjs && node --env-file-if-exists=.env local/server.mjs",
+    "build:signer": "node scripts/build-signer.mjs",
+    "backup": "node --env-file-if-exists=.env local/backup.mjs"
+  },
+  "dependencies": {
+    "@pdf-lib/fontkit": "1.1.1",
+    "intl-tel-input": "29.5.3",
+    "openid-client": "6.8.8",
+    "pdf-lib": "1.17.1",
+    "pdfjs-dist": "6.5.438",
+    "postgres": "^3.4.9",
+    "qrcode": "1.5.4"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "esbuild": "0.28.2"
+  },
+  "description": "OpenPEP-Rx · módulo independente de prescrição do OpenPEP Web",
+  "license": "AGPL-3.0-or-later",
+  "engines": {
+    "node": ">=24.20.0 <25"
+  }
+}

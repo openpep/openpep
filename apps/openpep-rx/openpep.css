@@ -1,0 +1,37 @@
+/* Shared identity of the OpenPEP clinical web interface. */
+:root {
+  --blue: #255da0;
+  --ink: #202e3d;
+  --muted: #5b6979;
+  --line: #dce2e9;
+}
+
+a.openpep-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  color: #202e3d;
+  font: 650 1.35rem/1.15 system-ui, sans-serif;
+  letter-spacing: -.04em;
+  text-decoration: none;
+}
+a.openpep-brand:focus-visible, .demo-link:focus-visible {
+  outline: 3px solid #255da0;
+  outline-offset: 4px;
+}
+body a.openpep-brand img {
+  display: block;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+.openpep-brand small, .module-label {
+  color: #5b6979;
+  letter-spacing: normal;
+}
+[hidden] { display: none !important; }
+
+.homologation { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line); }
+.homologation > summary { cursor: pointer; color: var(--muted); font-weight: 600; padding: 8px 0; }
+.rx-connection{max-width:520px;width:calc(100% - 40px);border:1px solid #bbd0df;border-radius:18px;padding:28px;color:#213541;font-family:inherit;line-height:1.6}.rx-connection::backdrop{background:#12263780}.rx-connection label{display:block;margin:22px 0 10px}.rx-connection input{display:block;width:100%;padding:10px;border:1px solid #bbd0df;border-radius:8px;font:inherit}.rx-connection button{padding:10px 16px;margin:6px 8px 6px 0;border:1px solid #a4bfce;border-radius:8px;background:white;font:inherit;color:#075b91;cursor:pointer}.rx-connection button:first-of-type{background:#075b91;color:white}
+.rx-disconnect{border:0;background:transparent;text-decoration:underline;color:inherit;font:inherit;font-size:13px;cursor:pointer;padding:5px}body>header,.home-header{flex-wrap:wrap}

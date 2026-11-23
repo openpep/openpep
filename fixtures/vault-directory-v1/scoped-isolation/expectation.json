@@ -1,0 +1,14 @@
+{
+  "schema": "openpep/vault-directory-expectation@1",
+  "result": "localized_failure",
+  "valid_patients": [
+    "pt_0198f5c2-0000-7000-8000-000000000001",
+    "pt_0198f5c2-0000-7000-8000-000000000002"
+  ],
+  "unavailable_patients": [
+    "pt_0198f5c2-0000-7000-8000-000000000003"
+  ],
+  "unmanaged_paths": [
+    "notes-for-user.txt"
+  ]
+}

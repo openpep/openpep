@@ -1,0 +1,33 @@
+{
+  "patientID": "pt_0198f700-0000-7000-8000-000000000091",
+  "draft": {
+    "kind": "screening",
+    "label": "Synthetic problem",
+    "text": "Synthetic finding.",
+    "source": "enc_0198f700-0000-7000-8000-000000000001",
+    "quote": "Synthetic finding.",
+    "date": "",
+    "clinicalStatus": "unknown",
+    "certainty": "unknown",
+    "medicationUse": "unknown",
+    "dosage": "",
+    "measurement": "",
+    "value": "",
+    "unit": "",
+    "method": "",
+    "observationStatus": "unknown",
+    "ips": {
+      "course": "unknown",
+      "frequency": "",
+      "route": "",
+      "eventStatus": "planned",
+      "nextDate": "2027-02-30"
+    }
+  },
+  "source": {
+    "id": "enc_0198f700-0000-7000-8000-000000000001",
+    "path": "content/notes/final/synthetic.md",
+    "sha256": "12a654ead5d024d5b8f530227ee385860eebcbe40e24829b1d1f93209ca1d7c6"
+  },
+  "mappingVersion": "openpep/wiki-measurements@1"
+}

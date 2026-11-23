@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpep.org/schemas/v2/progressive-summary-work.schema.json",
+  "title": "OpenPEP Incremental Consultation Summary Work",
+  "type": "object",
+  "required": ["schema", "session_id", "vault_id", "patient_id", "encounter_id", "created_at", "updated_at", "summary_interval_seconds", "capture", "transcription_engine", "transcription_model", "summary_engine", "summary_model", "segments", "blocks", "summary", "pending_ranges", "status", "last_error"],
+  "properties": {
+    "schema": { "const": "openpep/progressive-summary-work@2" },
+    "session_id": { "$ref": "#/$defs/sessionId" },
+    "vault_id": { "$ref": "#/$defs/vaultId" },
+    "patient_id": { "$ref": "#/$defs/patientId" },
+    "encounter_id": { "$ref": "#/$defs/encounterId" },
+    "created_at": { "$ref": "#/$defs/timestamp" },
+    "updated_at": { "$ref": "#/$defs/timestamp" },
+    "summary_interval_seconds": { "type": "integer", "minimum": 60, "maximum": 300 },
+    "capture": { "$ref": "#/$defs/capture" },
+    "transcription_engine": { "$ref": "#/$defs/provider" },
+    "transcription_model": { "$ref": "#/$defs/provider" },
+    "summary_engine": { "$ref": "#/$defs/provider" },
+    "summary_model": { "oneOf": [{ "$ref": "#/$defs/provider" }, { "type": "null" }] },
+    "segments": { "type": "array", "maxItems": 50000, "items": { "$ref": "#/$defs/segment" } },
+    "blocks": { "type": "array", "maxItems": 0 },
+    "summary": { "$ref": "#/$defs/summary" },
+    "pending_ranges": { "type": "array", "maxItems": 10000, "items": { "$ref": "#/$defs/range" } },
+    "status": { "$ref": "#/$defs/status" },
+    "last_error": { "oneOf": [{ "$ref": "#/$defs/errorText" }, { "type": "null" }] }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "uuid": { "type": "string", "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "sessionId": { "type": "string", "pattern": "^session_[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "attemptId": { "type": "string", "pattern": "^attempt_[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "segmentId": { "type": "string", "pattern": "^segment_[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "itemId": { "type": "string", "pattern": "^summary_item_[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "revisionId": { "type": "string", "pattern": "^revision_[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "generationId": { "type": "string", "pattern": "^gen_[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "acceptanceId": { "type": "string", "pattern": "^acceptance_[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "vaultId": { "type": "string", "pattern": "^vlt_[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "patientId": { "type": "string", "pattern": "^pt_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+    "encounterId": { "type": "string", "pattern": "^enc_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+    "userId": { "type": "string", "pattern": "^usr_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+    "assetId": { "type": "string", "pattern": "^asset_[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+    "timestamp": { "type": "string", "format": "date-time", "pattern": "Z$" },
+    "provider": { "type": "string", "minLength": 1, "maxLength": 256, "pattern": "^[^\\u0000-\\u001f\\u007f-\\u009f]+$" },
+    "text": { "type": "string", "minLength": 1, "maxLength": 500000 },
+    "errorText": { "type": "string", "minLength": 1, "maxLength": 1000 },
+    "filename": { "type": "string", "minLength": 1, "maxLength": 255, "pattern": "^[^/\\u0000-\\u001f\\u007f-\\u009f]+$", "not": { "enum": [".", ".."] } },
+    "status": { "enum": ["preparing", "recording", "transcribing", "draining", "ready", "incomplete", "failed"] },
+    "range": {
+      "type": "object",
+      "required": ["start_seconds", "end_seconds", "is_approximate"],
+      "properties": {
+        "start_seconds": { "type": "number", "minimum": 0, "maximum": 86400 },
+        "end_seconds": { "type": "number", "minimum": 0, "maximum": 86400 },
+        "is_approximate": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "reference": {
+      "type": "object",
+      "required": ["segment_id", "revision"],
+      "properties": {
+        "segment_id": { "$ref": "#/$defs/segmentId" },
+        "revision": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "capture": {
+      "type": "object",
+      "required": ["source", "status", "attempt_id", "started_at", "ended_at", "captured_seconds", "audio_filename"],
+      "properties": {
+        "source": { "enum": ["imported", "microphone", "telecall"] },
+        "status": { "$ref": "#/$defs/status" },
+        "attempt_id": { "$ref": "#/$defs/attemptId" },
+        "started_at": { "oneOf": [{ "$ref": "#/$defs/timestamp" }, { "type": "null" }] },
+        "ended_at": { "oneOf": [{ "$ref": "#/$defs/timestamp" }, { "type": "null" }] },
+        "captured_seconds": { "type": "number", "minimum": 0 },
+        "audio_filename": { "oneOf": [{ "$ref": "#/$defs/filename" }, { "type": "null" }] },
+        "audio_filenames": { "type": "array", "minItems": 1, "maxItems": 1000, "uniqueItems": true, "items": { "$ref": "#/$defs/filename" } }
+      },
+      "additionalProperties": false
+    },
+    "segment": {
+      "type": "object",
+      "required": ["id", "revision", "range", "text", "engine", "model", "attempt_id"],
+      "properties": {
+        "id": { "$ref": "#/$defs/segmentId" },
+        "revision": { "type": "integer", "minimum": 1 },
+        "range": { "$ref": "#/$defs/range" },
+        "text": { "$ref": "#/$defs/text" },
+        "engine": { "$ref": "#/$defs/provider" },
+        "model": { "$ref": "#/$defs/provider" },
+        "attempt_id": { "$ref": "#/$defs/attemptId" }
+      },
+      "additionalProperties": false
+    },
+    "generation": {
+      "type": "object",
+      "required": ["generation_id", "engine", "model", "response_id", "prompt_version", "generated_at", "source", "segment_references"],
+      "properties": {
+        "generation_id": { "$ref": "#/$defs/generationId" },
+        "engine": { "$ref": "#/$defs/provider" },
+        "model": { "oneOf": [{ "$ref": "#/$defs/provider" }, { "type": "null" }] },
+        "response_id": { "oneOf": [{ "$ref": "#/$defs/provider" }, { "type": "null" }] },
+        "prompt_version": { "$ref": "#/$defs/provider" },
+        "generated_at": { "$ref": "#/$defs/timestamp" },
+        "source": { "type": "string", "minLength": 1, "maxLength": 2000000 },
+        "segment_references": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/reference" } }
+      },
+      "additionalProperties": false
+    },
+    "acceptance": {
+      "type": "object",
+      "required": ["acceptance_id", "accepted_by", "accepted_at", "accepted_text", "source_asset_id"],
+      "properties": {
+        "acceptance_id": { "$ref": "#/$defs/acceptanceId" },
+        "accepted_by": { "$ref": "#/$defs/userId" },
+        "accepted_at": { "$ref": "#/$defs/timestamp" },
+        "accepted_text": { "$ref": "#/$defs/text" },
+        "source_asset_id": { "$ref": "#/$defs/assetId" }
+      },
+      "additionalProperties": false
+    },
+    "item": {
+      "type": "object",
+      "required": ["id", "text", "state", "segment_references"],
+      "properties": {
+        "id": { "$ref": "#/$defs/itemId" },
+        "text": { "$ref": "#/$defs/text" },
+        "state": { "enum": ["proposed", "professional", "needs_review"] },
+        "segment_references": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/reference" } }
+      },
+      "additionalProperties": false
+    },
+    "summaryRevision": {
+      "type": "object",
+      "required": ["id", "sequence", "base_revision", "saved_at", "origin", "kind", "affected_item_ids", "segment_references", "before_text", "after_text", "computed_diff", "generation"],
+      "properties": {
+        "id": { "$ref": "#/$defs/revisionId" },
+        "sequence": { "type": "integer", "minimum": 1 },
+        "base_revision": { "type": "integer", "minimum": 0 },
+        "saved_at": { "$ref": "#/$defs/timestamp" },
+        "origin": { "enum": ["model", "professional"] },
+        "kind": { "enum": ["update", "no_change"] },
+        "affected_item_ids": { "type": "array", "maxItems": 1000, "items": { "$ref": "#/$defs/itemId" } },
+        "segment_references": { "type": "array", "items": { "$ref": "#/$defs/reference" } },
+        "before_text": { "type": "string", "maxLength": 500000 },
+        "after_text": { "type": "string", "maxLength": 500000 },
+        "computed_diff": { "type": "string", "maxLength": 1000000 },
+        "generation": { "oneOf": [{ "$ref": "#/$defs/generation" }, { "type": "null" }] }
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "required": ["revision", "covered_segment_references", "items", "revisions", "acceptance"],
+      "properties": {
+        "revision": { "type": "integer", "minimum": 0 },
+        "covered_segment_references": { "type": "array", "maxItems": 50000, "items": { "$ref": "#/$defs/reference" } },
+        "items": { "type": "array", "maxItems": 1000, "items": { "$ref": "#/$defs/item" } },
+        "revisions": { "type": "array", "maxItems": 10000, "items": { "$ref": "#/$defs/summaryRevision" } },
+        "acceptance": { "oneOf": [{ "$ref": "#/$defs/acceptance" }, { "type": "null" }] }
+      },
+      "additionalProperties": false
+    }
+  }
+}

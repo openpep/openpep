@@ -1,0 +1,6 @@
+import {sqliteTable,text,integer,index,primaryKey} from 'drizzle-orm/sqlite-core';
+export const relay=sqliteTable('rx_relay',{
+ id:text('id').primaryKey(),localId:text('local_id').notNull().unique(),userId:text('user_id').notNull(),prescriber:text('prescriber').notNull(),environment:text('environment').notNull(),type:text('type').notNull(),quantity:integer('quantity').notNull(),period:text('period').notNull(),intent:text('intent').notNull(),stateHash:text('state_hash').unique(),status:text('status').notNull(),resultKind:text('result_kind'),result:text('result'),createdAt:integer('created_at').notNull(),completedAt:integer('completed_at')
+},t=>[index('rx_relay_user').on(t.userId,t.createdAt),index('rx_relay_quota').on(t.prescriber,t.environment,t.type,t.period)]);
+export const exports=sqliteTable('rx_exports',{id:text('id').primaryKey().references(()=>relay.id),destination:text('destination').notNull(),package:text('package').notNull(),createdAt:integer('created_at').notNull()});
+export const exportNumbers=sqliteTable('rx_export_numbers',{environment:text('environment').notNull(),canonical:text('canonical').notNull(),exportId:text('export_id').notNull().references(()=>exports.id)},t=>[primaryKey({columns:[t.environment,t.canonical]})]);
