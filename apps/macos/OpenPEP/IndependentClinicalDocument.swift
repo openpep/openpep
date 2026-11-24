@@ -33,9 +33,15 @@ struct IndependentClinicalDocument {
         yaml.split(separator: "\n", omittingEmptySubsequences: false).contains { line in
             var node = line.drop(while: { $0 == " " || $0 == "\t" })
             if node.hasPrefix("- ") { node = node.dropFirst(2) }
-            if let colon = node.range(of: ": ") ?? (node.hasSuffix(":") ? node.range(of: ":", options: .backwards) : nil),
-               !node.hasPrefix("\"") && !node.hasPrefix("'") {
-                node = node[colon.upperBound...].drop(while: { $0 == " " || $0 == "\t" })
+            // A quoted key ends at its closing quote; the value check applies after it as for plain keys.
+            var keyEnd = node.startIndex
+            if let quote = node.first, quote == "\"" || quote == "'",
+               let closing = node.dropFirst().firstIndex(of: quote) {
+                keyEnd = node.index(after: closing)
+            }
+            let rest = node[keyEnd...]
+            if let colon = rest.range(of: ": ") ?? (rest.hasSuffix(":") ? rest.range(of: ":", options: .backwards) : nil) {
+                node = rest[colon.upperBound...].drop(while: { $0 == " " || $0 == "\t" })
             }
             guard let first = node.first else { return false }
             return "&*![{".contains(first)
