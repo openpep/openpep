@@ -27,15 +27,15 @@ export function createRelay({fetcher=fetch,now=Date.now}={}){
     if(request.method==='POST'&&(request.headers.get('origin')!==origin||request.headers.get('content-type')!=='application/json'))return json({error:'Origem ou formato inválido.'},403);
     try{
     if(url.pathname==='/api/relay/meta')return json({enabled:origin===portalOrigin(env),origin,canonical:portalOrigin(env),exportReady:Boolean(env.SNCR_EXPORT_PRIVATE_JWK&&env.SNCR_EXPORT_KEY_ID)});
-      if(['/api/relay/start','/api/relay/portal/start'].includes(url.pathname)&&request.method==='POST'){
+      // Numbers reach a local stock only as a lot signed here (exportLot); there is no unsigned import path.
+      if(url.pathname==='/api/relay/portal/start'&&request.method==='POST'){
         if(url.protocol!=='https:'||!url.hostname.endsWith('.br'))return json({error:'Abra o domínio HTTPS .br configurado pelo seu provedor para usar o SNCR.'},422);
         const body=JSON.parse(await bounded(request,8192)),intent=checked(body);
-        if(url.pathname==='/api/relay/portal/start'){
-          if(origin!==portalOrigin(env)||!env.SNCR_EXPORT_PRIVATE_JWK||!env.SNCR_EXPORT_KEY_ID)throw Error('O portal ainda não está configurado para exportar lotes.');
-          await signingConfig(env);
-          intent.mode='portal';intent.destination=destination(body.destination);intent.request=numbersRequest(body.request);
-          if(intent.destination.crm!==intent.request.documento||intent.destination.uf!==intent.request.uf)throw Error('O CRM/UF deve corresponder ao estoque de destino.');
-        }
+        if(origin!==portalOrigin(env)||!env.SNCR_EXPORT_PRIVATE_JWK||!env.SNCR_EXPORT_KEY_ID)throw Error('O portal ainda não está configurado para exportar lotes.');
+        await signingConfig(env);
+        intent.mode='portal';intent.destination=destination(body.destination);intent.request=numbersRequest(body.request);
+        if(body.back==='local')intent.back='local';else if(body.back!==undefined)throw Error('Pedido local inválido.');
+        if(intent.destination.crm!==intent.request.documento||intent.destination.uf!==intent.request.uf)throw Error('O CRM/UF deve corresponder ao estoque de destino.');
         if(body.confirm!==true||(intent.environment==='prd'&&body.confirmProduction!==true))throw Error('Confirme o pedido e o ambiente de produção.');
         const time=now(),day=new Date(time).toLocaleDateString('en-CA',{timeZone:'America/Sao_Paulo'}),range=RANGE_TYPES.includes(intent.request.tipo),period=range?day.slice(0,7):day;
         const existing=await db.prepare('SELECT id,status,intent FROM rx_relay WHERE local_id=? AND user_id=?').bind(intent.id,user).first();
@@ -73,8 +73,9 @@ export function createRelay({fetcher=fetch,now=Date.now}={}){
         result.message=String(result.message|| (result.kind==='success'?'Resposta do SNCR recebida.':'Confira o resultado antes de tentar novamente.')).slice(0,600);
         const receipt={...intent,result};let stored=false;
         for(let attempt=0;attempt<3&&!stored;attempt++)try{await db.prepare("UPDATE rx_relay SET status='concluido',result_kind=?,result=?,completed_at=? WHERE id=?").bind(result.kind,JSON.stringify(result),now(),row.id).run();stored=true;}catch{}
-        if(!stored)return json(receipt,200,{'Content-Disposition':'attachment; filename="openpep-rx-recuperacao.json"'});
-        return new Response(null,{status:303,headers:{...headers,Location:(intent.mode==='portal'?'/portal-sncr.html':'/dados-locais.html')+'?relay='+row.id,'Set-Cookie':`${COOKIE}=; Secure; HttpOnly; SameSite=Lax; Path=/; Max-Age=0`}});
+        // Unsigned record for the provider's support only; the local helper imports signed lots exclusively.
+        if(!stored)return json(receipt,200,{'Content-Disposition':'attachment; filename="openpep-rx-registro-sncr.json"'});
+        return new Response(null,{status:303,headers:{...headers,Location:(intent.back==='local'?'/dados-locais.html':'/portal-sncr.html')+'?relay='+row.id,'Set-Cookie':`${COOKIE}=; Secure; HttpOnly; SameSite=Lax; Path=/; Max-Age=0`}});
       }
       if(url.pathname==='/api/relay/portal/download'&&request.method==='POST'){
         const body=JSON.parse(await bounded(request,1024));
@@ -90,14 +91,6 @@ export function createRelay({fetcher=fetch,now=Date.now}={}){
           if(result?.kind==='success')try{count=lotPayload({version:1,id:r.id,destination:intent.destination,environment:r.environment,request:intent.request,issuedAt:r.completed_at,result}).numbers.length;}catch(error){message=error.message;}
           return {id:r.id,clientId:r.local_id,environment:r.environment,type:r.type,quantity:r.quantity,createdAt:r.created_at,status:r.status,resultKind:r.result_kind,destination:intent.destination,count,message};
         })});
-      }
-      if(url.pathname==='/api/relay/result'&&request.method==='GET'){
-        const row=await db.prepare('SELECT * FROM rx_relay WHERE id=? AND user_id=?').bind(url.searchParams.get('id'),user).first();
-        if(!row)return json({error:'Pedido não encontrado.'},404);
-        return json({id:row.id,status:row.status,...(row.result?{receipt:{...JSON.parse(row.intent),result:JSON.parse(row.result)}}:{})});
-      }
-      if(url.pathname==='/api/relay/history'&&request.method==='GET'){
-        const rows=await db.prepare('SELECT id,local_id,environment,type,quantity,status,result_kind,created_at FROM rx_relay WHERE user_id=? ORDER BY created_at DESC LIMIT 100').bind(user).all();return json({requests:rows.results});
       }
       return json({error:'Operação indisponível.'},404);
     }catch(error){return json({error:error.message && !/SQL|D1|database|constraint/i.test(error.message) ? error.message : 'Não foi possível registrar o pedido. Confira o histórico antes de tentar novamente.'},422);}

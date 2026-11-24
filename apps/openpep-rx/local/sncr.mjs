@@ -4,7 +4,7 @@ import {NR_TYPES, RANGE_TYPES} from '../api/ledger.mjs';
 import {GATEWAYS, blockedByCloudflare} from '../api/sncr-probe.mjs';
 import {postNumbers} from '../api/sncr-numbers.mjs';
 import {bounded} from '../api/http-utils.mjs';
-import {ownerOf, sha} from './database.mjs';
+import {ownerOf} from './database.mjs';
 
 const same = (a,b) => /^[a-f0-9]{64}$/.test(a || '') && /^[a-f0-9]{64}$/.test(b || '') && timingSafeEqual(Buffer.from(a), Buffer.from(b));
 export function sncrConfig(body) {
@@ -16,7 +16,7 @@ export function sncrConfig(body) {
 }
 export function createLocalSNCR({db, fetcher = fetch, now = Date.now}) {
   return {
-    start(body, origin, relayOrigin = null) {
+    start(body, origin) {
       const profile = db.profile(), config = db.config();
       if (!profile || !config.enabled) throw Error('Configure o emitente e ative o SNCR em Dados locais.');
       if (body.confirm !== true || (config.environment === 'prd' && body.confirmProduction !== true)) throw Error('Confirme o pedido de numeração e seu ambiente.');
@@ -25,23 +25,10 @@ export function createLocalSNCR({db, fetcher = fetch, now = Date.now}) {
       if (range && !config.cnpj) throw Error('Configure o CNPJ da plataforma para RCE ou RET.');
       const request = {tipo:type, quantidade:quantity, conselho:'CRM', uf:profile.uf, documento:profile.crm, ...(range ? {cnpj:config.cnpj} : {})};
       const state = randomBytes(32).toString('hex');
-      const stored=relayOrigin?{...request,_relay:{origin:relayOrigin,receipt:sha(state)}}:request;
-      const id=db.beginNumbers({owner:ownerOf(profile), environment:config.environment, type, quantity, request:stored, state, now:now()});
-      if(relayOrigin){db.claimNumbers(state,now());return {id,receipt:state,environment:config.environment,request};}
+      db.beginNumbers({owner:ownerOf(profile), environment:config.environment, type, quantity, request, state, now:now()});
       const url = new URL('auth/login', GATEWAYS[config.environment]);
       url.searchParams.set('client_url', origin + '/sncr/retorno'); url.searchParams.set('state', state);
       return {url:url.href, state};
-    },
-    importRelay(body, origin) {
-      if(!/^[a-f0-9-]{36}$/.test(body.id||'')||!/^[a-f0-9]{64}$/.test(body.receipt||''))throw Error('Comprovante do pedido inválido.');
-      const row=db.get('SELECT * FROM rx_requests WHERE id=?',body.id);
-      const stored=row?JSON.parse(row.request):null;
-      if(!stored?._relay||stored._relay.origin!==origin||stored._relay.receipt!==sha(body.receipt)||body.environment!==row.environment)throw Error('Este comprovante não pertence ao pedido local.');
-      for(const key of ['tipo','quantidade','conselho','uf','documento','cnpj'])if(stored[key]!==body.request?.[key])throw Error('O pedido retornado não corresponde ao registro local.');
-      if(!['enviando','incerto'].includes(row.status))return row.status;
-      const result=body.result;
-      if(!['success','refused','not-sent','ambiguous'].includes(result?.kind)||!(result.http===null||Number.isInteger(result.http)&&result.http>=100&&result.http<=599)||JSON.stringify(result.body).length>262144||typeof result.message!=='string'||result.message.length>600)throw Error('Resultado do SNCR inválido.');
-      return db.recordNumbers(row,result);
     },
     async finish(url, cookie, origin) {
       const state = url.searchParams.get('state'), session = url.searchParams.get('session_id');

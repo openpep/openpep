@@ -166,11 +166,11 @@ export function createLocalServer({signer = native, prepare = prepareSignature, 
           if(paired||req.headers['content-type']!=='application/json')return json(res,403,{error:'Autorize a conexão na página local.'});
           try{return json(res,200,bridge.pair(JSON.parse((await input(req,2048)).toString())));}catch(error){return json(res,422,{error:error.message});}
         }
-        if (['/api/local/settings', '/api/local/sncr/request','/api/local/sncr/import'].includes(url.pathname)) {
+        if (['/api/local/settings', '/api/local/sncr/request'].includes(url.pathname)) {
           if (req.headers['content-type'] !== 'application/json') return json(res, 415, {error:'Pedido inválido.'});
           busy = true;
           try {
-            const body = JSON.parse((await input(req, url.pathname.endsWith('/import')?300000:8192)).toString());
+            const body = JSON.parse((await input(req, 8192)).toString());
             if (url.pathname.endsWith('/settings')) {
               const profile = body.profile ? profileInput(body.profile) : null;
               const config = body.sncr ? sncrConfig(body.sncr) : null;
@@ -179,12 +179,9 @@ export function createLocalServer({signer = native, prepare = prepareSignature, 
               db.transaction(() => { if (profile) db.setSetting('profile', profile); if (config) db.setSetting('sncr', config); if (office) db.setSetting('office:' + ownerOf(effective), office); });
               return json(res, 200, {saved:true});
             }
-            if(url.pathname.endsWith('/import')){
-              if(!paired)return json(res,403,{error:'Importe o retorno pelo ambiente web conectado.'});
-              return json(res,200,{status:sncr.importRelay(body,requestOrigin)});
-            }
-            const result = sncr.start(body, origin, paired?requestOrigin:null);
-            if(paired)return json(res,200,result);
+            // A paired web origin requests numbers through the portal and imports the signed lot.
+            if(paired)return json(res,403,{error:'Peça números pelo portal do provedor; o lote assinado é importado neste computador.'});
+            const result = sncr.start(body, origin);
             res.setHeader('Set-Cookie', `openpep_rx_sncr=${result.state}; HttpOnly; SameSite=Lax; Path=/sncr/retorno; Max-Age=300`);
             return json(res, 200, {url:result.url});
           } finally { busy = false; }
