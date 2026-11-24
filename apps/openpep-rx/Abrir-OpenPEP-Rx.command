@@ -19,7 +19,8 @@ if [[ ! -x local/bin/vidaas-signer || local/VIDaaSSigner.swift -nt local/bin/vid
   npm run build:signer || fail 'Não foi possível compilar o assinador. Confira a instalação do Xcode Command Line Tools.'
 fi
 
-print 'Abra https://rx.openpep.com.br e conecte este computador quando solicitado.'
+print 'Quando o auxiliar iniciar, abra uma vez o endereço de abertura exibido abaixo no navegador que vai usar.'
+print 'Depois abra https://rx.openpep.com.br e conecte este computador quando solicitado.'
 print 'Mantenha esta janela aberta. Para encerrar o auxiliar, pressione Control+C.'
 print 'Se ele já estiver aberto em outra janela, use a instância existente.'
 npm run local
