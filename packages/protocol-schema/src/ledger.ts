@@ -154,6 +154,7 @@ export async function verifyClinicalLedgerBytes(
   let objectsVerified = 0;
   let signaturesVerified = 0;
   const eventIds = new Set<string>();
+  let previousOccurredAt = Number.NEGATIVE_INFINITY;
 
   for (let index = 0; index < parsedEvents.length; index += 1) {
     const parsed = parsedEvents[index];
@@ -181,6 +182,18 @@ export async function verifyClinicalLedgerBytes(
       );
     }
     eventIds.add(event.event_id);
+
+    // Keys are authorized by occurred_at; a later event dated before an earlier one could hide behind a revoked key's window.
+    const occurredAt = Date.parse(event.occurred_at);
+    if (!(occurredAt >= previousOccurredAt)) {
+      throw validationError(
+        source,
+        `${basePath}/occurred_at`,
+        "ledger.occurred_at_order",
+        "occurred_at não pode ser anterior ao do evento anterior",
+      );
+    }
+    previousOccurredAt = occurredAt;
 
     if (patientId === null) {
       patientId = event.patient_id;

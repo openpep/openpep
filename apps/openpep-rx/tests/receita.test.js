@@ -110,7 +110,7 @@ test('draft, preview without number, then issue: the first NRB is used, signed a
   assert.equal(r.code, 200, r.bytes.toString());assert.equal(r.json().numero, prefix(accounts) + '0000001');
   const signed = await t.req(`pdf?id=${d.id}`);
   assert.equal(signed.code, 200);assert.match(signed.headers['Content-Disposition'], /attachment; filename="receita-NRB-2411/);
-  assert.match((await PDFDocument.load(signed.bytes)).getTitle(), new RegExp(r.json().numero.replace(/\./g, '\\.')));
+  assert.match((await PDFDocument.load(signed.bytes)).getTitle(), new RegExp(r.json().numero.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
   const n = await numberState(r.json().numero);
   assert.deepEqual(n, {estado: 'usado', liberado: true, pdf_sha256: sha(signed.bytes)});
   const state = (await t.req('estado')).json();

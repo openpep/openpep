@@ -110,6 +110,8 @@ export {
   decodeYamlBytes,
   isProtocolValidationError,
   maximumYamlBytes,
+  maximumYamlLines,
+  readYamlFileBytes,
   maximumYamlDepth,
   parseYamlSubset,
   type YamlValue,

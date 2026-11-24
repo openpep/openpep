@@ -321,3 +321,15 @@ function hasIssue(
   );
   return true;
 }
+
+test("an event dated before the previous one is refused before key authorization", async () => {
+  const ledgerText = await readFile(join(goldenDirectory, "ledger.ndjson"), "utf8");
+  const backdated = ledgerText.replace('"occurred_at":"2026-08-30T18:05:00Z"', '"occurred_at":"2026-08-30T17:05:00Z"');
+  assert.notEqual(backdated, ledgerText);
+  await assert.rejects(
+    verifyClinicalLedgerBytes(new TextEncoder().encode(backdated), {
+      signingKeyRegistry: await readSigningKeyRegistry(),
+    }),
+    (error: unknown) => hasIssue(error, "ledger.occurred_at_order", "/lines/2/occurred_at"),
+  );
+});

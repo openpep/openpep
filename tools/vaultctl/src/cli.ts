@@ -175,7 +175,7 @@ async function runVerify(
   const checkpointPath = resolve(command.checkpoint);
   const objectsPath = resolve(command.objects);
   const [ledger, keyValue, checkpointValue, objectResolver] = await Promise.all([
-    readFile(ledgerPath),
+    readRegularFile(ledgerPath, maximumLedgerFileBytes),
     readJsonFile(keysPath),
     readJsonFile(checkpointPath),
     createSafeObjectResolver(objectsPath),
@@ -377,8 +377,24 @@ async function createSafeObjectResolver(
     if (!isWithin(root, actualPath)) {
       throw new Error("o caminho real do objeto sai do diretório informado");
     }
-    return readFile(actualPath);
+    return readRegularFile(actualPath, maximumObjectBytes);
   };
+}
+
+// The ledger and its objects come from the folder being checked: never block on a FIFO
+// or read a file of unbounded size.
+const maximumLedgerFileBytes = 64 * 1024 * 1024;
+const maximumObjectBytes = 64 * 1024 * 1024;
+
+async function readRegularFile(filePath: string, maximumBytes: number): Promise<Buffer> {
+  const metadata = await stat(filePath);
+  if (!metadata.isFile()) {
+    throw new Error(`não é um arquivo regular: ${filePath}`);
+  }
+  if (metadata.size > maximumBytes) {
+    throw new Error(`o arquivo excede ${maximumBytes} bytes: ${filePath}`);
+  }
+  return readFile(filePath);
 }
 
 function isWithin(root: string, target: string): boolean {

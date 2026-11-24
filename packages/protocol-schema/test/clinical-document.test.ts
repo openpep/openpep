@@ -438,7 +438,7 @@ telemedicine:
 
   assert.throws(
     () => validateEncounterMarkdown(Buffer.from(
-      remote.replace(/telemedicine:\n(?:  .*\n?)+(?=x_actor_assurance)/, ""),
+      remote.replace(/telemedicine:\n(?: {2}[^\n]*\n)+(?=x_actor_assurance)/, ""),
     )),
     ProtocolValidationError,
   );
