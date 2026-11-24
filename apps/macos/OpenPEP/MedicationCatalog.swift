@@ -72,7 +72,10 @@ struct MedicationCatalog: Sendable {
         }
         do {
         var request = URLRequest(url: source); request.timeoutInterval = 60
-        let (data, response) = try await URLSession.shared.data(for: request)
+        // No shared cookies, credentials or cache for a public catalogue download.
+        let session = URLSession(configuration: .ephemeral)
+        defer { session.finishTasksAndInvalidate() }
+        let (data, response) = try await session.data(for: request)
         guard (response as? HTTPURLResponse)?.statusCode == 200,
               data.count <= 30_000_000, let csv = String(data: data, encoding: .utf8) else { throw CatalogError.invalid }
         let catalog = try Self(csv: csv)
