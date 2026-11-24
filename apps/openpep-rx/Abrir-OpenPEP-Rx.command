@@ -20,6 +20,7 @@ if [[ ! -x local/bin/vidaas-signer || local/VIDaaSSigner.swift -nt local/bin/vid
 fi
 
 print 'Quando o auxiliar iniciar, abra uma vez o endereço de abertura exibido abaixo no navegador que vai usar.'
+print 'Para usar o ambiente web, defina OPENPEP_RX_WEB_ORIGINS=https://rx.openpep.com.br no arquivo .env desta pasta.'
 print 'Depois abra https://rx.openpep.com.br e conecte este computador quando solicitado.'
 print 'Mantenha esta janela aberta. Para encerrar o auxiliar, pressione Control+C.'
 print 'Se ele já estiver aberto em outra janela, use a instância existente.'

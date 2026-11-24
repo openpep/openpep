@@ -255,3 +255,13 @@ test('local CEP endpoint authenticates, validates and caches only the postal loo
  for(const q of ['?cep=01001-000','?cep=01001000&name=Patient','?cep=01001000&cep=01001000'])assert.equal((await get(q)).status,400);
  for(let i=0;i<2;i++){const r=await get('?cep=01001000');assert.equal(r.status,200);assert.equal((await r.json()).cidade,'São Paulo');}assert.equal(count,1);
 });
+test('a page on another loopback port (same-site) cannot reach the local API with the session cookie', async t => {
+  const s = await setup(t);
+  const opened = await fetch(s.origin + s.server.launchPath, {redirect: 'manual'});
+  assert.equal(opened.status, 403); // single use already consumed by setup
+  const sameSite = await fetch(s.origin + '/api/local/settings', {headers: {...s.headers, 'Sec-Fetch-Site': 'same-site'}});
+  assert.equal(sameSite.status, 403);
+  const sameOrigin = await fetch(s.origin + '/api/local/settings', {headers: {...s.headers, 'Sec-Fetch-Site': 'same-origin'}});
+  assert.equal(sameOrigin.status, 200);
+  assert.equal((await fetch(s.origin + '/api/local/settings', {headers: s.headers})).status, 200);
+});

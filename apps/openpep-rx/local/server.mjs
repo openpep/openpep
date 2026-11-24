@@ -4,6 +4,7 @@ import {createPublications} from './publications.mjs';
 import {createServer} from 'node:http';
 import {randomBytes, createHash, timingSafeEqual} from 'node:crypto';
 import {readFile, access, mkdir} from 'node:fs/promises';
+import {chmodSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {prepareSignature} from './prepare-pdf.mjs';
 import {certificateName} from './appearance.mjs';
@@ -76,7 +77,9 @@ export function createLocalServer({signer = native, prepare = prepareSignature, 
     // keep the same origin checks, including requests carrying our session cookie.
     const pageNavigation = ['GET','HEAD'].includes(req.method) && req.headers['sec-fetch-mode'] === 'navigate' && req.headers['sec-fetch-dest'] === 'document' &&
       ['/', '/index.html', '/receita.html', '/assinatura.html', '/dados-locais.html','/conectar.html'].includes(url.pathname);
-    if (!pageNavigation && !paired && ((req.headers.origin && req.headers.origin !== origin) || req.headers['sec-fetch-site'] === 'cross-site')) return json(res, 403, {error: 'Pedido de outra origem recusado.'});
+    // Cookies are not port-scoped on 127.0.0.1, so a page on another local port is 'same-site': accept only same-origin or direct navigation.
+    const fetchSite = req.headers['sec-fetch-site'];
+    if (!pageNavigation && !paired && ((req.headers.origin && req.headers.origin !== origin) || (fetchSite && !['same-origin', 'none'].includes(fetchSite)))) return json(res, 403, {error: 'Pedido de outra origem recusado.'});
     if (!['GET', 'HEAD', 'POST'].includes(req.method)) return json(res, 405, {error: 'Método não permitido.'});
     if (url.pathname === '/abrir' && req.method === 'GET') {
       if (!launch || !equal(url.searchParams.get('chave'), launch)) return json(res, 403, {error: 'Endereço de abertura inválido ou já usado. Reinicie o auxiliar local e abra o novo endereço exibido no terminal.'});
@@ -275,6 +278,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const port = Number(process.env.PORT || 4197);
   const directory = dataDirectory();
   await mkdir(directory,{recursive:true,mode:0o700});
+  // A pre-existing shared folder keeps its own mode on mkdir; restrict it explicitly.
+  chmodSync(directory,0o700);
   const unlock = lockRuntime(directory);
   try { await backupDatabase(directory); } catch(error) { unlock(); throw error; }
   const database = new LocalDatabase(directory); database.recoverInterrupted();
@@ -286,5 +291,6 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     const address = `http://127.0.0.1:${server.address().port}`;
     console.log(`OpenPEP-Rx · ${address}/`);
     console.log(`Abra uma vez, no navegador que vai usar: ${address}${server.launchPath}`);
+    if (!process.env.OPENPEP_RX_WEB_ORIGINS) console.log('Ambiente web: nenhum autorizado. Para conectar um site, defina OPENPEP_RX_WEB_ORIGINS no arquivo .env (por exemplo, https://rx.openpep.com.br) e reinicie.');
   });
 }
