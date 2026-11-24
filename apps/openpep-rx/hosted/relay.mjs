@@ -5,6 +5,7 @@ import {postNumbers} from '../api/sncr-numbers.mjs';
 import {destination,numbersRequest,lotPayload} from '../integracao/sncr-lote.mjs';
 import {exportLot,portalOrigin,signingConfig} from './exports.mjs';
 const TTL=300000,COOKIE='__Host-openpep-rx-sncr';
+const QUOTA_SCOPE="q.prescriber=rx_relay.prescriber AND q.environment=rx_relay.environment AND q.type=rx_relay.type AND q.period=rx_relay.period AND q.id<>rx_relay.id AND q.status<>'aguardando' AND (q.result_kind IS NULL OR q.result_kind NOT IN ('not-sent','refused'))";
 // Each signed-in account may open at most START_LIMIT SNCR logins per START_WINDOW.
 export const START_LIMIT=10,START_WINDOW=3600_000;
 const hex=()=>Array.from(crypto.getRandomValues(new Uint8Array(32)),b=>b.toString(16).padStart(2,'0')).join('');
@@ -44,7 +45,7 @@ export function createRelay({fetcher=fetch,now=Date.now}={}){
         const id=crypto.randomUUID(),state=hex(),prescriber=await hash(intent.request.documento+'|'+intent.request.uf),stateHash=await hash(state);
         // One atomic conditional INSERT enforces the quota across concurrent requests.
         const added=await db.prepare(`INSERT INTO rx_relay (id,local_id,user_id,prescriber,environment,type,quantity,period,intent,state_hash,status,created_at)
-          SELECT ?,?,?,?,?,?,?,?,?,?,'aguardando',? WHERE (SELECT ${range?'COUNT(*)':'COALESCE(SUM(quantity),0)'} FROM rx_relay WHERE prescriber=? AND environment=? AND type=? AND period=? AND (result_kind IS NULL OR result_kind NOT IN ('not-sent','refused'))) < ? AND NOT EXISTS (SELECT 1 FROM rx_relay WHERE local_id=?) AND (SELECT COUNT(*) FROM rx_relay WHERE user_id=? AND created_at>?) < ?`).bind(id,intent.id,user,prescriber,intent.environment,intent.request.tipo,intent.request.quantidade,period,JSON.stringify(intent),stateHash,time,prescriber,intent.environment,intent.request.tipo,period,range?3:51-intent.request.quantidade,intent.id,user,time-START_WINDOW,START_LIMIT).run();
+          SELECT ?,?,?,?,?,?,?,?,?,?,'aguardando',? WHERE (SELECT ${range?'COUNT(*)':'COALESCE(SUM(quantity),0)'} FROM rx_relay WHERE prescriber=? AND environment=? AND type=? AND period=? AND status<>'aguardando' AND (result_kind IS NULL OR result_kind NOT IN ('not-sent','refused'))) < ? AND NOT EXISTS (SELECT 1 FROM rx_relay WHERE local_id=?) AND (SELECT COUNT(*) FROM rx_relay WHERE user_id=? AND created_at>?) < ?`).bind(id,intent.id,user,prescriber,intent.environment,intent.request.tipo,intent.request.quantidade,period,JSON.stringify(intent),stateHash,time,prescriber,intent.environment,intent.request.tipo,period,range?3:51-intent.request.quantidade,intent.id,user,time-START_WINDOW,START_LIMIT).run();
         if(added.meta.changes!==1){
           const recent=await db.prepare('SELECT COUNT(*) AS n FROM rx_relay WHERE user_id=? AND created_at>?').bind(user,time-START_WINDOW).first();
           if(recent.n>=START_LIMIT)return json({error:'Muitos pedidos iniciados nesta conta na última hora. Aguarde e confira o histórico antes de tentar novamente.'},429,{'Retry-After':'3600'});
@@ -56,8 +57,16 @@ export function createRelay({fetcher=fetch,now=Date.now}={}){
       if(url.pathname==='/sncr/retorno'&&request.method==='GET'){
         const state=url.searchParams.get('state'),session=url.searchParams.get('session_id');
         if(!/^[a-f0-9]{64}$/.test(state||'')||!equal(state,cookie(request))||url.searchParams.getAll('state').length!==1||url.searchParams.getAll('session_id').length!==1||!/^[\x21-\x7e]{1,4096}$/.test(session||'')||url.searchParams.has('error'))throw Error('Retorno do SNCR inválido. Confira o histórico antes de tentar novamente.');
-        const row=await db.prepare("UPDATE rx_relay SET status='autenticando',state_hash=NULL WHERE state_hash=? AND user_id=? AND status='aguardando' AND created_at>=? AND created_at<=? RETURNING *").bind(await hash(state),user,now()-TTL,now()).first();
-        if(!row)throw Error('Retorno expirado ou já utilizado. Confira o histórico.');
+        // Pending logins do not hold the prescriber's quota, so another account cannot block a CRM by
+        // starting logins it never completes. The quota is re-checked atomically here, before any SNCR call.
+        const quota=`(CASE WHEN rx_relay.type IN ('RCE','RET') THEN (SELECT COUNT(*) FROM rx_relay q WHERE ${QUOTA_SCOPE}) < 3
+          ELSE (SELECT COALESCE(SUM(q.quantity),0) FROM rx_relay q WHERE ${QUOTA_SCOPE}) + rx_relay.quantity <= 50 END)`;
+        const stateHash=await hash(state);
+        const row=await db.prepare(`UPDATE rx_relay SET status='autenticando',state_hash=NULL WHERE state_hash=? AND user_id=? AND status='aguardando' AND created_at>=? AND created_at<=? AND ${quota} RETURNING *`).bind(stateHash,user,now()-TTL,now()).first();
+        if(!row){
+          const blocked=await db.prepare("UPDATE rx_relay SET status='concluido',state_hash=NULL,result_kind='not-sent',result=?,completed_at=? WHERE state_hash=? AND user_id=? AND status='aguardando' AND created_at>=? RETURNING id").bind(JSON.stringify({kind:'not-sent',http:null,body:null,message:'O limite deste período foi atingido por outro pedido concluído. Nenhum pedido de números foi enviado.'}),now(),stateHash,user,now()-TTL).first();
+          throw Error(blocked?'O limite deste período foi atingido por outro pedido concluído. Nenhum pedido de números foi enviado.':'Retorno expirado ou já utilizado. Confira o histórico.');
+        }
         const intent=JSON.parse(row.intent);let result,http=null,sending=false;
         try{
           const tokenURL=new URL('auth/token',GATEWAYS[intent.environment]);tokenURL.searchParams.set('session_id',session);

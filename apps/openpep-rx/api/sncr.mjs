@@ -1,5 +1,5 @@
 import { randomBytes, timingSafeEqual } from 'node:crypto';
-import {makeStore} from './store.mjs';
+import {makeStore, allowClient, clientOf} from './store.mjs';
 import {bounded} from './http-utils.mjs';
 import { sha256 } from './store.mjs';
 import { makeLedger, LedgerError, NR_TYPES, RANGE_TYPES } from './ledger.mjs';
@@ -163,7 +163,7 @@ export function createHandler({now = Date.now, random = () => randomBytes(32).to
         if (!entry?.canRequest) return json(res, 403, { error: 'Entre no OpenPEP e confirme nome, CRM/UF e CPF antes de solicitar números.' });
       }
       try {
-        if (!await store.allow('start',10)) return json(res,429,{error:'Limite temporário de testes atingido. Tente mais tarde.'});
+        if (!await allowClient(store, wantsNumbers ? 'start-numeros' : 'start-diagnostico', clientOf(req), wantsNumbers ? [10, 100] : [5, 30])) return json(res,429,{error:'Limite temporário de testes atingido. Tente mais tarde.'});
         let intent;
         if (wantsNumbers) {
           const i = entry.identity, l = getLedger();
@@ -260,7 +260,7 @@ export function createHandler({now = Date.now, random = () => randomBytes(32).to
     if (url.pathname === '/api/sncr/sondar') {
       if (req.method !== 'GET') return json(res, 405, { error: 'Método não permitido.' });
       if (url.search) return json(res, 400, { error: 'Parâmetros não permitidos.' });
-      try { if (!await store.allow('sondar', 20)) return json(res, 429, { error: 'Limite de sondagens atingido. Aguarde até 15 minutos.' }); }
+      try { if (!await allowClient(store, 'sondar', clientOf(req), [5, 60])) return json(res, 429, { error: 'Limite de sondagens atingido. Aguarde até 15 minutos.' }); }
       catch { return json(res, 503, { error: 'Sondagem indisponível. Tente novamente.' }); }
       try { return json(res, 200, { regiao: region, em: new Date(now()).toISOString(), ...(await probe()) }); }
       catch { return json(res, 503, { error: 'Sondagem indisponível. Tente novamente.' }); }

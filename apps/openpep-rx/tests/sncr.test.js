@@ -189,3 +189,15 @@ test('SNCR Edge probe bundle is self-contained and routed',async()=>{
  const code=await readFile('.vercel/output/functions/api/sncr/sondar-edge.func/index.js','utf8');assert.ok(!/from ?["']node:/.test(code));assert.ok(!/postgres/.test(code));assert.ok(code.includes('api-gateway.prd.apps.anvisa.gov.br'));
  const ui=await readFile('.vercel/output/static/sncr.js','utf8');assert.ok(ui.includes('/api/sncr/sondar-edge'));
 });
+test('SNCR rate limits are per client with a global ceiling; one client cannot block the others',async()=>{
+ const {createEdgeProbe}=await import('../api/sncr-probe-edge.mjs');
+ const counts=new Map(),store={allow:async(bucket,limit)=>{const n=(counts.get(bucket)||0)+1;counts.set(bucket,n);return n<=limit;}};
+ const probe=createEdgeProbe({store,probe:async()=>({})});
+ const from=ip=>probe(new Request('https://rx-hml.openpep.com.br/api/sncr/sondar-edge',{headers:{host:'rx-hml.openpep.com.br','x-real-ip':ip}}));
+ for(let i=0;i<5;i++)assert.equal((await from('203.0.113.7')).status,200);
+ assert.equal((await from('203.0.113.7')).status,429);
+ assert.equal((await from('198.51.100.9')).status,200);
+ for(let i=0;i<60;i++)await from('192.0.2.'+(i%250));
+ assert.equal((await from('198.51.100.10')).status,429);
+ assert.ok([...counts.keys()].every(k=>k==='sondar-edge'||k.startsWith('sondar-edge:')));
+});

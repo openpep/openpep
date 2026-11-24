@@ -1,6 +1,6 @@
 // Edge twin of GET /api/sncr/sondar. Some upstream networks treat Node and Edge egress differently; this checks
 // whether the Anvisa production Cloudflare does the same before the token exchange is moved.
-import {makeStore} from './store.mjs';
+import {makeStore, allowClient} from './store.mjs';
 import {ORIGIN, probeGateways} from './sncr-probe.mjs';
 const headers = {'Cache-Control':'no-store, max-age=0','Referrer-Policy':'no-referrer','X-Content-Type-Options':'nosniff','X-Robots-Tag':'noindex, nofollow, noarchive','Content-Type':'application/json; charset=utf-8'};
 const json = (status, data) => new Response(JSON.stringify(data), {status, headers});
@@ -15,7 +15,7 @@ export function createEdgeProbe({store = makeStore(process.env, fetch, {namespac
     if ((request.headers.get('host') || url.host) !== new URL(ORIGIN).host) return json(403, {error:'Use o domínio de homologação .br.'});
     if (request.method !== 'GET') return json(405, {error:'Método não permitido.'});
     if (url.search) return json(400, {error:'Parâmetros não permitidos.'});
-    try { if (!await store.allow('sondar-edge', 20)) return json(429, {error:'Limite de sondagens atingido. Aguarde até 15 minutos.'}); }
+    try { if (!await allowClient(store, 'sondar-edge', request.headers.get('x-real-ip'), [5, 60])) return json(429, {error:'Limite de sondagens atingido. Aguarde até 15 minutos.'}); }
     catch { return json(503, {error:'Sondagem indisponível. Tente novamente.'}); }
     try { return json(200, {runtime:'edge', regiao: regionOf(request), em: new Date(now()).toISOString(), ...(await probe())}); }
     catch { return json(503, {error:'Sondagem indisponível. Tente novamente.'}); }
