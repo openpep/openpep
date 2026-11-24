@@ -88,3 +88,13 @@ test('verified domain alias preserves old plans and publishes/revokes only at th
  await migrated.revoke(doc,true);assert.equal(calls,2);
  const foreign=createPublications({db,origin:'https://unrelated.example.org',token});await assert.rejects(foreign.revoke(doc,true));assert.equal(calls,2);
 });
+test('startup backups keep only the newest copies, all private to the user',async t=>{
+ const {mkdtemp,rm,readdir,stat,writeFile}=await import('node:fs/promises');
+ const dir=await mkdtemp(join(tmpdir(),'rx-backup-rotation-'));t.after(()=>rm(dir,{recursive:true,force:true}));
+ const db=new LocalDatabase(dir);t.after(()=>db.close());
+ const folder=join(dir,'backups');await backupDatabase(dir,{keep:3});
+ for(const n of [1,2,3,4])await writeFile(join(folder,`openpep-rx-2000-01-0${n}T00-00-00.000Z.sqlite`),'old');
+ const kept=await backupDatabase(dir,{keep:3});const names=(await readdir(folder)).sort();
+ assert.deepEqual(names.filter(n=>!n.endsWith('.sqlite')),[]);assert.equal(names.length,3);assert.ok(names.includes(kept.split('/').at(-1)));assert.ok(!names.includes('openpep-rx-2000-01-01T00-00-00.000Z.sqlite'));
+ assert.equal((await stat(folder)).mode&0o777,0o700);assert.equal((await stat(kept)).mode&0o777,0o600);
+});
