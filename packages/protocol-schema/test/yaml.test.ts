@@ -7,7 +7,9 @@ import { ProtocolValidationError } from "../src/errors.js";
 import {
   decodeYamlBytes,
   maximumYamlBytes,
+  maximumYamlLines,
   parseYamlSubset,
+  readYamlFileBytes,
 } from "../src/yaml.js";
 
 function expectIssue(
@@ -170,4 +172,36 @@ test("accepts input at the exact byte limit", () => {
   )}\n`;
   assert.equal(Buffer.byteLength(source, "utf8"), maximumYamlBytes);
   assert.doesNotThrow(() => parseYamlSubset(source));
+});
+
+test("refuses YAML with too many lines before the quadratic duplicate-key check", () => {
+  const text = Array.from({ length: maximumYamlLines + 1 }, (_, index) => `k${index}: 1`).join("\n");
+  assert.throws(
+    () => parseYamlSubset(text, "synthetic.yaml"),
+    (error: unknown) => error instanceof ProtocolValidationError && error.issues.some(issue => issue.rule === "yaml.resource_exhaustion"),
+  );
+});
+
+test("reads YAML files only when they are regular and within the size limit", async () => {
+  const { mkdtemp, rm, writeFile, symlink } = await import("node:fs/promises");
+  const { tmpdir } = await import("node:os");
+  const { join } = await import("node:path");
+  const { execFileSync } = await import("node:child_process");
+  const directory = await mkdtemp(join(tmpdir(), "openpep-yaml-"));
+  try {
+    const ok = join(directory, "ok.yaml");
+    await writeFile(ok, "schema: synthetic\n");
+    assert.equal(new TextDecoder().decode(await readYamlFileBytes(ok)), "schema: synthetic\n");
+    const large = join(directory, "large.yaml");
+    await writeFile(large, "x".repeat(maximumYamlBytes + 1));
+    await assert.rejects(readYamlFileBytes(large), (error: unknown) => error instanceof ProtocolValidationError && error.issues[0]?.rule === "yaml.maximum_size");
+    const link = join(directory, "link.yaml");
+    await symlink(ok, link);
+    await assert.rejects(readYamlFileBytes(link), (error: unknown) => error instanceof ProtocolValidationError && error.issues[0]?.rule === "yaml.not_regular_file");
+    const fifo = join(directory, "fifo.yaml");
+    execFileSync("mkfifo", [fifo]);
+    await assert.rejects(readYamlFileBytes(fifo), (error: unknown) => error instanceof ProtocolValidationError && error.issues[0]?.rule === "yaml.not_regular_file");
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
 });

@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { readFileSync } from "node:fs";
-import { readFile } from "node:fs/promises";
 import { basename } from "node:path";
 import { ProtocolValidationError, validationError } from "./errors.js";
 import {
@@ -10,7 +9,7 @@ import {
   createProtocolAjv,
   schemaIssues,
 } from "./schema-validation.js";
-import { decodeYamlBytes, parseYamlSubset } from "./yaml.js";
+import { decodeYamlBytes, parseYamlSubset, readYamlFileBytes } from "./yaml.js";
 
 export interface PatientContact {
   readonly type: "phone" | "email";
@@ -72,7 +71,7 @@ export function validatePatientYaml(
 export async function readPatientManifest(
   filePath: string,
 ): Promise<PatientManifest> {
-  const bytes = await readFile(filePath);
+  const bytes = await readYamlFileBytes(filePath);
   return validatePatientYaml(decodeYamlBytes(bytes, filePath), filePath);
 }
 

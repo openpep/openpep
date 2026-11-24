@@ -10,6 +10,7 @@ import {
   parseDocument,
   type Node,
 } from "yaml";
+import { lstat, readFile } from "node:fs/promises";
 import {
   ProtocolValidationError,
   type ProtocolValidationIssue,
@@ -18,6 +19,24 @@ import {
 
 export const maximumYamlBytes = 256 * 1024;
 export const maximumYamlDepth = 12;
+// Real manifests have a few dozen lines. The duplicate-key check grows with the square of the keys,
+// so a hostile file with tens of thousands of short keys is refused before parsing.
+export const maximumYamlLines = 2000;
+
+/** Reads a YAML file only if it is a regular file within the size limit: never a FIFO, device or link. */
+export async function readYamlFileBytes(
+  filePath: string,
+  source = filePath,
+): Promise<Uint8Array> {
+  const metadata = await lstat(filePath);
+  if (!metadata.isFile()) {
+    throw validationError(source, "/", "yaml.not_regular_file", "o caminho não é um arquivo regular");
+  }
+  if (metadata.size > maximumYamlBytes) {
+    throw validationError(source, "/", "yaml.maximum_size", `o YAML excede ${maximumYamlBytes} bytes`);
+  }
+  return readFile(filePath);
+}
 
 const yamlKeyPattern = /^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$/;
 const utf8Decoder = new TextDecoder("utf-8", { fatal: true });
@@ -74,6 +93,9 @@ export function parseYamlSubset(
   source = "<memory>",
 ): YamlValue {
   validateTextEncodingRules(sourceText, source);
+  if (sourceText.split("\n").length > maximumYamlLines) {
+    throw validationError(source, "/", "yaml.resource_exhaustion", `o YAML excede ${maximumYamlLines} linhas`);
+  }
 
   const lineCounter = new LineCounter();
   const document = parseDocument(sourceText, {

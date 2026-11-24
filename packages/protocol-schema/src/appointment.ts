@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { readFileSync } from "node:fs";
-import { readFile } from "node:fs/promises";
 import { basename } from "node:path";
 import { ProtocolValidationError, validationError } from "./errors.js";
 import {
@@ -10,7 +9,7 @@ import {
   createProtocolAjv,
   schemaIssues,
 } from "./schema-validation.js";
-import { decodeYamlBytes, parseYamlSubset } from "./yaml.js";
+import { decodeYamlBytes, parseYamlSubset, readYamlFileBytes } from "./yaml.js";
 
 export interface AppointmentManifest {
   readonly schema: "openpep/appointment@1";
@@ -62,7 +61,7 @@ export function validateAppointmentYaml(
 export async function readAppointmentManifest(
   filePath: string,
 ): Promise<AppointmentManifest> {
-  const bytes = await readFile(filePath);
+  const bytes = await readYamlFileBytes(filePath);
   return validateAppointmentYaml(decodeYamlBytes(bytes, filePath), filePath);
 }
 
