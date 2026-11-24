@@ -39,7 +39,7 @@ estoque, autentica o prescritor e entrega um lote para importação local. O por
 de documentos só recebe PDFs após confirmação individual. Instalar o módulo
 não provisiona esses serviços. O portal SNCR identifica a conta pelo cabeçalho
 `oai-authenticated-user-id`, que a hospedagem precisa definir e não pode aceitar
-do cliente, e permite no máximo 10 logins SNCR por conta a cada hora. Seus
+do cliente, e permite no máximo 10 logins SNCR por conta a cada hora. O ambiente web pareado não grava números diretamente: o pedido passa pelo portal, e o resultado só entra no estoque local como lote assinado, conferido pelo auxiliar com a chave pública configurada. Seus
 geradores estão em `scripts/preparar-portal.mjs` e
 `scripts/preparar-documentos.mjs`, com configuração em `.env.example`.
 

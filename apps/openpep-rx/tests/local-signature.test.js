@@ -108,6 +108,17 @@ test('web pairing needs local consent; tokens are scoped to one configured origi
   assert.equal((await foreign('pair/complete',{challenge,code:paired.code})).status,403);
   time=12*3600_000+1;assert.equal((await foreign('settings',null,paired.token)).status,403);assert.deepEqual(s.calls,[]);
 });
+test('a paired web origin cannot write SNCR numbers without a signed lot', async t => {
+  const web='https://rx.example.br',s=await setup(t,{webOrigins:web}),challenge='d'.repeat(64);
+  const paired=await (await s.request('pair',{origin:web,challenge})).json();
+  const foreign=(path,body)=>fetch(s.origin+'/api/local/'+path,{method:body?'POST':'GET',headers:{Origin:web,'Sec-Fetch-Site':'cross-site','X-OpenPEP-Request':'local','X-OpenPEP-Local':paired.token,...(body?{'Content-Type':'application/json'}:{})},body:body?JSON.stringify(body):undefined});
+  assert.equal((await s.request('settings',{profile:{nome:'Profissional Fictício',cpf:'52998224725',crm:'12345',uf:'SP'},sncr:{enabled:true,environment:'hmg'}})).status,200);
+  const forged={id:'00000000-0000-4000-8000-000000000000',receipt:'e'.repeat(64),environment:'hmg',request:{tipo:'NRB',quantidade:10,conselho:'CRM',uf:'SP',documento:'12345'},result:{kind:'success',http:200,body:{numeroReceita:['1234567890123456']}}};
+  assert.equal((await foreign('sncr/import',forged)).status,404);
+  assert.equal((await foreign('sncr/request',{tipo:'NRB',quantidade:10,confirm:true})).status,403);
+  assert.equal((await foreign('sncr/import-lot',{bundle:{format:'openpep-rx.sncr-lote',version:1,keyId:'unknown-key',payload:'e30',signature:'AA'},confirm:true})).status,422);
+  const settings=await (await foreign('settings')).json();assert.deepEqual(settings.numbers,[]);assert.deepEqual(settings.requests,[]);assert.deepEqual(s.calls,[]);
+});
 
 test('inline emitter stores profile and office atomically and keeps offices isolated by registration', async t => {
   const s=await setup(t),profile={nome:'Profissional Fictício',cpf:'52998224725',crm:'12345',uf:'SP'},office={cidade:'Cidade Exemplo',uf:'SP',telefone:'',parts:{cep:'01001000',logradouro:'Rua Exemplo',numero:'100',complemento:'Sala 2',bairro:'Centro'}};
