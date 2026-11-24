@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {DatabaseSync} from 'node:sqlite';
 import {readFileSync} from 'node:fs';
 import {randomUUID} from 'node:crypto';
-import {createRelay} from '../hosted/relay.mjs';
+import {createRelay,START_LIMIT,START_WINDOW} from '../hosted/relay.mjs';
 import {LocalDatabase,ownerOf} from '../local/database.mjs';
 import {createLocalSNCR} from '../local/sncr.mjs';
 const origin='https://rx.example.br',profile={nome:'Profissional Fictício',cpf:'52998224725',crm:'12345',uf:'SP'};
@@ -38,6 +38,17 @@ test('relay enforces quota atomically and retains one request on duplicate start
   const s=setup(t),body={...s.intent(),request:{...s.intent().request,quantidade:50}};await s.begin(body);
   const duplicate=await s.request('/api/relay/start',body);assert.equal((await duplicate.json()).pending,true);
   assert.equal((await s.request('/api/relay/start',s.intent())).status,422);assert.equal(s.sql.prepare('SELECT COUNT(*) n FROM rx_relay').get().n,1);assert.equal(s.calls.length,0);
+});
+test('relay limits SNCR logins per account and window without blocking other accounts',async t=>{
+  let time=Date.UTC(2026,0,5,12);const s=setup(t,{now:()=>time});
+  // Distinct synthetic registrations keep the per-prescriber quota out of the way.
+  const intent=n=>({...s.intent(),request:{...s.intent().request,documento:String(10000+n)}});
+  for(let n=0;n<START_LIMIT;n++)await s.begin(intent(n));
+  const limited=await s.request('/api/relay/start',intent(START_LIMIT));
+  assert.equal(limited.status,429);assert.equal(limited.headers.get('Retry-After'),'3600');assert.match((await limited.json()).error,/última hora/);
+  assert.equal((await s.request('/api/relay/start',intent(START_LIMIT),{'oai-authenticated-user-id':'other-owner'})).status,200);
+  time+=START_WINDOW;assert.equal((await s.request('/api/relay/start',intent(START_LIMIT+1))).status,200);
+  assert.equal(s.sql.prepare("SELECT COUNT(*) n FROM rx_relay WHERE user_id='synthetic-owner'").get().n,START_LIMIT+1);assert.equal(s.calls.length,0);
 });
 test('relay persistence failure returns a recovery receipt without resending the request',async t=>{
   const s=setup(t),start=await s.begin();s.failSave=true;
