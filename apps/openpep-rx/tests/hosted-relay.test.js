@@ -35,10 +35,18 @@ test('relay exchanges and sends once, persists result, isolates history, never p
   assert.deepEqual((await (await s.request('/api/relay/portal/history',null,{'oai-authenticated-user-id':'other-owner'})).json()).requests,[]);
   assert.doesNotMatch(JSON.stringify(s.sql.prepare('SELECT * FROM rx_relay').all()),/synthetic-sensitive-token|synthetic-session/);
 });
-test('relay enforces quota atomically and retains one request on duplicate starts',async t=>{
-  const s=setup(t),body={...s.intent(),request:{...s.intent().request,quantidade:50}};await s.begin(body);
+test('relay enforces quota at authentication; pending logins of another account do not block a CRM',async t=>{
+  const s=setup(t),body={...s.intent(),request:{...s.intent().request,quantidade:50}};
+  const victim=await s.begin(body);
   const duplicate=await s.request('/api/relay/portal/start',body);assert.equal((await duplicate.json()).pending,true);
-  assert.equal((await s.request('/api/relay/portal/start',s.intent())).status,422);assert.equal(s.sql.prepare('SELECT COUNT(*) n FROM rx_relay').get().n,1);assert.equal(s.calls.length,0);
+  // Another account starts logins for the same CRM and never completes them.
+  for(let n=0;n<3;n++)assert.equal((await s.request('/api/relay/portal/start',s.intent(),{'oai-authenticated-user-id':'other-owner'})).status,200);
+  const second=await s.begin();
+  const back=(start)=>s.request('/sncr/retorno?state='+start.state+'&session_id=synthetic-session',null,{Cookie:start.cookie});
+  assert.equal((await back(victim)).status,303);assert.equal(s.calls.length,2);
+  const blocked=await back(second);assert.equal(blocked.status,422);assert.match((await blocked.json()).error,/limite deste período/);assert.equal(s.calls.length,2);
+  assert.equal(s.sql.prepare("SELECT result_kind FROM rx_relay WHERE id=?").get(second.id).result_kind,'not-sent');
+  assert.equal((await s.request('/api/relay/portal/start',s.intent())).status,422);
 });
 test('relay limits SNCR logins per account and window without blocking other accounts',async t=>{
   let time=Date.UTC(2026,0,5,12);const s=setup(t,{now:()=>time});

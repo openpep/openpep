@@ -17,13 +17,22 @@ function redis(env,fetcher){
   return body.result;
  };
 }
+// Per-client bucket plus a wider global ceiling: one client cannot exhaust the service for
+// everyone, and the global cap still bounds calls to the Anvisa gateways. The address comes from
+// the platform header (x-real-ip); a missing or malformed value shares one fallback bucket.
+export const clientOf=req=>req.headers?.['x-real-ip'];
+export async function allowClient(store,name,client,[perClient,global]){
+  const id=/^[0-9a-fA-F:.]{2,45}$/.test(client||'')?client:'desconhecido';
+  return await store.allow(name+':'+id,perClient)&&await store.allow(name,global);
+}
 export function makeStore(env=process.env,fetcher=fetch,{namespace='openpep:rx:local:v1',ttl=900}={}){
  const command=redis(env,fetcher);
  const key=async id=>`${namespace}:${await sha256(id)}`;
  return {
   async allow(bucket,limit){
    const lua="local n=redis.call('INCR',KEYS[1]); if n==1 then redis.call('EXPIRE',KEYS[1],900) end; return n";
-   return (await command(['EVAL',lua,'1',`${namespace}:limit:${bucket}`]))<=limit;
+   // Buckets may carry a client address; only its hash reaches the store.
+   return (await command(['EVAL',lua,'1',`${namespace}:limit:${await sha256(bucket)}`]))<=limit;
   },
   async get(id){const raw=await command(['GET',await key(id)]);return raw?JSON.parse(raw):null;},
   async create(id,data){return (await command(['SET',await key(id),JSON.stringify(data),'EX',ttl,'NX']))==='OK';},
