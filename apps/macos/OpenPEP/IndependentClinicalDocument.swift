@@ -29,11 +29,27 @@ struct IndependentClinicalDocument {
                 .precomposedStringWithCanonicalMapping
         }
     }
+    static func hasStructuralIndicator(_ yaml: String) -> Bool {
+        yaml.split(separator: "\n", omittingEmptySubsequences: false).contains { line in
+            var node = line.drop(while: { $0 == " " || $0 == "\t" })
+            if node.hasPrefix("- ") { node = node.dropFirst(2) }
+            if let colon = node.range(of: ": ") ?? (node.hasSuffix(":") ? node.range(of: ":", options: .backwards) : nil),
+               !node.hasPrefix("\"") && !node.hasPrefix("'") {
+                node = node[colon.upperBound...].drop(while: { $0 == " " || $0 == "\t" })
+            }
+            guard let first = node.first else { return false }
+            return "&*![{".contains(first)
+        }
+    }
+
     static func read(_ text: String) throws -> Self {
         guard text.hasPrefix("---\n"), let end = text.range(of: "\n---\n", range: text.index(text.startIndex, offsetBy: 4)..<text.endIndex) else {
             throw ConsultationFieldsError.ambiguous
         }
         let yaml = String(text[text.index(text.startIndex, offsetBy: 4)..<end.lowerBound])
+        // The header holds eight scalars written by YAMLEncoder. Vault text is untrusted: bound its size and
+        // refuse anchors, aliases, tags and flow collections at the start of any node before Yams expands it.
+        guard yaml.utf8.count <= 16 * 1024, !Self.hasStructuralIndicator(yaml) else { throw ConsultationFieldsError.ambiguous }
         let header = try YAMLDecoder().decode(Header.self, from: yaml)
         guard header.document_format == "openpep-document-snapshot-v1",
               OpenPEPIdentifier.isPatient(header.patient_id), OpenPEPIdentifier.isAsset(header.pdf_asset_id),

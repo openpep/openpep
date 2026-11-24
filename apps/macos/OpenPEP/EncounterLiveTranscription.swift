@@ -780,6 +780,15 @@ final class OpenAIRealtimeTranscription {
     }
 }
 
+private final class RealtimeNoRedirectDelegate: NSObject, URLSessionTaskDelegate, @unchecked Sendable {
+    func urlSession(_ session: URLSession, task: URLSessionTask,
+                    willPerformHTTPRedirection response: HTTPURLResponse,
+                    newRequest request: URLRequest,
+                    completionHandler: @escaping (URLRequest?) -> Void) {
+        completionHandler(nil)
+    }
+}
+
 @MainActor
 final class URLSessionOpenAIRealtimeSocketFactory: OpenAIRealtimeSocketFactory {
     func connect(apiKey: String) throws -> any OpenAIRealtimeSocket {
@@ -792,7 +801,9 @@ final class URLSessionOpenAIRealtimeSocketFactory: OpenAIRealtimeSocketFactory {
         configuration.waitsForConnectivity = false
         configuration.httpCookieStorage = nil
         configuration.urlCache = nil
-        let task = URLSession(configuration: configuration).webSocketTask(with: request)
+        // The bearer key must never follow a redirect to another host during the handshake.
+        let task = URLSession(configuration: configuration, delegate: RealtimeNoRedirectDelegate(), delegateQueue: nil)
+            .webSocketTask(with: request)
         task.resume()
         return URLSessionOpenAIRealtimeSocket(task: task)
     }
