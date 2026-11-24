@@ -31,7 +31,7 @@ const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const flight = document.getElementById('flight');
 let flyby;
 async function fly() {
-  if (reducedMotion.matches || !flight.animate) return;
+  if (!flight || reducedMotion.matches || !flight.animate) return;
   try { await flight.querySelector('img').decode(); } catch { return; }
   if (reducedMotion.matches || window.scrollY > 80) return;
   flight.hidden = false;
@@ -50,5 +50,5 @@ async function fly() {
   flyby = flight.animate(path, { duration: 3000, easing: 'linear', fill: 'both' });
   flyby.finished.then(() => { flight.hidden = true; }).catch(() => { flight.hidden = true; });
 }
-reducedMotion.addEventListener('change', event => { if(event.matches) { flyby?.cancel(); flight.hidden = true; } });
+reducedMotion.addEventListener('change', event => { if(event.matches && flight) { flyby?.cancel(); flight.hidden = true; } });
 if(document.readyState === 'complete') fly(); else window.addEventListener('load', fly, {once:true});
