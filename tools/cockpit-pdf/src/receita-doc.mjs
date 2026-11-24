@@ -394,7 +394,7 @@ export async function prescriptionPDF({id, tipo, numero, conteudo, prescritor, e
 
     // QR da Notificação de Receita: consulta do SNCR com o número (exigência da Anvisa), no lugar do modelo.
     if (numero) {
-      qr(SNCR_CONSULT + numero, qx, qt, qs);
+      qr(SNCR_CONSULT + encodeURIComponent(numero), qx, qt, qs);
     } else {
       page.drawRectangle({x: qx, y: top(qt + qs), width: qs, height: qs, borderColor: LABEL, borderWidth: 0.6, borderDashArray: [3, 2]});
       draw('QR na emissão', qx + (qs - width('QR na emissão', 7.5)) / 2, qt + qs / 2 + 3, 7.5, regular, LABEL);

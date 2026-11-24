@@ -70,8 +70,10 @@ O aviso original permanece em
 | Inter | Subconjuntos incluídos | OFL-1.1 | Tipografia dos documentos e do site |
 
 As resoluções exatas estão em `Package.resolved` e nos arquivos `package-lock.json`.
-Os avisos das bibliotecas do renderizador, inclusive as transitivas, acompanham
-`apps/macos/OpenPEP/Resources/CockpitPDF/THIRD-PARTY-NOTICES.txt`; a licença das
+Os avisos das bibliotecas do renderizador instaladas pelo npm acompanham
+`apps/macos/OpenPEP/Resources/CockpitPDF/THIRD-PARTY-NOTICES.txt`. O pacote
+`@pdf-lib/fontkit` já é distribuído com código de terceiros embutido, como
+`iconv-lite`; os avisos desse código ainda precisam ser levantados; a licença das
 fontes acompanha os arquivos. O site preserva seus avisos de fontes, Tailwind
 e [mídia](website/ASSETS.md).
 

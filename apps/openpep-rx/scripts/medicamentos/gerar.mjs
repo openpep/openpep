@@ -743,6 +743,8 @@ function textoDeHtml(html) {
     .replace(/<(script|style)[\s\S]*?<\/\1>/gi, '')
     .replace(/<br\s*\/?>|<\/(p|div|tr|li|h\d)>/gi, '\n')
     .replace(/<[^>]+>/g, '')
+    // Plain text for comparison only: drop any angle bracket left by malformed markup.
+    .replace(/[<>]/g, ' ')
     .replace(/&([A-Za-z])(acute|grave|circ|tilde|uml|cedil);/g, (_, l, m) => (l + marcas[m]).normalize('NFC'))
     .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
     .replace(/&([a-z]+);/g, (x, n) => nomeadas[n] ?? x);

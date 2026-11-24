@@ -2,10 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { readFileSync } from "node:fs";
-import { readFile } from "node:fs/promises";
 import { ProtocolValidationError } from "./errors.js";
 import { createProtocolAjv, schemaIssues } from "./schema-validation.js";
-import { decodeYamlBytes, parseYamlSubset } from "./yaml.js";
+import { decodeYamlBytes, parseYamlSubset, readYamlFileBytes } from "./yaml.js";
 
 export interface VaultManifest {
   readonly schema: "openpep/vault@1";
@@ -50,7 +49,7 @@ export function validateVaultYaml(
 export async function readVaultManifest(
   filePath: string,
 ): Promise<VaultManifest> {
-  const bytes = await readFile(filePath);
+  const bytes = await readYamlFileBytes(filePath);
   const sourceText = decodeYamlBytes(bytes, filePath);
   return validateVaultYaml(sourceText, filePath);
 }
