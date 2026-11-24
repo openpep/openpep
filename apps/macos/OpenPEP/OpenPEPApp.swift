@@ -19,6 +19,13 @@ struct OpenPEPApp: App {
     @FocusedValue(\.openPEPAssistant) private var openAssistant
     @FocusedValue(\.openPEPSettings) private var openSettings
 
+    init() {
+        // Delivery copies left by a previous run are not part of the vault; remove them at launch.
+        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil {
+            TemporaryClinicalFiles.sweep()
+        }
+    }
+
     var body: some Scene {
         WindowGroup {
             // Unit tests construct their own views and inject synthetic services.
