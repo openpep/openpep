@@ -31,7 +31,7 @@ struct UntrustedVaultTextTests {
     @Test func documentSnapshotRefusesAnchorsAliasesTagsAndOversizedHeaders() throws {
         let valid = try IndependentClinicalDocument(header: header(title: "Receita"), body: "Corpo").text
         for injected in ["title: &a Receita", "title: *a", "title: !!binary AAAA", "title: [a, b]",
-                         "title:\n  &a Receita"] {
+                         "title:\n  &a Receita", "\"title\": &a Receita", "'title': *a"] {
             let text = valid.replacingOccurrences(of: "title: Receita", with: injected)
             #expect(text != valid)
             #expect(throws: (any Error).self) { try IndependentClinicalDocument.read(text) }

@@ -42,7 +42,7 @@ prontuario/
     .openpep/audit.ndjson             SHA-256 de cada nota final
 ```
 
-As notas, os adendos, os documentos importados e as revisões humanas são a fonte. Índices, wiki e IPS são derivados e podem ser reconstruídos a partir dela. A nota final não é editada: correções entram como adendo.
+As notas, os adendos, os documentos importados e as revisões humanas são a fonte. Índices, o resumo da wiki e o IPS são derivados e podem ser reconstruídos a partir dela. A nota final não é editada: correções entram como adendo.
 
 Por isso, **qualquer agente de IA com acesso à pasta lê o prontuário diretamente**, como lê qualquer projeto de código. Não precisa de API, integração ou acesso a um banco de dados. Isso facilita resumir, buscar, migrar e auditar, e abre caminho para que a IA prepare documentos na consulta. Também muda o modelo de segurança. Hoje:
 

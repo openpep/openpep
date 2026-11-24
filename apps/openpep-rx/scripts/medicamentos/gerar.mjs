@@ -739,8 +739,10 @@ function validar(saida) {
 function textoDeHtml(html) {
   const marcas = { acute: '́', grave: '̀', circ: '̂', tilde: '̃', uml: '̈', cedil: '̧' };
   const nomeadas = { nbsp: ' ', quot: '"', amp: '&', lt: '<', gt: '>', ordm: 'º', ordf: 'ª', sect: '§', ndash: '-', mdash: '-', ldquo: '"', rdquo: '"' };
-  return html
-    .replace(/<(script|style)[\s\S]*?<\/\1>/gi, '')
+  // Repeat until stable: removing one block must not leave a new one assembled from the pieces.
+  let text = html, previous;
+  do { previous = text; text = text.replace(/<(script|style)[\s\S]*?<\/\1>/gi, ''); } while (text !== previous);
+  return text
     .replace(/<br\s*\/?>|<\/(p|div|tr|li|h\d)>/gi, '\n')
     .replace(/<[^>]+>/g, '')
     // Plain text for comparison only: drop any angle bracket left by malformed markup.

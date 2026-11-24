@@ -22,8 +22,10 @@ function redis(env,fetcher){
 // the platform header (x-real-ip); a missing or malformed value shares one fallback bucket.
 export const clientOf=req=>req.headers?.['x-real-ip'];
 export async function allowClient(store,name,client,[perClient,global]){
-  const id=/^[0-9a-fA-F:.]{2,45}$/.test(client||'')?client:'desconhecido';
-  return await store.allow(name+':'+id,perClient)&&await store.allow(name,global);
+  // Without a valid platform address there is no per-client bucket: only the global ceiling applies,
+  // so a missing header never collapses every client into one small bucket.
+  if(!/^[0-9a-fA-F:.]{2,45}$/.test(client||''))return store.allow(name,global);
+  return await store.allow(name+':'+client,perClient)&&await store.allow(name,global);
 }
 export function makeStore(env=process.env,fetcher=fetch,{namespace='openpep:rx:local:v1',ttl=900}={}){
  const command=redis(env,fetcher);
