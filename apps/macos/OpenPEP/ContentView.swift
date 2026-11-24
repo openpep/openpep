@@ -529,6 +529,25 @@ struct ContentView: View {
             assistant.close(restoreFocus: false)
             authenticationSession.clear()
         }
+        // Locking the screen or starting the screen saver also ends the finalization session,
+        // so a long working session does not outlive the clinician leaving the Mac.
+        .onReceive(DistributedNotificationCenter.default().publisher(
+            for: Notification.Name("com.apple.screenIsLocked")
+        )) { _ in
+            assistant.close(restoreFocus: false)
+            authenticationSession.clear()
+        }
+        .onReceive(DistributedNotificationCenter.default().publisher(
+            for: Notification.Name("com.apple.screensaver.didstart")
+        )) { _ in
+            assistant.close(restoreFocus: false)
+            authenticationSession.clear()
+        }
+        .onReceive(NotificationCenter.default.publisher(
+            for: NSApplication.willTerminateNotification
+        )) { _ in
+            TemporaryClinicalFiles.sweep()
+        }
         .quickLookPreview($previewURL)
         .onChange(of: previewURL) { _, newValue in
             if newValue == nil {
@@ -2378,9 +2397,9 @@ struct ContentView: View {
                 .font(.headline)
                 .accessibilityLabel("Estado: Rascunho")
         case .verified:
-            Label("Final íntegro", systemImage: "checkmark.shield")
+            Label("Final sem alteração detectada", systemImage: "checkmark.shield")
                 .font(.headline)
-                .accessibilityLabel("Estado: Nota final íntegra")
+                .accessibilityLabel("Estado: Nota final sem alteração detectada")
         case .altered:
             Label("Alteração detectada", systemImage: "exclamationmark.shield")
                 .font(.headline)
@@ -2394,7 +2413,7 @@ struct ContentView: View {
         case .draft:
             "Este rascunho ainda pode ser editado e salvo automaticamente."
         case .verified:
-            "Nota final somente leitura, verificada por SHA-256. A autenticação local não equivale a assinatura ICP-Brasil."
+            "Nota final somente leitura. O SHA-256 registrado confere com o arquivo: isso detecta alteração acidental, mas não impede que quem pode escrever na pasta altere a nota e o registro juntos. A autenticação local não equivale a assinatura ICP-Brasil."
         case .altered:
             "O OpenPEP detectou divergência nos artefatos desta consulta. Revise os arquivos antes de continuar."
         }
