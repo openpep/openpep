@@ -59,6 +59,16 @@ struct FirstRunSetupView: View {
                 Text(step == 0 ? "Vamos preparar sua primeira consulta." : "Agora, o microfone.")
                     .font(.title2.weight(.semibold))
                 if step == 0 {
+                    GroupBox {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Label("Versão alfa pré-operacional", systemImage: "exclamationmark.triangle")
+                                .font(.headline)
+                            Text("Não use com pacientes reais. O OpenPEP não tem liberação clínica, certificação SBIS ou registro sanitário, e as garantias de segurança ainda estão em discussão.")
+                            Text("Com a IA ativada, abrir um paciente envia à OpenAI o histórico dele, inclusive o texto de documentos importados, para atualizar a wiki. A transcrição envia o áudio da consulta. Use apenas os dados de demonstração.")
+                        }
+                        .fixedSize(horizontal: false, vertical: true)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    }
                     Text("Cole a chave da OpenAI. Vamos testar a conexão e preparar transcrição, resumos, assistente e atualização da história do paciente de uma vez.")
                     SecureField("Chave da API OpenAI", text: $key).textFieldStyle(.roundedBorder)
                         .textContentType(.password).disabled(task != nil)
