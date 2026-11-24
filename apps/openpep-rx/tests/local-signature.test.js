@@ -26,7 +26,10 @@ async function setup(t, overrides = {}) {
   t.after(() => new Promise(resolve => { server.close(resolve); server.closeAllConnections(); }));
   const origin = `http://127.0.0.1:${server.address().port}`;
   const base = {'X-OpenPEP-Request': 'local'};
-  const session = await (await fetch(origin + '/api/local/session', {headers: base})).json();
+  const opened = await fetch(origin + server.launchPath, {redirect: 'manual'});
+  assert.equal(opened.status, 303);
+  const cookie = opened.headers.get('Set-Cookie').split(';')[0];
+  const session = await (await fetch(origin + '/api/local/session', {headers: {...base, Cookie: cookie}})).json();
   const request = (route, body, headers = {}) => fetch(origin + '/api/local/' + route, {
     method: 'POST', headers: {...base, 'X-OpenPEP-Local': session.token, Origin: origin,
       'Content-Type': Buffer.isBuffer(body) ? 'application/pdf' : 'application/json', ...headers},
@@ -40,6 +43,30 @@ async function setup(t, overrides = {}) {
   };
   return {server, origin, request, prepare, calls, headers:{...base,'X-OpenPEP-Local':session.token}};
 }
+
+test('session token is handed only to the browser that opened the single-use launch address', async t => {
+  const server = createLocalServer({available: true, signer: async () => { throw Error('native code must not run'); }});
+  server.listen(0, '127.0.0.1'); await once(server, 'listening');
+  t.after(() => new Promise(resolve => { server.close(resolve); server.closeAllConnections(); }));
+  const origin = `http://127.0.0.1:${server.address().port}`, base = {'X-OpenPEP-Request': 'local'};
+  const session = headers => fetch(origin + '/api/local/session', {headers: {...base, ...headers}});
+  const open = path => fetch(origin + path, {redirect: 'manual'});
+  assert.match(server.launchPath, /^\/abrir\?chave=[a-f0-9]{64}$/);
+  assert.equal((await session()).status, 403);
+  assert.equal((await session({Cookie: 'openpep_rx_local=' + 'f'.repeat(64)})).status, 403);
+  assert.equal((await open('/abrir?chave=' + 'f'.repeat(64))).status, 403);
+  assert.equal((await open('/abrir')).status, 403);
+  const opened = await open(server.launchPath);
+  assert.equal(opened.status, 303); assert.equal(opened.headers.get('Location'), '/');
+  const setCookie = opened.headers.get('Set-Cookie');
+  assert.match(setCookie, /^openpep_rx_local=[a-f0-9]{64}; HttpOnly; SameSite=Strict; Path=\/$/);
+  assert.equal((await open(server.launchPath)).status, 403);
+  const cookie = setCookie.split(';')[0], granted = await session({Cookie: cookie});
+  assert.equal(granted.status, 200); assert.equal(granted.headers.get('Set-Cookie'), null);
+  const {token} = await granted.json(); assert.equal(token, cookie.split('=')[1]);
+  assert.equal((await fetch(origin + '/api/local/session', {headers: {Cookie: cookie}})).status, 403);
+  assert.equal((await session({Cookie: cookie, Origin: 'https://attacker.example'})).status, 403);
+});
 
 test('PDF preparation preserves pages, reserves one signature and rejects forms or existing signatures', async () => {
   const prepared = await prepareSignature(await pdf());

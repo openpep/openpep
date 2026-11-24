@@ -5,7 +5,7 @@ $('web-origin').textContent=origin||'Endereço ausente';
 try{
   const parsed=new URL(origin);
   if(parsed.protocol!=='https:'||parsed.origin!==origin||!/^[a-f0-9]{64}$/.test(challenge||''))throw Error('Endereço inválido.');
-  const r=await fetch('/api/local/session',{headers:{'X-OpenPEP-Request':'local'},cache:'no-store'});if(!r.ok)throw Error('Reabra o auxiliar local.');token=(await r.json()).token;
+  const r=await fetch('/api/local/session',{headers:{'X-OpenPEP-Request':'local'},cache:'no-store'});if(!r.ok)throw Error((await r.json().catch(()=>({}))).error||'Reabra o auxiliar local.');token=(await r.json()).token;
   $('connect').disabled=false;$('status').textContent='Confira o endereço antes de conectar.';
 }catch(error){$('status').textContent=error.message;}
 $('connect').onclick=async()=>{
