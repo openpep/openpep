@@ -736,19 +736,20 @@ function validar(saida) {
 // 7. Conferência opcional das listas embutidas com o texto oficial
 // ---------------------------------------------------------------------------
 
-// Drops <script> and <style> blocks by scanning tags, so no partial block can be reassembled.
-function semScriptsNemEstilos(html) {
+// HTML to plain text by scanning tags (no regex sanitization): drops <script>/<style> blocks and
+// every tag, turns line-level tags into line breaks and discards stray angle brackets.
+function htmlParaTexto(html) {
   let texto = '', ignorando = null;
   for (const [indice, parte] of html.split('<').entries()) {
-    if (indice === 0) { texto += parte; continue; }
-    const minuscula = parte.toLowerCase();
-    if (ignorando) {
-      if (minuscula.startsWith('/' + ignorando)) { ignorando = null; texto += parte.slice(parte.indexOf('>') + 1); }
-      continue;
-    }
-    const bloco = ['script', 'style'].find(nome => minuscula.startsWith(nome) && !/[a-z0-9-]/.test(minuscula[nome.length] ?? ''));
-    if (bloco) { ignorando = bloco; continue; }
-    texto += '<' + parte;
+    if (indice === 0) { texto += parte.replaceAll('>', ' '); continue; }
+    const fim = parte.indexOf('>');
+    if (fim < 0) { if (!ignorando) texto += ' ' + parte; continue; }
+    const tag = parte.slice(0, fim).trim().toLowerCase(), resto = parte.slice(fim + 1).replaceAll('>', ' ');
+    const nome = tag.replace(/^\//, '').split(/[\s/]/)[0];
+    if (ignorando) { if (tag.startsWith('/') && nome === ignorando) { ignorando = null; texto += resto; } continue; }
+    if (!tag.startsWith('/') && (nome === 'script' || nome === 'style')) { ignorando = nome; continue; }
+    const quebra = nome === 'br' || (tag.startsWith('/') && /^(p|div|tr|li|h\d)$/.test(nome));
+    texto += (quebra ? '\n' : '') + resto;
   }
   return texto;
 }
@@ -756,11 +757,7 @@ function semScriptsNemEstilos(html) {
 function textoDeHtml(html) {
   const marcas = { acute: '́', grave: '̀', circ: '̂', tilde: '̃', uml: '̈', cedil: '̧' };
   const nomeadas = { nbsp: ' ', quot: '"', amp: '&', lt: '<', gt: '>', ordm: 'º', ordf: 'ª', sect: '§', ndash: '-', mdash: '-', ldquo: '"', rdquo: '"' };
-  return semScriptsNemEstilos(html)
-    .replace(/<br\s*\/?>|<\/(p|div|tr|li|h\d)>/gi, '\n')
-    .replace(/<[^>]+>/g, '')
-    // Plain text for comparison only: drop any angle bracket left by malformed markup.
-    .replace(/[<>]/g, ' ')
+  return htmlParaTexto(html)
     .replace(/&([A-Za-z])(acute|grave|circ|tilde|uml|cedil);/g, (_, l, m) => (l + marcas[m]).normalize('NFC'))
     .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
     .replace(/&([a-z]+);/g, (x, n) => nomeadas[n] ?? x);
