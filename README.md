@@ -24,6 +24,35 @@ Um prontuário ambulatorial brasileiro de código aberto, com transcrição, int
 - **Receitas e documentos:** composição e geração local de PDFs, integração com o SNCR para numeração e assinatura com certificado disponível no Mac. Homologação é o padrão do SNCR; produção exige escolha explícita e autorização própria.
 - **Controle dos registros:** rascunhos com salvamento automático, finalização com autenticação do Mac, correções por adendo, exportação, backup e restauração em uma nova pasta.
 
+## O prontuário é uma pasta
+
+Esta é a escolha mais disruptiva do OpenPEP. Os registros clínicos são arquivos abertos numa pasta escolhida pelo profissional, sem banco de dados nem servidor obrigatórios:
+
+```text
+prontuario/
+  vault.yaml                          identidade e versão do prontuário
+  appointments/AAAA/MM/*.yaml         agenda
+  recordings/                         áudios das consultas
+  patients/pt_<id>/
+    patient.yaml                      cadastro
+    content/encounters/*.md           consultas
+    content/notes/{drafts,final,addenda}/*.md   notas em Markdown com cabeçalho YAML
+    raw/AAAA/MM/asset_<id>.*          PDFs, imagens e textos, com ficha .meta.md (SHA-256 e origem)
+    wiki/                             resumo e fatos revisados, derivados das fontes
+    .openpep/audit.ndjson             SHA-256 de cada nota final
+```
+
+As notas, os adendos, os documentos importados e as revisões humanas são a fonte. Índices, wiki e IPS são derivados e podem ser reconstruídos a partir dela. A nota final não é editada: correções entram como adendo.
+
+Por isso, **qualquer agente de IA com acesso à pasta lê o prontuário diretamente**, como lê qualquer projeto de código. Não precisa de API, integração ou acesso a um banco de dados. Isso facilita resumir, buscar, migrar e auditar, e abre caminho para que a IA prepare documentos na consulta. Também muda o modelo de segurança. Hoje:
+
+- quem lê a pasta lê tudo; o controle de acesso é o do sistema operacional, sem papéis nem acesso por paciente;
+- o OpenPEP não cifra os arquivos; a proteção em repouso depende do FileVault;
+- o que um agente lê pode ser enviado ao provedor de IA dele, e leituras feitas fora do aplicativo não ficam registradas;
+- o registro de auditoria detecta alteração acidental, mas não adulteração deliberada.
+
+Esses pontos precisam de discussão ampla, técnica, ética, regulatória e profissional, antes de um prontuário assim ser usado na prática diária. A [página de arquitetura e roadmap](https://openpep.com.br/arquitetura.html) ([fonte](website/arquitetura.html)) detalha o modelo de arquivos, o IPS, o papel da IA na consulta e o que vem a seguir.
+
 ## Experimente
 
 Compile o aplicativo e escolha **Explorar demonstração**, ou crie um prontuário em uma pasta vazia. A configuração rápida orienta a chave OpenAI, o teste da conexão e a permissão do microfone. Também é possível continuar localmente. Novos áudios ficam em `recordings/`, dentro do prontuário.

@@ -1,0 +1,242 @@
+<!doctype html>
+<!-- SPDX-FileCopyrightText: 2026 Carlos Pedrotti and OpenPEP contributors -->
+<!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arquitetura e roadmap — OpenPEP</title>
+  <meta name="description" content="O prontuário do OpenPEP é uma pasta de arquivos abertos que qualquer agente de IA consegue ler. Veja o modelo de arquivos, o IPS, a IA na consulta, os limites de segurança em discussão e o roadmap.">
+  <meta name="theme-color" content="#102c25">
+  <meta property="og:title" content="OpenPEP · Arquitetura e roadmap">
+  <meta property="og:description" content="Um prontuário que é uma pasta. Arquivos abertos, legíveis por qualquer agente de IA, e os pontos que ainda precisam de discussão.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://openpep.com.br/assets/images/film-poster.jpg">
+  <link rel="icon" type="image/png" href="assets/openpep-logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-forest text-ivory antialiased">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header relative z-30 border-b border-white/15">
+    <div class="shell flex min-h-24 items-center justify-between gap-5">
+      <a class="brand flex items-center gap-3" href="index.html" aria-label="OpenPEP, página inicial"><img src="assets/openpep-logo.png" width="44" height="44" alt=""><span class="text-2xl font-bold tracking-tight">OpenPEP</span></a>
+      <nav class="hidden items-center gap-8 text-sm md:flex" aria-label="Navegação principal">
+        <a href="#pasta">A pasta</a><a href="#discussao">Em discussão</a><a href="#ia">IA na consulta</a><a href="#roadmap">Roadmap</a><a href="index.html" class="nav-cta">Início</a>
+      </nav>
+      <button id="menu-toggle" class="menu-toggle md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
+    </div>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Navegação móvel" hidden><a href="#pasta">A pasta</a><a href="#discussao">Em discussão</a><a href="#ia">IA na consulta</a><a href="#roadmap">Roadmap</a><a href="index.html">Início</a></nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="arch-hero section-pad" aria-labelledby="arch-title">
+      <div class="shell">
+        <p class="eyebrow mb-6 text-yellow">ARQUITETURA E ROADMAP</p>
+        <h1 id="arch-title" class="max-w-4xl">O prontuário é uma pasta.</h1>
+        <p class="mt-8 max-w-3xl text-xl leading-relaxed text-white/85">No OpenPEP, os registros clínicos são arquivos abertos numa pasta escolhida pelo profissional. Não há banco de dados nem servidor obrigatórios. Qualquer programa com acesso à pasta, inclusive um agente de IA, lê o prontuário diretamente.</p>
+        <p class="mt-6 max-w-3xl text-lg leading-relaxed text-sage">É a decisão mais disruptiva do projeto. Também é a que mais precisa de discussão antes de um prontuário assim chegar à prática diária.</p>
+        <p class="arch-alert mt-10 max-w-3xl">Alfa experimental, sem liberação para uso clínico. Esta página separa o que existe no código do que é plano. Cada item traz seu estado; nada marcado como planejado ou direção está implementado.</p>
+      </div>
+    </section>
+
+    <section id="pasta" class="section-pad bg-ivory text-forest" aria-labelledby="pasta-title">
+      <div class="shell grid gap-14 lg:grid-cols-[1.1fr_1fr]">
+        <div>
+          <p class="eyebrow mb-5">MODELO DE ARQUIVOS</p>
+          <h2 id="pasta-title">Arquivos que você abre, copia e entende.</h2>
+          <p class="mt-6 text-lg leading-relaxed text-forest/75">Notas em Markdown com cabeçalho YAML, cadastro e agenda em YAML, documentos em PDF, imagem ou texto. Cada formato é documentado e validado por schemas abertos.</p>
+          <pre class="tree mt-8" aria-label="Organização da pasta do prontuário"><code>prontuario/
+  vault.yaml                    <span>identidade e versão</span>
+  appointments/AAAA/MM/*.yaml   <span>agenda</span>
+  recordings/                   <span>áudios das consultas</span>
+  indexes/                      <span>derivado, reconstruível</span>
+  patients/pt_&lt;id&gt;/
+    patient.yaml                <span>cadastro</span>
+    content/encounters/*.md     <span>consultas</span>
+    content/notes/drafts/*.md   <span>rascunhos</span>
+    content/notes/final/*.md    <span>notas finais, só leitura</span>
+    content/notes/addenda/*.md  <span>adendos</span>
+    raw/AAAA/MM/asset_&lt;id&gt;.pdf <span>documentos e exames</span>
+    raw/AAAA/MM/*.meta.md       <span>ficha: SHA-256 e origem</span>
+    wiki/                       <span>fatos revisados, derivados</span>
+    .openpep/audit.ndjson       <span>SHA-256 das notas finais</span></code></pre>
+        </div>
+        <div class="flex flex-col justify-center gap-5">
+          <article class="arch-card">
+            <h3>Fonte</h3>
+            <p>Cadastro, consultas, notas, adendos, documentos importados e as revisões humanas da wiki. É o que o profissional escreveu ou recebeu.</p>
+          </article>
+          <article class="arch-card">
+            <h3>Derivado</h3>
+            <p>Índices, resumo da wiki e o IPS. São reconstruídos a partir das fontes e nunca viram fonte. Apagá-los não perde informação.</p>
+          </article>
+          <article class="arch-card">
+            <h3>Correção por adendo</h3>
+            <p>A nota final é somente leitura. Uma correção entra como um novo arquivo de adendo, ligado à nota original.</p>
+          </article>
+          <article class="arch-card">
+            <h3>Verificação independente</h3>
+            <p>Schemas TypeScript e a ferramenta <code>vaultctl</code> validam a estrutura da pasta sem o aplicativo. Ainda não verificam o registro de auditoria que o app grava.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="agentes" class="section-pad" aria-labelledby="agentes-title">
+      <div class="shell grid gap-14 lg:grid-cols-2">
+        <div>
+          <p class="eyebrow mb-5 text-yellow">LEGÍVEL POR QUALQUER AGENTE</p>
+          <h2 id="agentes-title">Sem API. Sem banco. Só arquivos.</h2>
+          <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/85">Um agente de IA de linha de comando, um script ou um editor de texto lê o prontuário como lê qualquer projeto de código. Não é preciso integração, credencial de banco de dados ou exportação.</p>
+        </div>
+        <div class="flex flex-col justify-center">
+          <article class="feature-row feature-row-dark"><h3>Resumir, buscar e comparar</h3><p>A história do paciente está em texto, com as fontes ao lado. Um agente cita o arquivo de onde tirou cada informação.</p></article>
+          <article class="feature-row feature-row-dark"><h3>Migrar e exportar</h3><p>Trazer registros de outro sistema é converter para arquivos documentados. Sair do OpenPEP é copiar a pasta.</p></article>
+          <article class="feature-row feature-row-dark"><h3>Preparar o trabalho da consulta</h3><p>Com acesso de leitura, a IA pode preparar rascunhos de receita, pedidos e atestados. O profissional revisa e assina.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="discussao" class="section-pad bg-ivory text-forest" aria-labelledby="discussao-title">
+      <div class="shell">
+        <div class="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:items-end">
+          <div>
+            <p class="eyebrow mb-5">EM DISCUSSÃO</p>
+            <h2 id="discussao-title">O que precisa ser discutido antes da prática clínica.</h2>
+          </div>
+          <p class="text-lg leading-relaxed text-forest/75">Um prontuário legível por qualquer agente muda o modelo de segurança. Estes são os limites do código atual. Exigem discussão técnica, ética, regulatória e entre os profissionais, em várias instâncias.</p>
+        </div>
+        <div class="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <article class="risk-card"><h3>Acesso</h3><p>Quem lê a pasta lê tudo. O controle é o do sistema operacional: usuário do Mac e permissões de arquivo. Não há papéis nem acesso por paciente.</p></article>
+          <article class="risk-card"><h3>Criptografia em repouso</h3><p>O OpenPEP não cifra os arquivos. A proteção depende do FileVault. Pastas sincronizadas com serviços de nuvem exigem avaliação própria.</p></article>
+          <article class="risk-card"><h3>Integridade</h3><p>Cada nota final tem o SHA-256 registrado, sem encadeamento nem assinatura. Detecta alteração acidental, não adulteração deliberada. O protocolo já define um registro encadeado e assinado, que o app ainda não grava.</p></article>
+          <article class="risk-card"><h3>Agentes de IA</h3><p>Um agente com acesso ao disco contorna qualquer interface controlada. O que ele lê pode ir para o provedor de IA dele. Instruções escondidas em documentos importados são uma ameaça real.</p></article>
+          <article class="risk-card"><h3>Rastreabilidade</h3><p>Leituras feitas fora do aplicativo não ficam registradas. Hoje não é possível saber quem leu qual arquivo.</p></article>
+          <article class="risk-card"><h3>LGPD, CFM e SBIS</h3><p>Controlador e operador, base legal, retenção, consentimento para gravação e para IA, requisitos de prontuário eletrônico e certificação ainda não foram avaliados.</p></article>
+        </div>
+        <p class="mt-10 max-w-3xl leading-relaxed text-forest/75">Quer contribuir com essa discussão? <a class="underlined-link font-bold" href="https://github.com/openpep/openpep/issues">Abra uma issue no GitHub</a>. Para relatar uma falha de segurança, siga o <a class="underlined-link font-bold" href="https://github.com/openpep/openpep/blob/main/SECURITY.md">SECURITY.md</a>.</p>
+      </div>
+    </section>
+
+    <section id="ia" class="section-pad" aria-labelledby="ia-title">
+      <div class="shell">
+        <p class="eyebrow mb-5 text-yellow">IA NA CONSULTA</p>
+        <h2 id="ia-title" class="max-w-4xl">A proposta é da IA. A decisão é do profissional.</h2>
+        <div class="mt-12 grid gap-10 lg:grid-cols-2">
+          <div>
+            <h3 class="mb-2">Hoje, na alfa</h3>
+            <ul class="status-list">
+              <li><span class="status status-done">Implementado</span>Transcrição local da Apple ou pela OpenAI, inclusive em telemedicina.</li>
+              <li><span class="status status-done">Implementado</span>Resumo progressivo da consulta, inserido no rascunho só após revisão, com a origem registrada.</li>
+              <li><span class="status status-done">Implementado</span>Wiki por paciente: fatos com evidência literal e perguntas ao histórico com as fontes citadas.</li>
+              <li><span class="status status-done">Implementado</span>Assistente (⌘J): abre paciente e histórico, responde sobre o paciente e prepara a abertura de um documento, sem redigir conteúdo clínico.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mb-2">Para onde vai</h3>
+            <ul class="status-list">
+              <li><span class="status status-direction">Direção</span>Identificar na consulta o que deve mudar na receita, com a justificativa visível.</li>
+              <li><span class="status status-direction">Direção</span>Sugerir os exames a solicitar e acompanhar os pendentes ou vencidos.</li>
+              <li><span class="status status-direction">Direção</span>Preparar receita, pedido de exame, atestado e adendo como rascunhos prontos para revisão.</li>
+              <li><span class="status status-planned">Planejado</span>Cuidado contínuo: quem precisa de retorno, exame a acompanhar, contato sugerido. Envio externo só com autorização.</li>
+              <li><span class="status status-proposal">Proposta</span>Agentes com permissões por escopo (ler, preparar, propor), por meio de um servidor MCP local. O agente nunca finaliza nem assina.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="arch-alert mt-12 max-w-3xl">Nas propostas, a IA indica origem, motivo e evidência. Nada entra no prontuário sem revisão profissional, e uma nota final só é corrigida por adendo.</p>
+      </div>
+    </section>
+
+    <section id="ips" class="section-pad bg-ivory text-forest" aria-labelledby="ips-title">
+      <div class="shell grid gap-14 lg:grid-cols-2">
+        <div>
+          <p class="eyebrow mb-5">INTEROPERABILIDADE</p>
+          <h2 id="ips-title">Um resumo do paciente em padrão internacional.</h2>
+          <p class="mt-6 text-lg leading-relaxed text-forest/75">O International Patient Summary (IPS) é um resumo clínico padronizado em HL7 FHIR. No OpenPEP, ele é uma visão derivada da pasta, nunca a fonte.</p>
+        </div>
+        <ul class="status-list status-list-light">
+          <li><span class="status status-done">Implementado</span>Exportação do resumo como Bundle FHIR R4 / IPS 2.0.1, apenas com fatos revisados pelo profissional.</li>
+          <li><span class="status status-done">Implementado</span>Subconjunto SNOMED CT do IPS (CC BY 4.0) e CID-10 DATASUS, ambos consultados offline.</li>
+          <li><span class="status status-partial">Parcial</span>A checagem no app é estrutural. A conformidade com o perfil é conferida à parte.</li>
+          <li><span class="status status-planned">Planejado</span>IPS automático e reconstruível a partir das fontes, com estado aprovado ou não aprovado por versão.</li>
+          <li><span class="status status-idea">Fora do escopo</span>Integração com a RNDS: não há integração validada nem plano fechado.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="receitas" class="section-pad" aria-labelledby="receitas-title">
+      <div class="shell grid gap-14 lg:grid-cols-2">
+        <div>
+          <p class="eyebrow mb-5 text-yellow">RECEITAS E ASSINATURA</p>
+          <h2 id="receitas-title">Documentos gerados no computador.</h2>
+          <p class="mt-6 text-lg leading-relaxed text-white/85">Receitas e documentos são compostos e gerados localmente em PDF. O módulo OpenPEP-Rx também funciona no navegador, com um serviço local.</p>
+        </div>
+        <ul class="status-list">
+          <li><span class="status status-partial">Parcial</span>Numeração SNCR para receitas controladas. Homologação é o padrão; produção exige escolha explícita.</li>
+          <li><span class="status status-partial">Parcial</span>Assinatura com certificado em nuvem (VIDaaS Connect). A integridade CMS é verificada; conformidade ICP-Brasil/PAdES e revogação, ainda não.</li>
+          <li><span class="status status-planned">Planejado</span>Assinatura PAdES ICP-Brasil, começando por certificado A3 em nuvem e depois A1 local.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section-pad bg-ivory text-forest" aria-labelledby="roadmap-title">
+      <div class="shell">
+        <p class="eyebrow mb-5">ROADMAP</p>
+        <h2 id="roadmap-title" class="max-w-4xl">Do alfa ao uso real, em etapas.</h2>
+        <p class="mt-6 max-w-3xl text-lg leading-relaxed text-forest/75">Um roadmap indicativo, sem compromisso de prazo. A ordem pode mudar conforme a discussão e as contribuições.</p>
+        <div class="legend mt-8" aria-label="Legenda dos estados">
+          <span class="status status-done">Implementado</span><span class="status status-partial">Parcial</span><span class="status status-planned">Planejado</span><span class="status status-proposal">Proposta</span><span class="status status-direction">Direção</span><span class="status status-pending">Pendente</span>
+        </div>
+        <div class="mt-12 grid gap-10 lg:grid-cols-3">
+          <div class="roadmap-column">
+            <h3>Agora · alfa 0.1</h3>
+            <ul class="status-list status-list-light">
+              <li><span class="status status-done">Implementado</span>Pasta local, cadastro, agenda, consulta, notas, adendos, busca, exportação, backup e restauração.</li>
+              <li><span class="status status-done">Implementado</span>Transcrição, resumo progressivo, wiki por paciente e assistente.</li>
+              <li><span class="status status-done">Implementado</span>Exportação IPS/FHIR revisada, SNOMED IPS e CID-10.</li>
+              <li><span class="status status-done">Implementado</span>Agenda com Google Meet.</li>
+              <li><span class="status status-partial">Parcial</span>Receitas, numeração SNCR e assinatura CMS.</li>
+              <li><span class="status status-pending">Pendente</span>Instalador assinado e notarizado para Mac.</li>
+            </ul>
+          </div>
+          <div class="roadmap-column">
+            <h3>Próximo</h3>
+            <ul class="status-list status-list-light">
+              <li><span class="status status-planned">Planejado</span>Wiki do consultório e cuidado contínuo: atenção, retornos e exames a acompanhar.</li>
+              <li><span class="status status-planned">Planejado</span>IPS automático e reconstruível.</li>
+              <li><span class="status status-planned">Planejado</span>Assinatura PAdES ICP-Brasil.</li>
+              <li><span class="status status-planned">Planejado</span>Registro de auditoria encadeado e assinado, verificável pelo <code>vaultctl</code>.</li>
+              <li><span class="status status-pending">Pendente</span>Consultas longas e separação das vozes na telemedicina.</li>
+            </ul>
+          </div>
+          <div class="roadmap-column">
+            <h3>Depois</h3>
+            <ul class="status-list status-list-light">
+              <li><span class="status status-proposal">Proposta</span>Agentes com escopo via MCP local: primeiro leitura, depois rascunhos.</li>
+              <li><span class="status status-direction">Direção</span>Sugestões na consulta: ajustes de receita, exames e documentos preparados.</li>
+              <li><span class="status status-proposal">Proposta</span>Instruções da IA configuráveis pelo profissional.</li>
+              <li><span class="status status-proposal">Proposta</span>Modo secretária: recepção web sem acesso a conteúdo clínico.</li>
+              <li><span class="status status-direction">Direção</span>Uso em mais de um dispositivo.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" aria-labelledby="colabore-title">
+      <div class="shell grid gap-10 md:grid-cols-2 md:items-end">
+        <div>
+          <p class="eyebrow mb-5 text-yellow">100% OPEN-SOURCE</p>
+          <h2 id="colabore-title">Leia o código. Discuta as escolhas.</h2>
+        </div>
+        <div>
+          <p class="text-lg leading-relaxed text-white/85">Todo o código, os schemas e os formatos estão no repositório. Use somente dados sintéticos para testar.</p>
+          <div class="mt-8 flex flex-wrap gap-4"><a class="button button-yellow" href="https://github.com/openpep/openpep">Repositório no GitHub</a><a class="button button-glass" href="index.html">Voltar ao início</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="border-t border-white/15 py-10 text-sm text-sage"><div class="shell">OpenPEP · alfa experimental, sem liberação para uso clínico. Código sob AGPL-3.0-or-later; schemas e ferramentas sob Apache-2.0.</div></footer>
+  <script src="script.js" defer></script>
+</body>
+</html>
