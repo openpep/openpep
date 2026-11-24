@@ -380,7 +380,8 @@ enum OpenPEPIdentifier {
     }
 
     private static func matches(_ value: String, pattern: String) -> Bool {
-        value.range(of: pattern, options: .regularExpression) != nil
+        // ICU's `$` also matches before a final newline; identifiers never contain line breaks.
+        !value.contains(where: \.isNewline) && value.range(of: pattern, options: .regularExpression) != nil
     }
 }
 
