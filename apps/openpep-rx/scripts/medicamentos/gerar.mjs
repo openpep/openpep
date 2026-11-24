@@ -736,13 +736,27 @@ function validar(saida) {
 // 7. Conferência opcional das listas embutidas com o texto oficial
 // ---------------------------------------------------------------------------
 
+// Drops <script> and <style> blocks by scanning tags, so no partial block can be reassembled.
+function semScriptsNemEstilos(html) {
+  let texto = '', ignorando = null;
+  for (const [indice, parte] of html.split('<').entries()) {
+    if (indice === 0) { texto += parte; continue; }
+    const minuscula = parte.toLowerCase();
+    if (ignorando) {
+      if (minuscula.startsWith('/' + ignorando)) { ignorando = null; texto += parte.slice(parte.indexOf('>') + 1); }
+      continue;
+    }
+    const bloco = ['script', 'style'].find(nome => minuscula.startsWith(nome) && !/[a-z0-9-]/.test(minuscula[nome.length] ?? ''));
+    if (bloco) { ignorando = bloco; continue; }
+    texto += '<' + parte;
+  }
+  return texto;
+}
+
 function textoDeHtml(html) {
   const marcas = { acute: '́', grave: '̀', circ: '̂', tilde: '̃', uml: '̈', cedil: '̧' };
   const nomeadas = { nbsp: ' ', quot: '"', amp: '&', lt: '<', gt: '>', ordm: 'º', ordf: 'ª', sect: '§', ndash: '-', mdash: '-', ldquo: '"', rdquo: '"' };
-  // Repeat until stable: removing one block must not leave a new one assembled from the pieces.
-  let text = html, previous;
-  do { previous = text; text = text.replace(/<(script|style)[\s\S]*?<\/\1>/gi, ''); } while (text !== previous);
-  return text
+  return semScriptsNemEstilos(html)
     .replace(/<br\s*\/?>|<\/(p|div|tr|li|h\d)>/gi, '\n')
     .replace(/<[^>]+>/g, '')
     // Plain text for comparison only: drop any angle bracket left by malformed markup.
