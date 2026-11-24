@@ -201,3 +201,10 @@ test('SNCR rate limits are per client with a global ceiling; one client cannot b
  assert.equal((await from('198.51.100.10')).status,429);
  assert.ok([...counts.keys()].every(k=>k==='sondar-edge'||k.startsWith('sondar-edge:')));
 });
+test('SNCR rate limits without a platform address fall back to the global ceiling only',async()=>{
+ const {createEdgeProbe}=await import('../api/sncr-probe-edge.mjs');
+ const counts=new Map(),store={allow:async(bucket,limit)=>{const n=(counts.get(bucket)||0)+1;counts.set(bucket,n);return n<=limit;}};
+ const probe=createEdgeProbe({store,probe:async()=>({})});
+ for(let i=0;i<10;i++)assert.equal((await probe(new Request('https://rx-hml.openpep.com.br/api/sncr/sondar-edge',{headers:{host:'rx-hml.openpep.com.br'}}))).status,200);
+ assert.deepEqual([...counts.keys()],['sondar-edge']);
+});
