@@ -104,7 +104,7 @@ export function makeLedger(query) {
       return b64 ? Buffer.from(b64, 'base64') : null;
     },
     prescriptions: async prescritorId => (await one('select cockpit_rx.receitas($1) as receitas', [prescritorId])).receitas,
-    // Acesso pelo QR da plataforma: só o hash do código do paciente trafega e fica gravado.
+    // Acesso pelo QR da plataforma: a verificação compara o hash do código do paciente.
     // The patient code is printed on the PDF (migration 0006): stored with the signed PDF, never replaced.
     finishIssueWithAccess: async (id, prescritorId, pdf, sha, serial, codigo, hash) =>
       (await one('select cockpit_rx.concluir_emissao_com_acesso($1, $2, $3, $4, $5, $6, $7) as numero', [id, prescritorId, Buffer.from(pdf).toString('base64'), sha, serial, codigo, hash])).numero,

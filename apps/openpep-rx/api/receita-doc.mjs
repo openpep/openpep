@@ -419,7 +419,7 @@ export async function prescriptionPDF({id, tipo, numero, conteudo, prescritor, e
       if (value) { const x = 65 + width(label, 6.5, semibold) + 5, f = fit(value, right - x, 1, 7.5, 6, regular, 4.5); draw(f.lines[0], x, t0, f.size, regular, LABEL); }
     };
     foot('IDENTIFICAÇÃO DA PLATAFORMA', platform.name, 0);
-    foot('REGISTRO DA ASSINATURA DIGITAL E DATA', previa ? 'aplicado na emissão' : `${platform.signature || 'ICP-Brasil (PAdES)'} · ${prescritor.nome} · ${date(emitidaEm)}`, 1);
+    foot('REGISTRO DA ASSINATURA DIGITAL E DATA', previa ? 'aplicado na emissão' : `${platform.signature || 'assinatura digital'} · ${prescritor.nome} · ${date(emitidaEm)}`, 1);
     foot('VALIDE ESSA ASSINATURA EM', 'validar.iti.gov.br', 2);
     foot('ESTA PRESCRIÇÃO PODE SER VERIFICADA EM:', onlineAccess ? 'Link individual no QR acima; confira também o arquivo no ITI.' : !showAccess ? 'Arquivo PDF original; validar.iti.gov.br' : previa ? 'endereço gerado na emissão' : `${access} · código ${codigo ?? '—'}`, 3);
     foot('VERIFIQUE A NUMERAÇÃO E REGISTRE A UTILIZAÇÃO DESTA PRESCRIÇÃO EM', 'sncr.anvisa.gov.br', 4);

@@ -42,7 +42,8 @@ async function input(req) {
   return JSON.parse(data);
 }
 // Mensagens do registro (P0001) vão à tela; o resto sai genérico.
-// Six-digit patient code; only sha256("<prescription id>:<code>") is stored.
+// Six-digit patient code. It is printed on the PDF and kept with the signed prescription (migration 0006);
+// sha256("<prescription id>:<code>") is what the access check compares. The code does not expire.
 const newCode = () => String(randomInt(0, 1000000)).padStart(6, '0');
 // Link sent to the patient (WhatsApp) and encoded in the access QR: the code rides in the fragment, never sent to the server.
 export const accessLink = (id, code) => `${ORIGIN}/r/${shortId(id)}#${code}`;

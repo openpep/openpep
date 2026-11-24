@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 import {DatabaseSync} from 'node:sqlite';
-import {mkdirSync, chmodSync, readFileSync} from 'node:fs';
+import {mkdirSync, chmodSync, readFileSync, existsSync} from 'node:fs';
 import {resolve, join} from 'node:path';
 import {createHash, randomUUID} from 'node:crypto';
 import {NR_TYPES, RANGE_TYPES, parseNotificationResponse, expandRangeResponse} from '../api/ledger.mjs';
@@ -18,6 +18,8 @@ export class LocalDatabase {
     this.db = new DatabaseSync(this.path);
     if (directory !== ':memory:') chmodSync(this.path, 0o600);
     this.db.exec('PRAGMA foreign_keys=ON; PRAGMA journal_mode=WAL; PRAGMA synchronous=FULL; PRAGMA busy_timeout=5000;');
+    // WAL sidecars follow the process umask; they hold the same clinical data as the database.
+    if (directory !== ':memory:') for (const suffix of ['-wal', '-shm']) if (existsSync(this.path + suffix)) chmodSync(this.path + suffix, 0o600);
     this.db.exec(readFileSync(new URL('./schema.sql', import.meta.url), 'utf8'));
     if (!this.all('PRAGMA table_info(rx_documents)').some(c => c.name === 'attempted_at')) this.db.exec('ALTER TABLE rx_documents ADD COLUMN attempted_at INTEGER');
   }
