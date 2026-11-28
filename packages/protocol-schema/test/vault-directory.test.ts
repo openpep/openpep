@@ -3,6 +3,7 @@
 
 import assert from "node:assert/strict";
 import {
+  chmod,
   cp,
   mkdir,
   mkdtemp,
@@ -410,3 +411,157 @@ async function materializePatient(
     await mkdir(join(vault, "patients", patientID, directory), { recursive: true });
   }
 }
+
+const demoFixture = new URL("fixtures/demo-cardiology-v1/vault/", repositoryRoot);
+const demoMarker = ".openpep-demo-directory";
+const demoMarkerText = "OPENPEP_SYNTHETIC_DEMO_DIRECTORY_V1\n";
+
+test("reads the demo vault and keeps it read-only", async () => {
+  const temporary = await mkdtemp(join(tmpdir(), "openpep-directory-demo-"));
+  try {
+    const source = join(temporary, "vault");
+    await cp(demoFixture, source, { recursive: true });
+    const inspection = await inspectVaultDirectory(source);
+    assert.equal(inspection.ok, true);
+    assert.equal(inspection.readable, true);
+    assert.equal(inspection.writing_allowed, false);
+    assert.equal(inspection.valid_patients.length, 20);
+    assert.equal(
+      inspection.items.filter((candidate) =>
+        candidate.rule === "operations.demo_directory_marker"
+      ).length,
+      5,
+    );
+  } finally {
+    await rm(temporary, { recursive: true, force: true });
+  }
+});
+
+test("accepts the demo marker only with exact bytes, alone, in a demo vault", async () => {
+  const temporary = await mkdtemp(join(tmpdir(), "openpep-directory-marker-"));
+  try {
+    const cases: Array<[string, (ledger: string) => Promise<void>, boolean]> = [
+      ["wrong bytes", (ledger) =>
+        writeFile(join(ledger, demoMarker), "OPENPEP_SYNTHETIC_DEMO_DIRECTORY_V2\n"), true],
+      ["symbolic link", async (ledger) => {
+        await writeFile(join(temporary, "marker-target"), demoMarkerText);
+        await symlink(join(temporary, "marker-target"), join(ledger, demoMarker));
+      }, true],
+      ["extra file", async (ledger) => {
+        await writeFile(join(ledger, demoMarker), demoMarkerText);
+        await writeFile(join(ledger, "synthetic.ops.ndjson"), "{}\n");
+      }, true],
+      ["non-demo vault", (ledger) =>
+        writeFile(join(ledger, demoMarker), demoMarkerText), false],
+    ];
+    for (const [label, populate, demo] of cases) {
+      const source = demo
+        ? join(temporary, label.replaceAll(" ", "-"))
+        : await materializeEmptyVault(join(temporary, "plain"));
+      if (demo) {
+        await cp(demoFixture, source, { recursive: true });
+        await rm(join(source, "operations/ledger", demoMarker));
+      }
+      await populate(join(source, "operations/ledger"));
+      const inspection = await inspectVaultDirectory(source);
+      assert.equal(inspection.ok, false, label);
+      assert.equal(inspection.readable, false, label);
+      assert.equal(
+        inspection.items.find((candidate) =>
+          candidate.path === "operations/ledger"
+        )?.rule,
+        "operations.state_not_empty",
+        label,
+      );
+    }
+  } finally {
+    await rm(temporary, { recursive: true, force: true });
+  }
+});
+
+test(
+  "reports an unreadable entry as blocked and keeps inspecting the rest",
+  { skip: process.platform === "win32" || process.getuid?.() === 0 },
+  async () => {
+    const temporary = await mkdtemp(join(tmpdir(), "openpep-directory-io-"));
+    const locked: string[] = [];
+    try {
+      const source = await materializeEmptyVault(temporary);
+      const readableID = "pt_0198f5c2-0000-7000-8000-000000000001";
+      const lockedID = "pt_0198f5c2-0000-7000-8000-000000000002";
+      await materializePatient(source, readableID);
+      await materializePatient(source, lockedID);
+      const month = join(source, "appointments/2026/09");
+      await mkdir(month, { recursive: true });
+      for (const path of [join(source, "patients", lockedID, "content"), month]) {
+        await chmod(path, 0o000);
+        locked.push(path);
+      }
+
+      const result = await inspectVaultDirectory(source);
+      assert.equal(result.readable, true);
+      assert.equal(result.ok, false);
+      assert.deepEqual(result.valid_patients, [readableID]);
+      assert.deepEqual(result.unavailable_patients, [lockedID]);
+      const unreadable = result.items.filter((item) =>
+        item.rule === "filesystem.unreadable"
+      );
+      assert.deepEqual(
+        unreadable.map((item) => [item.scope, item.status, item.path]),
+        [
+          ["patient", "blocked", `patients/${lockedID}`],
+          ["appointment", "blocked", "appointments/2026/09"],
+        ],
+      );
+      assert.ok(unreadable.every((item) => !item.message.includes(temporary)));
+
+      await chmod(month, 0o755);
+      locked.pop();
+      const ledger = join(source, "operations/ledger");
+      await chmod(ledger, 0o000);
+      locked.push(ledger);
+      const blocked = await inspectVaultDirectory(source);
+      assert.equal(blocked.readable, false);
+      assert.equal(
+        blocked.items.find((item) => item.status === "blocked")?.rule,
+        "filesystem.unreadable",
+      );
+    } finally {
+      for (const path of locked) await chmod(path, 0o755);
+      await rm(temporary, { recursive: true, force: true });
+    }
+  },
+);
+
+test(
+  "reports unreadable manifests as blocked instead of aborting",
+  { skip: process.platform === "win32" || process.getuid?.() === 0 },
+  async () => {
+    const temporary = await mkdtemp(join(tmpdir(), "openpep-directory-io-manifest-"));
+    try {
+      const source = await materializeEmptyVault(temporary);
+      for (const manifest of ["vault.yaml", "operations/manifest.yaml"]) {
+        const path = join(source, manifest);
+        await chmod(path, 0o000);
+        try {
+          const result = await inspectVaultDirectory(source);
+          assert.equal(result.readable, false, manifest);
+          assert.deepEqual(
+            result.items.find((item) => item.path === manifest),
+            {
+              scope: "vault",
+              status: "blocked",
+              path: manifest,
+              rule: "filesystem.unreadable",
+              message: "falha de leitura (EACCES)",
+            },
+          );
+        } finally {
+          await chmod(path, 0o644);
+        }
+      }
+    } finally {
+      await rm(temporary, { recursive: true, force: true });
+    }
+  },
+);

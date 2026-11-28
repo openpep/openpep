@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Carlos Pedrotti and OpenPEP contributors <https://github.com/openpep/openpep>
 // SPDX-License-Identifier: Apache-2.0
 
+import type { Dirent } from "node:fs";
 import { lstat, readFile, readdir, realpath } from "node:fs/promises";
 import { basename, isAbsolute, join, relative, resolve, sep } from "node:path";
 import { ProtocolValidationError } from "./errors.js";
@@ -89,6 +90,13 @@ const prescribingRegistries = new Map([
 ]);
 const prescribingRegistryLimit = 32 * 1024 * 1024;
 
+// The synthetic demo fixture keeps empty directories in Git with this marker.
+// It is accepted only in a vault declaring the demo profile, with exact bytes.
+const demoProfile = "cardiology_demo_v1";
+const demoDirectoryMarkerName = ".openpep-demo-directory";
+const demoDirectoryMarkerText = "OPENPEP_SYNTHETIC_DEMO_DIRECTORY_V1\n";
+const demoDirectoryMarkerRule = "operations.demo_directory_marker";
+
 export async function inspectVaultDirectory(
   source: string,
 ): Promise<VaultDirectoryInspection> {
@@ -127,7 +135,9 @@ export async function inspectVaultDirectory(
         "manifesto raiz validado",
       ));
     } catch (error) {
-      items.push(...protocolItems(error, "vault", "blocked", "vault.yaml"));
+      items.push(...(error instanceof ProtocolValidationError
+        ? protocolItems(error, "vault", "blocked", "vault.yaml")
+        : [unreadableItem(error, "vault", "vault.yaml")]));
     }
   }
 
@@ -154,12 +164,9 @@ export async function inspectVaultDirectory(
         ));
       } catch (error) {
         operationsManifest = "invalid";
-        items.push(...protocolItems(
-          error,
-          "vault",
-          "blocked",
-          "operations/manifest.yaml",
-        ));
+        items.push(...(error instanceof ProtocolValidationError
+          ? protocolItems(error, "vault", "blocked", "operations/manifest.yaml")
+          : [unreadableItem(error, "vault", "operations/manifest.yaml")]));
       }
     }
   }
@@ -169,7 +176,10 @@ export async function inspectVaultDirectory(
       canonicalSource,
       manifest?.vault_id ?? null,
     ));
-    items.push(...await inspectOperationsTree(canonicalSource));
+    items.push(...await inspectOperationsTree(
+      canonicalSource,
+      manifest?.x_profile === demoProfile,
+    ));
   }
 
   const validPatients: string[] = [];
@@ -206,7 +216,8 @@ export async function inspectVaultDirectory(
     vault_id: manifest?.vault_id ?? null,
     protocol_version: manifest?.protocol_version ?? null,
     readable: !rootBlocked,
-    writing_allowed: !rootBlocked && operationsManifest === "verified",
+    writing_allowed: !rootBlocked && operationsManifest === "verified" &&
+      !items.some((candidate) => candidate.rule === demoDirectoryMarkerRule),
     operations_manifest: operationsManifest,
     valid_patients: validPatients.sort(),
     unavailable_patients: unavailablePatients.sort(),
@@ -248,19 +259,22 @@ async function inspectAppointments(
   const validAppointments: string[] = [];
   const unavailableAppointments: string[] = [];
   const seen = new Set<string>();
-  for (const year of await readdir(appointmentsRoot, { withFileTypes: true })) {
+  const years = await readdirOrItem(appointmentsRoot, "appointments", items);
+  for (const year of years) {
     const yearPath = `appointments/${year.name}`;
     if (!/^\d{4}$/.test(year.name) || !year.isDirectory() || year.isSymbolicLink()) {
       items.push(item("appointment", "invalid", yearPath, "appointment.invalid_year_directory", "o diretório anual da agenda é inválido"));
       continue;
     }
-    for (const month of await readdir(join(appointmentsRoot, year.name), { withFileTypes: true })) {
+    const months = await readdirOrItem(join(appointmentsRoot, year.name), yearPath, items);
+    for (const month of months) {
       const monthPath = `${yearPath}/${month.name}`;
       if (!/^(?:0[1-9]|1[0-2])$/.test(month.name) || !month.isDirectory() || month.isSymbolicLink()) {
         items.push(item("appointment", "invalid", monthPath, "appointment.invalid_month_directory", "o diretório mensal da agenda é inválido"));
         continue;
       }
-      for (const file of await readdir(join(appointmentsRoot, year.name, month.name), { withFileTypes: true })) {
+      const files = await readdirOrItem(join(appointmentsRoot, year.name, month.name), monthPath, items);
+      for (const file of files) {
         const relativePath = `${monthPath}/${file.name}`;
         const candidateID = file.name.endsWith(".yaml")
           ? file.name.slice(0, -5)
@@ -310,7 +324,9 @@ async function inspectAppointments(
           items.push(item("appointment", "valid", relativePath, "appointment.manifest_valid", "agendamento validado", appointment.patient_id));
         } catch (error) {
           unavailableAppointments.push(candidateID);
-          items.push(...protocolItems(error, "appointment", "invalid", relativePath));
+          items.push(...(error instanceof ProtocolValidationError
+            ? protocolItems(error, "appointment", "invalid", relativePath)
+            : [unreadableItem(error, "appointment", relativePath)]));
         }
       }
     }
@@ -448,33 +464,77 @@ async function inspectPrescribingRegistry(
 
 async function inspectOperationsTree(
   root: string,
+  demoVault: boolean,
 ): Promise<VaultInspectionItem[]> {
   const items: VaultInspectionItem[] = [];
   for (const relativePath of requiredOperationsDirectories) {
-    const path = join(root, relativePath);
-    const metadata = await metadataOrNull(path);
-    if (metadata === null || !metadata.isDirectory() ||
-        metadata.isSymbolicLink()) {
-      items.push(item(
-        "vault",
-        "blocked",
+    try {
+      const result = await inspectOperationsDirectory(
+        root,
         relativePath,
-        "filesystem.required_directory",
-        "o diretório operacional obrigatório está ausente ou é inseguro",
-      ));
-      continue;
-    }
-    if ((await readdir(path)).length > 0) {
-      items.push(item(
-        "vault",
-        "blocked",
-        relativePath,
-        "operations.state_not_empty",
-        "state empty diverge do conteúdo operacional",
-      ));
+        demoVault,
+      );
+      if (result !== null) items.push(result);
+    } catch (error) {
+      items.push(unreadableItem(error, "vault", relativePath));
     }
   }
   return items;
+}
+
+async function inspectOperationsDirectory(
+  root: string,
+  relativePath: string,
+  demoVault: boolean,
+): Promise<VaultInspectionItem | null> {
+  const path = join(root, relativePath);
+  const metadata = await metadataOrNull(path);
+  if (metadata === null || !metadata.isDirectory() ||
+      metadata.isSymbolicLink()) {
+    return item(
+      "vault",
+      "blocked",
+      relativePath,
+      "filesystem.required_directory",
+      "o diretório operacional obrigatório está ausente ou é inseguro",
+    );
+  }
+  const entries = await readdir(path);
+  if (entries.length === 0) {
+    return null;
+  }
+  if (demoVault && await holdsOnlyDemoDirectoryMarker(path, entries)) {
+    return item(
+      "vault",
+      "valid",
+      relativePath,
+      demoDirectoryMarkerRule,
+      "marcador do cofre de demonstração; escrita bloqueada",
+    );
+  }
+  return item(
+    "vault",
+    "blocked",
+    relativePath,
+    "operations.state_not_empty",
+    "state empty diverge do conteúdo operacional",
+  );
+}
+
+async function holdsOnlyDemoDirectoryMarker(
+  directory: string,
+  entries: readonly string[],
+): Promise<boolean> {
+  if (entries.length !== 1 || entries[0] !== demoDirectoryMarkerName) {
+    return false;
+  }
+  const path = join(directory, demoDirectoryMarkerName);
+  const metadata = await lstat(path);
+  if (!metadata.isFile() ||
+      metadata.size !== Buffer.byteLength(demoDirectoryMarkerText)) {
+    return false;
+  }
+  return await readFile(path, "utf8") === demoDirectoryMarkerText;
 }
 
 async function inspectPatients(root: string): Promise<{
@@ -501,7 +561,16 @@ async function inspectPatients(root: string): Promise<{
   const items: VaultInspectionItem[] = [];
   const validPatients: string[] = [];
   const unavailablePatients: string[] = [];
-  const patientEntries = await readdir(patientsRoot, { withFileTypes: true });
+  let patientEntries;
+  try {
+    patientEntries = await readdir(patientsRoot, { withFileTypes: true });
+  } catch (error) {
+    return {
+      items: [unreadableItem(error, "vault", "patients")],
+      validPatients: [],
+      unavailablePatients: [],
+    };
+  }
   for (const entry of patientEntries.sort((left, right) =>
     left.name.localeCompare(right.name)
   )) {
@@ -522,7 +591,12 @@ async function inspectPatients(root: string): Promise<{
       continue;
     }
 
-    const patientResult = await inspectPatient(root, patientID);
+    let patientResult: VaultInspectionItem[];
+    try {
+      patientResult = await inspectPatient(root, patientID);
+    } catch (error) {
+      patientResult = [unreadableItem(error, "patient", patientPath, patientID)];
+    }
     items.push(...patientResult);
     if (patientResult.some((candidate) =>
       candidate.status === "invalid" || candidate.status === "blocked"
@@ -700,6 +774,43 @@ async function metadataOrNull(path: string): Promise<Awaited<ReturnType<typeof l
     if ((error as NodeJS.ErrnoException).code === "ENOENT") return null;
     throw error;
   }
+}
+
+async function readdirOrItem(
+  directory: string,
+  relativePath: string,
+  items: VaultInspectionItem[],
+): Promise<Dirent[]> {
+  try {
+    return await readdir(directory, { withFileTypes: true });
+  } catch (error) {
+    items.push(unreadableItem(error, "appointment", relativePath));
+    return [];
+  }
+}
+
+// Turns a failed system call into a blocked item so that one unreadable entry
+// does not abort the whole inspection. Only the error code is reported, never
+// the absolute path. Any other error is rethrown.
+function unreadableItem(
+  error: unknown,
+  scope: VaultInspectionScope,
+  path: string,
+  patientID?: string,
+): VaultInspectionItem {
+  const { code, syscall } = (error ?? {}) as NodeJS.ErrnoException;
+  if (!(error instanceof Error) || typeof code !== "string" ||
+      typeof syscall !== "string") {
+    throw error;
+  }
+  return item(
+    scope,
+    "blocked",
+    path,
+    "filesystem.unreadable",
+    `falha de leitura (${code})`,
+    patientID,
+  );
 }
 
 function protocolItems(
