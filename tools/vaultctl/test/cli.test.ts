@@ -183,6 +183,26 @@ test("requires the operations manifest when validating a directory", async () =>
   }
 });
 
+test("validates the synthetic demo vault as readable and read-only", async () => {
+  const io = captureIo();
+  assert.equal(
+    await runVaultctl(
+      ["validate", join(repositoryRoot, "fixtures/demo-cardiology-v1/vault"), "--json"],
+      io.io,
+    ),
+    0,
+  );
+  const result = JSON.parse(io.stdout) as {
+    readonly readable: boolean;
+    readonly writing_allowed: boolean;
+    readonly valid_patients: readonly string[];
+  };
+  assert.equal(result.readable, true);
+  assert.equal(result.writing_allowed, false);
+  assert.equal(result.valid_patients.length, 20);
+  assert.equal(io.stderr, "");
+});
+
 test("reports localized patients and unmanaged files in stable JSON", async () => {
   const temporary = await mkdtemp(join(tmpdir(), "openpep-vaultctl-scoped-"));
   try {

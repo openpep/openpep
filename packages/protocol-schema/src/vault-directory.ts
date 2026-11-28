@@ -89,6 +89,13 @@ const prescribingRegistries = new Map([
 ]);
 const prescribingRegistryLimit = 32 * 1024 * 1024;
 
+// The synthetic demo fixture keeps empty directories in Git with this marker.
+// It is accepted only in a vault declaring the demo profile, with exact bytes.
+const demoProfile = "cardiology_demo_v1";
+const demoDirectoryMarkerName = ".openpep-demo-directory";
+const demoDirectoryMarkerText = "OPENPEP_SYNTHETIC_DEMO_DIRECTORY_V1\n";
+const demoDirectoryMarkerRule = "operations.demo_directory_marker";
+
 export async function inspectVaultDirectory(
   source: string,
 ): Promise<VaultDirectoryInspection> {
@@ -169,7 +176,10 @@ export async function inspectVaultDirectory(
       canonicalSource,
       manifest?.vault_id ?? null,
     ));
-    items.push(...await inspectOperationsTree(canonicalSource));
+    items.push(...await inspectOperationsTree(
+      canonicalSource,
+      manifest?.x_profile === demoProfile,
+    ));
   }
 
   const validPatients: string[] = [];
@@ -206,7 +216,8 @@ export async function inspectVaultDirectory(
     vault_id: manifest?.vault_id ?? null,
     protocol_version: manifest?.protocol_version ?? null,
     readable: !rootBlocked,
-    writing_allowed: !rootBlocked && operationsManifest === "verified",
+    writing_allowed: !rootBlocked && operationsManifest === "verified" &&
+      !items.some((candidate) => candidate.rule === demoDirectoryMarkerRule),
     operations_manifest: operationsManifest,
     valid_patients: validPatients.sort(),
     unavailable_patients: unavailablePatients.sort(),
@@ -448,6 +459,7 @@ async function inspectPrescribingRegistry(
 
 async function inspectOperationsTree(
   root: string,
+  demoVault: boolean,
 ): Promise<VaultInspectionItem[]> {
   const items: VaultInspectionItem[] = [];
   for (const relativePath of requiredOperationsDirectories) {
@@ -464,17 +476,45 @@ async function inspectOperationsTree(
       ));
       continue;
     }
-    if ((await readdir(path)).length > 0) {
+    const entries = await readdir(path);
+    if (entries.length === 0) {
+      continue;
+    }
+    if (demoVault && await holdsOnlyDemoDirectoryMarker(path, entries)) {
       items.push(item(
         "vault",
-        "blocked",
+        "valid",
         relativePath,
-        "operations.state_not_empty",
-        "state empty diverge do conteúdo operacional",
+        demoDirectoryMarkerRule,
+        "marcador do cofre de demonstração; escrita bloqueada",
       ));
+      continue;
     }
+    items.push(item(
+      "vault",
+      "blocked",
+      relativePath,
+      "operations.state_not_empty",
+      "state empty diverge do conteúdo operacional",
+    ));
   }
   return items;
+}
+
+async function holdsOnlyDemoDirectoryMarker(
+  directory: string,
+  entries: readonly string[],
+): Promise<boolean> {
+  if (entries.length !== 1 || entries[0] !== demoDirectoryMarkerName) {
+    return false;
+  }
+  const path = join(directory, demoDirectoryMarkerName);
+  const metadata = await lstat(path);
+  if (!metadata.isFile() ||
+      metadata.size !== Buffer.byteLength(demoDirectoryMarkerText)) {
+    return false;
+  }
+  return await readFile(path, "utf8") === demoDirectoryMarkerText;
 }
 
 async function inspectPatients(root: string): Promise<{

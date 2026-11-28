@@ -410,3 +410,70 @@ async function materializePatient(
     await mkdir(join(vault, "patients", patientID, directory), { recursive: true });
   }
 }
+
+const demoFixture = new URL("fixtures/demo-cardiology-v1/vault/", repositoryRoot);
+const demoMarker = ".openpep-demo-directory";
+const demoMarkerText = "OPENPEP_SYNTHETIC_DEMO_DIRECTORY_V1\n";
+
+test("reads the demo vault and keeps it read-only", async () => {
+  const temporary = await mkdtemp(join(tmpdir(), "openpep-directory-demo-"));
+  try {
+    const source = join(temporary, "vault");
+    await cp(demoFixture, source, { recursive: true });
+    const inspection = await inspectVaultDirectory(source);
+    assert.equal(inspection.ok, true);
+    assert.equal(inspection.readable, true);
+    assert.equal(inspection.writing_allowed, false);
+    assert.equal(inspection.valid_patients.length, 20);
+    assert.equal(
+      inspection.items.filter((candidate) =>
+        candidate.rule === "operations.demo_directory_marker"
+      ).length,
+      5,
+    );
+  } finally {
+    await rm(temporary, { recursive: true, force: true });
+  }
+});
+
+test("accepts the demo marker only with exact bytes, alone, in a demo vault", async () => {
+  const temporary = await mkdtemp(join(tmpdir(), "openpep-directory-marker-"));
+  try {
+    const cases: Array<[string, (ledger: string) => Promise<void>, boolean]> = [
+      ["wrong bytes", (ledger) =>
+        writeFile(join(ledger, demoMarker), "OPENPEP_SYNTHETIC_DEMO_DIRECTORY_V2\n"), true],
+      ["symbolic link", async (ledger) => {
+        await writeFile(join(temporary, "marker-target"), demoMarkerText);
+        await symlink(join(temporary, "marker-target"), join(ledger, demoMarker));
+      }, true],
+      ["extra file", async (ledger) => {
+        await writeFile(join(ledger, demoMarker), demoMarkerText);
+        await writeFile(join(ledger, "synthetic.ops.ndjson"), "{}\n");
+      }, true],
+      ["non-demo vault", (ledger) =>
+        writeFile(join(ledger, demoMarker), demoMarkerText), false],
+    ];
+    for (const [label, populate, demo] of cases) {
+      const source = demo
+        ? join(temporary, label.replaceAll(" ", "-"))
+        : await materializeEmptyVault(join(temporary, "plain"));
+      if (demo) {
+        await cp(demoFixture, source, { recursive: true });
+        await rm(join(source, "operations/ledger", demoMarker));
+      }
+      await populate(join(source, "operations/ledger"));
+      const inspection = await inspectVaultDirectory(source);
+      assert.equal(inspection.ok, false, label);
+      assert.equal(inspection.readable, false, label);
+      assert.equal(
+        inspection.items.find((candidate) =>
+          candidate.path === "operations/ledger"
+        )?.rule,
+        "operations.state_not_empty",
+        label,
+      );
+    }
+  } finally {
+    await rm(temporary, { recursive: true, force: true });
+  }
+});
