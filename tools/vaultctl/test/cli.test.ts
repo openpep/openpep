@@ -29,6 +29,7 @@ test("reports help and version without touching files", async () => {
   const help = captureIo();
   assert.equal(await runVaultctl(["--help"], help.io), 0);
   assert.match(help.stdout, /vaultctl verify/);
+  assert.match(help.stdout, /não\s+verifica a origem/);
 
   const version = captureIo();
   assert.equal(await runVaultctl(["--version"], version.io), 0);

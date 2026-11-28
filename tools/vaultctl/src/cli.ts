@@ -28,6 +28,10 @@ const usage = `Uso:
   vaultctl verify <ledger.ndjson> --keys <signing-keys.json> --objects <patient-directory> --checkpoint <checkpoint.json> [--json]
   vaultctl --version
   vaultctl --help
+
+verify confere o ledger contra as chaves e o checkpoint recebidos e não
+verifica a origem deles. Obtenha esses arquivos fora do cofre verificado: uma
+cópia do próprio cofre pode ter sido alterada junto com o ledger.
 `;
 
 export interface VaultctlIo {
