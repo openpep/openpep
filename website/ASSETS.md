@@ -17,8 +17,10 @@
   `openpep-rx-61s.mp4` e `filme-poster-rx-61s.jpg` vêm do projeto
   `media/openpep-rx-filme` do openpep-archive: trilha Google Lyria 3 Pro,
   efeitos CC0 1.0 e foto de talonário genérico cedida pelo autor. `mesa-rx.jpg`,
-  a imagem de fundo, foi recuperada da publicação anterior e ainda não tem
-  procedência registrada. As marcas ICP-Brasil e Anvisa/SNCR identificam as
+  a imagem de fundo, foi gerada com o ImageGen do ChatGPT em 22/11/2026 para a
+  página anterior do Rx: mesa de madeira, notebook e folhas em branco, sem
+  pessoas, texto ou marcas. O prompt integral está em
+  `sites/openpep-rx-abertura/hero-prompt.txt` do repositório openpep-rx. As marcas ICP-Brasil e Anvisa/SNCR identificam as
   integrações.
 - A seção IPS é uma ilustração HTML/CSS de evolução da interface, identificada
   na página. Não é uma captura da aplicação.
