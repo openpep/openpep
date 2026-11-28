@@ -4,6 +4,7 @@
 @source "../index.html";
 @source "../arquitetura.html";
 @source "../script.js";
+@source not "../rx";
 @theme { --color-forest:#102c25; --color-ivory:#f4f5ef; --color-sage:#b8cdc2; --color-yellow:#f2d84e; --font-sans:Inter,ui-sans-serif,system-ui,sans-serif; }
 @font-face {font-family:Inter;src:url('assets/fonts/Inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face {font-family:Inter;src:url('assets/fonts/Inter-700.woff2') format('woff2');font-weight:600 900;font-display:swap}
