@@ -73,8 +73,12 @@ As resoluções exatas estão em `Package.resolved` e nos arquivos `package-lock
 Os avisos das bibliotecas do renderizador instaladas pelo npm acompanham
 `apps/macos/OpenPEP/Resources/CockpitPDF/THIRD-PARTY-NOTICES.txt`. O pacote
 `@pdf-lib/fontkit` já é distribuído com código de terceiros embutido, como
-`iconv-lite`; os avisos desse código ainda precisam ser levantados; a licença das
-fontes acompanha os arquivos. O site preserva seus avisos de fontes, Tailwind
+`iconv-lite`, `buffer`, `ieee754` (BSD-3-Clause) e o decodificador brotli
+(Apache-2.0). Esse código foi levantado a partir do `rollup.config.js` e do
+`yarn.lock` do repositório de origem, conferido no arquivo distribuído, e seus
+avisos estão em `tools/cockpit-pdf/licenses/fontkit-embedded.txt`. As tabelas
+derivadas de dados do Unicode ainda não tiveram os termos avaliados. A licença
+das fontes acompanha os arquivos. O site preserva seus avisos de fontes, Tailwind
 e [mídia](website/ASSETS.md).
 
 
