@@ -7,8 +7,9 @@ const root = new URL('../../apps/macos/OpenPEP/Resources/CockpitPDF/', import.me
 const output = await build({entryPoints: [new URL('src/renderer.mjs', import.meta.url).pathname], bundle:true,
   format:'iife', globalName:'OpenPEPCockpitPDF', platform:'browser', target:'safari17', minify:true,
   legalComments:'inline', write:false, outfile:new URL('renderer.js',root).pathname});
-const notices = ['@pdf-lib/fontkit\n' + await readFile(new URL('licenses/fontkit.txt',import.meta.url),'utf8')];
-for (const [name,file] of [['pdf-lib','LICENSE.md'],['qrcode','license'],['dijkstrajs','LICENSE.md'],['pako','LICENSE'],['@pdf-lib/standard-fonts','LICENSE.md'],['@pdf-lib/upng','LICENSE']]) {
+const notices = ['@pdf-lib/fontkit\n' + await readFile(new URL('licenses/fontkit.txt',import.meta.url),'utf8'),
+  await readFile(new URL('licenses/fontkit-embedded.txt',import.meta.url),'utf8')];
+for (const [name,file] of [['pdf-lib','LICENSE.md'],['qrcode','license'],['dijkstrajs','LICENSE.md'],['pako','LICENSE'],['@pdf-lib/standard-fonts','LICENSE.md'],['@pdf-lib/upng','LICENSE'],['tslib','LICENSE.txt']]) {
   notices.push(name + '\n' + await readFile(new URL(`node_modules/${name}/${file}`,import.meta.url),'utf8'));
 }
 for (const [name, bytes] of [['renderer.js', output.outputFiles[0].contents], ['THIRD-PARTY-NOTICES.txt', Buffer.from(notices.join('\n\n'))]]) {
