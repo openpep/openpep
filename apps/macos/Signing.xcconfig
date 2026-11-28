@@ -1,0 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Carlos Pedrotti and OpenPEP contributors <https://github.com/openpep/openpep>
+// SPDX-License-Identifier: AGPL-3.0-or-later
+//
+// Equipe de assinatura local. Crie Signing.local.xcconfig ao lado deste arquivo
+// com a linha DEVELOPMENT_TEAM = <sua equipe>. Ele é ignorado pelo Git.
+// Não escolha a equipe pelo menu Signing do Xcode: isso grava o valor no projeto.
+#include? "Signing.local.xcconfig"
