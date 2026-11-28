@@ -75,7 +75,7 @@ make mac-check
 
 Abra `apps/macos/OpenPEP.xcodeproj` no Xcode, selecione **OpenPEP → My Mac** e execute com `⌘R`. Configure a assinatura de desenvolvimento localmente, sem versionar credenciais. `make mac-check` compila e testa sem assinatura de código.
 
-O site está em `website/`: execute `npm ci --prefix website` e `npm run build --prefix website` para compilar o Tailwind. A página é estática; sirva essa pasta por HTTP.
+O site openpep.com.br, incluindo a página do OpenPEP-Rx em `website/rx/`, está em `website/`: execute `npm ci --prefix website` e `npm run build --prefix website` para compilar o Tailwind. As páginas são estáticas; sirva essa pasta por HTTP. A publicação no Vercel segue `website/vercel.json`.
 
 ## OpenPEP-Rx
 
