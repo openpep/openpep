@@ -3,6 +3,7 @@
 
 import assert from "node:assert/strict";
 import {
+  chmod,
   cp,
   mkdir,
   mkdtemp,
@@ -477,3 +478,57 @@ test("accepts the demo marker only with exact bytes, alone, in a demo vault", as
     await rm(temporary, { recursive: true, force: true });
   }
 });
+
+test(
+  "reports an unreadable entry as blocked and keeps inspecting the rest",
+  { skip: process.platform === "win32" || process.getuid?.() === 0 },
+  async () => {
+    const temporary = await mkdtemp(join(tmpdir(), "openpep-directory-io-"));
+    const locked: string[] = [];
+    try {
+      const source = await materializeEmptyVault(temporary);
+      const readableID = "pt_0198f5c2-0000-7000-8000-000000000001";
+      const lockedID = "pt_0198f5c2-0000-7000-8000-000000000002";
+      await materializePatient(source, readableID);
+      await materializePatient(source, lockedID);
+      const month = join(source, "appointments/2026/09");
+      await mkdir(month, { recursive: true });
+      for (const path of [join(source, "patients", lockedID, "content"), month]) {
+        await chmod(path, 0o000);
+        locked.push(path);
+      }
+
+      const result = await inspectVaultDirectory(source);
+      assert.equal(result.readable, true);
+      assert.equal(result.ok, false);
+      assert.deepEqual(result.valid_patients, [readableID]);
+      assert.deepEqual(result.unavailable_patients, [lockedID]);
+      const unreadable = result.items.filter((item) =>
+        item.rule === "filesystem.unreadable"
+      );
+      assert.deepEqual(
+        unreadable.map((item) => [item.scope, item.status, item.path]),
+        [
+          ["patient", "blocked", `patients/${lockedID}`],
+          ["appointment", "blocked", "appointments/2026/09"],
+        ],
+      );
+      assert.ok(unreadable.every((item) => !item.message.includes(temporary)));
+
+      await chmod(month, 0o755);
+      locked.pop();
+      const ledger = join(source, "operations/ledger");
+      await chmod(ledger, 0o000);
+      locked.push(ledger);
+      const blocked = await inspectVaultDirectory(source);
+      assert.equal(blocked.readable, false);
+      assert.equal(
+        blocked.items.find((item) => item.status === "blocked")?.rule,
+        "filesystem.unreadable",
+      );
+    } finally {
+      for (const path of locked) await chmod(path, 0o755);
+      await rm(temporary, { recursive: true, force: true });
+    }
+  },
+);
