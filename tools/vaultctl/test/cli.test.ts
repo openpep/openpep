@@ -4,6 +4,7 @@
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import {
+  chmod,
   cp,
   mkdir,
   mkdtemp,
@@ -203,6 +204,41 @@ test("validates the synthetic demo vault as readable and read-only", async () =>
   assert.equal(result.valid_patients.length, 20);
   assert.equal(io.stderr, "");
 });
+
+test(
+  "summarizes the vault when one patient directory is unreadable",
+  { skip: process.platform === "win32" || process.getuid?.() === 0 },
+  async () => {
+    const temporary = await mkdtemp(join(tmpdir(), "openpep-vaultctl-io-"));
+    const source = join(temporary, "vault");
+    await cp(join(repositoryRoot, "fixtures/demo-cardiology-v1/vault"), source, {
+      recursive: true,
+    });
+    const patientID = "pt_01990003-0000-7000-8000-000000000301";
+    const locked = join(source, "patients", patientID, "content");
+    try {
+      await chmod(locked, 0o000);
+      const io = captureIo();
+      assert.equal(await runVaultctl(["validate", source, "--json"], io.io), 1);
+      const result = JSON.parse(io.stdout) as {
+        readonly readable: boolean;
+        readonly valid_patients: readonly string[];
+        readonly unavailable_patients: readonly string[];
+        readonly items: Array<{ readonly status: string; readonly rule: string }>;
+      };
+      assert.equal(result.readable, true);
+      assert.equal(result.valid_patients.length, 19);
+      assert.deepEqual(result.unavailable_patients, [patientID]);
+      assert.ok(result.items.some((item) =>
+        item.status === "blocked" && item.rule === "filesystem.unreadable"
+      ));
+      assert.equal(io.stderr, "");
+    } finally {
+      await chmod(locked, 0o755);
+      await rm(temporary, { recursive: true, force: true });
+    }
+  },
+);
 
 test("reports localized patients and unmanaged files in stable JSON", async () => {
   const temporary = await mkdtemp(join(tmpdir(), "openpep-vaultctl-scoped-"));

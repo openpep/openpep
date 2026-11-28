@@ -135,7 +135,9 @@ export async function inspectVaultDirectory(
         "manifesto raiz validado",
       ));
     } catch (error) {
-      items.push(...protocolItems(error, "vault", "blocked", "vault.yaml"));
+      items.push(...(error instanceof ProtocolValidationError
+        ? protocolItems(error, "vault", "blocked", "vault.yaml")
+        : [unreadableItem(error, "vault", "vault.yaml")]));
     }
   }
 
@@ -162,12 +164,9 @@ export async function inspectVaultDirectory(
         ));
       } catch (error) {
         operationsManifest = "invalid";
-        items.push(...protocolItems(
-          error,
-          "vault",
-          "blocked",
-          "operations/manifest.yaml",
-        ));
+        items.push(...(error instanceof ProtocolValidationError
+          ? protocolItems(error, "vault", "blocked", "operations/manifest.yaml")
+          : [unreadableItem(error, "vault", "operations/manifest.yaml")]));
       }
     }
   }
@@ -790,17 +789,20 @@ async function readdirOrItem(
   }
 }
 
-// Turns a filesystem failure into a blocked item so that one unreadable entry
+// Turns a failed system call into a blocked item so that one unreadable entry
 // does not abort the whole inspection. Only the error code is reported, never
-// the absolute path. Anything other than a filesystem error is rethrown.
+// the absolute path. Any other error is rethrown.
 function unreadableItem(
   error: unknown,
   scope: VaultInspectionScope,
   path: string,
   patientID?: string,
 ): VaultInspectionItem {
-  const code = (error as NodeJS.ErrnoException | null)?.code;
-  if (!(error instanceof Error) || typeof code !== "string") throw error;
+  const { code, syscall } = (error ?? {}) as NodeJS.ErrnoException;
+  if (!(error instanceof Error) || typeof code !== "string" ||
+      typeof syscall !== "string") {
+    throw error;
+  }
   return item(
     scope,
     "blocked",

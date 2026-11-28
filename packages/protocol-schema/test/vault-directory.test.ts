@@ -532,3 +532,36 @@ test(
     }
   },
 );
+
+test(
+  "reports unreadable manifests as blocked instead of aborting",
+  { skip: process.platform === "win32" || process.getuid?.() === 0 },
+  async () => {
+    const temporary = await mkdtemp(join(tmpdir(), "openpep-directory-io-manifest-"));
+    try {
+      const source = await materializeEmptyVault(temporary);
+      for (const manifest of ["vault.yaml", "operations/manifest.yaml"]) {
+        const path = join(source, manifest);
+        await chmod(path, 0o000);
+        try {
+          const result = await inspectVaultDirectory(source);
+          assert.equal(result.readable, false, manifest);
+          assert.deepEqual(
+            result.items.find((item) => item.path === manifest),
+            {
+              scope: "vault",
+              status: "blocked",
+              path: manifest,
+              rule: "filesystem.unreadable",
+              message: "falha de leitura (EACCES)",
+            },
+          );
+        } finally {
+          await chmod(path, 0o644);
+        }
+      }
+    } finally {
+      await rm(temporary, { recursive: true, force: true });
+    }
+  },
+);
