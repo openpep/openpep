@@ -23,6 +23,7 @@
 /* Begin PBXFileReference section */
 		55BB75483044CD09009E0623 /* OpenPEP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenPEP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55BB755A3044CD32009E0623 /* OpenPEPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenPEPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55BB75703044CE00009E0623 /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -60,6 +61,7 @@
 		55BB753F3044CD09009E0623 = {
 			isa = PBXGroup;
 			children = (
+				55BB75703044CE00009E0623 /* Signing.xcconfig */,
 				55BB754A3044CD09009E0623 /* OpenPEP */,
 				55BB755B3044CD32009E0623 /* OpenPEPTests */,
 				55BB75493044CD09009E0623 /* Products */,
@@ -216,6 +218,7 @@
 /* Begin XCBuildConfiguration section */
 		55BB75513044CD0A009E0623 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55BB75703044CE00009E0623 /* Signing.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -279,6 +282,7 @@
 		};
 		55BB75523044CD0A009E0623 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55BB75703044CE00009E0623 /* Signing.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
